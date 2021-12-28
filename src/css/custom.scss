@@ -1,0 +1,327 @@
+@use "variables" as v;
+
+@font-face {
+  font-family: WenKai;
+  src: url(/src/font/WenKai.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: KaiTi;
+  src: url(/src/font/KaiTi.woff2);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Zihun67;
+  src: url(/src/font/Zihun67.ttf);
+  font-display: swap;
+}
+
+:root {
+  --ifm-color-primary: #3578e5;
+  --ifm-color-primary-dark: #1d68e1;
+  --ifm-color-primary-darker: #1b62d4;
+  --ifm-color-primary-darkest: #1751af;
+  --ifm-color-primary-light: #4e89e8;
+  --ifm-color-primary-lighter: #5a91ea;
+  --ifm-color-primary-lightest: #80aaef;
+  --ifm-code-font-size: 95%;
+}
+
+.markdown {
+  // 文檔 Youtube 影片大小
+  .video-responsive {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  // 文檔超鏈結展現樣式
+  a:not(.breadcrumbs__link):not(.hash-link) {
+    background-color: rgba(187, 239, 253, 0.3);
+    border-bottom: 1px solid var(--ifm-hr-border-color);
+    color: var(--ifm-font-color-base);
+    display: initial;
+    line-height: calc(var(--ifm-font-size-base) + 4px);
+  }
+
+  // 字詞粵普讀音標示
+  .py-circle {
+    display: inline-block;
+    color: v.$py-circle-color;
+    font-size: 0.875em;
+    width: 1.25rem;
+    line-height: 125%;
+    background-color: white;
+    text-align: center;
+    font-family: Tahoma;
+    border: 1.5px solid v.$py-circle-color;
+    border-radius: 100%;
+  }
+
+  // 引文／前文展現樣式
+  .pre-text {
+    font-size: 1.2rem;
+    text-align: justify;
+    color: v.$pre-text-color;
+    font-family: FangSong, SimHei, SimSun;
+    html[data-theme="dark"] & {
+      color: v.$pre-text-color-dark;
+    }
+  }
+
+  // 正文展現樣式
+  .main-text {
+    font-size: 1.7rem;
+    font-family: KaiTi, DFKai-SB, KaiU, STKaiti, Serif;
+    text-align: justify;
+    text-indent: 2em;
+    line-height: 1.2;
+    margin: 1.8rem 0;
+  }
+
+  // 語譯／比較閱讀／延伸閱讀樣式
+  .translation-text {
+    font-size: 1.2em;
+    text-align: justify;
+    text-indent: 2em;
+  }
+
+  // 文章來源樣式
+  .source-text {
+    color: v.$source-text-color;
+    text-align: right;
+    margin-bottom: 1.5rem;
+    html[data-theme="dark"] & {
+      color: v.$source-text-color-dark;
+    }
+  }
+
+  //.remark & .type 正文注釋、段意、段旨
+  .remark {
+    text-indent: 0;
+    color: v.$remark-color;
+    font-size: 1.2rem;
+    font-family: cwTeXKai, DFKai-SB, KaiU, STKaiti, Serif;
+    text-align: justify;
+    .type {
+      background-color: #e6e6e6;
+      color: v.$remark-type-color;
+      border: v.$remark-type-color solid 1px;
+      border-radius: 6px;
+      padding: 0.2rem;
+    }
+    html[data-theme="dark"] & {
+      color: v.$remark-color-dark;
+    }
+  }
+  // 導航
+  nav.breadcrumbs {
+    margin-top: 1.5rem;
+    html[data-theme="dark"] & .breadcrumbs__item--active a {
+      color: v.$source-text-color-dark;
+    }
+  }
+  // Annotate 正文字詞釋義 Tooltip
+  span[aria-label] {
+    background-color: v.$annotate-color;
+  }
+}
+
+@media (min-width: 997px) {
+  button[title="Collapse sidebar"] {
+    border-bottom: 0;
+  }
+}
+
+/* Task學習評估 */
+.task-game {
+  background-color: var(--ifm-card-background-color);
+  border-radius: var(--ifm-card-border-radius);
+  min-height: 12.5rem;
+  height: min-content;
+  padding: 1.25rem;
+  box-shadow: var(--ifm-global-shadow-lw);
+  display: flex;
+  justify-content: space-evenly;
+
+  .question-section {
+    width: 100%;
+    position: relative;
+  }
+
+  .question-count {
+    margin-bottom: 1.25rem;
+    font-size: 1.75rem;
+  }
+
+  .question-text {
+    margin-bottom: 0.75rem;
+    margin-right: 2rem;
+  }
+
+  .answer-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .score-section {
+    display: flex;
+    font-size: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    button {
+      justify-content: center;
+    }
+  }
+
+  button {
+    font-size: 1rem;
+    font-weight: var(--ifm-button-font-weight);
+    color: var(--ifm-color-gray-900);
+    background-color: var(--ifm-color-secondary);
+    border-radius: var(--ifm-button-border-radius);
+    display: flex;
+    padding: 5px;
+    border: var(--ifm-button-border-width) solid var(--ifm-color-secondary);
+    cursor: pointer;
+    &:hover {
+      background-color: var(--ifm-color-secondary-dark);
+    }
+  }
+}
+
+.task-list-block {
+  margin-bottom: var(--ifm-leading);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  background-color: v.$task-list-block-background-color;
+  color: v.$task-list-block-color;
+  html[data-theme="dark"] & {
+    color: v.$task-list-block-color-dark;
+    background-color: v.$task-list-block-background-color-dark;
+  }
+  .question-section {
+    border-bottom: 1px solid var(--ifm-color-emphasis-300);
+    border-top-left-radius: var(--ifm-global-radius);
+    border-top-right-radius: var(--ifm-global-radius);
+    font-size: var(--ifm-code-font-size);
+    padding: 0.75rem var(--ifm-pre-padding);
+  }
+  .answer-section {
+    direction: ltr;
+    position: relative;
+    pre {
+      background-color: inherit;
+      border-radius: var(--ifm-global-radius);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      margin: 0;
+      padding: 0;
+      code {
+        font: inherit;
+        float: left;
+        min-width: 100%;
+        padding: var(--ifm-pre-padding);
+        p {
+          &.correct-answer {
+            color: v.$task-list-correct-answer-color;
+            background-color: rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 calc(var(--ifm-pre-padding) * -1);
+            padding: 0 var(--ifm-pre-padding);
+            margin-bottom: var(--ifm-paragraph-margin-bottom);
+            html[data-theme="dark"] & {
+              color: v.$task-list-correct-answer-color-dark;
+            }
+          }
+          &:not(.correct-answer) .option {
+            color: v.$task-list-correct-answer-option-color;
+            html[data-theme="dark"] & {
+              color: v.$task-list-correct-answer-option-color-dark;
+            }
+          }
+          .comment {
+            font-style: italic;
+            color: v.$task-list-correct-answer-comment-color;
+            html[data-theme="dark"] & {
+              color: v.$task-list-correct-answer-comment-color-dark;
+            }
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+blockquote {
+  text-align: justify;
+}
+
+h1,
+.hero__subtitle {
+  font-family: WenKai;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+  html[data-theme="dark"] & {
+    background-color: rgba(0, 0, 0, 0.3);
+    --text-color-pre: blue;
+  }
+}
+
+// 右上角 Github 圖標
+.header-github-link:before {
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
+  content: "";
+  display: flex;
+  height: 24px;
+  width: 24px;
+  html[data-theme="dark"] & {
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+      no-repeat;
+  }
+}
+
+footer.footer {
+  padding: calc(var(--ifm-footer-padding-vertical) * 0.5) var(--ifm-footer-padding-horizontal);
+  font-size: 0.8rem;
+  color: #a4a4a4;
+  background: var(--ifm-navbar-background-color);
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+@media (min-width: 997px) {
+  .featureText {
+    margin-left: 4rem;
+  }
+}
+
+@media (max-width: 996px) {
+  .featureText {
+    text-align: center;
+    ul {
+      list-style-type: none;
+      margin-block-start: 0;
+      padding-inline-start: 0;
+    }
+  }
+}
