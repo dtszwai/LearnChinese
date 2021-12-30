@@ -100,6 +100,7 @@
     color: v.$source-text-color;
     text-align: right;
     margin-bottom: 1.5rem;
+    display: block;
     html[data-theme="dark"] & {
       color: v.$source-text-color-dark;
     }
@@ -140,6 +141,15 @@
   button[title="Collapse sidebar"] {
     border-bottom: 0;
   }
+}
+
+.card-container {
+  align-items: center;
+  background-color: var(--ifm-color-black-alpha-05);
+  border-radius: var(--ifm-global-radius);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
 
 /* Task學習評估 */
@@ -302,7 +312,8 @@ h1,
 }
 
 footer.footer {
-  padding: calc(var(--ifm-footer-padding-vertical) * 0.5) var(--ifm-footer-padding-horizontal);
+  padding: calc(var(--ifm-footer-padding-vertical) * 0.5)
+    var(--ifm-footer-padding-horizontal);
   font-size: 0.8rem;
   color: #a4a4a4;
   background: var(--ifm-navbar-background-color);

@@ -103,7 +103,7 @@ const taskList = questions.map((item, itemindex) => (
                         <React.Fragment key={'sub' + subindex} >
                             <p className={sub.isCorrect ? "correct-answer" : ""}>
                                 <span className="option">{String.fromCharCode(subindex + 65)}. </span>
-                                {sub.answerText} {sub.isCorrect && <span className="comment">// 正確</span>}
+                                {sub.answerText} {sub.isCorrect && <span className="comment">// 正確答案</span>}
                             </p>
                         </React.Fragment>
                     )}

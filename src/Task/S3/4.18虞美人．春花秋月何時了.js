@@ -4,76 +4,76 @@ import TabItem from "@theme/TabItem";
 
 const questions = [
   {
-    questionText: "蘇軾於〈水調歌頭〉中加入了詞序。請問詞序有何功用？",
+    questionText: "〈虞美人〉是一首描述什麼的詞？",
     answerOptions: [
-      { answerText: "闡明文章主題", isCorrect: false },
-      { answerText: "交代自己的身份", isCorrect: false },
-      { answerText: "指出寫作前的經歷", isCorrect: false },
-      { answerText: "交代詞作的寫作背景", isCorrect: true },
+      { answerText: "悼亡詞", isCorrect: false },
+      { answerText: "抒情詞", isCorrect: true },
+      { answerText: "懷古詞", isCorrect: false },
+      { answerText: "詠物詞", isCorrect: false },
     ],
   },
   {
-    questionText: "此詞描寫的是甚麼節日？",
+    questionText: "以下哪項是這首詞的情調？",
     answerOptions: [
-      { answerText: "春節", isCorrect: false },
-      { answerText: "元宵節", isCorrect: false },
-      { answerText: "中秋節", isCorrect: true },
-      { answerText: "冬至", isCorrect: false },
-    ],
-  },
-  {
-    questionText: "「天上宮闕」除了指天宮以外，還隱含了甚麼意思？",
-    answerOptions: [
-      { answerText: "家庭", isCorrect: false },
-      { answerText: "朝廷", isCorrect: true },
-      { answerText: "故鄉眉州", isCorrect: false },
-      { answerText: "美人住處", isCorrect: false },
-    ],
-  },
-  {
-    questionText: "「瓊樓玉宇」指的是甚麼？",
-    answerOptions: [
-      { answerText: "明指嫦娥，暗指月宮。", isCorrect: false },
-      { answerText: "明指朝廷，暗指月宮。", isCorrect: false },
-      { answerText: "明指月宮，暗指朝廷。", isCorrect: true },
-      { answerText: "明指宫殿，暗指昔日美好的生活。", isCorrect: false },
-    ],
-  },
-  {
-    questionText:
-      "「人有悲歡離合，月有陰晴圓缺，此事古難全」運用了甚麼寫作手法？",
-    answerOptions: [
-      { answerText: "誇張", isCorrect: false },
-      { answerText: "情景交融", isCorrect: true },
-      { answerText: "先抑後揚", isCorrect: false },
-      { answerText: "借古諷今", isCorrect: false },
-    ],
-  },
-  {
-    questionText: "「此事古難全」的全字是什麼意思？",
-    answerOptions: [
-      { answerText: "存在", isCorrect: false },
-      { answerText: "圓滿", isCorrect: true },
-      { answerText: "保存", isCorrect: false },
-      { answerText: "成全", isCorrect: false },
+      { answerText: "平淡", isCorrect: false },
+      { answerText: "豪放", isCorrect: false },
+      { answerText: "悲痛", isCorrect: true },
+      { answerText: "輕鬆", isCorrect: false },
     ],
   },
   {
     questionText: "以下哪項不是詞作的內容？",
     answerOptions: [
-      { answerText: "異地戀愛", isCorrect: true },
-      { answerText: "思念弟弟", isCorrect: false },
-      { answerText: "人間離別", isCorrect: false },
-      { answerText: "思想的矛盾", isCorrect: false },
+      { answerText: "故國之思", isCorrect: false },
+      { answerText: "及時行樂", isCorrect: true },
+      { answerText: "物是人非", isCorrect: false },
+      { answerText: "亡國之痛", isCorrect: false },
     ],
   },
   {
-    questionText: "以下哪項不是本詞的寫作特色？",
+    questionText: "作者寫本詞時，是身處在什麼境況下？",
     answerOptions: [
-      { answerText: "擬物手法", isCorrect: true },
-      { answerText: "結構嚴謹", isCorrect: false },
-      { answerText: "融化詩句", isCorrect: false },
-      { answerText: "浪漫的想像", isCorrect: false },
+      { answerText: "被人軟禁", isCorrect: true },
+      { answerText: "身陷天牢", isCorrect: false },
+      { answerText: "離鄉背井", isCorrect: false },
+      { answerText: "遊山玩水", isCorrect: false },
+    ],
+  },
+  {
+    questionText: "「雕欄玉砌」這一意象指的是什麼？",
+    answerOptions: [
+      { answerText: "寺廟的欄杆", isCorrect: false },
+      { answerText: "南唐的宮殿", isCorrect: true },
+      { answerText: "江南的園林", isCorrect: false },
+      { answerText: "作者被囚禁的地方", isCorrect: false },
+    ],
+  },
+  {
+    questionText: "「小樓昨夜又東風」中的「小樓」指的是？",
+    answerOptions: [
+      { answerText: "寺廟", isCorrect: false },
+      { answerText: "南唐的宮殿", isCorrect: false },
+      { answerText: "江南的園林", isCorrect: false },
+      { answerText: "作者被囚禁的地方", isCorrect: true },
+    ],
+  },
+  {
+    questionText: "「小樓昨夜又東風」中的「東風」指的是？",
+    answerOptions: [
+      { answerText: "春天的風", isCorrect: true },
+      { answerText: "夏天的風", isCorrect: false },
+      { answerText: "秋天的風", isCorrect: false },
+      { answerText: "冬天的風", isCorrect: false },
+    ],
+  },
+  {
+    questionText:
+      "「問君能有幾多愁，恰似一江春水向東流。」以下哪項不是本句所運用的修辭手法？",
+    answerOptions: [
+      { answerText: "誇張", isCorrect: false },
+      { answerText: "比喻", isCorrect: false },
+      { answerText: "對偶", isCorrect: true },
+      { answerText: "設問", isCorrect: false },
     ],
   },
 ];
