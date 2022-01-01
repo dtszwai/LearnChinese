@@ -81,23 +81,22 @@ const questions = [
 const taskList = questions.map((item, itemindex) => (
   <div className="task-list-block" key={"questions" + itemindex}>
     <div className="question-section">
-      {itemindex + 1 + ". "}
-      {item.questionText}
+      {`${itemindex + 1}. ${item.questionText}`}
     </div>
-
     <div className="answer-section">
       <pre>
         <code>
           {item.answerOptions.map((sub, subindex) => (
-            <React.Fragment key={"sub" + subindex}>
-              <p className={sub.isCorrect ? "correct-answer" : ""}>
-                <span className="option">
-                  {String.fromCharCode(subindex + 65)}.{" "}
-                </span>
-                {sub.answerText}{" "}
-                {sub.isCorrect && <span className="comment">// 正確答案</span>}
-              </p>
-            </React.Fragment>
+            <p
+              key={"sub" + subindex}
+              className={sub.isCorrect ? "correct-answer" : ""}
+            >
+              <span className="option">
+                {`${String.fromCharCode(subindex + 65)}. `}
+              </span>
+              {`${sub.answerText} `}
+              {sub.isCorrect && <span className="comment">// 正確答案</span>}
+            </p>
           ))}
         </code>
       </pre>
@@ -128,12 +127,10 @@ function Game() {
   return (
     <div className="task-game">
       {showScore ? (
-        <>
-          <div className="score-section">
-            你在 {questions.length} 題裏答對了 {score} 題。
-            <button onClick={resetForm}>再做一次</button>
-          </div>
-        </>
+        <div className="score-section">
+          你在 {questions.length} 題裏答對了 {score} 題。
+          <button onClick={resetForm}>再做一次</button>
+        </div>
       ) : (
         <>
           <div className="question-section">
@@ -155,7 +152,7 @@ function Game() {
                   }
                   key={key}
                 >
-                  {answerOption.answerText}
+                  {String.fromCharCode(key + 65)}. {answerOption.answerText}
                 </button>
               )
             )}

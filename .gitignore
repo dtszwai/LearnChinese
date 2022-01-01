@@ -1,4 +1,5 @@
 .docusaurus
+.idea
 build
 node_modules
-.idea
+deploy

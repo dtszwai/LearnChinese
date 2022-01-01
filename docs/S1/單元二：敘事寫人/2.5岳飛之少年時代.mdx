@@ -5,25 +5,25 @@ id: 2.5岳飛之少年時代
 description: '記述南宋抗金名將岳飛少年時代的事跡和品格'
 ---
 
-import {Youtube, SourceText, Highlight, Tabs, TabItem, Remark, Annotate} from '/src/components/Tool.js';
+import * as Tool from '/src/components/Tool.js';
 
-<SourceText />
+<Tool.Breadcrumbs />
 
 <p className="pre-text">本文是根據<a href="https://zh.m.wikisource.org/zh-hant/%E5%AE%8B%E5%8F%B2/%E5%8D%B7365">《宋史．岳飛傳》</a>和《南渡十將傳》有關岳飛的部分改寫而成的。</p>
 
 ## 📖 正文
 
-<p className="main-text">岳飛，<Annotate title="古人成年（二十歲）後另取的別名，其意思往往與「名」有關聯。">字</Annotate>鵬舉，相州湯陰人也。生時，有大禽若<Annotate title="天鵝。粵 [酷]，[huk6]。">鵠</Annotate>，飛鳴室上，因以為名。未<Annotate title="指嬰兒出生滿一個月。彌︰滿，遍。">彌月</Annotate>，<Annotate title="黃河">河</Annotate><Annotate title="決堤">決</Annotate><Annotate title="今河南省內黃縣。">內黃</Annotate>，水<Annotate title="突然">暴</Annotate>至，母姚氏抱飛坐巨甕中，衝濤乘流而下，<Annotate title="到達">及</Annotate>岸，得不死。</p>
+<p className="main-text">岳飛，<Tool.Annotate title="古人成年（二十歲）後另取的別名，其意思往往與「名」有關聯。">字</Tool.Annotate>鵬舉，相州湯陰人也。生時，有大禽若<Tool.Annotate title="天鵝。粵 [酷]，[huk6]。">鵠</Tool.Annotate>，飛鳴室上，因以為名。未<Tool.Annotate title="指嬰兒出生滿一個月。彌︰滿，遍。">彌月</Tool.Annotate>，<Tool.Annotate title="黃河">河</Tool.Annotate><Tool.Annotate title="決堤">決</Tool.Annotate><Tool.Annotate title="今河南省內黃縣。">內黃</Tool.Annotate>，水<Tool.Annotate title="突然">暴</Tool.Annotate>至，母姚氏抱飛坐巨甕中，衝濤乘流而下，<Tool.Annotate title="到達">及</Tool.Annotate>岸，得不死。</p>
 
-<Remark type="段旨">出生：記敘岳飛得名之原因、籍貫及出生時的遭遇。預示岳飛之與眾不同：偉大人物的誕生，每有異象。在驚濤激流中脫災，可見他際遇之不尋常。</Remark>  
+<Tool.Remark type="段旨">出生：記敘岳飛得名之原因、籍貫及出生時的遭遇。預示岳飛之與眾不同：偉大人物的誕生，每有異象。在驚濤激流中脫災，可見他際遇之不尋常。</Tool.Remark>  
 
-<p className="main-text">飛少<Annotate title="懷有">負</Annotate>氣節，沈厚寡言。天資敏悟，<Annotate title="記憶力強">強記</Annotate>書傳，尤好<Annotate title="即《左傳》，相傳是左丘明所作，主要是記春秋時期的歷史。">《左氏春秋》</Annotate>及<Annotate title="春秋時孫武和戰國時吳起的並稱。皆古代兵家。孫武著《兵法》十三篇。吳起著《吳子》四十八篇。">孫吳兵法</Annotate>。家貧，拾薪為燭，誦習達旦，不<Annotate title="睡覺">寐</Annotate>。生有神力，<Annotate title="還未成年。冠︰古代男子二十歲舉行加冠禮，表示已成年。粵 [貫]，[gun3]。">未冠</Annotate>，能<Annotate title="拉開">挽弓</Annotate>三百斤。學射於周同。同射三矢，皆中<Annotate title="靶心">的</Annotate>，以<Annotate title="演示">示</Annotate>飛；飛引弓一發，破其<Annotate title="箭的尾部">筈</Annotate>；再發，又中。同大驚，以所愛良弓贈之。飛<Annotate title="從此">由是</Annotate><Annotate title="更加">益</Annotate>自練習，盡得同術。</p>
+<p className="main-text">飛少<Tool.Annotate title="懷有">負</Tool.Annotate>氣節，沈厚寡言。天資敏悟，<Tool.Annotate title="記憶力強">強記</Tool.Annotate>書傳，尤好<Tool.Annotate title="即《左傳》，相傳是左丘明所作，主要是記春秋時期的歷史。">《左氏春秋》</Tool.Annotate>及<Tool.Annotate title="春秋時孫武和戰國時吳起的並稱。皆古代兵家。孫武著《兵法》十三篇。吳起著《吳子》四十八篇。">孫吳兵法</Tool.Annotate>。家貧，拾薪為燭，誦習達旦，不<Tool.Annotate title="睡覺">寐</Tool.Annotate>。生有神力，<Tool.Annotate title="還未成年。冠︰古代男子二十歲舉行加冠禮，表示已成年。粵 [貫]，[gun3]。">未冠</Tool.Annotate>，能<Tool.Annotate title="拉開">挽弓</Tool.Annotate>三百斤。學射於周同。同射三矢，皆中<Tool.Annotate title="靶心">的</Tool.Annotate>，以<Tool.Annotate title="演示">示</Tool.Annotate>飛；飛引弓一發，破其<Tool.Annotate title="箭的尾部">筈</Tool.Annotate>；再發，又中。同大驚，以所愛良弓贈之。飛<Tool.Annotate title="從此">由是</Tool.Annotate><Tool.Annotate title="更加">益</Tool.Annotate>自練習，盡得同術。</p>
 
-<Remark type="段旨">成長：敘述岳飛的品格、資質和少年時勤奮好學的情況。岳飛喜歡看行軍作戰的名著，可見他能成為一代名將，實非偶然。岳飛天資聰敏、有神力、學習勤奮，為武師周同所愛重。</Remark>  
+<Tool.Remark type="段旨">成長：敘述岳飛的品格、資質和少年時勤奮好學的情況。岳飛喜歡看行軍作戰的名著，可見他能成為一代名將，實非偶然。岳飛天資聰敏、有神力、學習勤奮，為武師周同所愛重。</Tool.Remark>  
 
-<p className="main-text"><Annotate title="不久">未幾</Annotate>，同死，飛<Annotate title="十分悲傷。慟︰極悲哀，大哭。粵 [動]，[dung6]。">悲慟</Annotate>不已。每<Annotate title="逢">值</Annotate><Annotate title="農曆每月的初一稱「朔」，十五稱「望」；古人常在這些日子祭祀神靈。">朔望</Annotate>，必具酒肉，<Annotate title="前往">詣</Annotate>同墓，<Annotate title="向死者供獻祭品致敬">奠</Annotate>而泣；又引同所贈弓，發三矢，<Annotate title="於是，才">乃</Annotate><Annotate title="把酒灑在地上表示祭奠。粵 [賴]，[laai6]。">酹</Annotate>。父知而<Annotate title="合宜的事情。這裏用作動詞，稱讚他懂得道義。">義</Annotate>之，撫其背曰：「<Annotate title="假使，將來。">使</Annotate>汝<Annotate title="他日">異日</Annotate>得為時<Annotate title="任用，施展才能。">用</Annotate>，<Annotate title="副詞，表示假設推測語氣。">其</Annotate><Annotate title="為國捐軀">殉國</Annotate><Annotate title="為正義而死。">死義</Annotate>乎？」應曰：「<Annotate title="只要">惟</Annotate>大人許兒以身報國家，何事不可為？」</p>
+<p className="main-text"><Tool.Annotate title="不久">未幾</Tool.Annotate>，同死，飛<Tool.Annotate title="十分悲傷。慟︰極悲哀，大哭。粵 [動]，[dung6]。">悲慟</Tool.Annotate>不已。每<Tool.Annotate title="逢">值</Tool.Annotate><Tool.Annotate title="農曆每月的初一稱「朔」，十五稱「望」；古人常在這些日子祭祀神靈。">朔望</Tool.Annotate>，必具酒肉，<Tool.Annotate title="前往">詣</Tool.Annotate>同墓，<Tool.Annotate title="向死者供獻祭品致敬">奠</Tool.Annotate>而泣；又引同所贈弓，發三矢，<Tool.Annotate title="於是，才">乃</Tool.Annotate><Tool.Annotate title="把酒灑在地上表示祭奠。粵 [賴]，[laai6]。">酹</Tool.Annotate>。父知而<Tool.Annotate title="合宜的事情。這裏用作動詞，稱讚他懂得道義。">義</Tool.Annotate>之，撫其背曰：「<Tool.Annotate title="假使，將來。">使</Tool.Annotate>汝<Tool.Annotate title="他日">異日</Tool.Annotate>得為時<Tool.Annotate title="任用，施展才能。">用</Tool.Annotate>，<Tool.Annotate title="副詞，表示假設推測語氣。">其</Tool.Annotate><Tool.Annotate title="為國捐軀">殉國</Tool.Annotate><Tool.Annotate title="為正義而死。">死義</Tool.Annotate>乎？」應曰：「<Tool.Annotate title="只要">惟</Tool.Annotate>大人許兒以身報國家，何事不可為？」</p>
   
-<Remark type="段旨">立志：記敍岳飛不忘師恩的美德，並以他父親與他的對話顯示岳飛以身報國的志向。岳飛天性重義，尊師重道，孝順父母。</Remark>
+<Tool.Remark type="段旨">立志：記敍岳飛不忘師恩的美德，並以他父親與他的對話顯示岳飛以身報國的志向。岳飛天性重義，尊師重道，孝順父母。</Tool.Remark>
 
 ## 📝 語譯
 
@@ -120,17 +120,17 @@ import {Youtube, SourceText, Highlight, Tabs, TabItem, Remark, Annotate} from '/
 
 ## 📺 影片導讀
 
-<Tabs>
-  <TabItem value="Video1" label="盡忠報國的岳飛" default>
-    <Youtube id="eWetjnznJXk" />
-  </TabItem>
-  <TabItem value="Video2" label="名人故事之旅">
-    <Youtube>8jqHmUg_0Bs</Youtube>
-  </TabItem>
-  <TabItem value="Video3" label="百家講壇">
-    <Youtube>8dWw9lQfDb4</Youtube>
-  </TabItem>
-</Tabs>
+<Tool.Tabs>
+  <Tool.TabItem value="Video1" label="盡忠報國的岳飛" default>
+    <Tool.Youtube id="eWetjnznJXk" />
+  </Tool.TabItem>
+  <Tool.TabItem value="Video2" label="名人故事之旅">
+    <Tool.Youtube>8jqHmUg_0Bs</Tool.Youtube>
+  </Tool.TabItem>
+  <Tool.TabItem value="Video3" label="百家講壇">
+    <Tool.Youtube>8dWw9lQfDb4</Tool.Youtube>
+  </Tool.TabItem>
+</Tool.Tabs>
 
 ## 🌈 課文賞析
 
@@ -154,7 +154,9 @@ import {Youtube, SourceText, Highlight, Tabs, TabItem, Remark, Annotate} from '/
 
 <p className="translation-text">項籍者，下相人也，字羽。初起時，年二十四。其季父項梁，梁父即楚將項燕，為秦將王翦所戮者也。項氏世世為楚將，封於項，故姓項氏。</p>
 
-<p className="translation-text">項籍少時，學書不成，去；學劍，又不成。項梁怒之。籍曰：「書足以記名姓而已。劍一人敵，不足學，學萬人敵。」於是項梁乃教籍兵法，籍大喜，略知其意，又不肯竟學。……秦始皇帝游會稽，渡浙江，梁與籍俱觀。籍曰：「彼可取而代也。」梁掩其口，曰：「毋妄言，族矣！」梁以此奇籍。籍長八尺餘，力能扛鼎，才氣過人，雖吳中子弟，皆已憚籍矣。</p>
+<p className="translation-text">項籍少時，學書不成，去；學劍，又不成。項梁怒之。籍曰：「書足以記名姓而已。劍一人敵，不足學，學萬人敵。」於是項梁乃教籍兵法，籍大喜，略知其意，又不肯竟學。</p>
+
+<p className="translation-text">秦始皇帝游會稽，渡浙江，梁與籍俱觀。籍曰：「彼可取而代也。」梁掩其口，曰：「毋妄言，族矣！」梁以此奇籍。籍長八尺餘，力能扛鼎，才氣過人，雖吳中子弟，皆已憚籍矣。</p>
 
 ## 🚀 小試牛刀
 
