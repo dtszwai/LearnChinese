@@ -52,10 +52,10 @@ module.exports = {
           routeBasePath: "/",
           showLastUpdateTime: true,
         },
-        blog:{
-          blogTitle: '日誌',
+        blog: {
+          blogTitle: "日誌",
         },
-        googleAnalytics: { trackingID: "G-W84JMV3F51" },
+        googleAnalytics: { trackingID: "G-3CDVV4STYR", anonymizeIP: true },
         theme: { customCss: [require.resolve("./src/css/custom.scss")] },
       },
     ],

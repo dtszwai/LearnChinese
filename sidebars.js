@@ -4,7 +4,7 @@ module.exports = {
     {
       type: "category",
       label: "中一上",
-      link: { type: "generated-index", title: "中一上學期課文" },
+      link: { type: "generated-index", title: "中一級上學期課文" },
       collapsed: false,
       items: [
         {
@@ -16,6 +16,16 @@ module.exports = {
           },
           collapsed: false,
           items: ["S1/單元二：敘事寫人/2.5岳飛之少年時代"],
+        },
+        {
+          type: "category",
+          label: "單元四：詩歌欣賞",
+          link: {
+            type: "generated-index",
+            slug: "/category/S1/單元四：詩歌欣賞",
+          },
+          collapsed: false,
+          items: ["S1/單元四：詩歌欣賞/4.5燕詩"],
         },
       ],
     },
@@ -32,7 +42,7 @@ module.exports = {
     {
       type: "category",
       label: "中三上",
-      link: { type: "generated-index", title: "中三上學期課文" },
+      link: { type: "generated-index", title: "中三級上學期課文" },
       collapsed: false,
       items: [
         {
