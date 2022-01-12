@@ -39,7 +39,6 @@ module.exports = {
       },
     ],
     "docusaurus-plugin-sass",
-    "plugin-image-zoom",
   ],
 
   presets: [
@@ -55,8 +54,8 @@ module.exports = {
         blog: {
           blogTitle: "日誌",
         },
-        googleAnalytics: { trackingID: "G-3CDVV4STYR", anonymizeIP: true },
         theme: { customCss: [require.resolve("./src/css/custom.scss")] },
+        gtag: { trackingID: "G-3CDVV4STYR", anonymizeIP: true },
       },
     ],
   ],
@@ -81,7 +80,7 @@ module.exports = {
           label: "萌典",
           position: "right",
         },
-        { to: "blog", label: "日誌", position: "right" },
+        // { to: "blog", label: "日誌", position: "right" },
         {
           href: "https://github.com/rccttwd/library/tree/master",
           "aria-label": "GitHub repository",
@@ -90,10 +89,9 @@ module.exports = {
         },
       ],
     },
-    zoomSelector: ".markdown :not(em) > img",
-    footer: {
-      copyright: `Built with <a href="https://docusaurus.io/">Docusaurus</a>, 2021 - ${new Date().getFullYear()}.`,
-    },
+    // footer: {
+    //   copyright: `Built with <a href="https://docusaurus.io/">Docusaurus</a>, 2021 - ${new Date().getFullYear()}.`,
+    // },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,

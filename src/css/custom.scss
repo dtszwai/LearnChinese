@@ -1,4 +1,4 @@
-@use "variables" as v;
+@use 'variables' as v;
 
 @font-face {
   font-family: WenKai;
@@ -14,6 +14,12 @@
 @font-face {
   font-family: Zihun67;
   src: url(/src/font/Zihun67.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: SmallCaps;
+  src: url(/src/font/Fontin-SmallCaps.otf);
   font-display: swap;
 }
 
@@ -73,7 +79,7 @@
     text-align: justify;
     color: v.$pre-text-color;
     font-family: FangSong, SimHei, SimSun;
-    html[data-theme="dark"] & {
+    html[data-theme='dark'] & {
       color: v.$pre-text-color-dark;
     }
   }
@@ -105,7 +111,7 @@
     text-align: right;
     margin-bottom: 1.5rem;
     display: block;
-    html[data-theme="dark"] & {
+    html[data-theme='dark'] & {
       color: v.$source-text-color-dark;
     }
   }
@@ -124,14 +130,19 @@
       border-radius: 6px;
       padding: 0.2rem;
     }
-    html[data-theme="dark"] & {
+    html[data-theme='dark'] & {
       color: v.$remark-color-dark;
     }
   }
+
+  .admonition-heading h5 {
+    font-family: SmallCaps, var(--ifm-heading-font-family);
+  }
+
   // 導航
   nav.breadcrumbs {
     margin-top: 1.5rem;
-    html[data-theme="dark"] & .breadcrumbs__item--active a {
+    html[data-theme='dark'] & .breadcrumbs__item--active a {
       color: v.$source-text-color-dark;
     }
   }
@@ -141,8 +152,13 @@
   }
 }
 
+// ### 標題對齊 ## Emoji
+ul.table-of-contents li ul {
+  padding-left: 0.9rem;
+}
+
 @media (min-width: 997px) {
-  button[title="Collapse sidebar"] {
+  button[title='Collapse sidebar'] {
     border-bottom: 0;
   }
 }
@@ -221,7 +237,7 @@
   box-shadow: var(--ifm-global-shadow-lw);
   background-color: v.$task-list-block-background-color;
   color: v.$task-list-block-color;
-  html[data-theme="dark"] & {
+  html[data-theme='dark'] & {
     color: v.$task-list-block-color-dark;
     background-color: v.$task-list-block-background-color-dark;
   }
@@ -255,20 +271,20 @@
             margin: 0 calc(var(--ifm-pre-padding) * -1);
             padding: 0 var(--ifm-pre-padding);
             margin-bottom: var(--ifm-paragraph-margin-bottom);
-            html[data-theme="dark"] & {
+            html[data-theme='dark'] & {
               color: v.$task-list-correct-answer-color-dark;
             }
           }
           &:not(.correct-answer) .option {
             color: v.$task-list-correct-answer-option-color;
-            html[data-theme="dark"] & {
+            html[data-theme='dark'] & {
               color: v.$task-list-correct-answer-option-color-dark;
             }
           }
           .comment {
             font-style: italic;
             color: v.$task-list-correct-answer-comment-color;
-            html[data-theme="dark"] & {
+            html[data-theme='dark'] & {
               color: v.$task-list-correct-answer-comment-color-dark;
             }
           }
@@ -295,7 +311,7 @@ h1,
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
-  html[data-theme="dark"] & {
+  html[data-theme='dark'] & {
     background-color: rgba(0, 0, 0, 0.3);
     --text-color-pre: blue;
   }
@@ -305,11 +321,11 @@ h1,
 .header-github-link:before {
   background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
     no-repeat;
-  content: "";
+  content: '';
   display: flex;
   height: 24px;
   width: 24px;
-  html[data-theme="dark"] & {
+  html[data-theme='dark'] & {
     background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
       no-repeat;
   }
