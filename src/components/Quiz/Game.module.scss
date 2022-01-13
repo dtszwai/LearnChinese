@@ -1,0 +1,56 @@
+.Game {
+  background-color: var(--ifm-card-background-color);
+  border-radius: var(--ifm-card-border-radius);
+  min-height: 12.5rem;
+  height: min-content;
+  padding: 1.25rem;
+  box-shadow: var(--ifm-global-shadow-lw);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QuestionSection {
+  width: 100%;
+}
+
+.QuestionCount {
+  margin-bottom: 1.25rem;
+  font-size: 1.75rem;
+}
+
+.QuestionText {
+  margin-bottom: 0.75rem;
+  margin-right: 2rem;
+}
+
+.AnswerSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ScoreSection {
+  display: flex;
+  font-size: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  button {
+    justify-content: center;
+  }
+}
+
+button {
+  font-size: 1rem;
+  font-weight: var(--ifm-button-font-weight);
+  color: var(--ifm-color-gray-900);
+  background-color: var(--ifm-color-secondary);
+  border-radius: var(--ifm-button-border-radius);
+  display: flex;
+  padding: 5px;
+  border: var(--ifm-button-border-width) solid var(--ifm-color-secondary);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--ifm-color-secondary-dark);
+  }
+}

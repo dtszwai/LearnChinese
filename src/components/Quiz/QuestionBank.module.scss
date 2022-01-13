@@ -1,0 +1,65 @@
+$QuestionBank-color: #393a34;
+$QuestionBank-color-dark: #f8f8f2;
+$QuestionBank-background-color: #f6f8fa;
+$QuestionBank-background-color-dark: #282a36;
+$CorrectAnswer-color: #e31163;
+$CorrectAnswer-color-dark: #ff79c6;
+$CorrectAnswer-comment-color: #999;
+$CorrectAnswer-comment-color-dark: #6272a4;
+$CorrectAnswer-option-color: #36acaa;
+$CorrectAnswer-option-color-dark: #8d93f9;
+
+.Block {
+  margin-bottom: var(--ifm-leading);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  background-color: $QuestionBank-background-color;
+  color: $QuestionBank-color;
+  html[data-theme='dark'] & {
+    color: $QuestionBank-color-dark;
+    background-color: $QuestionBank-background-color-dark;
+  }
+}
+
+.QuestionSection {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  font-size: var(--ifm-code-font-size);
+  padding: 0.75rem var(--ifm-pre-padding);
+}
+
+.AnswerSection {
+  padding: var(--ifm-pre-padding);
+  font: var(--ifm-code-font-size) / var(--ifm-pre-line-height)
+    var(--ifm-font-family-monospace);
+}
+
+.Options {
+  color: $CorrectAnswer-option-color;
+  html[data-theme='dark'] & {
+    color: $CorrectAnswer-option-color-dark;
+  }
+}
+
+.CorrectAnswer {
+  color: $CorrectAnswer-color;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 calc(var(--ifm-pre-padding) * -1) var(--ifm-paragraph-margin-bottom);
+  padding: 0 var(--ifm-pre-padding);
+  html[data-theme='dark'] & {
+    color: $CorrectAnswer-color-dark;
+  }
+}
+
+.Comment {
+  font-style: italic;
+  color: $CorrectAnswer-comment-color;
+  html[data-theme='dark'] & {
+    color: $CorrectAnswer-comment-color-dark;
+  }
+}
+
+p:last-of-type {
+  margin-bottom: calc(
+    var(--ifm-paragraph-margin-bottom) - var(--ifm-pre-padding)
+  );
+}

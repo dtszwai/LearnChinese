@@ -154,7 +154,7 @@
 
 // ### 標題對齊 ## Emoji
 ul.table-of-contents li ul {
-  padding-left: 0.9rem;
+  padding-left: 0.8rem;
 }
 
 @media (min-width: 997px) {
@@ -170,131 +170,6 @@ ul.table-of-contents li ul {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-}
-
-/* Task學習評估 */
-.task-game {
-  background-color: var(--ifm-card-background-color);
-  border-radius: var(--ifm-card-border-radius);
-  min-height: 12.5rem;
-  height: min-content;
-  padding: 1.25rem;
-  box-shadow: var(--ifm-global-shadow-lw);
-  display: flex;
-  justify-content: space-evenly;
-
-  .question-section {
-    width: 100%;
-    position: relative;
-  }
-
-  .question-count {
-    margin-bottom: 1.25rem;
-    font-size: 1.75rem;
-  }
-
-  .question-text {
-    margin-bottom: 0.75rem;
-    margin-right: 2rem;
-  }
-
-  .answer-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .score-section {
-    display: flex;
-    font-size: 1.5rem;
-    flex-direction: column;
-    justify-content: center;
-    button {
-      justify-content: center;
-    }
-  }
-
-  button {
-    font-size: 1rem;
-    font-weight: var(--ifm-button-font-weight);
-    color: var(--ifm-color-gray-900);
-    background-color: var(--ifm-color-secondary);
-    border-radius: var(--ifm-button-border-radius);
-    display: flex;
-    padding: 5px;
-    border: var(--ifm-button-border-width) solid var(--ifm-color-secondary);
-    cursor: pointer;
-    &:hover {
-      background-color: var(--ifm-color-secondary-dark);
-    }
-  }
-}
-
-.task-list-block {
-  margin-bottom: var(--ifm-leading);
-  border-radius: var(--ifm-global-radius);
-  box-shadow: var(--ifm-global-shadow-lw);
-  background-color: v.$task-list-block-background-color;
-  color: v.$task-list-block-color;
-  html[data-theme='dark'] & {
-    color: v.$task-list-block-color-dark;
-    background-color: v.$task-list-block-background-color-dark;
-  }
-  .question-section {
-    border-bottom: 1px solid var(--ifm-color-emphasis-300);
-    border-top-left-radius: var(--ifm-global-radius);
-    border-top-right-radius: var(--ifm-global-radius);
-    font-size: var(--ifm-code-font-size);
-    padding: 0.75rem var(--ifm-pre-padding);
-  }
-  .answer-section {
-    direction: ltr;
-    position: relative;
-    pre {
-      background-color: inherit;
-      border-radius: var(--ifm-global-radius);
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      margin: 0;
-      padding: 0;
-      code {
-        font: inherit;
-        float: left;
-        min-width: 100%;
-        padding: var(--ifm-pre-padding);
-        p {
-          &.correct-answer {
-            color: v.$task-list-correct-answer-color;
-            background-color: rgba(0, 0, 0, 0.1);
-            display: block;
-            margin: 0 calc(var(--ifm-pre-padding) * -1);
-            padding: 0 var(--ifm-pre-padding);
-            margin-bottom: var(--ifm-paragraph-margin-bottom);
-            html[data-theme='dark'] & {
-              color: v.$task-list-correct-answer-color-dark;
-            }
-          }
-          &:not(.correct-answer) .option {
-            color: v.$task-list-correct-answer-option-color;
-            html[data-theme='dark'] & {
-              color: v.$task-list-correct-answer-option-color-dark;
-            }
-          }
-          .comment {
-            font-style: italic;
-            color: v.$task-list-correct-answer-comment-color;
-            html[data-theme='dark'] & {
-              color: v.$task-list-correct-answer-comment-color-dark;
-            }
-          }
-          &:last-of-type {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-  }
 }
 
 blockquote {
