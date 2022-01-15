@@ -40,15 +40,17 @@
   }
 }
 
-button {
+.AnswerOptions {
+  display: flex;
   font-size: 1rem;
   font-weight: var(--ifm-button-font-weight);
+  text-align: left;
   color: var(--ifm-color-gray-900);
   background-color: var(--ifm-color-secondary);
-  border-radius: var(--ifm-button-border-radius);
-  display: flex;
-  padding: 5px;
   border: var(--ifm-button-border-width) solid var(--ifm-color-secondary);
+  border-radius: var(--ifm-button-border-radius);
+  padding: 5px;
+  margin: 5px;
   cursor: pointer;
   &:hover {
     background-color: var(--ifm-color-secondary-dark);

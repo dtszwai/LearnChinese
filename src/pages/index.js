@@ -13,7 +13,7 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner, styles.heroPrimary)}>
       <div className="container">
         <div className={styles.row}>
-          <div className={clsx('col col--6', styles.col)}>
+          <div className={clsx('col col--6')}>
             <h1 className={clsx('hero__title', styles.title)}>
               {siteConfig.tagline}
             </h1>
@@ -30,7 +30,7 @@ function HomepageHeader() {
               </Link>
             </div> */}
           </div>
-          <div className="col-lg-6">
+          <div className="col col--6">
             <div className={styles.wrapper}>
               <img src={require('/img/index.png').default} />
               <Sketch className={styles.sketch} />

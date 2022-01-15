@@ -42,14 +42,14 @@ export const Highlight = ({ children, color }) => (
   </span>
 );
 
-export const Youtube = ({ children, id }) => {
+export const Youtube = ({ children, id, start = 0 }) => {
   const src = typeof children === "undefined" ? id : children;
   return (
     <div className="video-responsive">
       <iframe
         width="805"
         height="390"
-        src={"https://www.youtube-nocookie.com/embed/" + src}
+        src={`https://www.youtube-nocookie.com/embed/${src}?start=${start}`}
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -127,3 +127,7 @@ export const Breadcrumbs = () => {
     </nav>
   );
 };
+
+export function Recommend(props) {
+  return <span style={{ color: "#999" }}>推薦：{props.level}</span>
+}

@@ -57,6 +57,19 @@ module.exports = {
         },
         {
           type: "category",
+          label: "單元二：記敘的方法和詳略",
+          link: {
+            type: "generated-index",
+            slug: "/category/S3/單元二：記敘的方法和詳略",
+          },
+          collapsed: false,
+          items: [
+            "S3/單元二：記敘的方法和詳略/2.5爸爸的花兒落了",
+            "S3/單元二：記敘的方法和詳略/2.24閒情記趣（節錄）",
+          ],
+        },
+        {
+          type: "category",
           label: "單元四：詞曲欣賞",
           link: {
             type: "generated-index",

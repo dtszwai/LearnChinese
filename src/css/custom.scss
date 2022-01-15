@@ -84,6 +84,13 @@
     }
   }
 
+  rt {
+    color: v.$pre-text-color;
+    html[data-theme='dark'] & {
+      color: v.$pre-text-color-dark;
+    }
+  }
+
   // 正文展現樣式
   .main-text {
     font-size: 1.7rem;
@@ -95,7 +102,9 @@
   }
 
   .poetry {
-    line-height: 2;
+    font-size: 1.2rem;
+    font-family: WenKai;
+    word-break: keep-all;
   }
 
   // 語譯／比較閱讀／延伸閱讀樣式
@@ -230,4 +239,8 @@ footer.footer {
       padding-inline-start: 0;
     }
   }
+}
+
+.KeepAll {
+  word-break: keep-all;
 }

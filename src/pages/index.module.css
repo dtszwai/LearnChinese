@@ -19,6 +19,13 @@
 .subtitle {
   font-size: calc(1.5rem + 3px);
   text-align: left;
+  word-break: keep-all;
+}
+
+@media screen and (max-width: 495px) {
+  .subtitle {
+    text-align: center;
+  }
 }
 
 .row {
@@ -39,6 +46,7 @@
   position: absolute;
   width: 100%;
   top: 0;
+  stroke: black;
 }
 
 .sketch path {
@@ -59,6 +67,14 @@
   }
 }
 
+.wrapper img {
+  width: 500px;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transition: opacity 2s ease-out;
+}
+
 .wrapper:hover .sketch path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1001;
@@ -66,22 +82,19 @@
   animation: none;
 }
 
-.wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-  opacity: 0;
-  transition: opacity 4s ease-out;
-}
-
 .wrapper:hover img {
   opacity: 1;
 }
+
 
 path[data-name="4_px"] {
   stroke-dasharray: 250;
   -webkit-animation: svgDraw 2s ease alternate infinite;
   animation: svgDraw 2s ease alternate infinite;
+}
+
+html[data-theme="dark"] svg {
+  stroke: white;
 }
 
 .buttons {

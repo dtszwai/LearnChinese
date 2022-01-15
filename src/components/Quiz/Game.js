@@ -45,6 +45,7 @@ export default function Game({ questions }) {
             {questions[currentQuestion].answerOptions.map(
               (answerOption, i) => (
                 <button
+                  className={styles.AnswerOptions}
                   onClick={() =>
                     handleAnswerOptionClick(answerOption.isCorrect)
                   }

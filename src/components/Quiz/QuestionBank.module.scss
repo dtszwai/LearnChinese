@@ -58,7 +58,7 @@ $CorrectAnswer-option-color-dark: #8d93f9;
   }
 }
 
-p:last-of-type {
+.AnswerSection p:last-of-type {
   margin-bottom: calc(
     var(--ifm-paragraph-margin-bottom) - var(--ifm-pre-padding)
   );
