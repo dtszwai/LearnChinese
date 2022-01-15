@@ -28,6 +28,18 @@
   }
 }
 
+@media screen and (max-width: 420px) {
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .subtitle {
+    word-break: break-all;
+  }
+}
+
 .row {
   display: flex;
   flex-direction: row;

@@ -105,6 +105,7 @@
     font-size: 1.2rem;
     font-family: WenKai;
     word-break: keep-all;
+    text-overflow: ellipsis;
   }
 
   // 語譯／比較閱讀／延伸閱讀樣式
@@ -243,4 +244,5 @@ footer.footer {
 
 .KeepAll {
   word-break: keep-all;
+  text-overflow: ellipsis;
 }
