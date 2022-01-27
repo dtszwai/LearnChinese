@@ -51,7 +51,6 @@ $CorrectAnswer-option-color-dark: #8d93f9;
 }
 
 .Comment {
-  font-style: italic;
   color: $CorrectAnswer-comment-color;
   html[data-theme='dark'] & {
     color: $CorrectAnswer-comment-color-dark;

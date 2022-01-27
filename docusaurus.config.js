@@ -31,7 +31,7 @@ module.exports = {
           see_all_results: "查看所有結果",
           no_results: "沒有任何結果符合您的搜尋。",
           search_results_for: "您輸入的關鍵字：{{ keyword }}",
-          search_the_documentation: "眾裏尋他千百度",
+          search_the_documentation: "搜尋",
           count_documents_found: "{{ count }} 項搜尋結果",
           count_documents_found_plural: "{{ count }} 項搜尋結果",
           no_documents_were_found: "沒有任何結果符合您的搜尋。",

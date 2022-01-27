@@ -101,9 +101,29 @@
     margin: 1.8rem 0;
   }
 
+  h1:first-child {
+    margin-top: 2rem;
+    span[data-annotation] {
+      position: relative;
+      &::before {
+        content: attr(data-annotation);
+        position: absolute;
+        width: 100%;
+        top: -1em;
+        text-align: center;
+        font-size: 50%;
+        color: v.$pre-text-color;
+        html[data-theme='dark'] & {
+          color: v.$pre-text-color-dark;
+        }
+      }
+    }
+  }
+
   .poetry {
-    font-size: 1.2rem;
+    font-size: 1.7em;
     font-family: WenKai;
+    line-height: 2;
     word-break: keep-all;
     text-overflow: ellipsis;
   }

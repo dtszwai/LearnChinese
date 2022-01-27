@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styles from "./Game.module.scss";
 
-export default function Game({ questions }) {
+export default function Game({ questions, onAnswerSelect }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
-  const handleAnswerOptionClick = (isCorrect) => {
+  const handleAnswerOptionClick = (isCorrect, i) => {
+    onAnswerSelect(prepState => [...prepState, i]);
     isCorrect && setScore(score + 1)
 
     const nextQuestion = currentQuestion + 1;
@@ -19,6 +20,7 @@ export default function Game({ questions }) {
     setScore(0);
     setCurrentQuestion(0);
     setShowScore(false);
+    onAnswerSelect([]);
   };
 
   return (
@@ -26,7 +28,7 @@ export default function Game({ questions }) {
       {showScore ? (
         <div className={styles.ScoreSection}>
           你在 {questions.length} 題裏答對了 {score} 題。
-          <button onClick={resetForm}>再做一次</button>
+          <button className={styles.btn} onClick={resetForm}>再做一次</button>
         </div>
       ) : (
         <>
@@ -45,9 +47,9 @@ export default function Game({ questions }) {
             {questions[currentQuestion].answerOptions.map(
               (answerOption, i) => (
                 <button
-                  className={styles.AnswerOptions}
+                  className={styles.btn}
                   onClick={() =>
-                    handleAnswerOptionClick(answerOption.isCorrect)
+                    handleAnswerOptionClick(answerOption.isCorrect, i)
                   }
                   key={i}
                 >
