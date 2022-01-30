@@ -1,0 +1,27 @@
+.CollapseTitle {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.CollapseTitleIcon {
+  color: gray;
+  transition: 0.3s;
+}
+
+.CollapseTitleIconActive {
+  composes: CollapseTitleIcon;
+  color: black;
+  transform: rotate(180deg);
+}
+
+.CollapseContent {
+  display: flex;
+  flex-direction: column;
+  margin: 6px 0;
+  overflow: hidden;
+  transition: 0.3s;
+}

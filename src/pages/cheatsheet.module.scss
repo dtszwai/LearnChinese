@@ -1,0 +1,32 @@
+.header {
+  margin: 4rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+  font-family: WenKai;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #1e0d26;
+  html[data-theme='dark'] & {
+    color: #f6f3ee;
+  }
+}
+
+.description {
+  font-size: 1.5rem;
+  color: #1e0d26aa;
+  html[data-theme='dark'] & {
+    color: #f6f3ee;
+  }
+}
+
+.category {
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.column {
+  padding-right: 2rem !important;
+}

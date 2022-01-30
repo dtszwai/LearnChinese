@@ -1,0 +1,110 @@
+.Demo {
+  flex: 1;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.DemoBlock {
+  color: rgb(57, 58, 52);
+  background-color: rgb(246, 248, 250);
+  html[data-theme='dark'] & {
+    color: #999;
+    background: #333;
+  }
+  border-radius: 6px;
+  padding: 18px 9px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.DemoBlock::before {
+  content: attr(data-title);
+  color: rgb(57, 58, 52);
+  background-color: rgb(230, 230, 230);
+  html[data-theme='dark'] & {
+    color: #999;
+    background: #272727;
+  }
+  position: absolute;
+  top: -6px;
+  left: 11px;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.DemoBlockRegex {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.DemoBlockRegexIcon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  user-select: none;
+}
+
+.DemoBlockContent {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin: 10px auto;
+  min-height: 46px;
+}
+
+.DemoInputWrapper {
+  background: #272727;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.DemoInput:active,
+.DemoInput:focus {
+  outline: 1px saddlebrown solid;
+}
+
+.DemoResultTag {
+  box-shadow: 3px 3px 2px #21212110;
+  min-width: 10px;
+  height: 20px;
+  margin: 1px 3px;
+  color: #000;
+  background: #C4E0F9;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.DemoDescription {
+  font-size: 13px;
+  // margin: 0;
+  /* margin-left: 80px; */
+  color: #6457A6;
+}
+
+html[data-theme="dark"] .DemoDescription {
+  color: #9DACFF;
+}
+
+.DemoDescription code {
+  vertical-align: baseline;
+}

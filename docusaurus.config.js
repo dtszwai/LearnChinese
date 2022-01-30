@@ -70,6 +70,7 @@ module.exports = {
         { type: "doc", docId: "S1", label: "中一級", position: "left" },
         { type: "doc", docId: "S2", label: "中二級", position: "left" },
         { type: "doc", docId: "S3", label: "中三級", position: "left" },
+        // { to: "cheatsheet", label: "語基知識表", position: "right" },
         {
           href: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/",
           label: "粵音",
