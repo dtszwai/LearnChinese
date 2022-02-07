@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Vollkorn:ital,wght@0,600;1,500&display=swap');
+
+.title {
+  font-size: 3rem;
+  width: max-content;
+  margin: 0 auto 3rem;
+  box-shadow: 0 2px 0 var(--ifm-color-primary), 0 4px 0 white,
+    0 6px 0 var(--ifm-color-primary);
+  color: hsl(0 0% 25%);
+}
+
+.blockquote {
+  position: relative;
+  margin-top: 2rem;
+  padding: 2.5em 2.4em 1em;
+  background: hsl(0 0% 97%) no-repeat left;
+  font-size: 1.2rem;
+  border-radius: 7px;
+  border: 2px solid white;
+  box-shadow: 2px 2px 4px hsl(0 0% 0% / 20%);
+  text-indent: 2em;
+}
+
+.blockquote::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 7px;
+  box-shadow: inset -2px -2px 1px hsl(0 0% 100%),
+    inset 2px 2px 4px hsl(0 0% 0% / 20%);
+}
+
+.blockquote::after {
+  content: '❝';
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: -2px;
+  transform: translate(-50%, -50%);
+  width: 1.3em;
+  height: 1.3em;
+  line-height: 1.7em;
+  background: white;
+  box-shadow: 0 4px 5px -1px hsla(0 0% 0% / 20%);
+  border-radius: 50%;
+  color: var(--ifm-color-primary);
+  font-size: 1.6em;
+  font-style: normal;
+  text-indent: 0;
+  text-align: center;
+}
+
+.chinese {
+  font: 1.2rem WenKai;
+  font-weight: 600;
+  text-indent: 0;
+  text-align: center;
+}
+
+.english {
+  font: italic 1.2rem Vollkorn;
+}
+
+.source {
+  display: block;
+  margin-top: 30px;
+  text-indent: 0;
+  text-align: center;
+  font: bold 0.9rem Open Sans, KaiTi, Helvetica, Arial, sans-serif;
+  // font-family: var(--type-body);
+  text-transform: uppercase;
+  color: hsl(0 0% 20%);
+}

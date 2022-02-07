@@ -7,6 +7,9 @@
   margin: 0 auto;
   position: relative;
   width: 100%;
+  code {
+    font-size: 12px;
+  }
 }
 
 .DemoBlock {
@@ -85,8 +88,7 @@
   height: 20px;
   margin: 1px 3px;
   color: #000;
-  background: #C4E0F9;
-  font-size: 10px;
+  background: #c4e0f9;
   padding: 2px 5px;
   border-radius: 5px;
   display: inline-flex;
@@ -95,16 +97,9 @@
 }
 
 .DemoDescription {
-  font-size: 13px;
-  // margin: 0;
-  /* margin-left: 80px; */
-  color: #6457A6;
+  color: #6457a6;
 }
 
-html[data-theme="dark"] .DemoDescription {
-  color: #9DACFF;
-}
-
-.DemoDescription code {
-  vertical-align: baseline;
+html[data-theme='dark'] .DemoDescription {
+  color: #9dacff;
 }

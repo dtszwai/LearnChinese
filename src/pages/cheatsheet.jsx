@@ -8,7 +8,7 @@ import Demo from '../components/Cheatsheet/Demo';
 import styles from './cheatsheet.module.scss';
 
 export default function cheatsheet() {
-  const columns = [data.slice(0, 1)];
+  const columns = [data.slice(0, 1),data.slice(1)];
   const title = '語文基礎知識';
 
   return (

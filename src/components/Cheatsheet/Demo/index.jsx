@@ -5,7 +5,7 @@ import styles from './Demo.module.scss';
 
 const Demo = ({ data }) => {
   const [content, setContent] = useState(data?.example);
-  let description = data?.description.replace(/\\n/gm, '<br />')?.replace(/`(.*?)`/g, '<code>$1</code>')
+  let description = data.description?.replace(/\\n/gm, '<br />')?.replace(/`(.*?)`/g, '<code>$1</code>')
 
   const applyRegex = () => {
     let $regex = data?.regex;
@@ -20,12 +20,13 @@ const Demo = ({ data }) => {
 
   return (
     <div className={styles.Demo}>
+      {description && (
       <div
         className={clsx(styles.DemoBlock, styles.DemoBlockContent, styles.DemoDescription)}
         data-title='說明'
         dangerouslySetInnerHTML={{ __html: description }}
       />
-
+      )}
         <div
           className={clsx(styles.DemoBlock, styles.DemoBlockContent)}
           data-title='作用'
@@ -35,7 +36,7 @@ const Demo = ({ data }) => {
         
       <div
         className={clsx(styles.DemoBlock, styles.DemoBlockContent)}
-        data-title='例句'
+        data-title='例子'
         dangerouslySetInnerHTML={{
           __html: content?.replace(/\\n/gm, '<br />'),
         }}
