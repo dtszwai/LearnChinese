@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styles from "./Game.module.scss";
 
-export default function Game({ questions, onAnswerSelect }) {
+export default function Game({ questions, setSelectedAnswer }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
   const handleAnswerOptionClick = (isCorrect, i) => {
-    onAnswerSelect(prepState => [...prepState, i]);
+    setSelectedAnswer(prepState => ({ ...prepState, [currentQuestion]: i }));
     isCorrect && setScore(score + 1)
 
     const nextQuestion = currentQuestion + 1;
@@ -20,7 +20,6 @@ export default function Game({ questions, onAnswerSelect }) {
     setScore(0);
     setCurrentQuestion(0);
     setShowScore(false);
-    onAnswerSelect([]);
   };
 
   return (

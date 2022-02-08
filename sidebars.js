@@ -25,7 +25,10 @@ module.exports = {
             slug: "/category/S1/單元四：詩歌欣賞",
           },
           collapsed: false,
-          items: ["S1/單元四：詩歌欣賞/4.5燕詩"],
+          items: [
+            "S1/單元四：詩歌欣賞/4.5燕詩",
+            "S1/單元四：詩歌欣賞/4.26涉江采芙蓉"
+          ],
         },
       ],
     },
