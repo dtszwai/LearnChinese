@@ -1,0 +1,74 @@
+[
+  {
+    "questionText": "【越調】〈天淨沙．秋思〉中的越調是指什麽？",
+    "answerOptions": [
+      { "answerText": "詞牌", "isCorrect": false },
+      { "answerText": "宮調", "isCorrect": true },
+      { "answerText": "曲牌", "isCorrect": false },
+      { "answerText": "曲題", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "【越調】〈天淨沙．秋思〉中的秋思是什麽意思？",
+    "answerOptions": [
+      { "answerText": "曲牌名", "isCorrect": false },
+      { "answerText": "秋天的思念", "isCorrect": false },
+      { "answerText": "沒有意思，只是題目", "isCorrect": false },
+      { "answerText": "秋日寂寞凄涼的思緒", "isCorrect": true }
+    ]
+  },
+  {
+    "questionText": "【越調】〈天淨沙．秋思〉屬於下列哪類？",
+    "answerOptions": [
+      { "answerText": "絕句", "isCorrect": false },
+      { "answerText": "小令", "isCorrect": true },
+      { "answerText": "中調", "isCorrect": false },
+      { "answerText": "長調", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "【越調】〈天淨沙．秋思〉這個標題中，天淨沙是指？",
+    "answerOptions": [
+      { "answerText": "曲牌", "isCorrect": true },
+      { "answerText": "詞牌", "isCorrect": false },
+      { "answerText": "宮調", "isCorrect": false },
+      { "answerText": "曲題", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "「枯藤老樹昏鴉」的情境給人的感受如何？",
+    "answerOptions": [
+      { "answerText": "溫馨愉悅", "isCorrect": false },
+      { "answerText": "恬淡優美", "isCorrect": false },
+      { "answerText": "蕭瑟衰落", "isCorrect": true },
+      { "answerText": "空曠舒適", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "下列景物，何者「沒有」出現在馬致遠天淨沙秋思這首曲中？",
+    "answerOptions": [
+      { "answerText": "古老的道路", "isCorrect": false },
+      { "answerText": "澎湃的浪潮", "isCorrect": true },
+      { "answerText": "歸巢的烏鴉", "isCorrect": false },
+      { "answerText": "蕭颯的秋風", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "馬致遠天淨沙秋思一曲中，下列何者點明了時間？",
+    "answerOptions": [
+      { "answerText": "人家", "isCorrect": false },
+      { "answerText": "昏鴉", "isCorrect": true },
+      { "answerText": "瘦馬", "isCorrect": false },
+      { "answerText": "斷腸人", "isCorrect": false }
+    ]
+  },
+  {
+    "questionText": "作者在〈天淨沙．秋思〉中運用了哪種抒情手法？",
+    "answerOptions": [
+      { "answerText": "借事抒情", "isCorrect": false },
+      { "answerText": "借物抒情", "isCorrect": false },
+      { "answerText": "直接抒情", "isCorrect": false },
+      { "answerText": "借景抒情", "isCorrect": true }
+    ]
+  }
+]
