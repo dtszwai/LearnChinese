@@ -1,49 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import clsx from 'clsx';
-
+import React from 'react';
 import styles from './Demo.module.scss';
 
-const Demo = ({ data }) => {
-  const [content, setContent] = useState(data?.example);
-  let description = data.description?.replace(/\\n/gm, '<br />')?.replace(/`(.*?)`/g, '<code>$1</code>')
-
-  const applyRegex = () => {
-    let $regex = data?.regex;
-    $regex.match(/\\(\d+)/g)?.forEach(item => $regex = $regex?.replace(`\\${item[1]}`, `\\${parseInt(item[1], 10) + 1}`));
-    const reg = new RegExp(`(${$regex})`, 'gmi');
-    const replacedContent = content.replace(reg, `<span class=${styles.DemoResultTag}>$1</span>`);
-
-    setContent(replacedContent);
-    };
-
-  useEffect(applyRegex, []);
+export default function Demo({ data }) {
+  let regex = data.regex.match(/\\\d+/g)
+    ? new RegExp(`(${data.regex.replace(`\\1`, `\\2`)})`, 'gmi')
+    : new RegExp(`(${data.regex})`, 'gmi');
+  const replacedContent = data.example
+    .replace(regex, `<span class=${styles.DemoResultTag}>$1</span>`)
+    .replace(/\\n/gm, '<br />');
 
   return (
     <div className={styles.Demo}>
-      {description && (
       <div
-        className={clsx(styles.DemoBlock, styles.DemoBlockContent, styles.DemoDescription)}
         data-title='說明'
-        dangerouslySetInnerHTML={{ __html: description }}
-      />
-      )}
-        <div
-          className={clsx(styles.DemoBlock, styles.DemoBlockContent)}
-          data-title='作用'
-        >
-          {data?.purpose}
-        </div>
-        
-      <div
-        className={clsx(styles.DemoBlock, styles.DemoBlockContent)}
-        data-title='例子'
         dangerouslySetInnerHTML={{
-          __html: content?.replace(/\\n/gm, '<br />'),
+          __html: data.description
+            .replace(/\\n/gm, '<br />')
+            .replace(/`(.*?)`/g, '<code>$1</code>'),
         }}
       />
 
+      <div
+        data-title='作用'
+        dangerouslySetInnerHTML={{ __html: data.purpose }}
+      />
+
+      <div
+        data-title='例子'
+        dangerouslySetInnerHTML={{ __html: replacedContent }}
+      />
     </div>
   );
 }
-
-export default Demo;

@@ -1,0 +1,111 @@
+.heroBanner {
+  padding: 4rem 10rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ifm-background-color);
+  color: #1e0d26;
+
+  html[data-theme='dark'] & {
+    background-color: var(--ifm-background-color);
+    color: #f6f3ee;
+  }
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.title {
+  font-size: 3.5rem;
+  color: #448fff;
+}
+
+.subtitle {
+  font-size: calc(1.5rem + 3px);
+  word-break: keep-all;
+  font-family: WenKai;
+}
+
+@media screen and (max-width: 495px) {
+  .subtitle {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .subtitle {
+    word-break: break-all;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--ifm-spacing-horizontal) * -1);
+  align-items: center;
+  justify-content: space-around;
+}
+
+.wrapper {
+  position: relative;
+
+  & img {
+    width: 500px;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity 2s ease-out;
+  }
+
+  &:hover img {
+    opacity: 1;
+  }
+
+  .sketch {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    stroke: black;
+
+    html[data-theme='dark'] & {
+      stroke: white;
+    }
+    & path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 2s ease;
+      &[data-name='4_px'] {
+        stroke-dasharray: 250;
+        -webkit-animation: svgDraw 2s ease alternate infinite;
+        animation: svgDraw 2s ease alternate infinite;
+      }
+    }
+  }
+
+  &:hover .sketch path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1001;
+    -webkit-animation: none;
+    animation: none;
+  }
+}
+
+@-webkit-keyframes svgDraw {
+  to {
+    stroke-dashoffset: 251;
+  }
+}
+
+@keyframes svgDraw {
+  to {
+    stroke-dashoffset: 251;
+  }
+}

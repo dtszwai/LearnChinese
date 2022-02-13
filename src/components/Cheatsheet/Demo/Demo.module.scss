@@ -1,105 +1,53 @@
 .Demo {
-  flex: 1;
-  display: inline-flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin: 0 auto;
-  position: relative;
-  width: 100%;
-  code {
-    font-size: 12px;
-  }
-}
-
-.DemoBlock {
-  color: rgb(57, 58, 52);
-  background-color: rgb(246, 248, 250);
-  html[data-theme='dark'] & {
-    color: #999;
-    background: #333;
-  }
-  border-radius: 6px;
-  padding: 18px 9px;
   font-size: 12px;
-  letter-spacing: 1px;
-  margin: 5px 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  position: relative;
-}
 
-.DemoBlock::before {
-  content: attr(data-title);
-  color: rgb(57, 58, 52);
-  background-color: rgb(230, 230, 230);
-  html[data-theme='dark'] & {
-    color: #999;
-    background: #272727;
+  div[data-title] {
+    display: inline-block;
+    position: relative;
+    color: var(--ifm-font-color-base);
+    background-color: var(--ifm-code-background);
+    border-radius: 6px;
+    margin: 10px auto;
+    padding: 18px 9px;
+    text-align: center;
+    letter-spacing: 1px;
+    width: 100%;
+    min-height: 46px;
+
+    &::before {
+      content: attr(data-title);
+      color: var(--ifm-font-color-base);
+      background-color: rgb(230, 230, 230);
+      html[data-theme='dark'] & {
+        background: #272727;
+      }
+      position: absolute;
+      top: -6px;
+      left: 11px;
+      font-size: 10px;
+      padding: 2px 5px;
+      border-radius: 5px;
+    }
   }
-  position: absolute;
-  top: -6px;
-  left: 11px;
-  font-size: 10px;
-  padding: 2px 5px;
-  border-radius: 5px;
-}
 
-.DemoBlockRegex {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin: 10px auto;
-}
+  & div[data-title='說明'] {
+    color: #6457a6;
 
-.DemoBlockRegexIcon {
-  position: absolute;
-  right: 10px;
-  cursor: pointer;
-  color: #fff;
-  user-select: none;
-}
-
-.DemoBlockContent {
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-  margin: 10px auto;
-  min-height: 46px;
-}
-
-.DemoInputWrapper {
-  background: #272727;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-}
-
-.DemoInput:active,
-.DemoInput:focus {
-  outline: 1px saddlebrown solid;
+    html[data-theme='dark'] & {
+      color: #9dacff;
+    }
+  }
 }
 
 .DemoResultTag {
-  box-shadow: 3px 3px 2px #21212110;
-  min-width: 10px;
-  height: 20px;
-  margin: 1px 3px;
-  color: #000;
-  background: #c4e0f9;
-  padding: 2px 5px;
-  border-radius: 5px;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-}
-
-.DemoDescription {
-  color: #6457a6;
-}
-
-html[data-theme='dark'] .DemoDescription {
-  color: #9dacff;
+  height: 20px;
+  margin: 1px 3px;
+  padding: 2px 5px;
+  color: #000;
+  background: #c4e0f9;
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px #21212110;
 }
