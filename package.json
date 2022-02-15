@@ -23,6 +23,7 @@
     "@mdx-js/react": "^1.6.21",
     "@mui/material": "^5.2.5",
     "clsx": "^1.1.1",
+    "copy-text-to-clipboard": "^3.0.1",
     "docusaurus-plugin-sass": "^0.2.1",
     "node-gyp": "^8.4.1",
     "nodejieba": "^2.5.2",

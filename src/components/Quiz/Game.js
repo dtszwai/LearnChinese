@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from 'react-router-dom';
 import styles from "./Game.module.scss";
 import { IoShareSocialOutline } from "react-icons/io5";
+import copy from 'copy-text-to-clipboard';
 
 export default function Game({ questions, setSelectedAnswer }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -34,16 +35,14 @@ export default function Game({ questions, setSelectedAnswer }) {
   };
 
   const shareScore = () => {
-    const str = `${pathname.match(/(?<=\.\d+)\D+/g)} ${score}/${questions.length}分\n\n` +
-      `${answerList.join('')}\n\n` +
-      `${new Date().toLocaleDateString('zh')}\n\n` +
-      `${location.origin + pathname}`;
+    const title = pathname.split('/').splice(-1)[0].replace(/\d.\d+/, '') //Look Behind syntax is not supported in Safari, so (?<=\d.\d+) is not suggested.
 
-    setCopySuccess(true);
-    navigator.clipboard.writeText(str);
+    const str = `${title} ${score}/${questions.length}分\n\n${answerList.join('')}\n\n${new Date().toLocaleDateString('zh')}\n\n${location.origin + pathname}`;
+    copy(str)
+    setCopySuccess(true)
     setTimeout(() => {
       setCopySuccess(false);
-    }, 2500)
+    }, 2500);
   }
 
   return (
