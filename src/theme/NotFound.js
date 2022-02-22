@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import styles from './NotFound.module.scss';
 import quotes from '@site/static/misc/quotes.json';
 import Link from '@docusaurus/Link';
 
 function NotFound() {
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  const [randomQuote, setRandomQuote] = useState('')
+  useEffect(() => {
+    setRandomQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+  }, [])
 
   return (
     <Layout title="找不到頁面">
