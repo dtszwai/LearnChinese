@@ -7,10 +7,6 @@ id: 2.5爸爸的花兒落了
 description: '英子已經 12 歲，小學畢業了，但畢業典禮的那天她爸爸去世了。'
 ---
 
-import * as Tool from '/src/components/Tool.js';
-
-<Tool.Breadcrumbs />
-
 <p className="source-text">林海音</p>
 
 ## 📖 正文
@@ -180,11 +176,11 @@ import * as Tool from '/src/components/Tool.js';
 
 <!-- ## 📺 影片導讀
 
-<Tool.Tabs>
-  <Tool.TabItem value="作品講解">
-    <Tool.Youtube></Tool.Youtube>
-  </Tool.TabItem>
-</Tool.Tabs> -->
+<Tabs>
+  <TabItem value="作品講解">
+    <Youtube></Youtube>
+  </TabItem>
+</Tabs> -->
 
 <!-- ## 🌈 課文賞析 -->
 
@@ -199,7 +195,6 @@ import * as Tool from '/src/components/Tool.js';
 
 ## 🚀 小試牛刀
 
-import Quiz from '/src/components/Quiz'
 import questions from "/src/Task/S3/2.5爸爸的花兒落了";
 
 <Quiz {...{questions}} />

@@ -34,24 +34,12 @@
   --ifm-code-font-size: 95%;
 }
 
-.markdown {
-  // 文檔 Youtube 影片大小
-  .video-responsive {
-    height: 0;
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    iframe {
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-  }
+li.breadcrumbs__item:not(:last-child) a.breadcrumbs__link {
+  background: none;
+}
 
-  // 文檔超鏈結展現樣式
-  a:not(.breadcrumbs__link):not(.hash-link) {
+.markdown {
+  a:not(.hash-link) {
     background-color: rgba(187, 239, 253, 0.3);
     border-bottom: 1px solid var(--ifm-hr-border-color);
     color: var(--ifm-font-color-base);
@@ -84,13 +72,6 @@
     }
   }
 
-  rt {
-    color: v.$pre-text-color;
-    html[data-theme='dark'] & {
-      color: v.$pre-text-color-dark;
-    }
-  }
-
   // 正文展現樣式
   .main-text {
     font-size: 1.7rem;
@@ -102,7 +83,7 @@
   }
 
   h1:first-child {
-    margin-top: 2rem;
+    margin-top: 1rem;
     span[data-annotation] {
       position: relative;
       &::before {
@@ -145,39 +126,8 @@
     }
   }
 
-  //.remark & .type 正文注釋、段意、段旨
-  .remark {
-    text-indent: 0;
-    color: v.$remark-color;
-    font-size: 1.2rem;
-    font-family: cwTeXKai, DFKai-SB, KaiU, STKaiti, Serif;
-    text-align: justify;
-    .type {
-      background-color: #e6e6e6;
-      color: v.$remark-type-color;
-      border: v.$remark-type-color solid 1px;
-      border-radius: 6px;
-      padding: 0.2rem;
-    }
-    html[data-theme='dark'] & {
-      color: v.$remark-color-dark;
-    }
-  }
-
   .admonition-heading h5 {
     font-family: SmallCaps, var(--ifm-heading-font-family);
-  }
-
-  // 導航
-  nav.breadcrumbs {
-    margin-top: 1.5rem;
-    html[data-theme='dark'] & .breadcrumbs__item--active a {
-      color: v.$source-text-color-dark;
-    }
-  }
-  // Annotate 正文字詞釋義 Tooltip
-  span[aria-label] {
-    background-color: v.$annotate-color;
   }
 }
 

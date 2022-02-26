@@ -6,10 +6,6 @@ id: 4.5燕詩
 description: "叟有愛子。背叟而去，叟甚念之。叟少年時亦嘗如是，故作〈燕詩〉以諭之。"
 ---
 
-import * as Tool from "/src/components/Tool.js";
-
-<Tool.Breadcrumbs />
-
 <p className="source-text">【唐】白居易</p>
 
 <p className="pre-text">叟有愛子。背叟而去，叟甚念之。叟少年時亦嘗如是，故作〈燕詩〉以諭之。</p>
@@ -24,7 +20,7 @@ import * as Tool from "/src/components/Tool.js";
 
 <div className="main-text poetry">
 
-<p><Tool.Annotate title="同「樑」，架在柱上，用來支撐屋頂的橫木。">梁</Tool.Annotate>上有雙燕，翩翩雄與雌。<Tool.Annotate title="用嘴含物或叼物。">銜</Tool.Annotate>泥兩<Tool.Annotate title="架在屋梁橫木上，以承接木條及屋頂的木材。">椽</Tool.Annotate>間，一巢生四兒。四兒日夜長，<Tool.Annotate title="討食。粵：[摵]，[saak3]。">索食</Tool.Annotate>聲<Tool.Annotate title="狀聲詞，形容鳥鳴聲。粵：[之]，[zi1]">孜孜</Tool.Annotate>。青蟲不易捕，<Tool.Annotate title="雛鳥出生時，嘴為黃色，故稱以借代小燕子。">黃口</Tool.Annotate>無飽期。嘴爪雖<Tool.Annotate title="將要破損。將：將要。敝：毀壞，指殘損，或作「弊」。">欲敝</Tool.Annotate>，心力不知疲。<Tool.Annotate title="片刻之間。">須臾</Tool.Annotate>十來往，<Tool.Annotate title="仍然。">猶</Tool.Annotate>恐巢中飢。辛勤三十日，母瘦雛漸肥。喃喃教言語，一一刷毛衣。一旦羽翼成，引上庭樹枝；舉翅不回顧，隨風四散飛。雌雄空中鳴，聲盡呼不歸；卻入空巢裏，<Tool.Annotate title="形容鳥叫聲。粵：[周周]，[zau1zau1]；亦讀作[嘲周]，[zaau1zau1]。">啁啾</Tool.Annotate>終夜悲。</p>
+<p><Annotate title="同「樑」，架在柱上，用來支撐屋頂的橫木。">梁</Annotate>上有雙燕，翩翩雄與雌。<Annotate title="用嘴含物或叼物。">銜</Annotate>泥兩<Annotate title="架在屋梁橫木上，以承接木條及屋頂的木材。">椽</Annotate>間，一巢生四兒。四兒日夜長，<Annotate title="討食。粵：[摵]，[saak3]。">索食</Annotate>聲<Annotate title="狀聲詞，形容鳥鳴聲。粵：[之]，[zi1]">孜孜</Annotate>。青蟲不易捕，<Annotate title="雛鳥出生時，嘴為黃色，故稱以借代小燕子。">黃口</Annotate>無飽期。嘴爪雖<Annotate title="將要破損。將：將要。敝：毀壞，指殘損，或作「弊」。">欲敝</Annotate>，心力不知疲。<Annotate title="片刻之間。">須臾</Annotate>十來往，<Annotate title="仍然。">猶</Annotate>恐巢中飢。辛勤三十日，母瘦雛漸肥。喃喃教言語，一一刷毛衣。一旦羽翼成，引上庭樹枝；舉翅不回顧，隨風四散飛。雌雄空中鳴，聲盡呼不歸；卻入空巢裏，<Annotate title="形容鳥叫聲。粵：[周周]，[zau1zau1]；亦讀作[嘲周]，[zaau1zau1]。">啁啾</Annotate>終夜悲。</p>
 
 <p>燕燕爾勿悲！爾當反自思：思爾為雛日，高飛背母時。當時父母念，今日爾應知！</p>
 
@@ -78,11 +74,11 @@ import * as Tool from "/src/components/Tool.js";
 
 ## 📺 影片導讀
 
-<Tool.Tabs>
-  <Tool.TabItem value="Video1" label="作者介紹" default>
-    <Tool.Youtube id="poZvxGtMr5k" />
-  </Tool.TabItem>
-</Tool.Tabs>
+<Tabs>
+  <TabItem value="作者介紹" default>
+    <Youtube>poZvxGtMr5k</Youtube>
+  </TabItem>
+</Tabs>
 
 ## 🌈 課文賞析
 
@@ -104,7 +100,6 @@ import * as Tool from "/src/components/Tool.js";
 
 ## 🚀 小試牛刀
 
-import Quiz from '/src/components/Quiz'
 import questions from "/src/Task/S1/4.5燕詩";
 
 <Quiz {...{questions}} />

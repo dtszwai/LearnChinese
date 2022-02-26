@@ -6,10 +6,6 @@ id: 4.26涉江采芙蓉
 description: "古詩，蓋不知作者，或云枚乘，疑不能明也。"
 ---
 
-import * as Tool from "/src/components/Tool.js";
-
-<Tool.Breadcrumbs />
-
 <p className="source-text">《古詩十九首》佚名</p>
 
 :::info 題引
@@ -24,9 +20,9 @@ import * as Tool from "/src/components/Tool.js";
 
 <div className="main-text poetry">
 
-<p><Tool.Annotate title="渡過。">涉</Tool.Annotate>江采<Tool.Annotate title="即荷花，古稱芙蓉、芙蕖、菡萏。">芙蓉</Tool.Annotate>，<Tool.Annotate title="澤：沼澤。生有蘭草的沼澤地。">蘭澤</Tool.Annotate>多芳草。采之欲<Tool.Annotate title="贈送、給予。粵 [惠]，[wai6]。">遺</Tool.Annotate>誰？所思在遠道。</p>
+<p><Annotate title="渡過。">涉</Annotate>江采<Annotate title="即荷花，古稱芙蓉、芙蕖、菡萏。">芙蓉</Annotate>，<Annotate title="澤：沼澤。生有蘭草的沼澤地。">蘭澤</Annotate>多芳草。采之欲<Annotate title="贈送、給予。粵 [惠]，[wai6]。">遺</Annotate>誰？所思在遠道。</p>
 
-<p><Tool.Annotate title="回頭看。">還顧</Tool.Annotate>望舊鄉，長路<Tool.Annotate title="猶「浩浩漫漫」，形容路途的遙遠，無邊無際。">漫浩浩</Tool.Annotate>。<Tool.Annotate title="指夫婦情感之融洽。">同心</Tool.Annotate>而離居，憂傷以終老！</p>
+<p><Annotate title="回頭看。">還顧</Annotate>望舊鄉，長路<Annotate title="猶「浩浩漫漫」，形容路途的遙遠，無邊無際。">漫浩浩</Annotate>。<Annotate title="指夫婦情感之融洽。">同心</Annotate>而離居，憂傷以終老！</p>
 
 </div>
 
@@ -64,14 +60,14 @@ import * as Tool from "/src/components/Tool.js";
 
 ## 📺 影片導讀
 
-<Tool.Tabs>
-  <Tool.TabItem value="《古詩十九首》簡介" default>
-    <Tool.Youtube id="8pRrBfA5GEE" start="8" />
-  </Tool.TabItem>
-  <Tool.TabItem value="RTHK 《五夜講場》：古詩十九首">
-    <Tool.Youtube id="9ySQoHGdWps" />
-  </Tool.TabItem>
-</Tool.Tabs>
+<Tabs>
+  <TabItem value="《古詩十九首》簡介" default>
+    <Youtube id="8pRrBfA5GEE" start="8" />
+  </TabItem>
+  <TabItem value="RTHK 《五夜講場》：古詩十九首">
+    <Youtube id="9ySQoHGdWps" />
+  </TabItem>
+</Tabs>
 
 ## 🌈 課文賞析
 
@@ -95,7 +91,7 @@ import * as Tool from "/src/components/Tool.js";
 >
 > 　　綜觀詩編，只有八句，與「庭中有奇樹」同為十九首最短之兩首。就結構而言，由相思而采芳草，由芳草而望舊鄉，由望舊鄉又回到相思，情節迴環曲折。就筆法而言，雖複沓卻能變化。首二句皆言采芳草，但上句說「采」字，下句便省去「采」字。兩語句式各別，且背景又各不相同。「遠道」與「舊鄉」「長路漫浩浩」同是一事。「遠道」是泛指，「舊鄉」是專指，「遠道」是「天一方」。「長路漫浩浩」是這「一方」到那「一方」之空間。相思之深切，皆藉此而顯出。既採蓮，又採蘭，是唯恐恩情不足。既說道遠，又說路長，更加上漫浩浩，有會面安可知之意，是相思又憂傷，處處反映詩人內心複雜之苦悶與矛盾。
 >
-><span className="source-text">張清鐘《古詩十九首彙說賞析與研究》</span>
+> <span className="source-text">張清鐘《古詩十九首彙說賞析與研究》</span>
 
 
 
@@ -105,15 +101,14 @@ import * as Tool from "/src/components/Tool.js";
 
 <div className="translation-text poetry">
 
-<p>庭中有奇樹，綠葉發華滋。攀條折其榮，將以遺所思。</p>
+庭中有奇樹，綠葉發華滋。攀條折其榮，將以遺所思。
 
-<p>馨香盈懷袖，路遠莫致之。此物何足貢？但感別經時。</p>
+馨香盈懷袖，路遠莫致之。此物何足貢？但感別經時。
 
 </div>
 
 ## 🚀 小試牛刀
 
-import Quiz from '/src/components/Quiz'
 import questions from "/src/Task/S1/4.26涉江采芙蓉";
 
 <Quiz {...{questions}} />
