@@ -1,7 +1,8 @@
 import React from "react";
 import styles from './QuestionBank.module.scss'
 
-export default function QuestionBank({ questions, selectedAnswer }) {
+export default function QuestionBank({ data, selectedAnswer }) {
+  const { questions } = data;
   return (
     <>
       {questions.map((question, questionKey) => (
@@ -16,7 +17,7 @@ export default function QuestionBank({ questions, selectedAnswer }) {
             {question.answerOptions.map((option, answerKey) =>
               <p
                 key={answerKey}
-                className={option.isCorrect ? styles.CorrectAnswer : ""}
+                className={option.isCorrect && styles.CorrectAnswer}
               >
                 <span className={!option.isCorrect ? styles.Options : ""}>
                   {`${String.fromCharCode(answerKey + 65)}. `}
@@ -30,7 +31,8 @@ export default function QuestionBank({ questions, selectedAnswer }) {
             )}
           </div>
         </div>
-      ))}
+      ))
+      }
     </>
   );
 }

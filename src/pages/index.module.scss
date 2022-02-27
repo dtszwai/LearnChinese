@@ -1,10 +1,8 @@
 .heroBanner {
   padding: 4rem 10rem;
   position: relative;
-  overflow: hidden;
   background-color: var(--ifm-background-color);
   color: #1e0d26;
-
   html[data-theme='dark'] & {
     background-color: var(--ifm-background-color);
     color: #f6f3ee;
@@ -28,7 +26,7 @@
   font-family: WenKai;
 }
 
-@media screen and (max-width: 495px) {
+@media screen and (max-width: 512px) {
   .subtitle {
     text-align: center;
   }
@@ -37,12 +35,6 @@
 @media screen and (max-width: 420px) {
   .subtitle {
     font-size: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .subtitle {
-    word-break: break-all;
   }
 }
 
@@ -58,7 +50,7 @@
   position: relative;
 
   & img {
-    width: 500px;
+    width: 400px;
     height: auto;
     display: block;
     opacity: 0;
@@ -84,7 +76,6 @@
       transition: stroke-dashoffset 2s ease;
       &[data-name='4_px'] {
         stroke-dasharray: 250;
-        -webkit-animation: svgDraw 2s ease alternate infinite;
         animation: svgDraw 2s ease alternate infinite;
       }
     }
@@ -93,14 +84,7 @@
   &:hover .sketch path {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1001;
-    -webkit-animation: none;
     animation: none;
-  }
-}
-
-@-webkit-keyframes svgDraw {
-  to {
-    stroke-dashoffset: 251;
   }
 }
 
@@ -108,4 +92,19 @@
   to {
     stroke-dashoffset: 251;
   }
+}
+
+.IntroImg {
+  height: 100%;
+  width: 100%;
+  max-width: 220px;
+}
+
+.grade {
+  text-decoration: none;
+  color: var(--ifm-heading-color);
+}
+
+.section {
+  background-color: var(--ifm-color-emphasis-100);
 }

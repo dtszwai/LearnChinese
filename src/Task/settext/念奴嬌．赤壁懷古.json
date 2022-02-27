@@ -1,92 +1,111 @@
-[
-  {
-    "questionText": "「浪淘盡千古風流人物」一句，所謂的「風流人物」是指什麼？",
-    "answerOptions": [
-      { "answerText": "傑出的英雄人物", "isCorrect": true },
-      { "answerText": "風流倜儻的少年", "isCorrect": false },
-      { "answerText": "用情不專的男子", "isCorrect": false },
-      { "answerText": "浪蕩飄流的騷客", "isCorrect": false }
-    ]
-  },
-  {
-    "questionText": "「亂石穿空，驚濤拍岸，捲起千堆雪」哪幾個是動詞以營造氣勢？",
-    "answerOptions": [
-      { "answerText": "空、岸、雪", "isCorrect": false },
-      { "answerText": "穿、拍、捲", "isCorrect": true },
-      { "answerText": "穿、拍、堆", "isCorrect": false },
-      { "answerText": "亂、拍、捲", "isCorrect": false }
-    ]
-  },
-  {
-    "questionText": "「江山如畫，一時多少豪傑」一句，在對歷史的追溯中，隱含著什麼樣的感嘆？",
-    "answerOptions": [
-      { "answerText": "古今興亡盛衰", "isCorrect": true },
-      { "answerText": "色即是空，空即是色", "isCorrect": false },
-      { "answerText": "夕陽無限好，只是近黃昏", "isCorrect": false },
-      { "answerText": "長江後浪催前浪，一代新人換舊人", "isCorrect": false }
-    ]
-  },
-  {
-    "questionText": "〈念奴嬌．赤壁懷古〉一詞中，蘇軾以哪位雄姿英發的三國人物，對比老而無成的自己？",
-    "answerOptions": [
-      { "answerText": "關羽", "isCorrect": false },
-      { "answerText": "曹操", "isCorrect": false },
-      { "answerText": "周瑜", "isCorrect": true },
-      { "answerText": "諸葛亮", "isCorrect": false }
-    ]
-  },
-  {
-    "questionText": "「故壘西邊，人道是三國周郎赤壁。」句中「壘」字的意思是什麼？",
-    "answerOptions": [
-      { "answerText": "軍隊", "isCorrect": false },
-      { "answerText": "營壘", "isCorrect": true },
-      { "answerText": "城堡", "isCorrect": false },
-      { "answerText": "山丘", "isCorrect": false }
-    ]
-  },
-  {
-    "questionText": "「遙想公瑾當年，小喬初嫁了」一句，作者寫「小喬初嫁」主要用意是？",
-    "answerOptions": [
-      { "answerText": "強調兩者的夫妻關係", "isCorrect": false },
-      { "answerText": "點出周瑜愛好美色的心", "isCorrect": false },
-      { "answerText": "為詞賦加上陰柔的女人氣息", "isCorrect": false },
-      { "answerText": "以小喬襯托周瑜，用「美人」渲染「英雄」", "isCorrect": true }
-    ]
-  },
-  {
-    "questionText": "〈念奴嬌．赤壁懷古〉中，哪一句最能表現周瑜「運籌帷幄、決勝千里」的雄風？",
-    "answerOptions": [
-      { "answerText": "雄姿英發", "isCorrect": false },
-      { "answerText": "羽扇綸巾", "isCorrect": false },
-      { "answerText": "小喬初嫁了", "isCorrect": false },
-      { "answerText": "談笑間，檣櫓灰飛煙滅", "isCorrect": true }
-    ]
-  },
-  {
-    "questionText": "「談笑間、檣櫓灰飛煙滅」使用了哪項修辭手法？",
-    "answerOptions": [
-      { "answerText": "擬人", "isCorrect": false },
-      { "answerText": "借喻", "isCorrect": false },
-      { "answerText": "借代", "isCorrect": true },
-      { "answerText": "誇張", "isCorrect": false }
-    ]
-  },
-  {
-    "questionText": "「一尊還酹江月」的「尊」字，意思為何？",
-    "answerOptions": [
-      { "answerText": "祭品", "isCorrect": false },
-      { "answerText": "薄酒", "isCorrect": false },
-      { "answerText": "祭司", "isCorrect": false },
-      { "answerText": "酒杯", "isCorrect": true }
-    ]
-  },
-  {
-    "questionText": "以下哪一項並非〈念奴嬌．赤壁懷古〉的感慨？",
-    "answerOptions": [
-      { "answerText": "年華老去", "isCorrect": false },
-      { "answerText": "思念故鄉", "isCorrect": true },
-      { "answerText": "時光飛逝", "isCorrect": false },
-      { "answerText": "懷才不遇", "isCorrect": false }
-    ]
-  }
-]
+{
+  "title": "念奴嬌．赤壁懷古",
+  "author": "蘇軾",
+  "grade": "高中",
+  "chapter": "單元四",
+  "questions": [
+    {
+      "questionText": "「浪淘盡、千古風流人物」一句，所謂的「風流人物」是指什麼？",
+      "answerOptions": [
+        { "answerText": "傑出的英雄人物", "isCorrect": true },
+        { "answerText": "風流倜儻的少年", "isCorrect": false },
+        { "answerText": "用情不專的男子", "isCorrect": false },
+        { "answerText": "浪蕩飄流的騷客", "isCorrect": false }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「亂石穿空，驚濤拍岸，捲起千堆雪」一句，以哪幾個動詞營造磅礴的氣勢？",
+      "answerOptions": [
+        { "answerText": "空、岸、雪", "isCorrect": false },
+        { "answerText": "穿、拍、捲", "isCorrect": true },
+        { "answerText": "穿、拍、堆", "isCorrect": false },
+        { "answerText": "亂、拍、捲", "isCorrect": false }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「江山如畫，一時多少豪傑」一句，在對歷史的追溯中，隱含著什麼樣的感嘆？",
+      "answerOptions": [
+        { "answerText": "古今興亡盛衰", "isCorrect": true },
+        { "answerText": "色即是空，空即是色", "isCorrect": false },
+        { "answerText": "夕陽無限好，只是近黃昏", "isCorrect": false },
+        { "answerText": "長江後浪催前浪，一代新人換舊人", "isCorrect": false }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈念奴嬌．赤壁懷古〉中，蘇軾以哪位雄姿英發的三國人物，對比老而無成的自己？",
+      "answerOptions": [
+        { "answerText": "關羽", "isCorrect": false },
+        { "answerText": "曹操", "isCorrect": false },
+        { "answerText": "周瑜", "isCorrect": true },
+        { "answerText": "諸葛亮", "isCorrect": false }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「故壘西邊，人道是、三國周郎赤壁」一句，「壘」字是什麼意思？",
+      "answerOptions": [
+        { "answerText": "軍隊", "isCorrect": false },
+        { "answerText": "營壘", "isCorrect": true },
+        { "answerText": "城堡", "isCorrect": false },
+        { "answerText": "山丘", "isCorrect": false }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「遙想公瑾當年，小喬初嫁了」一句，作者寫「小喬初嫁」的主要用意是？",
+      "answerOptions": [
+        { "answerText": "強調兩者的夫妻關係", "isCorrect": false },
+        { "answerText": "點出周瑜愛好美色的心", "isCorrect": false },
+        { "answerText": "為詞賦加上陰柔的女人氣息", "isCorrect": false },
+        {
+          "answerText": "以小喬襯托周瑜，用「美人」渲染「英雄」",
+          "isCorrect": true
+        }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈念奴嬌．赤壁懷古〉中，哪一句最能表現周瑜「運籌帷幄、決勝千里」的雄風？",
+      "answerOptions": [
+        { "answerText": "雄姿英發", "isCorrect": false },
+        { "answerText": "羽扇綸巾", "isCorrect": false },
+        { "answerText": "小喬初嫁了", "isCorrect": false },
+        { "answerText": "談笑間，檣櫓灰飛煙滅", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「談笑間、檣櫓灰飛煙滅」使用了哪項修辭手法？",
+      "answerOptions": [
+        { "answerText": "擬人", "isCorrect": false },
+        { "answerText": "借喻", "isCorrect": false },
+        { "answerText": "借代", "isCorrect": true },
+        { "answerText": "誇張", "isCorrect": false }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「一尊還酹江月」的「尊」字，意思為何？",
+      "answerOptions": [
+        { "answerText": "祭品", "isCorrect": false },
+        { "answerText": "薄酒", "isCorrect": false },
+        { "answerText": "祭司", "isCorrect": false },
+        { "answerText": "酒杯", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "以下哪一項並非蘇軾在〈念奴嬌．赤壁懷古〉中的感慨？",
+      "answerOptions": [
+        { "answerText": "年華老去", "isCorrect": false },
+        { "answerText": "思念故鄉", "isCorrect": true },
+        { "answerText": "時光飛逝", "isCorrect": false },
+        { "answerText": "懷才不遇", "isCorrect": false }
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}

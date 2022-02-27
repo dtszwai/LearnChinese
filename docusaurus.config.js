@@ -52,9 +52,7 @@ module.exports = {
           routeBasePath: "/",
           showLastUpdateTime: true,
         },
-        blog: {
-          blogTitle: "日誌",
-        },
+        blog: false,
         theme: { customCss: [require.resolve("./src/css/custom.scss")] },
         gtag: { trackingID: "G-3CDVV4STYR", anonymizeIP: true },
       },
