@@ -64,24 +64,15 @@ module.exports = {
     navbar: {
       title: "書目引得",
       hideOnScroll: true,
-      logo: { alt: "", src: "img/logo.png" },
+      logo: { src: "img/logo.png" },
       items: [
         { type: "doc", docId: "S1", label: "中一級", position: "left" },
         { type: "doc", docId: "S2", label: "中二級", position: "left" },
         { type: "doc", docId: "S3", label: "中三級", position: "left" },
         { type: "docSidebar", sidebarId: "settext", label: "指定文言", position: "left" },
         { to: "cheatsheet", label: "語基知識表", position: "right", className: "navbarCheatsheet" },
-        {
-          href: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/",
-          label: "粵音",
-          position: "right",
-        },
-        {
-          href: "https://www.moedict.tw/",
-          label: "萌典",
-          position: "right",
-        },
-        // { to: "blog", label: "日誌", position: "right" },
+        { href: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/", label: "粵音", position: "right", },
+        { href: "https://www.moedict.tw/", label: "萌典", position: "right", },
         {
           href: "https://github.com/rccttwd/library/tree/master",
           "aria-label": "GitHub repository",
@@ -90,9 +81,6 @@ module.exports = {
         },
       ],
     },
-    // footer: {
-    //   copyright: `Built with <a href="https://docusaurus.io/">Docusaurus</a>, 2021 - ${new Date().getFullYear()}.`,
-    // },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
@@ -100,9 +88,7 @@ module.exports = {
     colorMode: {
       switchConfig: {
         darkIcon: "🌙",
-        darkIconStyle: {
-          transform: "scaleX(-1)",
-        },
+        darkIconStyle: { transform: "scaleX(-1)", },
         lightIcon: "☀️",
       },
     },
