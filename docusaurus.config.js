@@ -69,7 +69,7 @@ module.exports = {
         { type: "doc", docId: "S1", label: "中一級", position: "left" },
         { type: "doc", docId: "S2", label: "中二級", position: "left" },
         { type: "doc", docId: "S3", label: "中三級", position: "left" },
-        { type: "docSidebar", sidebarId: "settext", label: "十二篇範文", position: "left" },
+        { type: "docSidebar", sidebarId: "settext", label: "指定文言", position: "left" },
         { to: "cheatsheet", label: "語基知識表", position: "right", className: "navbarCheatsheet" },
         {
           href: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/",

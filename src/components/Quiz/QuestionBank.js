@@ -3,6 +3,25 @@ import styles from './QuestionBank.module.scss'
 
 export default function QuestionBank({ data, selectedAnswer }) {
   const { questions } = data;
+
+  const renderedMessage = (option, questionKey, answerKey) => {
+    let message = '';
+
+    if (option.isCorrect) {
+      if (selectedAnswer[questionKey] === undefined) {
+        message = '// 正確答案';
+      } else if (selectedAnswer[questionKey] !== answerKey) {
+        message = '⭕️ 正確答案';
+      } else if (selectedAnswer[questionKey] === answerKey) {
+        message = '✔️ 回答正確'
+      }
+    } else if (selectedAnswer[questionKey] === answerKey) {
+      message = '❌ 你的選擇';
+    }
+
+    return <span className={styles.Comment}>{message}</span>
+  };
+
   return (
     <>
       {questions.map((question, questionKey) => (
@@ -17,22 +36,17 @@ export default function QuestionBank({ data, selectedAnswer }) {
             {question.answerOptions.map((option, answerKey) =>
               <p
                 key={answerKey}
-                className={option.isCorrect && styles.CorrectAnswer}
+                className={option.isCorrect ? styles.CorrectAnswer : null}
               >
-                <span className={!option.isCorrect ? styles.Options : ""}>
-                  {`${String.fromCharCode(answerKey + 65)}. `}
+                <span className={option.isCorrect ? null : styles.Options}>
+                  {String.fromCharCode(answerKey + 65)}.&nbsp;
                 </span>
-                {`${option.answerText} `}
-                {!option.isCorrect && selectedAnswer[questionKey] === answerKey && <span className={styles.Comment}>❌ 你的選擇</span>}
-                {option.isCorrect && selectedAnswer[questionKey] !== answerKey && selectedAnswer[questionKey] !== undefined && <span className={styles.Comment}>⭕️ 正確答案</span>}
-                {option.isCorrect && selectedAnswer[questionKey] === undefined && <span className={styles.Comment}>// 正確答案</span>}
-                {option.isCorrect && selectedAnswer[questionKey] === answerKey && <span className={styles.Comment}>✔️ 回答正確</span>}
+                {option.answerText}&nbsp;{renderedMessage(option, questionKey, answerKey)}
               </p>
             )}
           </div>
         </div>
-      ))
-      }
+      ))}
     </>
   );
 }

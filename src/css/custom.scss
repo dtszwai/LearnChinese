@@ -39,6 +39,10 @@ li.breadcrumbs__item:not(:last-child) a.breadcrumbs__link {
 }
 
 .markdown {
+  p {
+    line-height: 1.7;
+  }
+
   a:not(.hash-link) {
     background-color: rgba(187, 239, 253, 0.3);
     border-bottom: 1px solid var(--ifm-hr-border-color);
@@ -78,7 +82,7 @@ li.breadcrumbs__item:not(:last-child) a.breadcrumbs__link {
     font-family: KaiTi, DFKai-SB, KaiU, STKaiti, Serif;
     text-align: justify;
     text-indent: 2em;
-    line-height: 1.2;
+    line-height: 1.7;
     margin: 1.8rem 0;
   }
 
@@ -103,9 +107,11 @@ li.breadcrumbs__item:not(:last-child) a.breadcrumbs__link {
 
   .poetry {
     font-family: WenKai;
+    text-indent: 0;
     line-height: 2;
     word-break: keep-all;
     text-overflow: ellipsis;
+    text-align: center;
   }
 
   // 語譯／比較閱讀／延伸閱讀樣式

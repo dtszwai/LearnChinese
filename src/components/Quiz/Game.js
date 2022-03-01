@@ -14,7 +14,7 @@ export default function Game({ data, setSelectedAnswer }) {
   const { pathname } = useLocation();
 
 
-  const handleAnswerOptionClick = (isCorrect, i) => {
+  const handleAnswerOptionClick = (isCorrect = false, i) => {
     setScore(score + +isCorrect);
     setSelectedAnswer(prepState => ({ ...prepState, [currentQuestion]: i }));
     setAnswerList(prepState => [...prepState, isCorrect ? '✔️' : '❌'])
