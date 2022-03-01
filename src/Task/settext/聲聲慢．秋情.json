@@ -1,0 +1,108 @@
+{
+  "title": "聲聲慢．秋情",
+  "author": "李清照",
+  "grade": "高中",
+  "chapter": "單元四",
+  "questions": [
+    {
+      "questionText": "〈聲聲慢．秋情〉上片敍述作者在秋風中自斟自飲的生活境況，塑造了一位_______的女子形象。",
+      "answerOptions": [
+        { "answerText": "温柔敦厚" },
+        { "answerText": "隨遇而安" },
+        { "answerText": "敏感纖弱", "isCorrect": true },
+        { "answerText": "孤芳自賞" }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "「三杯兩盞淡酒，怎敵他晚來風急」一句，以下哪一項最能表達作者當時的心情？",
+      "answerOptions": [
+        { "answerText": "心灰意冷" },
+        { "answerText": "迷茫無助" },
+        { "answerText": "無可奈何" },
+        { "answerText": "愁雲慘霧", "isCorrect": true }
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "questionText": "「雁過也，正傷心，卻是舊時相識」運用了甚麼抒情手法？",
+      "answerOptions": [
+        { "answerText": "直接抒情" },
+        { "answerText": "觸景生情", "isCorrect": true },
+        { "answerText": "緣情寫景" },
+        { "answerText": "借物抒情" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「滿地黃花堆積，憔悴損，如今有誰堪摘？」運用了甚麼抒情手法？",
+      "answerOptions": [
+        { "answerText": "直接抒情" },
+        { "answerText": "觸景生情" },
+        { "answerText": "緣情寫景", "isCorrect": true },
+        { "answerText": "借事抒情" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「滿地黃花堆積，憔悴損，如今有誰堪摘」一句，以下哪一項最能表達作者當時的心情？",
+      "answerOptions": [
+        { "answerText": "孤單寂寞", "isCorrect": true },
+        { "answerText": "憂心如焚" },
+        { "answerText": "自責不已" },
+        { "answerText": "心亂如麻" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「守着窗兒，獨自怎生得黑」表達了作者怎樣的心聲？",
+      "answerOptions": [
+        { "answerText": "感慨光陰飛逝，年華老去。" },
+        { "answerText": "埋怨時運不佳，命途多舛。" },
+        { "answerText": "害怕黑夜降臨，一夜難眠。" },
+        { "answerText": "長日無聊，希望時間快點過去。", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "作者感到「怎一箇愁字了得」，以下哪項不是她「愁」的事情？",
+      "answerOptions": [
+        { "answerText": "國家破亡，民不聊生。", "isCorrect": true },
+        { "answerText": "生活孤獨愁悶，難以排遣。" },
+        { "answerText": "對北方故國和家鄉的思念。" },
+        { "answerText": "自己年華老去、面容憔悴。" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈聲聲慢．秋情〉全詞在烘托哪一個字？",
+      "answerOptions": [
+        { "answerText": "喜" },
+        { "answerText": "愁", "isCorrect": true },
+        { "answerText": "哀" },
+        { "answerText": "怒" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈聲聲慢．秋情〉從頭到尾給人何種感受？",
+      "answerOptions": [
+        { "answerText": "殘酷不忍的景象" },
+        { "answerText": "寂寞單調的氣氛", "isCorrect": true },
+        { "answerText": "貧困無依的淒楚" },
+        { "answerText": "悲天憫人的情懷" }
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "questionText": "〈聲聲慢．秋情〉中，作者喝酒是為了何事？",
+      "answerOptions": [
+        { "answerText": "賞雁" },
+        { "answerText": "傷菊" },
+        { "answerText": "解饞" },
+        { "answerText": "澆愁", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}

@@ -7,9 +7,9 @@
     {
       "questionText": "下列關於近體詩與古體詩的比較，何者說明正確？",
       "answerOptions": [
-        { "answerText": "皆可以換韻", "isCorrect": false },
-        { "answerText": "句數皆有限制", "isCorrect": false },
-        { "answerText": "古體詩一定是五言體", "isCorrect": false },
+        { "answerText": "皆可以換韻" },
+        { "answerText": "句數皆有限制" },
+        { "answerText": "古體詩一定是五言體" },
         { "answerText": "古體詩不必講求平仄、對仗", "isCorrect": true }
       ],
       "difficulty": "easy"
@@ -17,30 +17,30 @@
     {
       "questionText": "下列有關古詩十九首的敘述，何者錯誤？",
       "answerOptions": [
-        { "answerText": "均為五言詩", "isCorrect": false },
-        { "answerText": "以首句為詩題", "isCorrect": false },
+        { "answerText": "均為五言詩" },
+        { "answerText": "以首句為詩題" },
         { "answerText": "作者是南朝梁蕭統", "isCorrect": true },
-        { "answerText": "內容多為抒情之作", "isCorrect": false }
+        { "answerText": "內容多為抒情之作" }
       ],
       "difficulty": "easy"
     },
     {
       "questionText": "本詩的體裁是？",
       "answerOptions": [
-        { "answerText": "五言絕詩", "isCorrect": false },
-        { "answerText": "五言律詩", "isCorrect": false },
+        { "answerText": "五言絕詩" },
+        { "answerText": "五言律詩" },
         { "answerText": "五言古詩", "isCorrect": true },
-        { "answerText": "五言新詩", "isCorrect": false }
+        { "answerText": "五言新詩" }
       ],
       "difficulty": "easy"
     },
     {
       "questionText": "根據詩意，主角「涉江采芙蓉」的用意為何？",
       "answerOptions": [
-        { "answerText": "以採蓮謀生", "isCorrect": false },
+        { "answerText": "以採蓮謀生" },
         { "answerText": "想送給思念的人", "isCorrect": true },
-        { "answerText": "想作為家中的裝飾品", "isCorrect": false },
-        { "answerText": "作為打發時間的休閒活動", "isCorrect": false }
+        { "answerText": "想作為家中的裝飾品" },
+        { "answerText": "作為打發時間的休閒活動" }
       ],
       "difficulty": "easy"
     },
@@ -48,56 +48,41 @@
       "questionText": "下列成語何者與「同心而離居」一樣意思？",
       "answerOptions": [
         { "answerText": "天涯咫尺", "isCorrect": true },
-        { "answerText": "咫尺天涯", "isCorrect": false },
-        { "answerText": "同床異夢", "isCorrect": false },
-        { "answerText": "孤枕難眠", "isCorrect": false }
+        { "answerText": "咫尺天涯" },
+        { "answerText": "同床異夢" },
+        { "answerText": "孤枕難眠" }
       ],
       "difficulty": "easy"
     },
     {
       "questionText": "此詩末句「憂傷以終老」之因為何？",
       "answerOptions": [
-        { "answerText": "思鄉情愁卻不得返鄉", "isCorrect": false },
+        { "answerText": "思鄉情愁卻不得返鄉" },
         { "answerText": "不能與思念之人團圓聚首", "isCorrect": true },
-        { "answerText": "花草易謝，青春悄然消逝", "isCorrect": false },
-        { "answerText": "想要當官卻懷才不遇", "isCorrect": false }
+        { "answerText": "花草易謝，青春悄然消逝" },
+        { "answerText": "想要當官卻懷才不遇" }
       ],
       "difficulty": "easy"
     },
     {
       "questionText": "本詩的主旨是？",
       "answerOptions": [
-        { "answerText": "寫戰場英雄的不羈與豪放", "isCorrect": false },
-        {
-          "answerText": "以女子角度敘寫獨守空閨的哀怨情懷",
-          "isCorrect": false
-        },
+        { "answerText": "寫戰場英雄的不羈與豪放" },
+        { "answerText": "以女子角度敘寫獨守空閨的哀怨情懷" },
         {
           "answerText": "寫同心之人卻分隔兩地，而終老異鄉之無奈",
           "isCorrect": true
         },
-        {
-          "answerText": "寄託遭小人陷害，不被國君重用的士人憤恨",
-          "isCorrect": false
-        }
+        { "answerText": "寄託遭小人陷害，不被國君重用的士人憤恨" }
       ],
       "difficulty": "easy"
     },
     {
       "questionText": "根據此詩的內容判斷，作者在表達何種情感？",
       "answerOptions": [
-        {
-          "answerText": "欣賞蘭草、蓮花之後，對大自然的讚嘆",
-          "isCorrect": false
-        },
-        {
-          "answerText": "芙蓉芳草無人欣賞，感慨自己懷才不遇",
-          "isCorrect": false
-        },
-        {
-          "answerText": "跋涉千里之後，見到故鄉的植物興起鄉愁",
-          "isCorrect": false
-        },
+        { "answerText": "欣賞蘭草、蓮花之後，對大自然的讚嘆" },
+        { "answerText": "芙蓉芳草無人欣賞，感慨自己懷才不遇" },
+        { "answerText": "跋涉千里之後，見到故鄉的植物興起鄉愁" },
         {
           "answerText": "由芙蓉而聯想到故鄉的家人，引發思鄉愁緒",
           "isCorrect": true

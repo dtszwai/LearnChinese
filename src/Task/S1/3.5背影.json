@@ -7,17 +7,12 @@
     {
       "questionText": "有關〈背影〉一文，下列之選項何者有誤？",
       "answerOptions": [
+        { "answerText": "〈背影〉一文以實際行動展現「父愛」。" },
         {
-          "answerText": "〈背影〉一文以實際行動展現「父愛」。",
-          "isCorrect": false
+          "answerText": "「到這邊時，我趕緊去攙他」一句顯示朱氏父子的關係趨於和緩。"
         },
         {
-          "answerText": "「到這邊時，我趕緊去攙他」一句顯示朱氏父 子的關係趨於和緩。",
-          "isCorrect": false
-        },
-        {
-          "answerText": "「我這樣大年紀的人，難道還不能料理自己麼」這句話顯露出作者當時自以為是的心情。",
-          "isCorrect": false
+          "answerText": "「我這樣大年紀的人，難道還不能料理自己麼」這句話顯露出作者當時自以為是的心情。"
         },
         {
           "answerText": "朱自清看到父親買橘子、爬月臺的背影而流淚的原因是父親違反交通規則。",
@@ -29,10 +24,10 @@
     {
       "questionText": "禍不單行的意思是？",
       "answerOptions": [
-        { "answerText": "找工作", "isCorrect": false },
-        { "answerText": "不幸的事只有一件", "isCorrect": false },
+        { "answerText": "找工作" },
+        { "answerText": "不幸的事只有一件" },
         { "answerText": "不幸的事接連發生", "isCorrect": true },
-        { "answerText": "上天不會存心斷絕人們的生機", "isCorrect": false }
+        { "answerText": "上天不會存心斷絕人們的生機" }
       ],
       "difficulty": "easy"
     },
@@ -40,21 +35,18 @@
       "questionText": "作者寫「我那時真是聰明過分」、「那時真是太聰明了」是要表達何種想法？",
       "answerOptions": [
         { "answerText": "自責愚昧，未能體會父愛", "isCorrect": true },
-        { "answerText": "自認觀念、做法最為正確", "isCorrect": false },
-        { "answerText": "暗笑父親說話和行事迂腐", "isCorrect": false },
-        { "answerText": "想念父親買橘子時的背影", "isCorrect": false }
+        { "answerText": "自認觀念、做法最為正確" },
+        { "answerText": "暗笑父親說話和行事迂腐" },
+        { "answerText": "想念父親買橘子時的背影" }
       ],
       "difficulty": "easy"
     },
     {
       "questionText": "「但他終於講定了價錢」，背影作者為何用「但」與「終於」兩個詞語？",
       "answerOptions": [
-        { "answerText": "心疼父親要被腳夫刁難", "isCorrect": false },
-        { "answerText": "強調腳夫的不客氣與不易說服", "isCorrect": false },
-        {
-          "answerText": "作者想要強調父親溫文儒雅、態度謙和",
-          "isCorrect": false
-        },
+        { "answerText": "心疼父親要被腳夫刁難" },
+        { "answerText": "強調腳夫的不客氣與不易說服" },
+        { "answerText": "作者想要強調父親溫文儒雅、態度謙和" },
         {
           "answerText": "作者認為父親能力不足，自己出面會比較好",
           "isCorrect": true
@@ -65,19 +57,19 @@
     {
       "questionText": "〈背影〉一文中，一開始作者為什麼認為父親的仔細照料「迂」？",
       "answerOptions": [
-        { "answerText": "擁有太多卻不加珍惜", "isCorrect": false },
-        { "answerText": "因父子離別而惆悵傷懷", "isCorrect": false },
+        { "answerText": "擁有太多卻不加珍惜" },
+        { "answerText": "因父子離別而惆悵傷懷" },
         { "answerText": "自認已長大，可料理自己", "isCorrect": true },
-        { "answerText": "父親年老力邁，顯出無力感", "isCorrect": false }
+        { "answerText": "父親年老力邁，顯出無力感" }
       ],
       "difficulty": "easy"
     },
     {
       "questionText": "朱自清使用三個「終於」描述當時情況：「但他終於不放心」、「終於決定還是自己送我去」、「但他終於講定了價錢」。這樣的寫法有什麼含義？",
       "answerOptions": [
-        { "answerText": "深深為父親的作為感動", "isCorrect": false },
-        { "answerText": "肯定父親處事鉅細無遺", "isCorrect": false },
-        { "answerText": "反應當時社會風氣的敗壞", "isCorrect": false },
+        { "answerText": "深深為父親的作為感動" },
+        { "answerText": "肯定父親處事鉅細無遺" },
+        { "answerText": "反應當時社會風氣的敗壞" },
         { "answerText": "反諷當時自己不耐煩的心情", "isCorrect": true }
       ],
       "difficulty": "easy"
@@ -89,41 +81,29 @@
           "answerText": "你踢球的技術真高明，連鞋子都踢飛了！",
           "isCorrect": true
         },
-        {
-          "answerText": "天氣如此熾熱，他的臉油到可以煎蛋了。",
-          "isCorrect": false
-        },
-        {
-          "answerText": "所有事物的細節就如同神祕難解的夢境。",
-          "isCorrect": false
-        },
-        {
-          "answerText": "灰心是動搖的開端，動搖是失敗的近鄰。",
-          "isCorrect": false
-        }
+        { "answerText": "天氣如此熾熱，他的臉油到可以煎蛋了。" },
+        { "answerText": "所有事物的細節就如同神祕難解的夢境。" },
+        { "answerText": "灰心是動搖的開端，動搖是失敗的近鄰。" }
       ],
       "difficulty": "easy"
     },
     {
       "questionText": "背影作者的父親將橘子放在皮大衣上之後，撲撲衣上的泥土，心裡很輕鬆似的，原因為何？",
       "answerOptions": [
-        { "answerText": "證明自己老當益壯", "isCorrect": false },
+        { "answerText": "證明自己老當益壯" },
         { "answerText": "父親為孩子完成一件事的踏實", "isCorrect": true },
-        { "answerText": "橘子購買不易，因此很有成就感", "isCorrect": false },
-        {
-          "answerText": "終於完成兒子交代的事情，鬆了一口氣",
-          "isCorrect": false
-        }
+        { "answerText": "橘子購買不易，因此很有成就感" },
+        { "answerText": "終於完成兒子交代的事情，鬆了一口氣" }
       ],
       "difficulty": "easy"
     },
     {
       "questionText": "下列在背影中出現的物品，何者不是象徵父親愁苦的心情？",
       "answerOptions": [
-        { "answerText": "黑布小帽", "isCorrect": false },
+        { "answerText": "黑布小帽" },
         { "answerText": "紫毛大衣", "isCorrect": true },
-        { "answerText": "深青布棉袍", "isCorrect": false },
-        { "answerText": "黑布大馬褂", "isCorrect": false }
+        { "answerText": "深青布棉袍" },
+        { "answerText": "黑布大馬褂" }
       ],
       "difficulty": "easy"
     },
@@ -131,18 +111,9 @@
       "questionText": "〈背影〉一文中，哪一句最能顯示朱自清從不認同父親的關心，轉為感動並企圖回饋？",
       "answerOptions": [
         { "answerText": "到這邊時，我趕緊去攙他", "isCorrect": true },
-        {
-          "answerText": "總覺他說話不大漂亮，非自己插嘴不可",
-          "isCorrect": false
-        },
-        {
-          "answerText": "我心裡暗笑他的迂；他們只認得錢，託他們直是白託",
-          "isCorrect": false
-        },
-        {
-          "answerText": "我兩三回勸他不必去；他只說：「不要緊，他們去不好！」",
-          "isCorrect": false
-        }
+        { "answerText": "總覺他說話不大漂亮，非自己插嘴不可" },
+        { "answerText": "我心裡暗笑他的迂；他們只認得錢，託他們直是白託" },
+        { "answerText": "我兩三回勸他不必去；他只說：「不要緊，他們去不好！」" }
       ],
       "difficulty": "easy"
     }
