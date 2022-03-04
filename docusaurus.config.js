@@ -60,6 +60,7 @@ module.exports = {
   ],
 
   themeConfig: {
+    metadata: [{ name: 'keywords', content: '書目引得, 中文科, 中國語文, 閱讀篇章, 初中, 高中, 中學, 文憑試, DSE, Chinese, 語文基礎, 語基, 指定文言, 文言文, 白話文' }],
     hideableSidebar: true,
     navbar: {
       title: "書目引得",
@@ -80,17 +81,6 @@ module.exports = {
           position: "right",
         },
       ],
-    },
-    prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
-    },
-    colorMode: {
-      switchConfig: {
-        darkIcon: "🌙",
-        darkIconStyle: { transform: "scaleX(-1)", },
-        lightIcon: "☀️",
-      },
     },
   },
 };
