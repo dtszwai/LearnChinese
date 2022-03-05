@@ -1,0 +1,60 @@
+---
+id: index
+title: 單元四：詩歌欣賞
+---
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
+
+<table
+  width='100%'
+  style={{ tableLayout: 'fixed', display: 'table', textAlign: 'center' }}
+>
+  <thead>
+    <tr>
+      <th></th>
+      <th>古詩</th>
+      <th>絕句</th>
+      <th>律詩</th>
+      <th>新詩</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>句數</td>
+      <td>不限</td>
+      <td>四句</td>
+      <td>八句</td>
+      <td>不限</td>
+    </tr>
+    <tr>
+      <td>字數</td>
+      <td>多五、七言，亦有四言</td>
+      <td colspan='2'>五言、七言</td>
+      <td>不限</td>
+    </tr>
+    <tr>
+      <td>對仗</td>
+      <td>不限</td>
+      <td>不限</td>
+      <td>頷聯、頸聯對仗</td>
+      <td>不限</td>
+    </tr>
+    <tr>
+      <td>平仄</td>
+      <td>不限</td>
+      <td colspan='2'>有一定限制</td>
+      <td>不限</td>
+    </tr>
+    <tr>
+      <td>押韻</td>
+      <td>用韻較寬，偶數句押韻</td>
+      <td colspan='2'>偶數句押韻，第一句可押可不押</td>
+      <td>不限</td>
+    </tr>
+  </tbody>
+</table>

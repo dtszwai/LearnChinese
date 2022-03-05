@@ -14,7 +14,7 @@ import './styles.css'; // MDX elements are wrapped through the MDX pragma. In so
 // with Head/Helmet) we need to unwrap those elements.
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import { Remark, Annotate, Highlight, Youtube, Bilibili, Recommend } from './Tool';
+import { Author, Remark, Annotate, Highlight, Youtube, Bilibili, Recommend } from '/src/components/Tool';
 import Admonition from '@theme/Admonition';
 import Quiz from '/src/components/Quiz'
 
@@ -71,6 +71,7 @@ const MDXComponents = {
   // Custom components
   Tabs,
   TabItem,
+  Author,
   Remark,
   Annotate,
   Highlight,

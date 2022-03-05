@@ -38,12 +38,31 @@ li.breadcrumbs__item:not(:last-child) a.breadcrumbs__link {
   background: none;
 }
 
+h1:first-child {
+  margin-top: 1rem;
+  span[data-annotation] {
+    position: relative;
+    &::before {
+      content: attr(data-annotation);
+      position: absolute;
+      width: 100%;
+      top: -1em;
+      text-align: center;
+      font-size: 50%;
+      color: v.$pre-text-color;
+      html[data-theme='dark'] & {
+        color: v.$pre-text-color-dark;
+      }
+    }
+  }
+}
+
 .markdown {
   p {
     line-height: 1.7;
   }
 
-  a:not(.hash-link) {
+  a:not(.hash-link):not(div.avatar a):not(.card) {
     background-color: rgba(187, 239, 253, 0.3);
     border-bottom: 1px solid var(--ifm-hr-border-color);
     color: var(--ifm-font-color-base);
@@ -84,25 +103,6 @@ li.breadcrumbs__item:not(:last-child) a.breadcrumbs__link {
     text-indent: 2em;
     line-height: 1.7;
     margin: 1.8rem 0;
-  }
-
-  h1:first-child {
-    margin-top: 1rem;
-    span[data-annotation] {
-      position: relative;
-      &::before {
-        content: attr(data-annotation);
-        position: absolute;
-        width: 100%;
-        top: -1em;
-        text-align: center;
-        font-size: 50%;
-        color: v.$pre-text-color;
-        html[data-theme='dark'] & {
-          color: v.$pre-text-color-dark;
-        }
-      }
-    }
   }
 
   .poetry {

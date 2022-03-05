@@ -1,0 +1,32 @@
+{
+  "杜甫": {
+    "name": "杜甫",
+    "dynasty": "唐",
+    "avatar": "/img/avatar/DuFu.jpg"
+  },
+  "白居易": {
+    "name": "白居易",
+    "dynasty": "唐",
+    "avatar": "/img/avatar/BaiJuyi.jpg"
+  },
+  "王昌齡": {
+    "name": "王昌齡",
+    "dynasty": "唐",
+    "avatar": "/img/avatar/WangChangling.jpg"
+  },
+  "李白": {
+    "name": "李白",
+    "dynasty": "唐",
+    "avatar": "/img/avatar/LiBai.jpg"
+  },
+  "朱自清": {
+    "name": "朱自清",
+    "dynasty": "",
+    "avatar": "/img/avatar/ZhuZiqing.jpg"
+  },
+  "蘇軾": {
+    "name": "蘇軾",
+    "dynasty": "宋",
+    "avatar": "/img/avatar/SuShi.jpg"
+  }
+}

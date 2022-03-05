@@ -1,5 +1,14 @@
 @use '@site/src/css/variables' as v;
 
+.author {
+  color: v.$source-text-color;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+  html[data-theme='dark'] & {
+    color: v.$source-text-color-dark;
+  }
+}
+
 //.remark & .type 正文注釋、段意、段旨
 .remark {
   text-indent: 0;
