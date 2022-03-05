@@ -9,6 +9,21 @@
   }
 }
 
+.authorInline {
+  align-items: baseline;
+  display: inline-flex;
+  margin-left: 0.25rem;
+}
+
+.avatarInline {
+  border-radius: 9999px;
+  align-self: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.25rem;
+  max-width: 100%;
+}
+
 //.remark & .type 正文注釋、段意、段旨
 .remark {
   text-indent: 0;

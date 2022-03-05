@@ -9,32 +9,42 @@ import clsx from 'clsx';
 import { MdFace } from 'react-icons/md';
 import authorInfo from '@site/static/misc/author';
 
-export const Author = ({ name, source, dynasty, right = true, tags = true }) => {
+export const Author = ({ name, source, dynasty, right = true, inline, label = name, src }) => {
+  let tags = !!authorInfo[name];
   let { avatar, dynasty: authorDynasty } = Object(authorInfo[name]);
   let renderedDynasty = dynasty || authorDynasty ? `【${dynasty || authorDynasty}】` : '';
 
-  let renderedImage = avatar
-    ? <img className='avatar__photo' src={useBaseUrl(avatar)} />
-    : <MdFace className='avatar__photo' />
+  let renderedImage = () => avatar
+    ? <img className={inline ? styles.avatarInline : 'avatar__photo'} src={useBaseUrl(src || avatar)} />
+    : <MdFace className={inline ? styles.avatarInline : 'avatar__photo'} />
 
   let renderedIntro = (
     <div className='avatar__intro' style={right ? { flex: 'none' } : null}>
-      <div className='avatar__name'>{renderedDynasty + name}</div>
+      <div className='avatar__name'>{renderedDynasty + label}</div>
       {source && <small className='avatar__subtitle'>{source}</small>}
     </div>
   );
 
-  return (
-    <div className={clsx('avatar', right && styles.author)}>
+  return inline
+    ? (
       <Link
-        to={tags ? `/tags/${name}` : null}
-        style={{ textDecoration: 'none', display: 'inherit', color: 'inherit' }}
-      >
-        {renderedImage}
-        {renderedIntro}
+        className={styles.authorInline}
+        style={{ textDecoration: 'none', color: 'inherit' }}
+        to={tags && `/tags/${name}`}>
+        {renderedImage()}
+        {label}
       </Link>
-    </div>
-  );
+    ) : (
+      <div className={clsx('avatar', right && styles.author)}>
+        <Link
+          to={tags && `/tags/${name}`}
+          style={{ textDecoration: 'none', display: 'inherit', color: 'inherit' }}
+        >
+          {renderedImage()}
+          {renderedIntro}
+        </Link>
+      </div>
+    );
 };
 
 export const Remark = ({ children, type }) => {
