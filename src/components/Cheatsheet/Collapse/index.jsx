@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Collapsible from 'react-collapsible';
-import styles from './Collapse.module.css';
+import styles from './Collapse.module.scss';
 import { AiFillCaretDown } from 'react-icons/ai';
 
 export default function Collapse({ title, children }) {

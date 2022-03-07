@@ -10,7 +10,7 @@ import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
 import Details from '@theme/Details';
-import './styles.css'; // MDX elements are wrapped through the MDX pragma. In some cases (notably usage
+import './styles.scss'; // MDX elements are wrapped through the MDX pragma. In some cases (notably usage
 // with Head/Helmet) we need to unwrap those elements.
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
