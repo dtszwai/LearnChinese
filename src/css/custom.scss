@@ -68,6 +68,11 @@ h1:first-child {
     color: var(--ifm-font-color-base);
     display: initial;
     line-height: calc(var(--ifm-font-size-base) + 4px);
+    text-decoration: none;
+    &:hover {
+      background-color: #bbeffd;
+      border-bottom-color: #1a1a1a;
+    }
   }
 
   // 字詞粵普讀音標示

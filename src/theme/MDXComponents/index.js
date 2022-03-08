@@ -17,6 +17,9 @@ import TabItem from "@theme/TabItem";
 import { Author, Remark, Annotate, Highlight, Youtube, Bilibili, Recommend } from '/src/components/Tool';
 import Admonition from '@theme/Admonition';
 import Quiz from '/src/components/Quiz'
+import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
+
 
 function unwrapMDXElement(element) {
   if (element?.props?.mdxType && element?.props?.originalType) {
@@ -79,6 +82,8 @@ const MDXComponents = {
   Bilibili,
   Recommend,
   Admonition,
-  Quiz
+  Quiz,
+  Typography,
+  Rate: ({ label, value }) => <Typography component="legend">{label}<Rating name="read-only" value={value} style={{ verticalAlign: 'text-bottom' }} readOnly /></Typography>,
 };
 export default MDXComponents;
