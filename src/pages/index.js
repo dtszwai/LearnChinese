@@ -4,9 +4,9 @@ import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Sketch from '/img/index.svg'
-import S1Text from '/docs/S1.md';
-import S2Text from '/docs/S2.md';
-import S3Text from '/docs/S3.md';
+import S1Text from '/docs/S1/index.mdx';
+import S2Text from '/docs/S2/index.mdx';
+import S3Text from '/docs/S3/index.mdx';
 import styles from './index.module.scss';
 
 export default function Home() {
@@ -73,7 +73,7 @@ function StartSection() {
 }
 
 function TextsSection() {
-  const renderedForm = (grade, Markdown) => {
+  const renderedForm = (grade, title, Markdown) => {
     return (
       <div className={clsx('col col--4')}>
         <div className="text--center">
@@ -85,7 +85,7 @@ function TextsSection() {
         </div>
         <div className={clsx('padding-horiz--md featureText')}>
           <Link to={`/${grade}`} className={styles.grade}>
-            <h2>中一級課文</h2>
+            <h2>{title}級課文</h2>
           </Link>
           <Markdown />
         </div>
@@ -97,9 +97,9 @@ function TextsSection() {
     <section className="padding-vert--xl">
       <div className="container">
         <div className="row">
-          {renderedForm('S1', S1Text)}
-          {renderedForm('S2', S2Text)}
-          {renderedForm('S3', S3Text)}
+          {renderedForm('S1', "中一", S1Text)}
+          {renderedForm('S2', "中二", S2Text)}
+          {renderedForm('S3', "中三", S3Text)}
         </div>
       </div>
     </section>

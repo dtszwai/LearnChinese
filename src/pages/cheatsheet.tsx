@@ -5,6 +5,10 @@ import Collapse from '../components/Cheatsheet/Collapse';
 import Demo from '../components/Cheatsheet/Demo';
 import styles from './cheatsheet.module.scss';
 
+type json = {
+  [key: string]: string;
+};
+
 export default function cheatsheet() {
   const columns = [data.slice(0, 1), data.slice(1)];
   const title = '語文基礎知識';
@@ -20,7 +24,7 @@ export default function cheatsheet() {
     <div className='row' style={{ marginBottom: '5rem' }}>
       {columns.map((column, index) => (
         <div key={index} className={`col col--4 ${styles.column}`}>
-          {column.map((row) => (
+          {column.map((row: { title: string; data: json[] }) => (
             <section key={row.title}>
               <h4 className={styles.category}>{row.title}</h4>
               {row.data.map((item) => (
