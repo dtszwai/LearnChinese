@@ -1,5 +1,5 @@
-import React from "react";
-import styles from './QuestionBank.module.scss'
+import React from 'react';
+import styles from './QuestionBank.module.scss';
 
 export default function QuestionBank({ data, selectedAnswer }) {
   const { questions } = data;
@@ -13,13 +13,13 @@ export default function QuestionBank({ data, selectedAnswer }) {
       } else if (selectedAnswer[questionKey] !== answerKey) {
         message = '⭕️ 正確答案';
       } else if (selectedAnswer[questionKey] === answerKey) {
-        message = '✔️ 回答正確'
+        message = '✔️ 回答正確';
       }
     } else if (selectedAnswer[questionKey] === answerKey) {
       message = '❌ 你的選擇';
     }
 
-    return <span className={styles.Comment}>{message}</span>
+    return <span className={styles.Comment}>{message}</span>;
   };
 
   return (
@@ -33,7 +33,7 @@ export default function QuestionBank({ data, selectedAnswer }) {
 
           {/* Answer 答案 */}
           <div className={styles.AnswerSection}>
-            {question.answerOptions.map((option, answerKey) =>
+            {question.answerOptions.map((option, answerKey) => (
               <p
                 key={answerKey}
                 className={option.isCorrect ? styles.CorrectAnswer : null}
@@ -41,9 +41,10 @@ export default function QuestionBank({ data, selectedAnswer }) {
                 <span className={option.isCorrect ? null : styles.Options}>
                   {String.fromCharCode(answerKey + 65)}.&nbsp;
                 </span>
-                {option.answerText}&nbsp;{renderedMessage(option, questionKey, answerKey)}
+                {option.answerText}&nbsp;
+                {renderedMessage(option, questionKey, answerKey)}
               </p>
-            )}
+            ))}
           </div>
         </div>
       ))}
