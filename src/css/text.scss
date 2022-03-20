@@ -27,9 +27,15 @@
     font-family: WenKai;
     text-indent: 0;
     line-height: 2;
-    word-break: keep-all;
-    text-overflow: ellipsis;
     text-align: center;
+
+    & p {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 100%;
+    }
   }
 }
 
