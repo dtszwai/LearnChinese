@@ -89,54 +89,6 @@ h1:first-child {
     border-radius: 100%;
   }
 
-  // 引文／前文展現樣式
-  .pre-text {
-    font-size: 1.2rem;
-    text-align: justify;
-    color: v.$pre-text-color;
-    font-family: FangSong, SimHei, SimSun;
-    html[data-theme='dark'] & {
-      color: v.$pre-text-color-dark;
-    }
-  }
-
-  // 正文展現樣式
-  .main-text {
-    font-size: 1.7rem;
-    font-family: KaiTi, DFKai-SB, KaiU, STKaiti, Serif;
-    text-align: justify;
-    text-indent: 2em;
-    line-height: 1.7;
-    margin: 1.8rem 0;
-  }
-
-  .poetry {
-    font-family: WenKai;
-    text-indent: 0;
-    line-height: 2;
-    word-break: keep-all;
-    text-overflow: ellipsis;
-    text-align: center;
-  }
-
-  // 語譯／比較閱讀／延伸閱讀樣式
-  .translation-text {
-    font-size: 1.2em;
-    text-align: justify;
-    text-indent: 2em;
-  }
-
-  // 文章來源樣式
-  .source-text {
-    color: v.$source-text-color;
-    text-align: right;
-    margin-bottom: 1.5rem;
-    display: block;
-    html[data-theme='dark'] & {
-      color: v.$source-text-color-dark;
-    }
-  }
-
   .admonition-heading h5 {
     font-family: SmallCaps, var(--ifm-heading-font-family);
   }

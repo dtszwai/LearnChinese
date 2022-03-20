@@ -5,7 +5,7 @@
   "chapter": "單元四",
   "questions": [
     {
-      "questionText": "【越調】〈天淨沙．秋思〉中的越調是指什麽？",
+      "questionText": "【越調】〈天淨沙．秋思〉中，越調是指？",
       "answerOptions": [
         { "answerText": "詞牌" },
         { "answerText": "宮調", "isCorrect": true },
@@ -15,9 +15,19 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "【越調】〈天淨沙．秋思〉中的秋思是什麽意思？",
+      "questionText": "【越調】〈天淨沙．秋思〉中，天淨沙是指？",
       "answerOptions": [
-        { "answerText": "曲牌名" },
+        { "answerText": "曲牌", "isCorrect": true },
+        { "answerText": "詞牌" },
+        { "answerText": "宮調" },
+        { "answerText": "曲題" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "【越調】〈天淨沙．秋思〉中，秋思是指？",
+      "answerOptions": [
+        { "answerText": "曲牌" },
         { "answerText": "秋天的思念" },
         { "answerText": "沒有意思，只是題目" },
         { "answerText": "秋日寂寞凄涼的思緒", "isCorrect": true }
@@ -35,16 +45,6 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "【越調】〈天淨沙．秋思〉這個標題中，天淨沙是指？",
-      "answerOptions": [
-        { "answerText": "曲牌", "isCorrect": true },
-        { "answerText": "詞牌" },
-        { "answerText": "宮調" },
-        { "answerText": "曲題" }
-      ],
-      "difficulty": "easy"
-    },
-    {
       "questionText": "「枯藤老樹昏鴉」的情境給人的感受如何？",
       "answerOptions": [
         { "answerText": "溫馨愉悅" },
@@ -55,7 +55,7 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "下列景物，何者「沒有」出現在馬致遠天淨沙秋思這首曲中？",
+      "questionText": "下列景物，何者「沒有」出現在馬致遠〈天淨沙．秋思〉這首曲中？",
       "answerOptions": [
         { "answerText": "古老的道路" },
         { "answerText": "澎湃的浪潮", "isCorrect": true },
@@ -65,7 +65,7 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "馬致遠天淨沙秋思一曲中，下列何者點明了時間？",
+      "questionText": "馬致遠〈天淨沙．秋思〉一曲中，下列何者點明了時間？",
       "answerOptions": [
         { "answerText": "人家" },
         { "answerText": "昏鴉", "isCorrect": true },

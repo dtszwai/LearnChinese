@@ -15,7 +15,7 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "以下哪項是這首詞的情調？",
+      "questionText": "以下哪項是〈虞美人〉的情調？",
       "answerOptions": [
         { "answerText": "平淡" },
         { "answerText": "豪放" },
@@ -25,7 +25,7 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "以下哪項不是詞作的內容？",
+      "questionText": "以下哪項不是〈虞美人〉的內容？",
       "answerOptions": [
         { "answerText": "故國之思" },
         { "answerText": "及時行樂", "isCorrect": true },
@@ -35,7 +35,7 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "作者寫本詞時，是身處在什麼境況下？",
+      "questionText": "李煜寫〈虞美人〉時，是身處在什麼境況下？",
       "answerOptions": [
         { "answerText": "被人軟禁", "isCorrect": true },
         { "answerText": "身陷天牢" },
@@ -45,7 +45,7 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "「雕欄玉砌」這一意象指的是什麼？",
+      "questionText": "〈虞美人〉「雕欄玉砌」這一意象指的是什麼？",
       "answerOptions": [
         { "answerText": "寺廟的欄杆" },
         { "answerText": "南唐的宮殿", "isCorrect": true },
@@ -55,7 +55,7 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "「小樓昨夜又東風」中的「小樓」指的是？",
+      "questionText": "〈虞美人〉「小樓昨夜又東風」中的「小樓」指的是？",
       "answerOptions": [
         { "answerText": "寺廟" },
         { "answerText": "南唐的宮殿" },
@@ -65,7 +65,7 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "「小樓昨夜又東風」中的「東風」指的是？",
+      "questionText": "〈虞美人〉「小樓昨夜又東風」中的「東風」指的是？",
       "answerOptions": [
         { "answerText": "春天的風", "isCorrect": true },
         { "answerText": "夏天的風" },
@@ -75,7 +75,7 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "「問君能有幾多愁，恰似一江春水向東流。」以下哪項不是本句所運用的修辭手法？",
+      "questionText": "〈虞美人〉「問君能有幾多愁，恰似一江春水向東流。」以下哪項不是本句所運用的修辭手法？",
       "answerOptions": [
         { "answerText": "誇張" },
         { "answerText": "比喻" },

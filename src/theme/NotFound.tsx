@@ -4,13 +4,13 @@ import styles from './NotFound.module.scss';
 import quotes from '@site/static/misc/quotes.json';
 import Link from '@docusaurus/Link';
 
-interface Quotes {
+type Quotes = {
   text: string;
   source: string;
   language: string;
-}
+};
 
-function NotFound() {
+export default function NotFound() {
   const [randomQuote, setRandomQuote] = useState<Quotes>({
     text: '',
     source: '',
@@ -19,6 +19,19 @@ function NotFound() {
   useEffect(() => {
     setRandomQuote(quotes[Math.floor(Math.random() * quotes.length)]);
   }, []);
+
+  const renderedBlockquote = () => (
+    <blockquote className={styles.blockquote}>
+      <p
+        className={
+          randomQuote.language === 'chinese' ? styles.chinese : styles.english
+        }
+      >
+        {randomQuote.text}
+      </p>
+      <cite className={styles.source}>{randomQuote.source}</cite>
+    </blockquote>
+  );
 
   return (
     <Layout title='找不到頁面'>
@@ -32,24 +45,10 @@ function NotFound() {
             <Link className={`button button--lg ${styles.buttons}`} to='/'>
               🏠 回到首頁
             </Link>
-
-            <blockquote className={styles.blockquote}>
-              <p
-                className={
-                  randomQuote.language === 'chinese'
-                    ? styles.chinese
-                    : styles.english
-                }
-              >
-                {randomQuote.text}
-              </p>
-              <cite className={styles.source}>{randomQuote.source}</cite>
-            </blockquote>
+            {renderedBlockquote()}
           </div>
         </div>
       </main>
     </Layout>
   );
 }
-
-export default NotFound;

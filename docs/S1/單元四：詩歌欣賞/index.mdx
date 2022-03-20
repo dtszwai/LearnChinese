@@ -18,6 +18,7 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
     <tr>
       <th></th>
       <th>古詩</th>
+      <th>樂府詩</th>
       <th>絕句</th>
       <th>律詩</th>
       <th>新詩</th>
@@ -25,36 +26,48 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
   </thead>
   <tbody>
     <tr>
-      <td>句數</td>
+      <th>句數</th>
+      <td>不限</td>
       <td>不限</td>
       <td>四句</td>
       <td>八句</td>
       <td>不限</td>
     </tr>
     <tr>
-      <td>字數</td>
+      <th>字數</th>
       <td>多五、七言，亦有四言</td>
-      <td colspan='2'>五言、七言</td>
+      <td>多長短句</td>
+      <td colSpan='2'>五言、七言</td>
       <td>不限</td>
     </tr>
     <tr>
-      <td>對仗</td>
+      <th>對仗</th>
+      <td>不限</td>
       <td>不限</td>
       <td>不限</td>
       <td>頷聯、頸聯對仗</td>
       <td>不限</td>
     </tr>
     <tr>
-      <td>平仄</td>
+      <th>平仄</th>
       <td>不限</td>
-      <td colspan='2'>有一定限制</td>
+      <td>不限</td>
+      <td colSpan='2'>有定格</td>
       <td>不限</td>
     </tr>
     <tr>
-      <td>押韻</td>
-      <td>用韻較寬，偶數句押韻</td>
-      <td colspan='2'>偶數句押韻，第一句可押可不押</td>
+      <th>押韻</th>
+      <td>可換韻腳</td>
+      <td>可換韻腳</td>
+      <td colSpan='2'>一韻到底；偶數句押韻，第一句可押可不押</td>
       <td>不限</td>
+    </tr>
+    <tr>
+      <th>其他</th>
+      <td>主言情，尚溫雅；不入樂，不可歌，只可誦</td>
+      <td>主敘事，貴遒勁；入樂，可歌，可誦</td>
+      <td colSpan='2'>莊重；不入樂，不可歌，只可誦</td>
+      <td>完全自由、極少限制</td>
     </tr>
   </tbody>
 </table>

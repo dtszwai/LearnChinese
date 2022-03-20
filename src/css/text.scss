@@ -1,0 +1,71 @@
+@use 'variables' as v;
+
+// 引文／前文展現樣式
+.pre {
+  font-size: 1.2rem;
+  text-align: justify;
+  color: v.$pre-text-color;
+  font-family: FangSong, SimHei, SimSun;
+  html[data-theme='dark'] & {
+    color: v.$pre-text-color-dark;
+  }
+}
+
+// 正文展現樣式
+.main {
+  font-size: 1.7rem;
+  font-family: KaiTi, DFKai-SB, KaiU, STKaiti, Serif;
+  margin: 1.8rem 0;
+
+  &.prose {
+    text-align: justify;
+    text-indent: 2em;
+    line-height: 1.7;
+  }
+
+  &.poetry {
+    font-family: WenKai;
+    text-indent: 0;
+    line-height: 2;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+}
+
+// 語譯／比較閱讀／延伸閱讀樣式
+.translation {
+  font-size: 1.2em;
+  text-align: justify;
+  text-indent: 2em;
+
+  &.poetry {
+    text-indent: 0;
+  }
+}
+
+.read-around {
+  font-size: 1.2em;
+  text-align: justify;
+  text-indent: 2em;
+
+  &.poetry {
+    font-family: WenKai;
+    text-align: center;
+    text-indent: 0;
+    line-height: 2 important;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+  }
+}
+
+// 文章來源樣式
+.source {
+  color: v.$source-text-color;
+  text-align: right;
+  margin-bottom: 1.5rem;
+  display: block;
+  html[data-theme='dark'] & {
+    color: v.$source-text-color-dark;
+  }
+}

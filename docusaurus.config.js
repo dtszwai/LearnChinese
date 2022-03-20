@@ -56,7 +56,7 @@ module.exports = {
           showLastUpdateTime: true,
         },
         blog: false,
-        theme: { customCss: [require.resolve("./src/css/custom.scss")] },
+        theme: { customCss: [require.resolve("./src/css/custom.scss"), require.resolve("./src/css/text.scss")] },
         gtag: { trackingID: "G-3CDVV4STYR", anonymizeIP: true },
       },
     ],

@@ -58,9 +58,9 @@
       "questionText": "此詩末句「憂傷以終老」之因為何？",
       "answerOptions": [
         { "answerText": "思鄉情愁卻不得返鄉" },
+        { "answerText": "想要當官卻懷才不遇" },
         { "answerText": "不能與思念之人團圓聚首", "isCorrect": true },
-        { "answerText": "花草易謝，青春悄然消逝" },
-        { "answerText": "想要當官卻懷才不遇" }
+        { "answerText": "花草易謝，青春悄然消逝" }
       ],
       "difficulty": "easy"
     },

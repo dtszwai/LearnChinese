@@ -18,9 +18,9 @@
       "questionText": "此詞描寫的是甚麼節日？",
       "answerOptions": [
         { "answerText": "春節" },
+        { "answerText": "冬至" },
         { "answerText": "元宵節" },
-        { "answerText": "中秋節", "isCorrect": true },
-        { "answerText": "冬至" }
+        { "answerText": "中秋節", "isCorrect": true }
       ],
       "difficulty": "easy"
     },
@@ -58,8 +58,8 @@
       "questionText": "「此事古難全」的全字是什麼意思？",
       "answerOptions": [
         { "answerText": "存在" },
-        { "answerText": "圓滿", "isCorrect": true },
         { "answerText": "保存" },
+        { "answerText": "圓滿", "isCorrect": true },
         { "answerText": "成全" }
       ],
       "difficulty": "easy"

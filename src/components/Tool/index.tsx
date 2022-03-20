@@ -32,7 +32,7 @@ export const Author = ({
   let renderedDynasty: string =
     dynasty || infoDynasty ? `【${dynasty || infoDynasty}】` : '';
 
-  let renderAvatar: JSX.Element = avatar ? (
+  let renderAvatar = avatar ? (
     <img
       className={inline ? styles.avatarInline : 'avatar__photo'}
       src={useBaseUrl(src || avatar)}
@@ -66,7 +66,13 @@ export const Author = ({
   );
 };
 
-export const Remark = ({ children, type }: { children: any; type: string }) => {
+export const Remark = ({
+  children,
+  type,
+}: {
+  children: React.ReactNode;
+  type: string;
+}) => {
   return (
     <p className={styles.remark}>
       <span className={styles.type}>{type}</span>

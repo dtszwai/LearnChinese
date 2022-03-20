@@ -31,4 +31,10 @@ export default {
       />
     </Typography>
   ),
+  Py: ({ children }) => (
+    <>
+      <span className='py-circle'>粵</span>
+      &nbsp;{children}
+    </>
+  ),
 };

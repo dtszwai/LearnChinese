@@ -65,7 +65,7 @@
       "difficulty": "easy"
     },
     {
-      "questionText": "下列哪項不是沈復記錄的三件趣事之一。",
+      "questionText": "下列哪項不是沈復記錄的三件趣事之一？",
       "answerOptions": [
         { "answerText": "小溪釣魚", "isCorrect": true },
         { "answerText": "神遊山林" },
