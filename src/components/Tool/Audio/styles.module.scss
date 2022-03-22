@@ -1,0 +1,32 @@
+.Card {
+  background-color: var(--ifm-card-background-color) !important;
+  max-width: 450px;
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.87);
+  html[data-theme='dark'] & {
+    color: #fff;
+  }
+}
+
+.title {
+  color: var(--ifm-color-emphasis-900);
+  font-weight: bold !important;
+}
+
+.author {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.progress {
+  height: 5px;
+  -webkit-appearance: none;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: #3b7677;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}

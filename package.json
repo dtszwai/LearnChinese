@@ -32,6 +32,7 @@
     "react-collapsible": "^2.8.4",
     "react-dom": "^17.0.1",
     "react-icons": "^4.3.1",
+    "react-slick": "^0.28.1",
     "sass": "^1.45.1"
   },
   "browserslist": {

@@ -1,70 +1,9 @@
 import React, { useState } from 'react';
 import Tooltip from '@mui/material/Tooltip';
 import styles from './styles.module.scss';
-import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import clsx from 'clsx';
-
-//Author
-import { MdFace } from 'react-icons/md';
-import authorInfo from '@site/static/misc/author';
-
-interface Author {
-  name: string;
-  source?: string;
-  dynasty?: string;
-  inline?: boolean;
-  label?: string;
-  src?: string;
-}
-
-export const Author = ({
-  name,
-  source,
-  dynasty,
-  inline,
-  label = name,
-  src,
-}: Author): JSX.Element => {
-  let tags = !!authorInfo[name];
-  let { avatar, dynasty: infoDynasty } = Object(authorInfo[name]);
-
-  let renderedDynasty: string =
-    dynasty || infoDynasty ? `【${dynasty || infoDynasty}】` : '';
-
-  let renderAvatar = avatar ? (
-    <img
-      className={inline ? styles.avatarInline : 'avatar__photo'}
-      src={useBaseUrl(src || avatar)}
-    />
-  ) : (
-    <MdFace className={inline ? styles.avatarInline : 'avatar__photo'} />
-  );
-
-  return inline ? (
-    <Link
-      className={styles.authorInline}
-      style={{ textDecoration: 'none', color: 'inherit' }}
-      to={tags && `/tags/${name}`}
-    >
-      {renderAvatar}
-      {label}
-    </Link>
-  ) : (
-    <div className={clsx('avatar', styles.author)}>
-      <Link
-        to={tags && `/tags/${name}`}
-        style={{ textDecoration: 'none', display: 'inherit', color: 'inherit' }}
-      >
-        {renderAvatar}
-        <div className='avatar__intro' style={{ flex: 'none' }}>
-          <div className='avatar__name'>{renderedDynasty + label}</div>
-          {source && <small className='avatar__subtitle'>{source}</small>}
-        </div>
-      </Link>
-    </div>
-  );
-};
+export { default as Carousel } from './Carousel';
+export { default as Author } from './Author';
+export { default as Audio } from './Audio';
 
 export const Remark = ({
   children,

@@ -20,6 +20,8 @@ export default {
   Bilibili: ({ children, id }) => Tool.Video(children ?? id, 0, 'Bilibili'),
   Admonition,
   Quiz,
+  Carousel: Tool.Carousel,
+  Audio: Tool.Audio,
   Rate: ({ label, value }: { label: String; value: number }) => (
     <Typography component='legend'>
       {label}
