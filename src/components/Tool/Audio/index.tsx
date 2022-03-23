@@ -14,7 +14,7 @@ type audio = {
   image?: string;
   src: string;
   frontMatter?: {
-    author: string;
+    author?: string;
     title: string;
   };
 };
@@ -100,7 +100,8 @@ export default function (props: audio) {
           isPlaying={isPlaying}
           onPlayPauseClick={setIsPlaying}
           onScrub={onScrub}
-          className={styles.controls}
+          styles={styles.controls}
+          audioRef={audioRef}
         />
         <div style={{ display: 'flex', alignItems: 'flex-end' }}>
           {Number.isNaN(duration) ? '00:00' : toTime(trackProgress)}
@@ -120,7 +121,7 @@ export default function (props: audio) {
       <CardMedia
         component='img'
         sx={{ width: 151 }}
-        image={useBaseUrl(image || '/img/Audio.svg')}
+        image={useBaseUrl(image || '/img/audio.svg')}
         style={{ margin: '8px' }}
       />
     </Card>
