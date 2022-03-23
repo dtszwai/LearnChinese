@@ -22,12 +22,13 @@ type audio = {
 export default function (props: audio) {
   const { title, author, image, src, frontMatter } = props;
   const [trackProgress, setTrackProgress] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>();
   const audioRef = useRef(
     typeof Audio !== 'undefined' && new Audio(useBaseUrl(src)),
   );
-  const intervalRef = useRef<NodeJS.Timer | null>();
+  const intervalRef = useRef<NodeJS.Timer>();
   const { duration } = audioRef.current;
+
   const currentPercentage = duration
     ? `${(trackProgress / duration) * 100}%`
     : '0%';
@@ -39,19 +40,17 @@ export default function (props: audio) {
   const startTimer = () => {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
-      !audioRef.current.ended && setTrackProgress(audioRef.current.currentTime);
+      setTrackProgress(audioRef.current.currentTime);
+      if (audioRef.current.ended) {
+        onScrub(0);
+        setIsPlaying(false);
+      }
     }, 1000);
   };
 
-  const onScrub = (value) => {
-    clearInterval(intervalRef.current);
+  const onScrub = (value: number) => {
     audioRef.current.currentTime = value;
     setTrackProgress(audioRef.current.currentTime);
-  };
-
-  const onScrubEnd = () => {
-    !isPlaying && setIsPlaying(true);
-    startTimer();
   };
 
   useEffect(() => {
@@ -71,13 +70,12 @@ export default function (props: audio) {
   }, []);
 
   const toTime = (e: number) => {
-    var m = Math.floor(e / 60)
-        .toString()
-        .padStart(2, '0'),
-      s = Math.floor(e % 60)
-        .toString()
-        .padStart(2, '0');
-
+    let m = Math.floor(Math.ceil(e) / 60)
+      .toString()
+      .padStart(2, '0');
+    let s = Math.floor(Math.ceil(e) % 60)
+      .toString()
+      .padStart(2, '0');
     return m + ':' + s;
   };
 
@@ -111,11 +109,9 @@ export default function (props: audio) {
             value={trackProgress}
             step='1'
             min='0'
-            max={duration ? duration : `${duration}`}
+            max={Number.isNaN(duration) ? 0 : duration}
             className={styles.progress}
-            onChange={(e) => onScrub(e.target.value)}
-            onMouseUp={onScrubEnd}
-            onKeyUp={onScrubEnd}
+            onChange={(e) => onScrub(Number(e.target.value))}
             style={{ background: progressStyling }}
           />
           {Number.isNaN(duration) ? '00:00' : toTime(duration)}

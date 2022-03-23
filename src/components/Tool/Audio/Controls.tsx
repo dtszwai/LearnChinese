@@ -13,9 +13,8 @@ export default function ({ isPlaying, onPlayPauseClick, onScrub, ...props }) {
         sx={{ color: 'inherit' }}
         aria-label='play/pause'
         onClick={() => onPlayPauseClick(!isPlaying)}
-      >
-        {isPlaying ? <MdPause size={38} /> : <MdPlayArrow size={38} />}
-      </IconButton>
+        children={isPlaying ? <MdPause size={38} /> : <MdPlayArrow size={38} />}
+      />
       <IconButton
         sx={{ color: 'inherit' }}
         aria-label='stop'
@@ -24,9 +23,8 @@ export default function ({ isPlaying, onPlayPauseClick, onScrub, ...props }) {
           onPlayPauseClick(false);
         }}
         style={{ marginTop: '8px' }}
-      >
-        <MdStop />
-      </IconButton>
+        children={<MdStop />}
+      />
     </Box>
   );
 }
