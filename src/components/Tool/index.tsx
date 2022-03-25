@@ -4,6 +4,8 @@ import styles from './styles.module.scss';
 export { default as Carousel } from './Carousel';
 export { default as Author } from './Author';
 export { default as Audio } from './Audio';
+export { default as Task } from './Task';
+export { Tips, Display } from './ToggleDisplay';
 
 export const Remark = ({
   children,
