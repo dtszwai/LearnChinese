@@ -4,12 +4,11 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-@use '@site/src/css/variables' as v;
 
 .lastUpdated {
   margin-top: 0.2rem;
-  font-style: italic;
   font-size: smaller;
+  color: rosybrown;
 }
 
 @media (min-width: 997px) {
@@ -40,4 +39,12 @@
   display: initial;
   line-height: calc(var(--ifm-font-size-base) + 4px);
   text-decoration: none;
+}
+
+.feedbackMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

@@ -51,7 +51,7 @@ module.exports = {
         docs: {
           sidebarCollapsed: false,
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/rccttwd/library/blob/master/",
+          // editUrl: "https://github.com/rccttwd/library/blob/master/",
           routeBasePath: "/",
           showLastUpdateTime: true,
         },

@@ -71,7 +71,6 @@ export default function DocItemFooter(props) {
 
   return (
     <>
-      <WasThisPageHelpful metadata={metadata} />
       <footer
         className={clsx(ThemeClassNames.docs.docFooter, 'docusaurus-mt-lg')}
       >
@@ -83,6 +82,9 @@ export default function DocItemFooter(props) {
             lastUpdatedBy={lastUpdatedBy}
             formattedLastUpdatedAt={formattedLastUpdatedAt}
           />
+        )}
+        {!metadata.frontMatter.norating && (
+          <WasThisPageHelpful metadata={metadata} />
         )}
       </footer>
     </>

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Link from '@docusaurus/Link';
 import IconButton from '@mui/material/IconButton';
 import ButtonGroup from '@mui/material/ButtonGroup';
@@ -21,35 +21,19 @@ declare global {
 }
 
 export default function ({ metadata }) {
-  const [feedback, setFeedback] = useState('');
-  const [hasProvidedFeedback, setHasProvidedFeedback] = useState(false);
+  const [feedback, setFeedback] = useState<string>();
   const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const formRef = useRef(null);
 
-  const formSubmit = (rating: string) => {
-    formRef.current.Page.value = metadata.unversionedId;
-    formRef.current.Rating.value = rating;
-    formRef.current.User.value = document.cookie;
-    formRef.current.submit();
+  const fetchURL =
+    'https://script.google.com/macros/s/AKfycbw-hLu-3lgOLKAcSm44vW027eHjUSN_kM6u8kRot0H_BSlIlPgp4Mu_zPPk0FS5uYaB/exec';
+
+  const fetchPost = (rating: string) => {
+    let formData = new FormData();
+    formData.append('Page', metadata.unversionedId);
+    formData.append('Rating', rating);
+    formData.append('User', document.cookie);
+    fetch(fetchURL, { method: 'POST', body: formData });
   };
-
-  // use HTML form tag because fetch cors is disabled.
-  const RenderedForm = () => (
-    <iframe name='dummy' style={{ display: 'none', height: 0 }}>
-      <div className='submitForm' style={{ display: 'none' }}>
-        <form
-          ref={formRef}
-          target='dummy' // this won't open new tab or redirect the page.
-          method='POST'
-          action='https://script.google.com/macros/s/AKfycbw-hLu-3lgOLKAcSm44vW027eHjUSN_kM6u8kRot0H_BSlIlPgp4Mu_zPPk0FS5uYaB/exec'
-        >
-          <input name='Page' />
-          <input name='Rating' />
-          <input name='User' />
-        </form>
-      </div>
-    </iframe>
-  );
 
   const action = (
     <IconButton
@@ -57,9 +41,8 @@ export default function ({ metadata }) {
       aria-label='close'
       color='inherit'
       onClick={() => setSnackbarOpen(false)}
-    >
-      <MdClose size={24} />
-    </IconButton>
+      children={<MdClose size={24} />}
+    />
   );
 
   const renderedSnackbar = () => (
@@ -73,15 +56,7 @@ export default function ({ metadata }) {
   );
 
   const feedbackMessage = () => (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-      }}
-    >
+    <div className={styles.feedbackMessage}>
       {feedback === 'up'
         ? '感謝您，讓我們知道做得很好！'
         : '很抱歉，讓您失望。'}
@@ -95,61 +70,62 @@ export default function ({ metadata }) {
     </div>
   );
 
-  const provideFeedback = (value: string) => {
-    setHasProvidedFeedback(true);
+  const provideFeedback = (rating: string) => {
+    setFeedback(rating);
     setSnackbarOpen(true);
-    setFeedback(value);
-    formSubmit(value);
+    fetchPost(rating);
     if (window.gtag) {
       window.gtag('send', {
         hitType: 'event',
         eventCategory: 'button',
         eventAction: 'feedback',
         eventLabel: metadata.unversionedId,
-        eventValue: value === 'up' ? 1 : 0,
+        eventValue: rating === 'up' ? 1 : 0,
       });
     }
   };
 
+  const RenderedButton = ({ title, rating, Icon, IconAlt }) => (
+    <Tooltip title={title} placement='top'>
+      <>
+        <IconButton
+          sx={{ color: 'inherit' }}
+          onClick={() => provideFeedback(rating)}
+          disabled={!!feedback}
+          children={
+            feedback === rating ? (
+              <Icon size={24} color='#1a73e8' />
+            ) : (
+              <IconAlt size={24} />
+            )
+          }
+        />
+      </>
+    </Tooltip>
+  );
+
   return (
     <>
       <hr />
-      {RenderedForm()}
       <div className={styles.feedback}>
-        本頁對您有幫助嗎？
+        <span>本頁對您有幫助嗎？</span>
         <ButtonGroup className={styles.button}>
-          <Tooltip title='有幫助' placement='top'>
-            <IconButton
-              sx={{ color: 'inherit' }}
-              onClick={() => provideFeedback('up')}
-              disabled={hasProvidedFeedback ? true : false}
-              children={
-                feedback === 'up' ? (
-                  <MdThumbUp size={24} color='#1a73e8' />
-                ) : (
-                  <MdThumbUpOffAlt size={24} />
-                )
-              }
-            />
-          </Tooltip>
-          <Tooltip title='沒有幫助' placement='top'>
-            <IconButton
-              sx={{ color: 'inherit' }}
-              onClick={() => provideFeedback('down')}
-              disabled={hasProvidedFeedback ? true : false}
-              children={
-                feedback === 'down' ? (
-                  <MdThumbDown size={24} color='#1a73e8' />
-                ) : (
-                  <MdThumbDownOffAlt size={24} />
-                )
-              }
-            />
-          </Tooltip>
+          <RenderedButton
+            title='有幫助'
+            rating='up'
+            Icon={MdThumbUp}
+            IconAlt={MdThumbUpOffAlt}
+          />
+          <RenderedButton
+            title='沒有幫助'
+            rating='down'
+            Icon={MdThumbDown}
+            IconAlt={MdThumbDownOffAlt}
+          />
         </ButtonGroup>
       </div>
+      {!!feedback && feedbackMessage()}
       {renderedSnackbar()}
-      {hasProvidedFeedback && feedbackMessage()}
     </>
   );
 }
