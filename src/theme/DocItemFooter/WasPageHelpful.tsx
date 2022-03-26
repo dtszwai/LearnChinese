@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
+import FormData from 'form-data';
 import IconButton from '@mui/material/IconButton';
 import { MdClose, MdOutlineFeedback } from 'react-icons/md';
 import Useless from '@site/static/img/emoji/useless.svg';
@@ -11,6 +12,7 @@ import TextField from '@mui/material/TextField';
 import { useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import Tooltip from '@mui/material/Tooltip';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 declare global {
   interface Window {
@@ -36,26 +38,23 @@ const RenderedSnackbar = ({ snackbarOpen, setSnackbarOpen }) => (
   />
 );
 
-export default function ({ metadata }) {
+function Feedback(metadata) {
   const [rating, setRating] = useState('');
   const [isRating, setIsRating] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState<boolean>(null);
 
-  const formRef = useRef() as React.MutableRefObject<HTMLFormElement>;
-  const [formData] = useState(new FormData(formRef.current));
-
-  useEffect(() => {
-    formData.append('Page', metadata.unversionedId);
-    formData.append('User', document.cookie);
-  }, [formData]);
+  const formData = new FormData() as any;
+  formData.append('Page', metadata.unversionedId);
+  formData.append('User', document.cookie);
 
   const fetchURL =
     'https://script.google.com/macros/s/AKfycbw-hLu-3lgOLKAcSm44vW027eHjUSN_kM6u8kRot0H_BSlIlPgp4Mu_zPPk0FS5uYaB/exec';
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    formData.append('Rating', rating);
     formData.append('Message_Rating', 'Given');
     formData.append('Message', message);
     fetch(fetchURL, { method: 'POST', body: formData }).then((res) =>
@@ -64,9 +63,9 @@ export default function ({ metadata }) {
   };
 
   const submitValidate = () => {
-    if (message.length < 4) {
+    if (message.length < 2) {
       return (
-        <Tooltip title='最輸入最少四個字。'>
+        <Tooltip title='請輸入最少兩個字。'>
           <span>
             <button
               type='submit'
@@ -162,7 +161,7 @@ export default function ({ metadata }) {
 
   return (
     <>
-      <form className={styles.form} ref={formRef} onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <p>本頁對您有幫助嗎？</p>
         <div className={styles.buttonGroup}>
           <RenderedButton value={0} rating='Useless' Icon={Useless} />
@@ -178,4 +177,8 @@ export default function ({ metadata }) {
       />
     </>
   );
+}
+
+export default function ({ metadata }) {
+  return <BrowserOnly>{() => Feedback(metadata)}</BrowserOnly>;
 }
