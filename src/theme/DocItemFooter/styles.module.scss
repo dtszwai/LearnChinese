@@ -17,34 +17,90 @@
   }
 }
 
-.feedback {
+.form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-}
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: var(--ifm-hr-border-width) solid var(--ifm-hr-border-color);
 
-.button {
-  html[data-theme='dark'] & {
-    color: white;
-    [disabled] {
-      color: rgba(255, 255, 255, 0.3);
+  .buttonGroup {
+    display: flex;
+    justify-content: center;
+
+    .iconButton {
+      width: 40px;
+      height: 40px;
+      padding: 2px 3px;
+      border: 0;
+      background: transparent;
+      transition: all ease 100ms;
+      -webkit-transition: all ease 100ms;
+      transform: translateY(0.5px);
+      -webkit-transform: translateY(0.5px);
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      cursor: pointer;
+
+      svg {
+        height: 24px;
+        width: 24px;
+      }
+
+      &[disabled] {
+        cursor: default;
+      }
+
+      &[data-selected='true'],
+      &:not([disabled]):hover {
+        transform: scale(1.35);
+        -webkit-transform: scale(1.35);
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
+      }
+
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
     }
   }
-}
 
-.link {
-  background-color: rgba(187, 239, 253, 0.3);
-  border-bottom: 1px solid var(--ifm-hr-border-color);
-  color: var(--ifm-font-color-base);
-  display: initial;
-  line-height: calc(var(--ifm-font-size-base) + 4px);
-  text-decoration: none;
-}
+  .reponse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12px;
+    max-width: 400px;
+    width: 100%;
 
-.feedbackMessage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+    .message {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+
+      html[data-theme='dark'] & {
+        label {
+          color: #f7fff7;
+        }
+        fieldset {
+          border-color: rgba(255, 255, 255, 0.23);
+        }
+        textarea {
+          color: #f7fff7;
+        }
+      }
+      button[type='submit'] {
+        border-radius: 9999px;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
 }

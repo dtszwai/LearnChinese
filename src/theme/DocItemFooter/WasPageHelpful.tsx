@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-import Link from '@docusaurus/Link';
+import React, { useState, useRef } from 'react';
 import IconButton from '@mui/material/IconButton';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import {
-  MdThumbUpOffAlt,
-  MdThumbDownOffAlt,
-  MdThumbUp,
-  MdThumbDown,
-  MdClose,
-  MdOutlineFeedback,
-} from 'react-icons/md';
-import Tooltip from '@mui/material/Tooltip';
+import { MdClose, MdOutlineFeedback } from 'react-icons/md';
+import Useless from '@site/static/img/emoji/useless.svg';
+import No from '@site/static/img/emoji/no.svg';
+import Yes from '@site/static/img/emoji/yes.svg';
+import Amazing from '@site/static/img/emoji/amazing.svg';
 import Snackbar from '@mui/material/Snackbar';
 import styles from './styles.module.scss';
+import TextField from '@mui/material/TextField';
+import { useEffect } from 'react';
+import Link from '@docusaurus/Link';
+import Tooltip from '@mui/material/Tooltip';
 
 declare global {
   interface Window {
@@ -20,112 +18,164 @@ declare global {
   }
 }
 
+const RenderedSnackbar = ({ snackbarOpen, setSnackbarOpen }) => (
+  <Snackbar
+    open={snackbarOpen}
+    autoHideDuration={6000}
+    onClose={() => setSnackbarOpen(false)}
+    message={`您已評價了本頁。`}
+    action={
+      <IconButton
+        size='small'
+        aria-label='close'
+        color='inherit'
+        onClick={() => setSnackbarOpen(false)}
+        children={<MdClose size={24} />}
+      />
+    }
+  />
+);
+
 export default function ({ metadata }) {
-  const [feedback, setFeedback] = useState<string>();
+  const [rating, setRating] = useState('');
+  const [isRating, setIsRating] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [message, setMessage] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(null);
+
+  const formRef = useRef() as React.MutableRefObject<HTMLFormElement>;
+  const [formData] = useState(new FormData(formRef.current));
+
+  useEffect(() => {
+    formData.append('Page', metadata.unversionedId);
+    formData.append('User', document.cookie);
+  }, [formData]);
 
   const fetchURL =
     'https://script.google.com/macros/s/AKfycbw-hLu-3lgOLKAcSm44vW027eHjUSN_kM6u8kRot0H_BSlIlPgp4Mu_zPPk0FS5uYaB/exec';
 
-  const fetchPost = (rating: string) => {
-    let formData = new FormData();
-    formData.append('Page', metadata.unversionedId);
-    formData.append('Rating', rating);
-    formData.append('User', document.cookie);
-    fetch(fetchURL, { method: 'POST', body: formData });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    formData.append('Message_Rating', 'Given');
+    formData.append('Message', message);
+    fetch(fetchURL, { method: 'POST', body: formData }).then((res) =>
+      setIsSubmitted(res.ok),
+    );
   };
 
-  const action = (
-    <IconButton
-      size='small'
-      aria-label='close'
-      color='inherit'
-      onClick={() => setSnackbarOpen(false)}
-      children={<MdClose size={24} />}
-    />
-  );
+  const submitValidate = () => {
+    if (message.length < 4) {
+      return (
+        <Tooltip title='最輸入最少四個字。'>
+          <span>
+            <button
+              type='submit'
+              className={`button button--primary`}
+              children='提交'
+              disabled
+            />
+          </span>
+        </Tooltip>
+      );
+    } else {
+      return (
+        <button
+          type='submit'
+          className={`button button--primary`}
+          children='提交'
+        />
+      );
+    }
+  };
 
-  const renderedSnackbar = () => (
-    <Snackbar
-      open={snackbarOpen}
-      autoHideDuration={6000}
-      onClose={() => setSnackbarOpen(false)}
-      message={`已將頁面評價為${feedback === 'down' ? '沒' : ''}有幫助。`}
-      action={action}
-    />
-  );
+  const messageWrapper = () => {
+    if (isSubmitted === null) {
+      return (
+        <div className={styles.message}>
+          <TextField
+            label='意見回饋'
+            sx={{ width: '100%', marginTop: '1rem' }}
+            minRows={4}
+            multiline
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          {submitValidate()}
+        </div>
+      );
+    } else if (isSubmitted) {
+      return <p>我們已收到您的意見，謝謝！</p>;
+    } else {
+      return (
+        <Link
+          className={styles.link}
+          to={`https://docs.google.com/forms/d/e/1FAIpQLSewteJTEVkqRZux55d_-Z0UI2EncxfGvZtT4I1A5oKObqcy5Q/viewform?usp=pp_url&entry.1511255577=${metadata.unversionedId}`}
+        >
+          <MdOutlineFeedback size={20} style={{ verticalAlign: 'sub' }} />
+          &nbsp;出錯了！但您仍可到這裏提供意見回饋。
+        </Link>
+      );
+    }
+  };
 
-  const feedbackMessage = () => (
-    <div className={styles.feedbackMessage}>
-      {feedback === 'up'
-        ? '感謝您，讓我們知道做得很好！'
-        : '很抱歉，讓您失望。'}
-      <Link
-        className={styles.link}
-        to={`https://docs.google.com/forms/d/e/1FAIpQLSewteJTEVkqRZux55d_-Z0UI2EncxfGvZtT4I1A5oKObqcy5Q/viewform?usp=pp_url&entry.1511255577=${metadata.unversionedId}`}
-      >
-        <MdOutlineFeedback size={20} style={{ verticalAlign: 'sub' }} />
-        若您有空，歡迎您提供意見回饋。
-      </Link>
+  const Response = () => (
+    <div className={styles.reponse}>
+      <p>
+        {rating === 'Yes' || rating === 'Amazing'
+          ? '感謝您，讓我們知道做得很好！'
+          : '很抱歉，讓您失望。'}
+      </p>
+      {messageWrapper()}
     </div>
   );
 
-  const provideFeedback = (rating: string) => {
-    setFeedback(rating);
-    setSnackbarOpen(true);
-    fetchPost(rating);
+  const Rating = (rating: string, value: number) => {
+    setRating(rating);
+    setIsRating(true);
     if (window.gtag) {
       window.gtag('send', {
         hitType: 'event',
         eventCategory: 'button',
         eventAction: 'feedback',
         eventLabel: metadata.unversionedId,
-        eventValue: rating === 'up' ? 1 : 0,
+        eventValue: value,
       });
     }
   };
 
-  const RenderedButton = ({ title, rating, Icon, IconAlt }) => (
-    <Tooltip title={title} placement='top'>
-      <>
-        <IconButton
-          sx={{ color: 'inherit' }}
-          onClick={() => provideFeedback(rating)}
-          disabled={!!feedback}
-          children={
-            feedback === rating ? (
-              <Icon size={24} color='#1a73e8' />
-            ) : (
-              <IconAlt size={24} />
-            )
-          }
-        />
-      </>
-    </Tooltip>
+  useEffect(() => {
+    if (isRating) {
+      setSnackbarOpen(true);
+      formData.append('Rating', rating);
+      fetch(fetchURL, { method: 'POST', body: formData });
+    }
+  }, [isRating]);
+
+  const RenderedButton = ({ rating: rate, Icon, value }) => (
+    <button
+      className={styles.iconButton}
+      data-selected={rating === rate}
+      onClick={() => Rating(rate, value)}
+      disabled={isRating}
+      children={<Icon />}
+    />
   );
 
   return (
     <>
-      <hr />
-      <div className={styles.feedback}>
-        <span>本頁對您有幫助嗎？</span>
-        <ButtonGroup className={styles.button}>
-          <RenderedButton
-            title='有幫助'
-            rating='up'
-            Icon={MdThumbUp}
-            IconAlt={MdThumbUpOffAlt}
-          />
-          <RenderedButton
-            title='沒有幫助'
-            rating='down'
-            Icon={MdThumbDown}
-            IconAlt={MdThumbDownOffAlt}
-          />
-        </ButtonGroup>
-      </div>
-      {!!feedback && feedbackMessage()}
-      {renderedSnackbar()}
+      <form className={styles.form} ref={formRef} onSubmit={handleSubmit}>
+        <p>本頁對您有幫助嗎？</p>
+        <div className={styles.buttonGroup}>
+          <RenderedButton value={0} rating='Useless' Icon={Useless} />
+          <RenderedButton value={1} rating='No' Icon={No} />
+          <RenderedButton value={2} rating='Yes' Icon={Yes} />
+          <RenderedButton value={3} rating='Amazing' Icon={Amazing} />
+        </div>
+        {isRating && Response()}
+      </form>
+      <RenderedSnackbar
+        snackbarOpen={snackbarOpen}
+        setSnackbarOpen={setSnackbarOpen}
+      />
     </>
   );
 }

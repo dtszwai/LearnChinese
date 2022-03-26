@@ -8,16 +8,40 @@ import S1Text from '@site/docs/S1/index.mdx';
 import S2Text from '@site/docs/S2/index.mdx';
 import S3Text from '@site/docs/S3/index.mdx';
 import styles from './index.module.scss';
+import TypeIt from 'typeit-react';
 
-export default function Home() {
+const Type = () => {
   return (
-    <Layout title={useDocusaurusContext().siteConfig.tagline}>
-      <HomepageHeader {...useDocusaurusContext()} />
-      {/* <StartSection /> */}
-      <TextsSection />
-    </Layout>
+    <>
+      <span>鳥宿池邊樹，</span>
+      <TypeIt
+        getBeforeInit={(instance) =>
+          instance
+            .pause(500)
+            .type('僧推月下門。', { speed: 300 })
+            .pause(900)
+            .move(-4, { speed: 100 })
+            .pause(500)
+            .delete(1)
+            .pause(700)
+            .type('<strong style="color:#8783D1">敲</strong>', { delay: 300 })
+            .move(4, { delay: 700 })
+            .break({ delay: 500 })
+            .type('水田飛白鷺，夏木囀黃鸝。', { speed: 200 })
+            .pause(1200)
+            .move(-12, { speed: 150 })
+            .type('<strong style="color:#E27396">漠漠</strong>', { speed: 500 })
+            .pause(1200)
+            .move(6, { speed: 200 })
+            .pause(500)
+            .type('<strong style="color:#E27396">陰陰</strong>', { speed: 500 })
+            .move(6, { speed: 200 })
+        }
+        options={{ speed: 100, waitUntilVisible: true }}
+      />
+    </>
   );
-}
+};
 
 function HomepageHeader({ siteConfig }) {
   return (
@@ -27,11 +51,13 @@ function HomepageHeader({ siteConfig }) {
           <div className={`col col--6`}>
             <h1 className={styles.title}>{siteConfig.tagline}</h1>
             <p className={styles.subtitle}>
+              <Type />
+              {/* <br />
               <span>古人學問無遺力，</span>
               <span>少壯工夫老始成。</span>
               <br />
               <span>紙上得來終覺淺，</span>
-              <span>絕知此事要躬行。</span>
+              <span>絕知此事要躬行。</span> */}
             </p>
             {/* <a
               className={clsx('button button--primary button--lg')}
@@ -103,5 +129,15 @@ function TextsSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+export default function Home() {
+  return (
+    <Layout title={useDocusaurusContext().siteConfig.tagline}>
+      <HomepageHeader {...useDocusaurusContext()} />
+      {/* <StartSection /> */}
+      <TextsSection />
+    </Layout>
   );
 }
