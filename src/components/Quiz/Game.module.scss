@@ -1,12 +1,13 @@
-.Game {
-  background-color: var(--ifm-card-background-color);
-  border-radius: var(--ifm-card-border-radius);
-  min-height: 12.5rem;
-  height: min-content;
-  padding: 1.25rem;
-  box-shadow: var(--ifm-global-shadow-lw);
+.Wrapper {
   display: flex;
   justify-content: space-evenly;
+  height: min-content;
+  min-height: 12.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--ifm-table-border-color);
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  background-color: var(--ifm-card-background-color);
 }
 
 .QuestionSection {

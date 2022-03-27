@@ -5,7 +5,7 @@ import Game from './Game';
 import QuestionBank from './QuestionBank';
 import Link from '@docusaurus/Link';
 
-const GoogleForms = (
+const GoogleFormsIcon = (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     viewBox='0 0 64 88'
@@ -24,14 +24,20 @@ const GoogleForms = (
 );
 
 export default function Quiz({ data, href }: { data: JSON; href?: string }) {
-  const [selectedAnswer, setSelectedAnswer] = useState({});
+  const [selectedAnswer, setSelectedAnswer] = useState<{
+    [key: number]: number;
+  }>({});
 
   return (
     <Tabs>
       <TabItem value='開始評估' default>
         {href && (
-          <Link to={href} className='button button--primary not-prose'>
-            複製至 Google Forms {GoogleForms}
+          <Link
+            to={href}
+            className='button button--primary not-prose'
+            style={{ marginBottom: '1rem' }}
+          >
+            複製至 Google Forms {GoogleFormsIcon}
           </Link>
         )}
         <Game {...{ data, setSelectedAnswer }} />

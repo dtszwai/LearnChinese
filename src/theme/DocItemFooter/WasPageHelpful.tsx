@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Link from '@docusaurus/Link';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
 import FormData from 'form-data';
-import IconButton from '@mui/material/IconButton';
+import { IconButton, Snackbar, TextField, Tooltip } from '@mui/material';
+
+import styles from './styles.module.scss';
+// Icons
 import { MdClose, MdOutlineFeedback } from 'react-icons/md';
 import Useless from '@site/static/img/emoji/useless.svg';
 import No from '@site/static/img/emoji/no.svg';
 import Yes from '@site/static/img/emoji/yes.svg';
 import Amazing from '@site/static/img/emoji/amazing.svg';
-import Snackbar from '@mui/material/Snackbar';
-import styles from './styles.module.scss';
-import TextField from '@mui/material/TextField';
-import { useEffect } from 'react';
-import Link from '@docusaurus/Link';
-import Tooltip from '@mui/material/Tooltip';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 
 declare global {
   interface Window {

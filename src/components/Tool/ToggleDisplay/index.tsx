@@ -9,12 +9,15 @@ type Tips = {
 };
 
 type Display = {
-  children?: any;
-  group?: string;
-  label?: string;
-  all?: boolean;
   left?: boolean;
-};
+} & Target &
+  Text;
+
+type Target = { all: true; group?: never } | { group: string; all?: never };
+
+type Text =
+  | { children: React.ReactNode; label?: never }
+  | { label: string; children?: never };
 
 export const Tips = (props: Tips) => {
   return (
