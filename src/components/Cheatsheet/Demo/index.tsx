@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from './Demo.module.scss';
 
-export default function Demo({ data }) {
+type DemoProps = {
+  regex: string;
+  example: string;
+  purpose: string;
+  description: string;
+};
+
+export default function Demo({ data }: { data: DemoProps }) {
   let regex = data.regex.match(/\\\d+/g)
     ? new RegExp(`(${data.regex.replace(`\\1`, `\\2`)})`, 'gmi')
     : new RegExp(`(${data.regex})`, 'gmi');

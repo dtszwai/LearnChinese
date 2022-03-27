@@ -8,8 +8,3 @@ declare module '@docusaurus/*';
 declare module '@site/*';
 
 declare module '@theme/*';
-
-declare module "*.json" {
-  const value: any;
-  export default value;
-}
