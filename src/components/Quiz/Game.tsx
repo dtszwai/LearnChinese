@@ -4,12 +4,31 @@ import Question from './Question';
 import Selection from './Selection';
 import Result from './Result';
 
-export default function Game({ data, setSelectedAnswer }) {
+type GameProps = {
+  data: {
+    questions: {
+      questionText: string;
+      answerOptions: {
+        answerText: string;
+        isCorrect?: boolean;
+      }[];
+    }[];
+  };
+  setSelectedAnswer: any;
+  setResult?: (value: React.SetStateAction<boolean[]>) => void;
+  result?: boolean[];
+};
+
+export default function Game({
+  data,
+  setSelectedAnswer,
+  setResult = () => {},
+  result = null,
+}: GameProps) {
   const { questions } = data;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
-  const [result, setResult] = useState<boolean[]>([]);
 
   const handleAnswerOptionClick = (isCorrect = false, selected: number) => {
     setScore((prep) => prep + (isCorrect ? 1 : 0));

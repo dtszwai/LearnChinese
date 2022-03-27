@@ -9,7 +9,7 @@ $CorrectAnswer-comment-color-dark: #6272a4;
 $CorrectAnswer-option-color: #36acaa;
 $CorrectAnswer-option-color-dark: #8d93f9;
 
-.Block {
+.QuestionWrapper {
   margin-bottom: var(--ifm-leading);
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-lw);

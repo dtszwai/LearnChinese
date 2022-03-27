@@ -51,7 +51,12 @@ export default function ({
     <div className={clsx('avatar', styles.author)}>
       <Link
         to={tags && `/tags/${name}`}
-        style={{ textDecoration: 'none', display: 'inherit', color: 'inherit' }}
+        style={{
+          textDecoration: 'none',
+          display: 'inherit',
+          color: 'inherit',
+          border: 'none',
+        }}
       >
         {renderedAvatar}
         <div className='avatar__intro' style={{ flex: 'none' }}>

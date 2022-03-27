@@ -1,53 +1,86 @@
 import React from 'react';
 import styles from './QuestionBank.module.scss';
+import { WrongAnswer } from './Result';
 
-export default function QuestionBank({ data, selectedAnswer }) {
-  const { questions } = data;
+type MessageProps = (
+  isCorrect: boolean,
+  selectedOption: number,
+  currentOption: number,
+) => JSX.Element;
 
-  const renderedMessage = (option, questionKey, answerKey) => {
-    let message = '';
+type questionsProps = {
+  answerOptions: [{ answerText: string; isCorrect?: boolean }];
+  questionText: string;
+}[];
 
-    if (option.isCorrect) {
-      if (selectedAnswer[questionKey] === undefined) {
-        message = '// 正確答案';
-      } else if (selectedAnswer[questionKey] !== answerKey) {
-        message = '⭕️ 正確答案';
-      } else if (selectedAnswer[questionKey] === answerKey) {
-        message = '✔️ 回答正確';
-      }
-    } else if (selectedAnswer[questionKey] === answerKey) {
-      message = '❌ 你的選擇';
+type Props = {
+  questions: questionsProps;
+  selectedAnswer: { [key: number]: number };
+  result: boolean[];
+};
+
+const renderedMessage: MessageProps = (
+  isCorrect,
+  selectedOption,
+  currentOption,
+) => {
+  let message = '';
+
+  if (!isCorrect && selectedOption === currentOption) {
+    return <span className={styles.Comment}> ❌ 你的選擇</span>;
+  }
+
+  if (isCorrect) {
+    if (selectedOption === undefined) {
+      message = ' // 正確答案';
+    } else if (selectedOption !== currentOption) {
+      message = ' ⭕️ 正確答案';
+    } else if (selectedOption === currentOption) {
+      message = ' ✔️ 回答正確';
     }
+  }
 
-    return <span className={styles.Comment}>{message}</span>;
-  };
+  return <span className={styles.Comment}>{message}</span>;
+};
+
+export default ({ questions, selectedAnswer, result }: Props) => {
+  const alertBorder = { border: '1px solid #e27396' };
 
   return (
     <>
-      {questions.map((question, questionKey) => (
-        <div className={styles.Block} key={questionKey}>
+      {WrongAnswer(result)}
+      {questions.map((question, number) => (
+        <section
+          className={styles.QuestionWrapper}
+          key={number}
+          style={result[number] === false ? alertBorder : null}
+        >
           {/* Question 題目 */}
           <div className={styles.QuestionSection}>
-            {`${questionKey + 1}. ${question.questionText}`}
+            {`${number + 1}. ${question.questionText}`}
           </div>
 
           {/* Answer 答案 */}
           <div className={styles.AnswerSection}>
-            {question.answerOptions.map((option, answerKey) => (
+            {question.answerOptions.map((option, index) => (
               <p
-                key={answerKey}
+                key={index}
                 className={option.isCorrect ? styles.CorrectAnswer : null}
               >
                 <span className={option.isCorrect ? null : styles.Options}>
-                  {String.fromCharCode(answerKey + 65)}.&nbsp;
+                  {String.fromCharCode(index + 65)}.&nbsp;
                 </span>
-                {option.answerText}&nbsp;
-                {renderedMessage(option, questionKey, answerKey)}
+                {option.answerText}
+                {renderedMessage(
+                  option.isCorrect,
+                  selectedAnswer[number],
+                  index,
+                )}
               </p>
             ))}
           </div>
-        </div>
+        </section>
       ))}
     </>
   );
-}
+};

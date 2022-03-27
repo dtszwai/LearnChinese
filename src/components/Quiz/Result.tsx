@@ -8,7 +8,7 @@ type ResultProps = {
   totalQuestions?: number;
 };
 
-const WrongAnswer = (result: boolean[]) => {
+export const WrongAnswer = (result: boolean[]) => {
   let arr = result
     .map((e, i) => (!e ? i + 1 : ''))
     .filter(String)

@@ -23,10 +23,11 @@ const GoogleFormsIcon = (
   </svg>
 );
 
-export default function Quiz({ data, href }: { data: JSON; href?: string }) {
+export default function Quiz({ data, href }) {
   const [selectedAnswer, setSelectedAnswer] = useState<{
     [key: number]: number;
   }>({});
+  const [result, setResult] = useState<boolean[]>([]);
 
   return (
     <Tabs>
@@ -40,10 +41,13 @@ export default function Quiz({ data, href }: { data: JSON; href?: string }) {
             複製至 Google Forms {GoogleFormsIcon}
           </Link>
         )}
-        <Game {...{ data, setSelectedAnswer }} />
+        <Game {...{ data, setSelectedAnswer, result, setResult }} />
       </TabItem>
       <TabItem value='題目庫'>
-        <QuestionBank {...{ data, selectedAnswer }} />
+        <QuestionBank
+          {...{ selectedAnswer, result }}
+          questions={data.questions}
+        />
       </TabItem>
     </Tabs>
   );
