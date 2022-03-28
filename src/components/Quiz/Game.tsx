@@ -66,6 +66,7 @@ export default function Game({
     setShowScore(false);
     setRecord([]);
     setResult([]);
+    setSelectedAnswer({});
   };
 
   return (
@@ -76,6 +77,7 @@ export default function Game({
           result={result}
           reset={reset}
           totalQuestions={questions.length}
+          checkAnswer
         />
       ) : (
         <>

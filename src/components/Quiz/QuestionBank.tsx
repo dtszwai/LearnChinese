@@ -54,6 +54,7 @@ export default ({ questions, selectedAnswer, result }: Props) => {
           className={styles.QuestionWrapper}
           key={number}
           style={
+            selectedAnswer[number] === undefined ||
             questions[number].answerOptions[selectedAnswer[number]]?.isCorrect //check if the selected option is correct
               ? null
               : alertBorder

@@ -6,6 +6,7 @@ type ResultProps = {
   result?: boolean[];
   reset?: () => void;
   totalQuestions?: number;
+  checkAnswer?: boolean;
 };
 
 export const WrongAnswer = (result: boolean[]) => {
@@ -21,6 +22,7 @@ export default function ({
   score,
   reset,
   totalQuestions,
+  checkAnswer = false,
 }: ResultProps) {
   return (
     <div className={styles.ScoreSection}>
@@ -37,9 +39,18 @@ export default function ({
       </p>
       {result && WrongAnswer(result)}
       {reset && (
-        <button className={styles.btn} onClick={reset}>
-          再做一次
-        </button>
+        <button className={styles.btn} onClick={reset} children='再做一次' />
+      )}
+      {checkAnswer && (
+        <button
+          className={styles.btn}
+          onClick={() => {
+            document
+              .querySelector<HTMLElement>('[data-quiz="Answers"]')
+              .click();
+          }}
+          children='查看答案'
+        />
       )}
     </div>
   );

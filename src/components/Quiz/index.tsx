@@ -13,11 +13,15 @@ export default function Quiz({ data, href }) {
 
   return (
     <Tabs>
-      <TabItem value='開始評估' default>
+      <TabItem
+        value='開始評估'
+        default
+        attributes={{ 'data-quiz': 'Questions' }}
+      >
         {href && <Copy href={href} />}
         <Game {...{ data, setSelectedAnswer, result, setResult }} />
       </TabItem>
-      <TabItem value='題目庫'>
+      <TabItem value='題目庫' attributes={{ 'data-quiz': 'Answers' }}>
         <QuestionBank
           {...{ selectedAnswer, result }}
           questions={data.questions}
