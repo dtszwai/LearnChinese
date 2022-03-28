@@ -23,7 +23,7 @@ import {
 import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import MDXContent from '@theme/MDXContent';
 
-import Author from './Author';
+import Author from '@site/src/components/Tool/Author';
 
 function DocItemMetadata(props) {
   const { content: DocContent } = props;
@@ -59,8 +59,7 @@ function DocItemContent(props) {
   // - Customization: add Author name into the header
   const { author, dynasty, source } = frontMatter;
   const { hide_author: hideAuthor } = frontMatter;
-  const shouldAddAuthor =
-    !hideAuthor && typeof author !== 'undefined';
+  const shouldAddAuthor = !hideAuthor && typeof author !== 'undefined';
   // - End
 
   const shouldAddTitle =
@@ -71,7 +70,7 @@ function DocItemContent(props) {
   const renderTocDesktop =
     canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
   return (
-    <div className="row">
+    <div className='row'>
       <div className={clsx('col', !hideTableOfContents && styles.docItemCol)}>
         <DocVersionBanner />
         <div className={styles.docItemContainer}>
@@ -100,10 +99,12 @@ function DocItemContent(props) {
                */}
               {shouldAddTitle && (
                 <header>
-                  <Heading as="h1">{title}</Heading>
+                  <Heading as='h1'>{title}</Heading>
                 </header>
               )}
-              {shouldAddAuthor && <Author name={author} dynasty={dynasty} source={source} />}
+              {shouldAddAuthor && (
+                <Author name={author} dynasty={dynasty} source={source} />
+              )}
               <MDXContent>
                 <DocContent />
               </MDXContent>
@@ -116,7 +117,7 @@ function DocItemContent(props) {
         </div>
       </div>
       {renderTocDesktop && (
-        <div className="col col--3">
+        <div className='col col--3'>
           <TOC
             toc={DocContent.toc}
             minHeadingLevel={tocMinHeadingLevel}

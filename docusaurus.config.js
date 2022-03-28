@@ -57,14 +57,13 @@ module.exports = {
         },
         blog: false,
         theme: { customCss: [require.resolve("./src/css/custom.scss"), require.resolve("./src/css/text.scss")] },
-        gtag: { trackingID: "G-3CDVV4STYR", anonymizeIP: true },
+        googleAnalytics: { trackingID: 'G-3CDVV4STYR', anonymizeIP: true, },
+        gtag: { trackingID: "GTM-T6FFDJT", anonymizeIP: true },
       },
     ],
   ],
 
   themeConfig: {
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    // @ts-ignore
     metadata: [{ name: 'keywords', content: '書目引得, 中文科, 中國語文, 閱讀篇章, 初中, 高中, 中學, 文憑試, DSE, Chinese, 語文基礎, 語基, 指定文言, 文言文, 白話文' }],
     hideableSidebar: true,
     navbar: {

@@ -1,27 +1,6 @@
 @use 'variables' as v;
 
-@font-face {
-  font-family: WenKai;
-  src: url(/src/font/WenKai.ttf);
-  font-display: swap;
-}
-@font-face {
-  font-family: KaiTi;
-  src: url(/src/font/KaiTi.woff2);
-  font-display: swap;
-}
 
-@font-face {
-  font-family: Zihun67;
-  src: url(/src/font/Zihun67.ttf);
-  font-display: swap;
-}
-
-@font-face {
-  font-family: SmallCaps;
-  src: url(/src/font/Fontin-SmallCaps.otf);
-  font-display: swap;
-}
 
 :root {
   --ifm-color-primary: #3578e5;
@@ -34,8 +13,10 @@
   --ifm-code-font-size: 95%;
 }
 
-li.breadcrumbs__item:not(:last-child) a.breadcrumbs__link {
-  background: none;
+.theme-last-updated {
+  margin-top: 0.2rem;
+  font-style: normal;
+  color: rosybrown;
 }
 
 h1:first-child {
