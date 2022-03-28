@@ -1,41 +1,42 @@
 import React from 'react';
 import styles from './Demo.module.scss';
 
-type DemoProps = {
-  regex: string;
-  example: string;
-  purpose: string;
-  description: string;
-};
+interface Props {
+  data: {
+    regex: string;
+    description: string;
+    purpose: string;
+    example: string;
+  };
+}
 
-export default function Demo({ data }: { data: DemoProps }) {
-  let regex = data.regex.match(/\\\d+/g)
-    ? new RegExp(`(${data.regex.replace(`\\1`, `\\2`)})`, 'gmi')
-    : new RegExp(`(${data.regex})`, 'gmi');
-  const replacedContent = data.example
-    .replace(regex, `<span class=${styles.DemoResultTag}>$1</span>`)
-    .replace(/\\n/gm, '<br />');
+export default ({ data }: Props) => {
+  let regex = new RegExp(`(${data.regex.replace(`\\1`, `\\2`)})`, 'gmi');
+
+  let renderedDescription = `<p>${data.description
+    .replace(/\\n/gm, '<br />')
+    .replace(/`(.*?)`/g, '<code>$1</code>')}</p>`;
+
+  let renderedPurpose = `<p>${data.purpose}</p>`;
+
+  let renderedExample = `<p>${data.example
+    .replace(regex, `<span class=${styles.Highlight}>$1</span>`)
+    .replace(/\\n/gm, '<br />')}</p>`;
 
   return (
     <div className={styles.Demo}>
       <div
         data-title='說明'
-        dangerouslySetInnerHTML={{
-          __html: data.description
-            .replace(/\\n/gm, '<br />')
-            .replace(/`(.*?)`/g, '<code>$1</code>'),
-        }}
+        dangerouslySetInnerHTML={{ __html: renderedDescription }}
       />
-
       <div
         data-title='作用'
-        dangerouslySetInnerHTML={{ __html: data.purpose }}
+        dangerouslySetInnerHTML={{ __html: renderedPurpose }}
       />
-
       <div
         data-title='例子'
-        dangerouslySetInnerHTML={{ __html: replacedContent }}
+        dangerouslySetInnerHTML={{ __html: renderedExample }}
       />
     </div>
   );
-}
+};

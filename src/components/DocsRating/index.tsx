@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Link from '@docusaurus/Link';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import FormData from 'form-data';
+import Fetch from '../Fetch';
 import { TextField, Tooltip } from '@mui/material';
 import { MdOutlineFeedback } from 'react-icons/md';
 import { Useless, No, Yes, Amazing } from './icons';
@@ -14,33 +15,32 @@ declare global {
 }
 
 export default ({ content }) => {
-  if (!ExecutionEnvironment.canUseDOM) return null;
-
   const { metadata } = content;
+  if (!ExecutionEnvironment.canUseDOM || metadata.frontMatter.hide_rating)
+    return null;
+
   const [value, setValue] = useState(-1);
   const [message, setMessage] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(null);
+  const [isSent, setIsSent] = useState<boolean>(false);
+  const [isReceived, setIsReceived] = useState<boolean>(null);
 
   const [formData] = useState<any>(new FormData());
   formData.append('Page', metadata.unversionedId);
   formData.append('User', document.cookie);
 
-  const fetchURL =
-    'https://script.google.com/macros/s/AKfycbw-hLu-3lgOLKAcSm44vW027eHjUSN_kM6u8kRot0H_BSlIlPgp4Mu_zPPk0FS5uYaB/exec';
-
-  const formSubmit = (e) => {
+  const formSubmit = async (e) => {
     e.preventDefault();
-    formData.append('Voted', 'true');
+    setIsSent(true);
+    formData.set('Event', 'Feedback');
     formData.append('Message', message);
-    fetch(fetchURL, { method: 'POST', body: formData }).then((res) =>
-      setIsSubmitted(res.ok),
-    );
+    setIsReceived(await Fetch(formData));
   };
 
   const Vote = (value: number) => {
     setValue(value);
-    formData.append('Rating', value);
-    fetch(fetchURL, { method: 'POST', body: formData });
+    formData.append('Event', 'Rating');
+    formData.append('Details', value);
+    Fetch(formData);
     if (window.gtag) {
       window.gtag('send', {
         hitType: 'event',
@@ -76,7 +76,7 @@ export default ({ content }) => {
           <p>
             {value > 1 ? '感謝您，讓我們知道做得很好！' : '很抱歉，讓您失望。'}
           </p>
-          {isSubmitted === null ? (
+          {!isSent || isReceived === null ? (
             <div className={styles.message}>
               <TextField
                 label='意見回饋'
@@ -91,12 +91,12 @@ export default ({ content }) => {
                     type='submit'
                     className={`button button--primary`}
                     children='提交'
-                    disabled={message.length < 2}
+                    disabled={message.length < 2 || isSent}
                   />
                 </span>
               </Tooltip>
             </div>
-          ) : isSubmitted ? (
+          ) : isReceived ? (
             <p>我們已收到您的意見，謝謝！</p>
           ) : (
             <Link

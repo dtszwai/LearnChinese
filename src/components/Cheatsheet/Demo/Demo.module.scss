@@ -1,6 +1,9 @@
 .Demo {
-  flex-direction: column;
   font-size: 12px;
+
+  p {
+    margin: 0;
+  }
 
   div[data-title] {
     display: inline-block;
@@ -33,21 +36,20 @@
 
   & div[data-title='說明'] {
     color: #6457a6;
-
     html[data-theme='dark'] & {
       color: #9dacff;
     }
   }
-}
 
-.DemoResultTag {
-  display: inline-flex;
-  align-items: center;
-  height: 20px;
-  margin: 1px 3px;
-  padding: 2px 5px;
-  color: #000;
-  background: #c4e0f9;
-  border-radius: 5px;
-  box-shadow: 3px 3px 2px #21212110;
+  .Highlight {
+    display: inline-flex;
+    align-items: center;
+    height: 20px;
+    margin: 1px 3px;
+    padding: 2px 5px;
+    color: #000;
+    background: #c4e0f9;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px #21212110;
+  }
 }

@@ -53,7 +53,11 @@ export default ({ questions, selectedAnswer, result }: Props) => {
         <section
           className={styles.QuestionWrapper}
           key={number}
-          style={result[number] === false ? alertBorder : null}
+          style={
+            questions[number].answerOptions[selectedAnswer[number]]?.isCorrect //check if the selected option is correct
+              ? null
+              : alertBorder
+          }
         >
           {/* Question 題目 */}
           <div className={styles.QuestionSection}>
