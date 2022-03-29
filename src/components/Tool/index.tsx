@@ -3,7 +3,7 @@ import Tooltip from '@mui/material/Tooltip';
 import styles from './styles.module.scss';
 export { default as Carousel } from './Carousel';
 export { default as Author } from './Author';
-export { default as Audio } from './Audio';
+export { default as AudioCard } from './AudioCard';
 export { default as Task } from './Task';
 export { Tips, Display } from './ToggleDisplay';
 

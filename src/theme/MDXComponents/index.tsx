@@ -21,7 +21,7 @@ export default {
     Tool.Video(children ?? id, start, 'Youtube'),
   Bilibili: ({ children, id }) => Tool.Video(children ?? id, 0, 'Bilibili'),
   Carousel: Tool.Carousel,
-  Audio: Tool.Audio,
+  AudioCard: Tool.AudioCard,
   Task: Tool.Task,
   Rate: ({ label, value }: { label: String; value: number }) => (
     <Typography component='legend'>
