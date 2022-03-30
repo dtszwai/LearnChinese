@@ -1,8 +1,8 @@
 import React from 'react';
 import data from './cheatsheet.json';
 import Layout from '@theme/Layout';
-import Collapse from '../components/Cheatsheet/Collapse';
-import Demo from '../components/Cheatsheet/Demo';
+import Collapse from '@site/src/components/Cheatsheet/Collapse';
+import Demo from '@site/src/components/Cheatsheet/Demo';
 import styles from './cheatsheet.module.scss';
 
 export default function cheatsheet() {

@@ -11,6 +11,10 @@
   --ifm-code-font-size: 95%;
 }
 
+html[data-theme='dark'] {
+  --ifm-background-color: #282c33;
+}
+
 html:not(.docs-wrapper) {
   scroll-behavior: smooth;
 }
@@ -48,6 +52,9 @@ div.text-list {
     font-weight: bold;
     line-height: 24px;
     margin-bottom: 1rem;
+    a {
+      border-bottom: none !important;
+    }
   }
 
   a {
@@ -102,6 +109,11 @@ div.text-list {
 .markdown {
   p {
     line-height: 1.7;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
   }
 
   a:not([target='_blank']):not(.hash-link):not([class^='author']) {
