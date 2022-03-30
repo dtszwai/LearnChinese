@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Link from '@docusaurus/Link';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import FormData from 'form-data';
 import Fetch from '../Fetch';
 import { TextField, Tooltip } from '@mui/material';
 import { MdOutlineFeedback } from 'react-icons/md';
@@ -24,7 +23,7 @@ export default ({ content }) => {
   const [isSent, setIsSent] = useState<boolean>(false);
   const [isReceived, setIsReceived] = useState<boolean>(null);
 
-  const [formData] = useState<any>(new FormData());
+  const [formData] = useState(new FormData());
   formData.append('Page', metadata.unversionedId);
   formData.append('User', document.cookie);
 
@@ -39,7 +38,7 @@ export default ({ content }) => {
   const Vote = (value: number) => {
     setValue(value);
     formData.append('Event', 'Rating');
-    formData.append('Details', value);
+    formData.append('Details', String(value));
     Fetch(formData);
     if (window.gtag) {
       window.gtag('send', {

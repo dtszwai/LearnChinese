@@ -3,8 +3,8 @@ import styles from './Game.module.scss';
 import Question from './Question';
 import Selection from './Selection';
 import Result from './Result';
-import FormData from 'form-data';
 import Fetch from '../Fetch';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 type GameProps = {
   data: {
@@ -27,6 +27,8 @@ export default function Game({
   result = null,
   setResult = () => {},
 }: GameProps) {
+  if (!ExecutionEnvironment.canUseDOM) return null;
+
   const { questions } = data;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);

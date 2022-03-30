@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import FormData from 'form-data';
 import Fetch from '../Fetch';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 const GoogleFormsIcon = (
   <svg
@@ -22,6 +22,8 @@ const GoogleFormsIcon = (
 );
 
 export default ({ href }) => {
+  if (!ExecutionEnvironment.canUseDOM) return null;
+  
   let form = new FormData();
   form.append('Event', 'Quiz Copy');
 
