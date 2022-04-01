@@ -9,6 +9,7 @@
     "serve": "docusaurus serve",
     "build & serve": "docusaurus build && docusaurus serve",
     "deploy": "docusaurus deploy",
+    "swizzle": "docusaurus swizzle",
     "clear": "docusaurus clear"
   },
   "dependencies": {

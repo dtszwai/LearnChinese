@@ -1,7 +1,7 @@
 @use 'variables' as v;
 
 :root {
-  --ifm-color-primary: #3578e5;
+  --ifm-color-primary: #247ba0;
   --ifm-color-primary-dark: #1d68e1;
   --ifm-color-primary-darker: #1b62d4;
   --ifm-color-primary-darkest: #1751af;
@@ -13,6 +13,7 @@
 
 html[data-theme='dark'] {
   --ifm-background-color: #282c33;
+  --ifm-color-primary: #38bdf6;
 }
 
 html:not(.docs-wrapper) {
@@ -116,7 +117,7 @@ div.text-list {
     margin: 0 auto;
   }
 
-  a:not([target='_blank']):not(.hash-link):not([class^='author']) {
+  a:not([target='_blank']):not(.hash-link):not([class^='author']):not(.card) {
     color: #0f172a;
     text-decoration: none;
     font-weight: 600;

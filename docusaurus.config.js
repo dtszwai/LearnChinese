@@ -1,8 +1,4 @@
 // @ts-check
-
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
   title: "書目引得",
@@ -85,10 +81,6 @@ module.exports = {
         //   position: "right",
         // },
       ],
-    },
-    prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
     },
   },
 };

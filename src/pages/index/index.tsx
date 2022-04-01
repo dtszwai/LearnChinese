@@ -72,6 +72,7 @@ export default () => (
         <a href='#S1'>中一級課文</a>
         {/* <a href='#S2'>中二級課文</a> */}
         <a href='#S3'>中三級課文</a>
+        <a href='#settext'>指定文言</a>
       </div>
       <TextList grade='S1' title='中一' Src={S1Text} />
       {/* <TextList grade='S2' title='中二' Src={S2Text} /> */}

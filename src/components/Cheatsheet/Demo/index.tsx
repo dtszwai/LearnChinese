@@ -3,7 +3,7 @@ import styles from './Demo.module.scss';
 
 interface Props {
   data: {
-    regex: string;
+    regex?: string;
     description: string;
     purpose: string;
     example: string;
@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default ({ data }: Props) => {
-  let regex = new RegExp(`(${data.regex.replace(`\\1`, `\\2`)})`, 'gmi');
+  let regex = new RegExp(`(${data.regex?.replace(`\\1`, `\\2`)})`, 'gmi');
 
   let renderedDescription = `<p>${data.description
     .replace(/\\n/gm, '<br />')
