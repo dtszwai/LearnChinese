@@ -7,20 +7,19 @@ export { default as AudioCard } from './AudioCard';
 export { default as Task } from './Task';
 export { Tips, Display } from './ToggleDisplay';
 
-export const Remark = ({
-  children,
-  type,
-}: {
-  children: React.ReactNode;
-  type: string;
-}) => {
-  return (
-    <p className={styles.remark}>
-      <span className={styles.type}>{type}</span>
-      {children}
-    </p>
-  );
-};
+export const Text = ({ title, children }) => (
+  <div className={styles.TextBlock}>
+    {title && <div className={styles.title}>{title}</div>}
+    <div className={styles.content}>{children}</div>
+  </div>
+);
+
+export const Remark = ({ children, type }) => (
+  <p className={styles.remark}>
+    <span className={styles.type}>{type}</span>
+    {children}
+  </p>
+);
 
 export const Annotate = ({ children, title }) => {
   const [open, setOpen] = useState(false);

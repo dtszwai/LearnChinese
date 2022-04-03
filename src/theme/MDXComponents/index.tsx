@@ -4,6 +4,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import * as Tool from '@site/src/components/Tool';
 import Quiz from '@site/src/components/Quiz';
+// import Review from '@site/src/components/Quiz/Review';
 import { Rating, Typography } from '@mui/material';
 
 export default {
@@ -11,12 +12,14 @@ export default {
   Tabs,
   TabItem,
   Quiz,
+  // Review,
   Author: Tool.Author,
   Remark: Tool.Remark,
   Annotate: Tool.Annotate,
   Highlight: Tool.Highlight,
   Display: Tool.Display,
   Tips: Tool.Tips,
+  Text: Tool.Text,
   Youtube: ({ children, id, start = 0 }) =>
     Tool.Video(children ?? id, start, 'Youtube'),
   Bilibili: ({ children, id }) => Tool.Video(children ?? id, 0, 'Bilibili'),

@@ -59,7 +59,10 @@ export default function ({
         }}
       >
         {renderedAvatar}
-        <div className='avatar__intro' style={{ flex: 'none' }}>
+        <div
+          className='avatar__intro'
+          style={{ flex: 'none', alignItems: 'center' }}
+        >
           <div className='avatar__name'>{renderedDynasty + label}</div>
           {source && <small className='avatar__subtitle'>{source}</small>}
         </div>
