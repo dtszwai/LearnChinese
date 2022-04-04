@@ -4,12 +4,12 @@ module.exports = {
   title: "書目引得",
   tagline: "中文科閱讀篇章",
   url: "https://rccttwd.github.io",
-  baseUrl: "/library/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
   favicon: "img/logo.png",
   organizationName: "rccttwd",
-  projectName: "library",
+  projectName: "rccttwd.github.io",
   deploymentBranch: "gh-pages",
   trailingSlash: false,
   i18n: {
@@ -47,7 +47,7 @@ module.exports = {
         docs: {
           sidebarCollapsed: false,
           sidebarPath: require.resolve("./sidebars.js"),
-          // editUrl: "https://github.com/rccttwd/library/blob/master/",
+          // editUrl: "https://github.com/rccttwd/blob/master/",
           routeBasePath: "/",
           showLastUpdateTime: true,
         },
@@ -75,7 +75,7 @@ module.exports = {
         { href: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/", label: "粵音", position: "right", },
         { href: "https://www.moedict.tw/", label: "萌典", position: "right", },
         // {
-        //   href: "https://github.com/rccttwd/library/tree/master",
+        //   href: "https://github.com/rccttwd/tree/master",
         //   "aria-label": "GitHub repository",
         //   className: "header-github-link",
         //   position: "right",
