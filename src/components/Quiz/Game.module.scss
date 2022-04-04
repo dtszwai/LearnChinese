@@ -43,6 +43,7 @@
 
 .btn {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-size: 1rem;
   font-weight: var(--ifm-button-font-weight);
@@ -54,7 +55,11 @@
   padding: 5px;
   margin: 5px;
   cursor: pointer;
-  &:hover {
+  &:not([disabled]):hover {
     background-color: var(--ifm-color-secondary-dark);
+  }
+  &[disabled] {
+    cursor: default;
+    color: #888;
   }
 }

@@ -4,7 +4,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import * as Tool from '@site/src/components/Tool';
 import Quiz from '@site/src/components/Quiz';
-// import Review from '@site/src/components/Quiz/Review';
+import Review from '@site/src/components/Quiz/Review';
 import { Rating, Typography } from '@mui/material';
 
 export default {
@@ -12,7 +12,7 @@ export default {
   Tabs,
   TabItem,
   Quiz,
-  // Review,
+  Review,
   Author: Tool.Author,
   Remark: Tool.Remark,
   Annotate: Tool.Annotate,
