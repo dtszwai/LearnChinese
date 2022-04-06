@@ -9,6 +9,7 @@
   --ifm-color-primary-lighter: #5a91ea;
   --ifm-color-primary-lightest: #80aaef;
   --ifm-code-font-size: 95%;
+  --ifm-background-color: #fff;
 }
 
 html[data-theme='dark'] {
@@ -161,6 +162,7 @@ div.text-list {
 
   .admonition-heading h5 {
     font-family: SmallCaps, var(--ifm-heading-font-family);
+    font-size: 1em;
   }
 }
 
@@ -234,4 +236,34 @@ blockquote {
 
 .ti-cursor {
   letter-spacing: 0 !important;
+}
+
+/* sidebar */
+
+.theme-doc-sidebar-item-link-level-1 a,
+.menu__list .menu__link--sublist {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  padding: 5px 12px !important;
+  // color: var(--ifm-menu-color) !important;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list {
+  border-left: 1px solid rgb(229, 231, 235);
+  border-left: 1px solid var(--ifm-color-secondary-dark);
+  padding-left: 0;
+  margin-left: 16px;
+  [aria-current='page'] {
+    font-weight: 600 !important;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      border-left: 1px solid var(--ifm-menu-color-active);
+    }
+  }
 }

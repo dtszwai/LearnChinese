@@ -8,9 +8,9 @@ export { default as Task } from './Task';
 export { Tips, Display } from './ToggleDisplay';
 
 export const Text = ({ title, children }) => (
-  <div className={styles.TextBlock}>
-    {title && <div className={styles.title}>{title}</div>}
-    <div className={styles.content}>{children}</div>
+  <div className='text-block'>
+    {title && <div className='title'>{title}</div>}
+    <div className='content'>{children}</div>
   </div>
 );
 

@@ -40,29 +40,3 @@
     width: 100%;
   }
 }
-
-.TextBlock {
-  margin-bottom: var(--ifm-leading);
-  border-radius: var(--ifm-global-radius);
-  box-shadow: var(--ifm-global-shadow-lw);
-  color: rgb(57, 58, 52);
-  background-color: rgb(246, 248, 250);
-  html[data-theme='dark'] & {
-    color: rgb(191, 199, 213);
-    background-color: rgb(41, 45, 62);
-  }
-  .title {
-    border-bottom: 1px solid var(--ifm-color-emphasis-300);
-    font-size: var(--ifm-code-font-size);
-    padding: 0.75rem var(--ifm-pre-padding);
-    font-family: 'SmallCaps';
-  }
-  .content {
-    padding: var(--ifm-pre-padding);
-    font: var(--ifm-code-font-size) / var(--ifm-pre-line-height)
-      var(--ifm-font-family-monospace);
-    p:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
