@@ -5,12 +5,96 @@
   "chapter": "單元六",
   "questions": [
     {
-      "questionText": "",
+      "questionText": "文中所說的作者說「北平」是現在的哪個城市？",
       "answerOptions": [
-        { "answerText": "" },
-        { "answerText": "" },
-        { "answerText": "", "isCorrect": true },
-        { "answerText": "" }
+        { "answerText": "北京", "isCorrect": true },
+        { "answerText": "南京" },
+        { "answerText": "台北" },
+        { "answerText": "東京" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「往城南訪一個朋友，去時太陽本已有些發毛」一句運用了動態描寫還是靜態描寫？",
+      "answerOptions": [
+        { "answerText": "動態描寫" },
+        { "answerText": "靜態描寫", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「那平日『肩摩轂擊』的大街，一看，完全換了樣，不要說車，連行人也沒有」一句運用了動態描寫還是靜態描寫？",
+      "answerOptions": [
+        { "answerText": "動態描寫" },
+        { "answerText": "靜態描寫", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「風真大，我這時又逆着風向走，走上了三步，倒退了兩步」一句運用了動態描寫還是靜態描寫？",
+      "answerOptions": [
+        { "answerText": "動態描寫", "isCorrect": true },
+        { "answerText": "靜態描寫" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「但是一路上棋子般大的泥塊，夾着粉末似的細沙，被風捲起來，儘往我臉上打」一句運用了動態描寫還是靜態描寫？",
+      "answerOptions": [
+        { "answerText": "動態描寫", "isCorrect": true },
+        { "answerText": "靜態描寫" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「原來是一天大雪，竟在一個晚上，不聲不響的，將我家那院子『粉妝玉琢』起來。」一句運用了動態描寫還是靜態描寫？",
+      "answerOptions": [
+        { "answerText": "動態描寫" },
+        { "answerText": "靜態描寫", "isCorrect": true }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "「整個北平內城就收在眼底，給那光明的、皎潔的、靜默的雪，瀰漫着，懷抱着」一句運用了動態描寫還是靜態描寫？",
+      "answerOptions": [
+        { "answerText": "動態描寫" },
+        { "answerText": "靜態描寫", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": " 「發毛」這詞的意思是甚麼？",
+      "answerOptions": [
+        { "answerText": "日光初現" },
+        { "answerText": "日光微弱", "isCorrect": true },
+        { "answerText": "太陽不見" },
+        { "answerText": "陽光猛烈" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "第一天與風奪路，作者有何感受？",
+      "answerOptions": [
+        { "answerText": "覺得有些「高處不勝寒」。" },
+        { "answerText": "強風中能扮成縴夫，覺得有趣而愉快。" },
+        { "answerText": "看見猛烈的風，抒發了興奮和驚歎的心情。" },
+        {
+          "answerText": "與強風搏鬥，寸步難移，表現出痛苦不安的心情。",
+          "isCorrect": true
+        }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "第二天觀賞雪景，作者有何感受？",
+      "answerOptions": [
+        { "answerText": "看到大雪紛飛，感到興奮和驚歎。" },
+        { "answerText": "跑上北海中的白塔，感到痛苦疲乏。" },
+        { "answerText": "家被白雪覆蓋，覺得十分苦惱，擔心被雪壓毀。" },
+        {
+          "answerText": "看見寧靜和美麗的雪景，抒發了興奮和驚歎的心情。",
+          "isCorrect": true
+        }
       ],
       "difficulty": "easy"
     }

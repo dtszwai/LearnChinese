@@ -26,7 +26,7 @@ const Header = ({ siteConfig }) => (
   </header>
 );
 
-const TextList = ({ grade, title, Src }) => (
+const TextList = ({ grade, title, Src, color = 'inherit' }) => (
   <div className={styles.TextList} id={grade}>
     <div className={styles.heading}>
       <img
@@ -34,7 +34,7 @@ const TextList = ({ grade, title, Src }) => (
         style={{ alignSelf: 'center' }}
       />
       <Link to={grade}>
-        <h2>{title}級課文</h2>
+        <h2 style={{ color: color }}>{title}級課文</h2>
       </Link>
     </div>
     <Src />
@@ -42,10 +42,10 @@ const TextList = ({ grade, title, Src }) => (
 );
 
 const Settext = () => (
-  <div className={styles.TextList} id='settext'>
+  <div className={styles.TextList} id='settext' style={{ color: '#0ea5e9' }}>
     <div className={styles.heading}>
       <Link to='settext'>
-        <h2>指定文言</h2>
+        <h2 style={{ color: '#0ea5e9' }}>指定文言</h2>
       </Link>
     </div>
     <div className='text-list'>
@@ -74,9 +74,9 @@ export default () => (
         <a href='#S3'>中三級課文</a>
         <a href='#settext'>指定文言</a>
       </div>
-      <TextList grade='S1' title='中一' Src={S1Text} />
+      <TextList grade='S1' title='中一' Src={S1Text} color='#ec4899' />
       {/* <TextList grade='S2' title='中二' Src={S2Text} /> */}
-      <TextList grade='S3' title='中三' Src={S3Text} />
+      <TextList grade='S3' title='中三' Src={S3Text} color='#6366f1' />
       <Settext />
     </section>
   </Layout>
