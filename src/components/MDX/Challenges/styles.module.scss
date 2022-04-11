@@ -1,0 +1,150 @@
+.Container {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  box-shadow: rgba(0, 0, 0, 0.05);
+  background-color: #f6f7f9;
+  html[data-theme='dark'] & {
+    background-color: #343a46;
+  }
+  border-color: #ebecf0;
+  border-radius: 0;
+  @media (min-width: 640px) {
+    border-radius: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.Header {
+  padding: 1.5rem 1.25rem 0;
+  @media (min-width: 640px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+  }
+  .Heading {
+    position: relative;
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+.Content {
+  padding: 1.25rem;
+  @media (min-width: 640px) {
+    padding: 2rem;
+  }
+
+  .currentChallenge {
+    color: #23272f;
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+    font-weight: inherit;
+    html[data-theme='dark'] & {
+      color: #f6f7f9;
+    }
+
+    .ChallengeNumber {
+      display: block;
+      font-weight: 700;
+      @media (min-width: 768px) {
+        display: inline;
+      }
+    }
+  }
+}
+
+.Extend {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Button,
+.ButtonActive {
+  margin: 4px 8px 4px 0px;
+  color: var(--ifm-color-gray-900);
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 0.5rem 1rem;
+  background-color: #ebecf0;
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  vertical-align: middle;
+  transition-property: color, background, border-color;
+  transition-duration: var(--ifm-button-transition-duration);
+  transition-timing-function: var(--ifm-transition-timing-default);
+  html[data-theme='dark'] & {
+    color: #ebecf0;
+    background-color: #404756;
+  }
+  svg {
+    line-height: 1em;
+    vertical-align: text-top;
+  }
+}
+
+.ButtonActive {
+  color: white !important;
+  background-color: #087ea4 !important;
+  html[data-theme='dark'] & {
+    background-color: #149eca;
+  }
+}
+
+.NavChallenge {
+  padding: 8px 0px;
+  margin-right: 1rem;
+  font-size: 15px;
+  line-height: 1.5rem;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  border-bottom: 4px solid #e5e7eb;
+}
+
+.NavChallengeActive {
+  color: #087ea4;
+  border-bottom-color: #087ea4;
+  html[data-theme='dark'] & {
+    color: #149eca;
+    border-bottom-color: #149eca;
+  }
+}
+
+.Scroll {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  height: 2rem;
+  color: #99a1b3;
+  border: 0;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: #ebecf0;
+  svg {
+    display: block;
+  }
+  &:last-child {
+    border-left: 1px solid #bcc1cd;
+    html[data-theme='dark'] & {
+      border-left: 1px solid #ebecf0;
+    }
+  }
+  html[data-theme='dark'] & {
+    background-color: #404756;
+  }
+}
+
+.CanScroll {
+  color: #23272f;
+  html[data-theme='dark'] & {
+    color: #f6f7f9;
+  }
+}

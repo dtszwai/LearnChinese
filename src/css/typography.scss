@@ -32,17 +32,6 @@
   font-named-instance: 'Regular';
 }
 
-// 引文／前文展現樣式
-.pre {
-  font-size: 1.2rem;
-  text-align: justify;
-  color: v.$pre-text-color;
-  font-family: FangSong, SimHei, SimSun;
-  html[data-theme='dark'] & {
-    color: v.$pre-text-color-dark;
-  }
-}
-
 // 正文展現樣式
 .main {
   font-size: 1.7rem;
@@ -131,4 +120,21 @@
       margin-bottom: 0;
     }
   }
+}
+
+.markdown {
+  code {
+    background-color: #99a1b31a;
+    border: 0;
+    border-radius: var(--ifm-code-border-radius);
+    font-family: inherit;
+    font-size: 1em;
+    padding: 1px 0.25rem;
+    vertical-align: unset;
+  }
+}
+
+.KeepAll {
+  word-break: keep-all;
+  text-overflow: ellipsis;
 }

@@ -3,7 +3,7 @@ import styles from './Game.module.scss';
 import Question from './Question';
 import Selection from './Selection';
 import Result from './Result';
-import Fetch from '../Fetch';
+import Fetch from '../../Fetch';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 type GameProps = {

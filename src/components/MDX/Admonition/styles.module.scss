@@ -1,0 +1,38 @@
+.Container {
+  position: relative;
+  padding: 2rem 1.25rem 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  @media (min-width: 640px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.Heading {
+  font-family: SmallCaps, var(--ifm-heading-font-family);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+  .Icon {
+    display: inline;
+    font-size: 1em;
+    vertical-align: text-top;
+    margin-right: 0.75rem;
+  }
+}
+
+.Content {
+  font-size: 1.2rem;
+  text-align: justify;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  *:last-child {
+    margin-bottom: 0;
+  }
+}

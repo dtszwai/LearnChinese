@@ -23,7 +23,7 @@ import {
 import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import MDXContent from '@theme/MDXContent';
 
-import Author from '@site/src/components/Tool/Author';
+import Author from '@site/src/components/MDX/Author';
 
 function DocItemMetadata(props) {
   const { content: DocContent } = props;
@@ -59,7 +59,7 @@ function DocItemContent(props) {
   // - Customization: add Author name into the header
   const { author, dynasty, source } = frontMatter;
   const { hide_author: hideAuthor } = frontMatter;
-  const shouldAddAuthor = !hideAuthor && typeof author !== 'undefined';
+  const shouldAddAuthor = !hideAuthor && author;
   // - End
 
   const shouldAddTitle =

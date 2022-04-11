@@ -44,6 +44,10 @@ const TextList = ({ grade, title, Src, color = 'inherit' }) => (
 const Settext = () => (
   <div className={styles.TextList} id='settext' style={{ color: '#0ea5e9' }}>
     <div className={styles.heading}>
+      <img
+        src={require(`@site/static/img/settext.png`).default}
+        style={{ alignSelf: 'center' }}
+      />
       <Link to='settext'>
         <h2 style={{ color: '#0ea5e9' }}>指定文言</h2>
       </Link>

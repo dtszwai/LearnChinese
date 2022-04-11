@@ -49,7 +49,6 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
           // editUrl: "https://github.com/rccttwd/blob/master/",
           routeBasePath: "/",
-          showLastUpdateTime: true,
         },
         blog: false,
         theme: { customCss: [require.resolve("./src/css/custom.scss"), require.resolve("./src/css/typography.scss")] },

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import Fetch from '../Fetch';
+import Fetch from '../../Fetch';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 const GoogleFormsIcon = (

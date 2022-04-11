@@ -4,7 +4,7 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import clsx from 'clsx';
 import { MdFace } from 'react-icons/md';
-import authorInfo from '@site/static/misc/author';
+import authorInfo from '@site/static/misc/author.json';
 
 type Author = {
   name: string;

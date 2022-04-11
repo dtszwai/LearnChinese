@@ -1,0 +1,80 @@
+.Container {
+  position: relative;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.Title {
+  color: #23272f;
+  font-weight: 700;
+  font-size: 20px;
+  html[data-theme='dark'] & {
+    color: #f6f7f9;
+  }
+}
+
+.Button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  outline: 0;
+  cursor: pointer;
+}
+
+.DeepDive {
+  background-color: #f3f4fd;
+  html[data-theme='dark'] & {
+    background-color: #2b349133;
+  }
+}
+
+.DeepDiveHeader {
+  color: #575fb7;
+  html[data-theme='dark'] & {
+    color: #8891ec;
+  }
+}
+
+.DeepDiveIcon {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #6b75db;
+  html[data-theme='dark'] & {
+    color: #8891ec;
+  }
+}
+
+.DeepDiveButton {
+  color: #ffffff;
+  background-color: #575fb7;
+  border-color: #575fb7;
+  &:hover {
+    background-color: #6b75db;
+  }
+}
+
+.DeepDiveExpand {
+  border-top-color: #e9ebfb;
+  html[data-theme='dark'] & {
+    border-color: #2b3491;
+  }
+}
