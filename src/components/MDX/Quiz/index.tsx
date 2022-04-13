@@ -29,7 +29,6 @@ const GoogleFormsIcon = (
 
 const Copy = ({ href }) => {
   if (!ExecutionEnvironment.canUseDOM) return null;
-
   let form = new FormData();
   form.append('Event', 'Quiz Copy');
   return (
@@ -45,6 +44,7 @@ const Copy = ({ href }) => {
 };
 
 const quizData = () => {
+  if (!ExecutionEnvironment.canUseDOM) return null;
   const { id } = useActiveDocContext().activeDoc;
   const path = `${id.split('/')[0]}/${id.split('/').at(-1)}`;
   return require(`@site/src/Task/${path}`);

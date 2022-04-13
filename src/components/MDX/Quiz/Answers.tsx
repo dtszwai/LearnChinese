@@ -42,7 +42,7 @@ export default ({ questions }) => {
             selectedAnswer[index] === undefined ||
             questions[index].answerOptions[selectedAnswer[index]]?.isCorrect //alert if the selected answer is wrong
               ? null
-              : { border: '1px solid #e27396' }
+              : { borderColor: '#e27396' }
           }
         >
           <div className={styles.Question}>
