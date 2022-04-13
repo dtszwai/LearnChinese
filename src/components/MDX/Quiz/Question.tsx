@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Game.module.scss';
+import styles from './styles.module.scss';
 
 type multiQuestions = {
   currentQuestion: number;

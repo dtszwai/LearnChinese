@@ -4,6 +4,7 @@ module.exports = {
   title: "書目引得",
   tagline: "中文科閱讀篇章",
   url: "https://rccttwd.github.io",
+  titleDelimiter: '📖',
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",

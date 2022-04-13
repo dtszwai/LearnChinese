@@ -1,23 +1,13 @@
 import React from 'react';
-import styles from './QuestionBank.module.scss';
-import { WrongAnswer } from './Result';
+import styles from './Answers.module.scss';
+import { WrongAnswer } from './App';
+import { QuizContext } from '@site/src/theme/Root';
 
 type MessageProps = (
   isCorrect: boolean,
   selectedOption: number,
   currentOption: number,
 ) => JSX.Element;
-
-type questionsProps = {
-  answerOptions: [{ answerText: string; isCorrect?: boolean }];
-  questionText: string;
-}[];
-
-type Props = {
-  questions: questionsProps;
-  selectedAnswer: { [key: number]: number };
-  result: boolean[];
-};
 
 const renderedMessage: MessageProps = (
   isCorrect,
@@ -43,7 +33,8 @@ const renderedMessage: MessageProps = (
   return <span className={styles.Comment}>{message}</span>;
 };
 
-export default ({ questions, selectedAnswer, result }: Props) => {
+export default ({ questions }) => {
+  const { selectedAnswer, result } = React.useContext(QuizContext);
   const alertBorder = { border: '1px solid #e27396' };
 
   return (

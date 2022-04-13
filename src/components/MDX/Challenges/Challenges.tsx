@@ -103,8 +103,6 @@ export function Challenges({ children }: { children: React.ReactElement[] }) {
     return order === currentChallenge.order + 1;
   });
 
-  console.log(currentChallenge.solution);
-
   return (
     <div className={styles.Container}>
       {challenges.length > 1 && (

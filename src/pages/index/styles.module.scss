@@ -5,10 +5,10 @@
 
 .heroBanner {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   max-width: 984px;
-  justify-content: space-around;
   margin: 3rem auto 8.5rem;
   row-gap: 2rem;
   color: #1e0d26;
@@ -17,6 +17,9 @@
   }
 
   .bannerCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     min-height: 15rem;
     .title {
@@ -27,6 +30,7 @@
       font-size: 24px;
       word-break: keep-all;
       font-family: WenKai;
+      min-height: 3.5em;
       @media (max-width: 996px) {
         text-align: center;
       }

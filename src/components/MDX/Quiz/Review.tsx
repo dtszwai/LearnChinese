@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import styles from './Game.module.scss';
+import styles from './styles.module.scss';
 import Question from './Question';
 
 type ReviewProps = {
-  question: {
-    questionText: string;
-    answerOptions: {
-      answerText: string;
-      isCorrect?: boolean;
-    }[];
-  };
+  question: string;
   label?: string;
+  children: React.ReactElement[];
+  Correct: number;
 };
+
+interface Questions {
+  label: string;
+  questionText: string;
+  answerOptions: { answerText: string; isCorrect?: boolean }[];
+}
 
 const tick = (
   <svg
@@ -40,9 +41,34 @@ const cross = (
   </svg>
 );
 
-export default ({ question, label = '快速回顧' }: ReviewProps) => {
-  if (!ExecutionEnvironment.canUseDOM) return null;
+const parseReviewContents = (children: React.ReactElement[], Correct) => {
+  const content = { answerOptions: [] } as Questions;
+  if (!children) return content;
+  React.Children.forEach(children, (item) => {
+    const { props } = item;
+    switch (props.mdxType) {
+      case 'h2':
+        content.label = props.children;
+        break;
+      case 'p':
+        content.questionText = props.children;
+        break;
+      case 'ol':
+      case 'ul':
+        props.children.map((child, i) => {
+          content.answerOptions.push({
+            answerText: child.props.children,
+            isCorrect: Correct === i,
+          });
+        });
+        break;
+    }
+  });
+  return content;
+};
 
+export default ({ Correct, children }: ReviewProps) => {
+  const questions = parseReviewContents(children, Correct - 1);
   const [selectedAnswer, setSelectedAnswer] = useState<number>(-1);
   const [message, setMessage] = useState<React.ReactNode>(null);
 
@@ -81,23 +107,25 @@ export default ({ question, label = '快速回顧' }: ReviewProps) => {
   };
 
   return (
-    <div className={styles.Wrapper}>
+    <div className={styles.Wrapper} id={questions.label ?? '快速回顧'}>
       <Question
-        questionText={question.questionText}
-        label={label}
+        questionText={questions.questionText}
+        label={questions.label ?? '快速回顧'}
         info={message}
       />
       <div className={styles.AnswerSection}>
-        {question.answerOptions.map((answerOption, i) => (
-          <button
-            className={styles.btn}
-            onClick={() => handleSelect(answerOption.isCorrect, i)}
-            key={i}
-            disabled={selectedAnswer !== -1}
-          >
-            {ButtonContent(answerOption, i)}
-          </button>
-        ))}
+        {questions.answerOptions.map((answerOption, i) => {
+          return (
+            <button
+              className={styles.btn}
+              onClick={() => handleSelect(answerOption.isCorrect, i)}
+              key={i}
+              disabled={selectedAnswer !== -1}
+            >
+              {ButtonContent(answerOption, i)}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

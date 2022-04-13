@@ -7,9 +7,8 @@ import AudioCard from './AudioCard';
 import Task from './Task';
 import { Tips, Display } from './ToggleDisplay';
 import Admonition from './Admonition';
-import Quiz from './Quiz';
+import { QuizSet, Quiz, QuizAnswers, Review } from './Quiz';
 import { Youtube, Bilibili } from './Video';
-import Review from './Quiz/Review';
 import { Challenges, Hint, Solution, NoSolution } from './Challenges';
 import ExpandableExample from './ExpandableExample';
 
@@ -72,7 +71,9 @@ export default {
   Task,
   Tabs,
   TabItem,
+  QuizSet,
   Quiz,
+  QuizAnswers,
   Review,
   Youtube,
   Bilibili,
