@@ -44,9 +44,8 @@ const Copy = ({ href }) => {
 };
 
 const quizData = () => {
-  if (!ExecutionEnvironment.canUseDOM) return null;
-  const { id } = useActiveDocContext().activeDoc;
-  const path = `${id.split('/')[0]}/${id.split('/').at(-1)}`;
+  const id = useActiveDocContext().activeDoc.id.split('/');
+  const path = `${id[0]}/${id[id.length - 1]}`;
   return require(`@site/src/Task/${path}`);
 };
 

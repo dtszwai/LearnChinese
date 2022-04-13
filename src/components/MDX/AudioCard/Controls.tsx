@@ -1,6 +1,5 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
+import { Box, IconButton } from '@mui/material';
 import { MdPlayArrow, MdPause, MdStop } from 'react-icons/md';
 
 export default function ({ isPlaying, setIsPlaying, onScrub, audioRef }) {

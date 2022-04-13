@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Controls from './Controls';
 import List from './List';

@@ -69,7 +69,6 @@ export default ({
           </div>
         </Link>
       </div>
-      );
     </>
   );
 };
