@@ -9,16 +9,6 @@ import { useActiveDocContext } from '@docusaurus/plugin-content-docs/client';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import Review from './Review';
 
-interface dataInterface {
-  questions: {
-    questionText: string;
-    answerOptions: {
-      answerText: string;
-      isCorrect?: boolean;
-    }[];
-  }[];
-}
-
 const GoogleFormsIcon = (
   <svg
     xmlns='http://www.w3.org/2000/svg'
@@ -54,35 +44,32 @@ const Copy = ({ href }) => {
   );
 };
 
-const quizData = (): dataInterface => {
+const quizData = () => {
   const { id } = useActiveDocContext().activeDoc;
   const path = `${id.split('/')[0]}/${id.split('/').at(-1)}`;
   return require(`@site/src/Task/${path}`);
 };
 
+export const Quiz = ({ data, href, checkAnswer = false }) => (
+  <>
+    {href && <Copy href={href} />}
+    <App questions={data ?? quizData().questions} checkAnswer={checkAnswer} />
+  </>
+);
+
+export const QuizAnswers = ({ data }) => (
+  <Answers questions={data ?? quizData().questions} />
+);
+
 export const QuizSet = ({ data, href }) => (
   <Tabs>
     <TabItem value='開始評估' default attributes={{ 'data-quiz': 'Questions' }}>
-      {href && <Copy href={href} />}
-      <App questions={data ?? quizData()} checkAnswer />
+      <Quiz data={data} href={href} checkAnswer />
     </TabItem>
     <TabItem value='題目庫' attributes={{ 'data-quiz': 'Answers' }}>
       <Answers questions={data ?? quizData()} />
     </TabItem>
   </Tabs>
-);
-
-export const Quiz = ({ data, href }) => {
-  return (
-    <>
-      {href && <Copy href={href} />}
-      <App questions={data ?? quizData().questions} />
-    </>
-  );
-};
-
-export const QuizAnswers = ({ data }) => (
-  <Answers questions={data ?? quizData().questions} />
 );
 
 export { Review };

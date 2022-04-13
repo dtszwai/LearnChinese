@@ -1,4 +1,5 @@
 import React from 'react';
+
 export { Challenges } from './Challenges';
 
 export const Hint = ({ children }) => <>{children}</>;

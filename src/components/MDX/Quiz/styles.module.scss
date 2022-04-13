@@ -1,4 +1,4 @@
-.Wrapper {
+.Quiz {
   display: flex;
   justify-content: space-evenly;
   height: min-content;
@@ -10,28 +10,19 @@
   background-color: var(--ifm-card-background-color);
 }
 
-.QuestionSection {
+.Question {
   width: 100%;
-}
-
-.QuestionCount {
-  margin-bottom: 1.25rem;
-  font-size: 1.75rem;
-}
-
-.QuestionText {
-  margin-bottom: 0.75rem;
   margin-right: 2rem;
 }
 
-.AnswerSection {
+.Selection {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.ScoreSection {
+.Score {
   display: flex;
   font-size: 1.5rem;
   flex-direction: column;
