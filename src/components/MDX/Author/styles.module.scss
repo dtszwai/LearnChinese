@@ -1,25 +1,36 @@
 @use '@site/src/css/variables' as v;
 
 .author {
-  color: v.$source-text-color;
+  display: flex;
   justify-content: flex-end;
+  gap: 1rem;
+  color: v.$source-text-color;
   margin-bottom: 1.5rem;
   html[data-theme='dark'] & {
     color: v.$source-text-color-dark;
   }
-}
 
-.authorInline {
-  align-items: baseline;
-  display: inline-flex;
-  margin-left: 0.25rem;
-}
+  .avatar {
+    width: 3rem;
+    height: 3rem;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 9999px;
+    vertical-align: middle;
+  }
 
-.avatarInline {
-  border-radius: 9999px;
-  align-self: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-right: 0.25rem;
-  max-width: 100%;
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      line-height: 1.25;
+    }
+
+    .subtitle {
+      margin-top: 0.25rem;
+    }
+  }
 }
