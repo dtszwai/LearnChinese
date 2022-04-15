@@ -4,6 +4,20 @@
   margin-bottom: 3rem;
   border-radius: 0.5rem;
   box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  &.DeepDive {
+    background-color: #f3f4fd;
+    html[data-theme='dark'] & {
+      background-color: #2b349133;
+    }
+  }
+
+  &.Dictionary {
+    background-color: #e8f1f9;
+    html[data-theme='dark'] & {
+      background-color: #2e4052;
+    }
+  }
 }
 
 .Header {
@@ -14,6 +28,22 @@
   line-height: 1.25rem;
   font-weight: 700;
   text-transform: uppercase;
+
+  &.DeepDive {
+    color: #575fb7;
+    html[data-theme='dark'] & {
+      color: #e0c3fc;
+    }
+  }
+}
+
+.DeepDiveIcon {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #6b75db;
+  html[data-theme='dark'] & {
+    color: #8891ec;
+  }
 }
 
 .Title {
@@ -38,43 +68,29 @@
   border-width: 1px;
   outline: 0;
   cursor: pointer;
-}
 
-.DeepDive {
-  background-color: #f3f4fd;
-  html[data-theme='dark'] & {
-    background-color: #2b349133;
+  &.DeepDive {
+    color: #ffffff;
+    background-color: #575fb7;
+    border-color: #575fb7;
+    &:hover {
+      background-color: #6b75db;
+    }
+  }
+
+  &.Dictionary {
+    color: #ffffff;
+    background-color: #575fb7;
+    border-color: #575fb7;
+    &:hover {
+      background-color: #6b75db;
+    }
   }
 }
 
-.DeepDiveHeader {
-  color: #575fb7;
-  html[data-theme='dark'] & {
-    color: #8891ec;
-  }
-}
-
-.DeepDiveIcon {
-  display: inline;
-  margin-right: 0.5rem;
-  color: #6b75db;
-  html[data-theme='dark'] & {
-    color: #8891ec;
-  }
-}
-
-.DeepDiveButton {
-  color: #ffffff;
-  background-color: #575fb7;
-  border-color: #575fb7;
-  &:hover {
-    background-color: #6b75db;
-  }
-}
-
-.DeepDiveExpand {
+.Expand {
   border-top-color: #e9ebfb;
   html[data-theme='dark'] & {
-    border-color: #2b3491;
+    border-top-color: #272727;
   }
 }

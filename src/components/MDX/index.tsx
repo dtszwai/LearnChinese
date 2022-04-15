@@ -24,9 +24,9 @@ const Text = ({ title, children }) => (
   </div>
 );
 
-const Remark = ({ children, type }) => (
+const Remark = ({ children, title }) => (
   <p className={styles.remark}>
-    <span className={styles.type}>{type}</span>
+    <span className={styles.title}>{title}</span>
     {children}
   </p>
 );
@@ -53,11 +53,13 @@ const Py = ({ children }) => (
   </>
 );
 
-const DeepDive = (props: {
-  children: React.ReactNode;
-  title: string;
-  excerpt: string;
-}) => <ExpandableExample {...props} type='DeepDive' />;
+const Dictionary = ({ children }) => (
+  <ExpandableExample
+    children={children}
+    title={<span style={{ fontSize: '1.5rem' }}>📜 字詞釋義</span>}
+    type='Dictionary'
+  />
+);
 
 export default {
   Author,
@@ -82,8 +84,10 @@ export default {
   Hint,
   Solution,
   NoSolution,
-  DeepDive,
+  Dictionary,
+  DeepDive: (props) => <ExpandableExample {...props} type='DeepDive' />,
   Intro: (props) => <Admonition type='Intro' {...props} />,
   Quote: (props) => <Admonition type='Quote' {...props} />,
   Note: (props) => <Admonition type='Note' {...props} />,
+  YouWillLearn: (props) => <Admonition type='YouWillLearn' {...props} />,
 };

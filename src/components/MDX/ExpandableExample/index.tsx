@@ -4,34 +4,29 @@ import styles from './styles.module.scss';
 import { AiOutlineSearch as IconDeepDive } from 'react-icons/ai';
 import { IoChevronDown } from 'react-icons/io5';
 
-interface ExpandableExampleProps {
+interface ExampleProps {
   children: React.ReactNode;
-  title: string;
+  title: JSX.Element;
   excerpt?: string;
-  type: 'DeepDive';
+  type: 'DeepDive' | 'Dictionary';
 }
 
-function ExpandableExample({
-  children,
-  title,
-  excerpt,
-  type,
-}: ExpandableExampleProps) {
+function ExpandableExample({ children, title, excerpt, type }: ExampleProps) {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const isDeepDive = type === 'DeepDive';
-
+  const isDictionary = type === 'Dictionary';
   return (
     <div
       className={clsx(styles.Container, {
         [styles.DeepDive]: isDeepDive,
-        // 'dark:bg-opacity-20 dark:bg-yellow-60 bg-yellow-5': isExample,
+        [styles.Dictionary]: isDictionary,
       })}
+      id={isDictionary && excerpt}
     >
       <div style={{ padding: '2rem' }}>
         <h5
           className={clsx(styles.Header, {
-            [styles.DeepDiveHeader]: isDeepDive,
-            // 'dark:text-yellow-30 text-yellow-60': isExample,
+            [styles.DeepDive]: isDeepDive,
           })}
         >
           {isDeepDive && (
@@ -40,12 +35,6 @@ function ExpandableExample({
               深入探討
             </>
           )}
-          {/* {isExample && (
-            <>
-              <IconCodeBlock className='inline mr-2 dark:text-yellow-30 text-yellow-50' />
-              Example
-            </>
-          )} */}
         </h5>
         <div style={{ marginBottom: '1rem' }}>
           <h3 className={styles.Title}>{title}</h3>
@@ -53,9 +42,8 @@ function ExpandableExample({
         </div>
         <button
           className={clsx(styles.Button, {
-            [styles.DeepDiveButton]: isDeepDive,
-            // 'bg-yellow-50 border-yellow-50 hover:bg-yellow-40 focus:bg-yellow-50 active:bg-yellow-50':
-            //   isExample,
+            [styles.DeepDive]: isDeepDive,
+            [styles.Dictionary]: isDictionary,
           })}
           onClick={() => setIsExpanded((current) => !current)}
         >
@@ -74,15 +62,12 @@ function ExpandableExample({
           !isExpanded
             ? { display: 'none' }
             : {
-                padding: '2rem',
+                padding: '1rem 2rem',
                 borderTopWidth: '1px',
                 borderTopStyle: 'solid',
               }
         }
-        className={clsx({
-          [styles.DeepDiveExpand]: isDeepDive,
-          // 'dark:border-yellow-60 border-yellow-50': isExample,
-        })}
+        className={styles.Expand}
       >
         {children}
       </div>

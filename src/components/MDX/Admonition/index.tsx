@@ -1,14 +1,17 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import clsx from 'clsx';
-import { BsSticky, BsJournalText, BsChatSquareQuote } from 'react-icons/bs';
 import { useColorMode } from '@docusaurus/theme-common';
-
-type Variants = 'Intro' | 'Note' | 'Quote';
+import {
+  BsSticky,
+  BsJournalText,
+  BsChatSquareQuote,
+  BsTag,
+} from 'react-icons/bs';
 
 interface Props {
   children: React.ReactNode;
-  type: Variants;
+  type: 'Intro' | 'Note' | 'Quote' | 'YouWillLearn';
   title?: string;
 }
 
@@ -30,6 +33,12 @@ const variantMap = {
     Icon: BsChatSquareQuote,
     light: { backgroundColor: '#faf2f6' },
     dark: { backgroundColor: '#765462' },
+  },
+  YouWillLearn: {
+    title: '學習重點',
+    Icon: BsTag,
+    light: { backgroundColor: '#f6f7f9' },
+    dark: { backgroundColor: '#343a46' },
   },
 };
 

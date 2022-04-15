@@ -48,7 +48,6 @@ module.exports = {
         docs: {
           sidebarCollapsed: false,
           sidebarPath: require.resolve("./sidebars.js"),
-          // editUrl: "https://github.com/rccttwd/blob/master/",
           routeBasePath: "/",
         },
         blog: false,
@@ -60,7 +59,7 @@ module.exports = {
   ],
 
   themeConfig: {
-    metadata: [{ name: 'keywords', content: '書目引得, 中文科, 中國語文, 閱讀篇章, 初中, 高中, 中學, 文憑試, DSE, Chinese, 語文基礎, 語基, 指定文言, 文言文, 白話文' }],
+    metadata: [{ name: 'keywords', content: '書目引得, 中文科, 中國語文, 閱讀篇章, 初中, 高中, 中學, 文憑試, DSE, Chinese, 語文基礎, 語基, 指定文言, 文言文, 白話文, 語譯, 練習, 答案' }],
     hideableSidebar: true,
     navbar: {
       title: "書目引得",
@@ -74,12 +73,6 @@ module.exports = {
         { to: "cheatsheet", label: "語基知識表", position: "right", className: "navbarCheatsheet" },
         { href: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/", label: "粵音", position: "right", },
         { href: "https://www.moedict.tw/", label: "萌典", position: "right", },
-        // {
-        //   href: "https://github.com/rccttwd/tree/master",
-        //   "aria-label": "GitHub repository",
-        //   className: "header-github-link",
-        //   position: "right",
-        // },
       ],
     },
   },
