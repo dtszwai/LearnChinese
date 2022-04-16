@@ -161,6 +161,16 @@ h1:first-child {
       width: 100%;
     }
   }
+
+  h2#-字詞釋義,
+  h2#-鞏固練習 {
+    width: 0;
+    margin: 0;
+    font-size: 0;
+    height: 0;
+    padding: 0;
+    visibility: hidden;
+  }
 }
 
 // ### 標題對齊 ## Emoji

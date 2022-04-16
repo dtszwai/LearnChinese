@@ -21,7 +21,6 @@ function ExpandableExample({ children, title, excerpt, type }: ExampleProps) {
         [styles.DeepDive]: isDeepDive,
         [styles.Dictionary]: isDictionary,
       })}
-      id={isDictionary && excerpt}
     >
       <div style={{ padding: '2rem' }}>
         <h5

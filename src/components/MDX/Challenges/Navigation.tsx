@@ -89,6 +89,7 @@ export function Navigation({
             overflowX: 'auto',
             position: 'relative',
             transitionProperty: 'transform',
+            margin: '1rem',
           }}
         >
           {challenges.map(({ name, id, order }, index) => (

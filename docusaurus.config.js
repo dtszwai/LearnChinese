@@ -1,4 +1,6 @@
 // @ts-check
+const TOC = require('./src/components/Remark/TOC');
+
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
   title: "書目引得",
@@ -49,6 +51,7 @@ module.exports = {
           sidebarCollapsed: false,
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
+          beforeDefaultRemarkPlugins: [TOC],
         },
         blog: false,
         theme: { customCss: [require.resolve("./src/css/custom.scss"), require.resolve("./src/css/typography.scss")] },

@@ -68,7 +68,6 @@ const parseChallengeContents = (
 
 export function Challenges({ children }: { children: React.ReactElement[] }) {
   const challenges = parseChallengeContents(children);
-  const scrollAnchorRef = React.useRef<HTMLDivElement>(null);
   const [showHint, setShowHint] = React.useState(false);
   const [showSolution, setShowSolution] = React.useState(false);
   const [activeChallenge, setActiveChallenge] = React.useState(
@@ -105,15 +104,16 @@ export function Challenges({ children }: { children: React.ReactElement[] }) {
 
   return (
     <div className={styles.Container}>
-      {challenges.length > 1 && (
-        <div ref={scrollAnchorRef} className={styles.Header}>
+      <div className={styles.Header}>
+        <h2 className={styles.Heading}>🎯 鞏固練習</h2>
+        {challenges.length > 1 && (
           <Navigation
             currentChallenge={currentChallenge}
             challenges={challenges}
             handleChange={handleChallengeChange}
           />
-        </div>
-      )}
+        )}
+      </div>
       <div className={styles.Content} id={currentChallenge.id}>
         <div key={activeChallenge}>
           <h3 className={styles.currentChallenge}>
