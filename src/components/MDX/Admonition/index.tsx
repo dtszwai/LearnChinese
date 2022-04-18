@@ -7,13 +7,14 @@ import {
   BsJournalText,
   BsChatSquareQuote,
   BsTag,
+  BsLink45Deg,
 } from 'react-icons/bs';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-  type: 'Intro' | 'Note' | 'Quote' | 'YouWillLearn';
+  type: 'Intro' | 'Note' | 'Quote' | 'YouWillLearn' | 'Resources';
   title?: string;
-}
+};
 
 const variantMap = {
   Intro: {
@@ -37,6 +38,12 @@ const variantMap = {
   YouWillLearn: {
     title: '學習重點',
     Icon: BsTag,
+    light: { backgroundColor: '#f6f7f9' },
+    dark: { backgroundColor: '#343a46' },
+  },
+  Resources: {
+    title: '學習資源',
+    Icon: BsLink45Deg,
     light: { backgroundColor: '#f6f7f9' },
     dark: { backgroundColor: '#343a46' },
   },
