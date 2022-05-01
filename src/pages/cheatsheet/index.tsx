@@ -1,5 +1,5 @@
 import React from 'react';
-import data from './cheatsheet.json';
+import data from '@site/src/data/cheatsheet.json';
 import Layout from '@theme/Layout';
 import Collapse from '@site/src/components/Cheatsheet/Collapse';
 import Demo from '@site/src/components/Cheatsheet/Demo';

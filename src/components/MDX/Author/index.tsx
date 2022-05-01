@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { MdFace } from 'react-icons/md';
-import authorInfo from '@site/static/misc/author.json';
+import authorInfo from '@site/src/data/author.json';
 
 interface Author {
   name: string;

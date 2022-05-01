@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import styles from './NotFound.module.scss';
-import quotes from '@site/static/misc/quotes.json';
+import quotes from '@site/src/data/quotes.json';
 import Link from '@docusaurus/Link';
 
 const RenderedBlockquote = ({ randomQuote, setRandomQuote }) => (

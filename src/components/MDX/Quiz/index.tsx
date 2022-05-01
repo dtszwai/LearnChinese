@@ -46,7 +46,7 @@ const Copy = ({ href }) => {
 const quizData = () => {
   const id = useActiveDocContext().activeDoc.id.split('/');
   const path = `${id[0]}/${id[id.length - 1]}`;
-  return require(`@site/src/Task/${path}`);
+  return require(`@site/src/data/Quiz/${path}`);
 };
 
 export const Quiz = ({ data, href, checkAnswer = false }) => (
