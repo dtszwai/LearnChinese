@@ -118,6 +118,10 @@ h1:first-child {
     width: 100%;
   }
 
+  small {
+    font-size: 0.7em;
+  }
+
   a:not([target='_blank']):not(.hash-link):not([class^='author']):not(.card):not(.text-list
       a) {
     color: #0f172a;

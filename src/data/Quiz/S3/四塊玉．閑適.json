@@ -1,0 +1,93 @@
+{
+  "title": "四塊玉．閑適",
+  "author": "關漢卿",
+  "grade": "中三",
+  "chapter": "作品選讀",
+  "questions": [
+    {
+      "questionText": "【南呂】《四塊玉．閑適》是一首元曲；在以下有關體制和內容的描述中，選出錯誤的一項。",
+      "answerOptions": [
+        { "answerText": "用語艱深", "isCorrect": true },
+        { "answerText": "屬於曲的小令" },
+        { "answerText": "全曲有7句，共31字" },
+        { "answerText": "韻腳有卧、多、過、我、麼" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "下列哪一項不是作者歸隱後的活動？",
+      "answerOptions": [
+        { "answerText": "發奮苦讀", "isCorrect": true },
+        { "answerText": "在東山休息" },
+        { "answerText": "在田野耕種" },
+        { "answerText": "閑時回想往事" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「南畝耕，東山臥」用了哪兩個人的典故？",
+      "answerOptions": [
+        { "answerText": "李白、王維" },
+        { "answerText": "杜甫、辛棄疾" },
+        { "answerText": "蘇軾、白居易" },
+        { "answerText": "陶淵明、謝安", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "判斷題：作者歸隱前經歷了許多人情冷暖；歸隱後已厭倦了世態炎涼的社會。",
+      "answerOptions": [
+        { "answerText": "正確", "isCorrect": true },
+        { "answerText": "錯誤" },
+        { "answerText": "無從判斷" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「賢的是他，愚的是我，爭甚麼？」這句用了何種修辭手法？",
+      "answerOptions": [
+        { "answerText": "誇張" },
+        { "answerText": "層遞" },
+        { "answerText": "反語", "isCorrect": true },
+        { "answerText": "襯托" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "這首曲主要表達作者什麼想法？",
+      "answerOptions": [
+        { "answerText": "看淡世事，選擇歸隱，與世無爭", "isCorrect": true },
+        { "answerText": "賢者爭名奪利，愚者只能賦閒在家" },
+        { "answerText": "賢者選擇歸隱，但我仍希望能建功立業" },
+        { "answerText": "人賢我愚，所以只能選擇看人臉色生活" }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "關於此曲的說明，下列哪一選項正確？",
+      "answerOptions": [
+        { "answerText": "「世態人情經歷多」透露作者處事圓融且交際手腕高明" },
+        { "answerText": "「閒將往事思量過」強調做人必須時時反躬自省以求精進" },
+        { "answerText": "「賢的是他，愚的是我」為自貶口吻，有自慚形穢的意味" },
+        {
+          "answerText": "「爭什麼」表示看透世間名利爭逐的醜態而不願同流合汙",
+          "isCorrect": true
+        }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "關於此曲的說明，下列哪一選項有誤？",
+      "answerOptions": [
+        { "answerText": "曲中勸喻人們莫爭是非，遠離名利的羈絆" },
+        {
+          "answerText": "結尾意境超曠，表現的是甘於遁隱的自得其樂",
+          "isCorrect": true
+        },
+        { "answerText": "首句引用典故，勾勒出隱居山野的悠閒與心志" },
+        { "answerText": "「閒將往事思量過」暗示作者內心仍有些難以釋懷" }
+      ],
+      "difficulty": "medium"
+    }
+  ]
+}
