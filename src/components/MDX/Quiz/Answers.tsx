@@ -2,13 +2,10 @@ import React from 'react';
 import styles from './Answers.module.scss';
 import { WrongAnswer } from './utils';
 import { QuizContext } from '@site/src/theme/Root';
+import clsx from 'clsx';
 
-const renderedMessage = (
-  isCorrect: boolean,
-  selectedOption: number,
-  currentOption: number,
-) => {
-  let comment: string = null;
+const renderedMessage = (isCorrect, selectedOption, currentOption) => {
+  let comment = '';
 
   if (isCorrect) {
     switch (selectedOption) {
@@ -26,7 +23,7 @@ const renderedMessage = (
     comment = ' ❌ 你的選擇';
   }
 
-  return comment && <span className={styles.Comment}>{comment}</span>;
+  return comment;
 };
 
 export default ({ questions }) => {
@@ -45,18 +42,26 @@ export default ({ questions }) => {
               : { borderColor: '#e27396' }
           }
         >
-          <div className={styles.Question}>
-            {index + 1}. {question.questionText}
+          <div className={styles.Question} data-before={`${index + 1}. `}>
+            {question.questionText}
           </div>
 
           <div className={styles.Answers}>
             {question.answerOptions.map((option, i) => (
-              <p key={i} className={option.isCorrect ? styles.isCorrect : null}>
-                <span className={option.isCorrect ? null : styles.Option}>
-                  {String.fromCharCode(i + 65)}.&nbsp;
-                </span>
+              <p
+                key={i}
+                className={clsx(
+                  option.isCorrect ? styles.isCorrect : null,
+                  styles.Content,
+                )}
+                data-before={`${String.fromCharCode(i + 65)}. `}
+                data-after={renderedMessage(
+                  option.isCorrect,
+                  selectedAnswer[index],
+                  i,
+                )}
+              >
                 {option.answerText}
-                {renderedMessage(option.isCorrect, selectedAnswer[index], i)}
               </p>
             ))}
           </div>

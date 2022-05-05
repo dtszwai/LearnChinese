@@ -140,7 +140,7 @@ h1:first-child {
 
   a[target='_blank']:not(.button) {
     background-color: rgba(187, 239, 253, 0.3);
-    border-bottom: 1px solid var(--ifm-hr-border-color);
+    border-bottom: 1px solid var(--ifm-hr-background-color);
     color: var(--ifm-font-color-base);
     display: initial;
     line-height: calc(var(--ifm-font-size-base) + 4px);

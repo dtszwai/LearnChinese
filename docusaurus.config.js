@@ -63,7 +63,9 @@ module.exports = {
 
   themeConfig: {
     metadata: [{ name: 'keywords', content: '書目引得, 中文科, 中國語文, 閱讀篇章, 初中, 高中, 中學, 文憑試, DSE, Chinese, 語文基礎, 語基, 指定文言, 文言文, 白話文, 語譯, 練習, 答案' }],
-    hideableSidebar: true,
+    docs: {
+      sidebar: { hideable: true }
+    },
     navbar: {
       title: "書目引得",
       hideOnScroll: true,
