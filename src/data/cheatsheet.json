@@ -425,5 +425,138 @@
         "regex": "凡生物都|人是生物"
       }
     ]
+  },
+  {
+    "title": "描寫手法",
+    "data": [
+      {
+        "code": "肖像",
+        "title": "人物描寫—肖像描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "行動",
+        "title": "人物描寫—行動描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "語言",
+        "title": "人物描寫—語言描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "心理",
+        "title": "人物描寫—心理描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "視覺",
+        "title": "景物描寫—視覺描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "聽覺",
+        "title": "景物描寫—聽覺描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "味覺",
+        "title": "景物描寫—味覺描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "嗅覺",
+        "title": "景物描寫—嗅覺描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "觸覺",
+        "title": "景物描寫—觸覺描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "動態",
+        "title": "景物描寫—動態描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "靜態",
+        "title": "景物描寫—靜態描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "隨時推移",
+        "title": "景物描寫—隨時推移法",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "步移",
+        "title": "景物描寫—步移法",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "定點描寫",
+        "title": "景物描寫—定點描寫",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "白描",
+        "title": "白描法",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      },
+      {
+        "code": "細描",
+        "title": "細描法",
+        "description": "",
+        "purpose": "",
+        "example": "",
+        "regex": ""
+      }
+    ]
   }
 ]

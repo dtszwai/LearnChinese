@@ -4,11 +4,12 @@ import Layout from '@theme/Layout';
 import Collapse from '@site/src/components/Cheatsheet/Collapse';
 import Demo from '@site/src/components/Cheatsheet/Demo';
 import styles from './cheatsheet.module.scss';
+import { useLocation } from '@docusaurus/router';
 
 export default function cheatsheet() {
-  const columns = [data.slice(0, 1), data.slice(1)];
+  const columns = [data.slice(0, 1), data.slice(1, 5), data.slice(5)];
   const title = '語文基礎知識';
-  const hash = typeof window !== 'undefined' && decodeURI(window.location.hash);
+  const hash = decodeURI(useLocation().hash);
 
   const renderedHeader = () => (
     <header className={styles.header}>
