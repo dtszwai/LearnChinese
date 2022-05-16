@@ -42,9 +42,15 @@ export default ({ questions }) => {
               : { borderColor: '#e27396' }
           }
         >
-          <div className={styles.Question} data-before={`${index + 1}. `}>
-            {question.questionText}
-          </div>
+          <div
+            className={styles.Question}
+            data-before={`${index + 1}. `}
+            dangerouslySetInnerHTML={{
+              __html: `${question.questionText
+                .replace(/\\n/gm, '<br />')
+                .replace(/`(.*?)`/g, '<code>$1</code>')}`,
+            }}
+          />
 
           <div className={styles.Answers}>
             {question.answerOptions.map((option, i) => (

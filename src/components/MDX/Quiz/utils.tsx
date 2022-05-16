@@ -10,7 +10,13 @@ interface Question {
 export const Question = ({ header, text, excerpt }: Question) => (
   <div className={styles.Question}>
     <h2>{header}</h2>
-    <p>{text}</p>
+    <p
+      dangerouslySetInnerHTML={{
+        __html: `${text
+          .replace(/\\n/gm, '<br />')
+          .replace(/`(.*?)`/g, '<code>$1</code>')}`,
+      }}
+    />
     {excerpt}
   </div>
 );
