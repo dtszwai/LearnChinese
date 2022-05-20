@@ -1,0 +1,110 @@
+{
+  "title": "廉頗藺相如列傳（節錄）",
+  "author": "司馬遷",
+  "grade": "高中",
+  "questions": [
+    {
+      "questionText": "請順序指出〈廉頗藺相如列傳〉當中的三個故事。",
+      "answerOptions": [
+        { "answerText": "完壁歸趙、負荊請罪、澠池之會" },
+        {
+          "answerText": "完壁歸趙、澠池之會、負荊請罪",
+          "isCorrect": true
+        },
+        { "answerText": "澠池之會、負荊請罪、完壁歸趙" },
+        { "answerText": "澠池之會、完壁歸趙、負荊請罪" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "在`完壁歸趙`中，藺相如本為：",
+      "answerOptions": [
+        { "answerText": "廉頗舍人" },
+        { "answerText": "繆賢舍人", "isCorrect": true },
+        { "answerText": "趙國大臣" },
+        { "answerText": "趙國上大夫" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "在`完壁歸趙`中，趙王及大臣面對秦國脅迫時，表現得猶豫不決，反之，藺相如則`(A)`，這是運用了`(B)`的寫作手法。",
+      "answerOptions": [
+        { "answerText": "A. 勇敢果斷；B. 襯托", "isCorrect": true },
+        { "answerText": "A. 勇敢果斷；B. 對比" },
+        { "answerText": "A. 寬宏大量；B. 對比" },
+        { "answerText": "A. 寬宏大量；B. 襯托" }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "「相如`度`秦王特以詐。」當中的「度」意思為：",
+      "answerOptions": [
+        { "answerText": "量度" },
+        { "answerText": "相信" },
+        { "answerText": "遊說" },
+        { "answerText": "推測", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「唯大王與群臣`孰`計議之。」當中的「孰」意思為：",
+      "answerOptions": [
+        { "answerText": "誰" },
+        { "answerText": "怎會" },
+        { "answerText": "聚集" },
+        { "answerText": "仔細地", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "在`澠池之會`中，藺相如與廉頗的身分是：",
+      "answerOptions": [
+        { "answerText": "藺相如：大夫；廉頗：將軍" },
+        { "answerText": "藺相如：大夫；廉頗：上卿", "isCorrect": true },
+        { "answerText": "藺相如：上卿；廉頗：上卿" },
+        { "answerText": "藺相如：舍人；廉頗：上卿" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「相如雖駑，`獨`畏廉將軍哉？」當中「獨」字意思為？",
+      "answerOptions": [
+        { "answerText": "難道", "isCorrect": true },
+        { "answerText": "獨自" },
+        { "answerText": "為什麼" },
+        { "answerText": "絕不會" }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "「欲予秦，秦城恐不可得，徒`見`欺」當中「見」字意思為？",
+      "answerOptions": [
+        { "answerText": "被", "isCorrect": true },
+        { "answerText": "看見" },
+        { "answerText": "明白" },
+        { "answerText": "察覺" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「`拜`相如為上大夫。」當中「拜」字意思為？",
+      "answerOptions": [
+        { "answerText": "封賞", "isCorrect": true },
+        { "answerText": "尊敬" },
+        { "answerText": "讚許" },
+        { "answerText": "拜見" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「使人`遺`趙王書」當中的「遺」意思為：",
+      "answerOptions": [
+        { "answerText": "遺留" },
+        { "answerText": "丟失" },
+        { "answerText": "給予", "isCorrect": true },
+        { "answerText": "忘記" }
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}

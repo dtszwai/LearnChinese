@@ -46,8 +46,7 @@ export default {
   Youtube,
   Bilibili,
   Remark: ({ children, title }) => (
-    <p className={styles.remark}>
-      <span className={styles.title}>{title}</span>
+    <p className={styles.remark} data-title={title}>
       {children}
     </p>
   ),

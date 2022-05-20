@@ -84,6 +84,9 @@ const Settext = () => (
     <div className='text-list'>
       <ul>
         <li>
+          <Link to={'settext/廉頗藺相如列傳（節錄）'}>廉頗藺相如列傳（節錄）</Link>
+        </li>
+        <li>
           <Link to={'settext/岳陽樓記'}>岳陽樓記</Link>
         </li>
         <li>
