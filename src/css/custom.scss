@@ -106,9 +106,12 @@ h1:first-child {
 }
 
 .markdown {
-  img {
+  p img {
     display: block;
     margin: 0 auto;
+    max-height: 60vh;
+    width: auto;
+    image-rendering: -webkit-optimize-contrast;
   }
 
   table {

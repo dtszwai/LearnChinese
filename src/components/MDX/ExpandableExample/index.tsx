@@ -6,7 +6,7 @@ import { IoChevronDown } from 'react-icons/io5';
 
 interface ExampleProps {
   children: React.ReactNode;
-  title: JSX.Element;
+  title: string;
   excerpt?: string;
   type: 'DeepDive' | 'Dictionary';
 }
@@ -36,8 +36,11 @@ function ExpandableExample({ children, title, excerpt, type }: ExampleProps) {
           )}
         </h5>
         <div style={{ marginBottom: '1rem' }}>
-          <h3 className={styles.Title}>{title}</h3>
-          {excerpt && <div>{excerpt}</div>}
+          <h3
+            className={styles.Title}
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+          {excerpt && <div dangerouslySetInnerHTML={{ __html: excerpt }} />}
         </div>
         <button
           className={clsx(styles.Button, {
