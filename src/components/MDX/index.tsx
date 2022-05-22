@@ -77,7 +77,7 @@ export default {
   Dictionary: ({ children }) => (
     <ExpandableExample
       children={children}
-      title={`<span style={{ fontSize: '1.5rem' }}>📜 字詞釋義</span>`}
+      title={`<span style="fontSize: '1.5rem'">📜 字詞釋義</span>`}
       type='Dictionary'
     />
   ),
