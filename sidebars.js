@@ -39,6 +39,14 @@ module.exports = {
         'S1/單元六：景物描寫（一）/6.29海上的日出',
       ],
     },
+    {
+      type: "category",
+      label: "單元八：借事說理",
+      link: { type: "doc", id: "S1/單元八：借事說理/index", },
+      items: [
+        'S1/單元八：借事說理/曾子殺豬',
+      ],
+    },
   ],
 
   S2: [
@@ -81,6 +89,7 @@ module.exports = {
       link: { type: "doc", id: "S3/單元六：小說與戲劇欣賞/index", },
       items: [
         'S3/單元六：小說與戲劇欣賞/6.5孔明借箭',
+        'S3/單元六：小說與戲劇欣賞/一碗陽春麵',
       ],
     },
     {

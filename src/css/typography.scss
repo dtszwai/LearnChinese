@@ -58,6 +58,18 @@
       max-width: 100%;
     }
   }
+
+  h2.paragraph {
+    font-size: 1.25em;
+    text-transform: uppercase;
+    color: #555;
+    text-align: center;
+    font-family: 'Cabin Sketch';
+    &::before,
+    &::after {
+      content: '-';
+    }
+  }
 }
 
 .read-around {
