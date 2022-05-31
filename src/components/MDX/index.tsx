@@ -15,6 +15,7 @@ import ExpandableExample from './ExpandableExample';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Tooltip from '@mui/material/Tooltip';
+import { style } from '@mui/system';
 
 const Annotate = ({ children, title }) => {
   const [open, setOpen] = useState(false);
@@ -68,12 +69,10 @@ export default {
   Hint,
   Solution,
   NoSolution,
-  Translation: (props) => (
-    <div
-      style={{ fontSize: '1.2em', textAlign: 'justify', margin: '1.8rem auto' }}
-      {...props}
-    />
-  ),
+  Translation: (props) => <div className={styles.Section} {...props} />,
+  Biography: (props) => <div className={styles.Section} {...props} />,
+  Appreciation: (props) => <div className={styles.Section} {...props} />,
+  Media: (props) => <div {...props} />,
   Dictionary: ({ children }) => (
     <ExpandableExample
       children={children}
