@@ -29,6 +29,7 @@ export default ({ track, tracks }: Props) => {
   const [trackIndex, setTrackIndex] = useState(0);
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState<boolean>();
+  const [duration, setDuration] = useState(0);
   const {
     title,
     author,
@@ -39,10 +40,11 @@ export default ({ track, tracks }: Props) => {
   const src = useBaseUrl(_src);
 
   const audioRef = useRef(new Audio(src));
+  audioRef.current.onloadedmetadata = () =>
+    setDuration(audioRef.current.duration);
 
   const intervalRef = useRef<NodeJS.Timer>();
 
-  const { duration } = audioRef.current;
   const currentPercentage = duration
     ? `${(trackProgress / duration) * 100}%`
     : '0%';
@@ -62,7 +64,6 @@ export default ({ track, tracks }: Props) => {
   };
 
   const onScrub = (value: number) => {
-    clearInterval(intervalRef.current);
     audioRef.current.currentTime = value;
     setTrackProgress(audioRef.current.currentTime);
   };
