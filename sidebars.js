@@ -45,6 +45,7 @@ module.exports = {
       link: { type: "doc", id: "S1/單元八：借事說理/index", },
       items: [
         'S1/單元八：借事說理/曾子殺豬',
+        'S1/單元八：借事說理/賣油翁',
       ],
     },
   ],
