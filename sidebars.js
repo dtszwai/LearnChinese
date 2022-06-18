@@ -41,6 +41,14 @@ module.exports = {
     },
     {
       type: "category",
+      label: "單元七：說明的方法和順序",
+      link: { type: "doc", id: "S1/單元七：說明的方法和順序/index", },
+      items: [
+        'S1/單元七：說明的方法和順序/生物之間的微妙關係',
+      ],
+    },
+    {
+      type: "category",
       label: "單元八：借事說理",
       link: { type: "doc", id: "S1/單元八：借事說理/index", },
       items: [

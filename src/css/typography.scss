@@ -37,6 +37,7 @@
   font-size: 1.7rem;
   font-family: KaiTi, DFKai-SB, KaiU, STKaiti, Serif;
   margin: 1.8rem 0;
+  counter-reset: paragraph;
 
   &.prose {
     text-align: justify;
@@ -59,16 +60,18 @@
     }
   }
 
-  h2.paragraph {
-    font-size: 1.25em;
+  &[data-paragraph='true'] p::before,
+  span.paragraph::before {
+    display: block;
     text-transform: uppercase;
-    color: #555;
+    color: var(--ifm-font-color-base);
     text-align: center;
-    font-family: 'Cabin Sketch';
-    &::before,
-    &::after {
-      content: '-';
-    }
+    font: 1.5rem 'Cabin Sketch';
+    font-weight: var(--ifm-heading-font-weight);
+    line-height: var(--ifm-heading-line-height);
+    margin-bottom: var(--ifm-heading-margin-bottom);
+    counter-increment: paragraph;
+    content: '-' counter(paragraph) '-';
   }
 }
 
