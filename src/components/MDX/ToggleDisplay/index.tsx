@@ -2,6 +2,8 @@ import React, { useState, useLayoutEffect } from 'react';
 import Chip from '@mui/material/Chip';
 import styles from './styles.module.scss';
 import { useLocation } from '@docusaurus/router';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import { useActiveDocContext } from '@docusaurus/plugin-content-docs/client';
 
 type Tips = {
   children: any;
@@ -28,8 +30,13 @@ export const Tips = (props: Tips) => {
 };
 
 export const Display = (props: Display) => {
-  const [show, setShow] = useState(false);
+  if (!ExecutionEnvironment.canUseDOM) return null;
   const { pathname } = useLocation();
+  const {
+    activeDoc: { id },
+  } = useActiveDocContext();
+  const data = JSON.parse(localStorage.getItem(props.label));
+  const [show, setShow] = useState(data?.[id]);
 
   useLayoutEffect(() => {
     const node = Array.from(
@@ -40,6 +47,11 @@ export const Display = (props: Display) => {
 
     node.forEach((el) => (el.style.display = show ? 'inherit' : 'none'));
   }, [pathname, show]);
+
+  const isShow = () => {
+    localStorage.setItem(props.label, JSON.stringify({ ...data, [id]: !show }));
+    setShow(!show);
+  };
 
   return (
     <div
@@ -52,7 +64,7 @@ export const Display = (props: Display) => {
         className={styles.button}
         color='success'
         variant='outlined'
-        onClick={() => setShow(!show)}
+        onClick={() => isShow()}
         label={props.children ?? (show ? '隱藏' : '顯示') + props.label}
       />
     </div>

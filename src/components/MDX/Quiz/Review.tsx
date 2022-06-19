@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import { Question, Selection } from './utils';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import { useActiveDocContext } from '@docusaurus/plugin-content-docs/client';
 import { BsCheckCircleFill, BsXCircleFill } from 'react-icons/bs';
 
 interface Review {
@@ -46,13 +48,33 @@ const parseReviewContents = (
 };
 
 export default ({ Correct, children }: Review) => {
+  if (!ExecutionEnvironment.canUseDOM) return null;
   const questions = parseReviewContents(children, Correct - 1);
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [options, setOptions] = useState<React.ReactNode[]>(
     questions.answerOptions.map((option) => option.answerText),
   );
+  const {
+    activeDoc: { id },
+  } = useActiveDocContext();
+  const data = JSON.parse(localStorage.getItem('Points'));
 
   const handleSelect = (index: number) => {
+    localStorage.setItem(
+      'Points',
+      JSON.stringify({
+        ...data,
+        [id]: {
+          checked: true,
+          response: index,
+          isCorrect: questions.answerOptions[index].isCorrect,
+        },
+      }),
+    );
+    renderedReview(index);
+  };
+
+  const renderedReview = (index) => {
     const isCorrect = questions.answerOptions[index].isCorrect;
     setOptions(
       questions.answerOptions.map((option, i) => {
@@ -83,6 +105,10 @@ export default ({ Correct, children }: Review) => {
       ),
     );
   };
+
+  useEffect(() => {
+    typeof data?.[id]?.response === 'number' && handleSelect(data[id].response);
+  }, []);
 
   return (
     <div className={styles.Quiz} id={questions.label ?? '鞏固所學'}>

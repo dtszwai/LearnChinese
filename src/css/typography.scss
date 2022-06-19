@@ -41,8 +41,10 @@
 
   &.prose {
     text-align: justify;
-    text-indent: 2em;
     line-height: 1.7;
+    &:not([data-paragraph='true']) {
+      text-indent: 2em;
+    }
   }
 
   &.poetry {
