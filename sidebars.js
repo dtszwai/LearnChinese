@@ -103,6 +103,14 @@ module.exports = {
     },
     {
       type: "category",
+      label: "單元七：論證的方法",
+      link: { type: "doc", id: "S3/單元七：論證的方法/index", },
+      items: [
+        'S3/單元七：論證的方法/最苦與最樂',
+      ],
+    },
+    {
+      type: "category",
       label: "單元九：文言選讀（三）",
       link: { type: "doc", id: "S3/單元九：文言選讀（三）/index", },
       items: [
