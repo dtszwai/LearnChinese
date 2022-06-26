@@ -5,8 +5,8 @@ import Carousel from './Carousel';
 import Author from './Author';
 import AudioCard from './AudioCard';
 import Task from './Task';
-import { Tips, Display } from './ToggleDisplay';
 import Admonition from './Admonition';
+import Commentary from './Commentary';
 import { QuizSet, Quiz, QuizAnswers, Review } from './Quiz';
 import { Youtube, Bilibili } from './Video';
 import { Challenges, Hint, Solution, NoSolution } from './Challenges';
@@ -15,7 +15,6 @@ import ExpandableExample from './ExpandableExample';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Tooltip from '@mui/material/Tooltip';
-import { style } from '@mui/system';
 
 const Annotate = ({ children, title }) => {
   const [open, setOpen] = useState(false);
@@ -51,8 +50,6 @@ export default {
       {children}
     </p>
   ),
-  Display,
-  Tips,
   Text: ({ title, children }) => (
     <div className='text-block'>
       {title && <div className='title'>{title}</div>}
@@ -86,4 +83,5 @@ export default {
   Note: (props) => <Admonition type='Note' {...props} />,
   YouWillLearn: (props) => <Admonition type='YouWillLearn' {...props} />,
   Resources: (props) => <Admonition type='Resources' {...props} />,
+  Commentary,
 };

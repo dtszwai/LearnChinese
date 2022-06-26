@@ -4,3 +4,11 @@
     color: rgb(102, 187, 106);
   }
 }
+
+.Commentary_Panel {
+  display: flex;
+  justify-content: flex-end;
+  .button {
+    display: inline-block;
+  }
+}
