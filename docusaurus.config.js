@@ -39,7 +39,7 @@ module.exports = {
       },
     ],
     "docusaurus-plugin-sass",
-    './src/components/plugin/Lesson.js'
+    './src/components/plugin/dynamicRoutes.js'
   ],
 
   presets: [

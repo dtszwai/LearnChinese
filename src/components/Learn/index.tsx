@@ -1,10 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import Layout from '@theme/Layout';
 import LearnFooter from './Footer';
 import Step from './Step';
 import Progress from './Progress';
+import styles from './index.module.scss';
+import { useLocation } from '@docusaurus/router';
+import clsx from 'clsx';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
-const LearnPage = ({ data, lesson }) => {
+export default () => {
+  if (!ExecutionEnvironment.canUseDOM) return null;
+
+  const { pathname: location } = useLocation();
+  const slug = location.split('/')[location.split('/').length - 1];
+  const data = require(`@site/src/data/Learn/${slug}.json`);
+  const lesson = require('@site/src/data/Learn/index.json')[slug];
   const key = `lesson.${lesson.slug}`;
+
   const record = localStorage.getItem(key);
   const [step, setStep] = useState(0);
   const [lastStep, setLastStep] = useState(0);
@@ -56,12 +68,12 @@ const LearnPage = ({ data, lesson }) => {
   }, [success]);
 
   return (
-    <>
-      <Progress total={data.length} current={step + 1} />
-      <Step lesson={lesson} data={data[step]} step={step} onChangeSuccess={setSuccess} error={error} />
-      <LearnFooter steps={data} step={step} prevStep={prevStep} nextStep={nextStep} success={success} error={error} />
-    </>
+    <Layout title={lesson.title}>
+      <main className={clsx('container', styles.container)}>
+        <Progress total={data.length} current={step + 1} />
+        <Step lesson={lesson} data={data[step]} step={step} onChangeSuccess={setSuccess} error={error} />
+        <LearnFooter steps={data} step={step} prevStep={prevStep} nextStep={nextStep} success={success} error={error} />
+      </main>
+    </Layout>
   );
 };
-
-export default LearnPage;

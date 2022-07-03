@@ -5,10 +5,8 @@ import lessons from '@site/src/data/Learn/index.json';
 import Link from '@docusaurus/Link';
 import { ImFilesEmpty, ImArrowRight2 } from 'react-icons/im';
 import clsx from 'clsx';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 export default () => {
-  if (!ExecutionEnvironment.canUseDOM) return null;
   const title = '學習';
 
   return (
