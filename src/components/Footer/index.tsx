@@ -5,7 +5,9 @@ import Link from '@docusaurus/Link';
 
 export default () => (
   <footer className={styles.footer}>
-    <img src={useBaseUrl('/img/logo.png')} className={styles.logo} />
+    <Link to={'/'}>
+      <img src={useBaseUrl('/img/logo.png')} className={styles.logo} />
+    </Link>
     <ul className={styles.list}>
       <li>
         <Link to={useBaseUrl('about')}>About</Link>

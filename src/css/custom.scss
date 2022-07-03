@@ -125,8 +125,7 @@ h1:first-child {
     font-size: 0.7em;
   }
 
-  a:not([target='_blank']):not(.hash-link):not([class^='author']):not(.card):not(.text-list
-      a) {
+  a:not([target='_blank']):not(.hash-link):not([class^='author']):not(.card):not(.text-list a) {
     color: #0f172a;
     text-decoration: none;
     font-weight: 600;
@@ -244,5 +243,22 @@ ul.table-of-contents li ul {
     padding: inherit;
     font-size: 0.7em;
     color: #57a773;
+  }
+}
+
+.Shortcut {
+  display: block;
+  padding: 0.15rem 0.3rem;
+  background-color: var(--ifm-navbar-background-color);
+  color: var(--ifm-navbar-search-input-placeholder-color);
+  font: 12px var(--ifm-font-family-monospace);
+  border: 1px solid var(--ifm-color-emphasis-500);
+  border-radius: 0.2rem;
+  box-shadow: inset 0 -1px 0 var(--ifm-color-emphasis-500);
+
+  @media (max-width: 600px) {
+    & {
+      display: none;
+    }
   }
 }

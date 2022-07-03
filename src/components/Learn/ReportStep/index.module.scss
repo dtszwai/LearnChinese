@@ -1,0 +1,14 @@
+.ReportStep {
+  cursor: default;
+  min-width: 10px;
+  user-select: none;
+  text-align: left;
+  font-size: 12px;
+}
+
+.ReportStepLink {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.1s;
+}

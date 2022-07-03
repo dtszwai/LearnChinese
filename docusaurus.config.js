@@ -39,6 +39,7 @@ module.exports = {
       },
     ],
     "docusaurus-plugin-sass",
+    './src/components/plugin/Lesson.js'
   ],
 
   presets: [
@@ -50,7 +51,7 @@ module.exports = {
           sidebarCollapsed: false,
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
-          beforeDefaultRemarkPlugins: [require('./src/components/Remark/TOC')],
+          beforeDefaultRemarkPlugins: [require('./src/components/plugin/TOC')],
         },
         blog: false,
         theme: { customCss: [require.resolve("./src/css/custom.scss"), require.resolve("./src/css/typography.scss")] },
@@ -74,6 +75,7 @@ module.exports = {
         // { type: "doc", docId: "S2/index", label: "中二級", position: "left" },
         { type: "doc", docId: "S3/index", label: "中三級", position: "left" },
         { type: "docSidebar", sidebarId: "settext", label: "指定文言", position: "left" },
+        { to: "learn", label: "學習", position: "right", className: "navbarCheatsheet" },
         { to: "cheatsheet", label: "語基知識表", position: "right", className: "navbarCheatsheet" },
         { href: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/", label: "粵音", position: "right", },
         { href: "https://www.moedict.tw/", label: "萌典", position: "right", },

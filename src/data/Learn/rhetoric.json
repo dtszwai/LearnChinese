@@ -1,0 +1,36 @@
+[
+  {
+    "image": "",
+    "topic": "",
+    "title": "修辭手法",
+    "description": "為了使文字詞句表達得更準確、鮮明、生動，我們會運用不同的修飾手法。\\n\\n一般所說的修辭，是指運用各種修辭格，如比喻、誇張、對偶等，以提高語言表達效果。\\n\\n修辭格有特定的表達效果，也有特定的結構形式，常用的修辭格有十多種，我們必須好好掌握。",
+    "content": "",
+    "prefix": "",
+    "suffix": "",
+    "initialValue": "",
+    "placeholder": "",
+    "regexMatch": [""],
+    "suggestedAnswer": [""],
+    "videoURL": "",
+    "readOnly": false,
+    "interactive": false,
+    "applyRegex": false
+  },
+  {
+    "image": "",
+    "topic": "修辭手法",
+    "title": "比喻修辭",
+    "description": "",
+    "content": "",
+    "prefix": "",
+    "suffix": "",
+    "initialValue": "",
+    "placeholder": "",
+    "regexMatch": [""],
+    "suggestedAnswer": [""],
+    "videoURL": "",
+    "readOnly": false,
+    "interactive": true,
+    "applyRegex": false
+  }
+]

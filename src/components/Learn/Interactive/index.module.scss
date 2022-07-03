@@ -1,0 +1,140 @@
+.Block {
+  background: var(--ifm-code-background);
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 1px;
+  margin: 20px 0;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.3s;
+  &:last-child {
+    margin-bottom: 5px;
+  }
+}
+
+.Block::before {
+  content: attr(data-title);
+  position: absolute;
+  top: -6px;
+  left: 11px;
+  background: #e6e6e6;
+  color: #999;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.BlockContent {
+  composes: Block;
+  display: block;
+  text-align: left;
+  padding: 20px 12px;
+  min-height: 65px;
+  line-height: 20px;
+}
+
+.BlockRegex {
+  composes: Block;
+  display: flex;
+  flex-direction: column;
+}
+
+.InputWrapper {
+  background: #e6e6e6;
+  padding: 7px 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html[data-theme='dark'] {
+  & .Block::before,
+  & .InputWrapper {
+    background: #272727;
+  }
+}
+
+.InputWrapper::before {
+  content: attr(data-prefix);
+  color: gray;
+}
+
+.InputWrapper::after {
+  content: attr(data-suffix);
+  color: gray;
+}
+
+.HiddenFlags::before,
+.HiddenFlags::after {
+  display: none;
+}
+
+.Input {
+  border: 0px;
+  padding: 5px;
+  margin: 3px;
+  text-align: center;
+  background: none;
+  color: #2a87d8;
+  max-width: 440px;
+  min-width: 60px;
+  overflow: hidden;
+  outline: 1px #444 dotted;
+  line-height: 1rem;
+}
+
+.Input:active,
+.Input:focus {
+  outline: 1px saddlebrown solid;
+}
+
+.ResultTag {
+  box-shadow: 2px 2px 1px #21212173;
+  min-width: 10px;
+  height: 20px;
+  margin: 1px 3px;
+  color: #000;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.Error .ResultTag {
+  background: tomato;
+}
+
+.Match .ResultTag {
+  background: #ffaa0d;
+}
+
+.Success .ResultTag {
+  background: #c4e0f9;
+}
+
+.ParentError .BlockRegex {
+  box-shadow: inset 0px 0px 0px 2px tomato;
+}
+
+.WatchButton {
+  display: inline-flex;
+  align-items: center;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.WatchButton:hover {
+  color: #2a87d8;
+}
+
+.WatchButton svg {
+  margin-right: 5px;
+}

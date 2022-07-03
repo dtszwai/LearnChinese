@@ -1,0 +1,39 @@
+.Progress {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  user-select: none;
+  position: relative;
+  margin: 2rem auto;
+}
+
+.ProgressStatus {
+  font-size: 14px;
+  color: #999;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  position: absolute;
+}
+
+.ProgressBar {
+  width: 100%;
+  max-width: 200px;
+  height: 2px;
+  background-color: #444;
+  border-radius: 2px;
+}
+
+.ProgressLine {
+  height: 6px;
+  border-radius: 3px;
+  position: relative;
+  bottom: 2px;
+  background-color: var(--ifm-color-primary);
+  transition: 0.1s;
+  min-width: 6px;
+  max-width: 100%;
+}
