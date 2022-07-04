@@ -7,13 +7,13 @@ import styles from './index.module.scss';
 import { useLocation } from '@docusaurus/router';
 import clsx from 'clsx';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import { LessonData } from './types';
 
 export default () => {
   if (!ExecutionEnvironment.canUseDOM) return null;
-
   const { pathname: location } = useLocation();
   const slug = location.split('/')[location.split('/').length - 1];
-  const data = require(`@site/src/data/Learn/${slug}.json`);
+  const data: LessonData[] = require(`@site/src/data/Learn/${slug}.json`);
   const lesson = require('@site/src/data/Learn/index.json')[slug];
   const key = `lesson.${lesson.slug}`;
 

@@ -1,36 +1,43 @@
 [
   {
-    "image": "",
-    "topic": "",
     "title": "修辭手法",
-    "description": "為了使文字詞句表達得更準確、鮮明、生動，我們會運用不同的修飾手法。\\n\\n一般所說的修辭，是指運用各種修辭格，如比喻、誇張、對偶等，以提高語言表達效果。\\n\\n修辭格有特定的表達效果，也有特定的結構形式，常用的修辭格有十多種，我們必須好好掌握。",
-    "content": "",
-    "prefix": "",
-    "suffix": "",
-    "initialValue": "",
-    "placeholder": "",
-    "regexMatch": [""],
-    "suggestedAnswer": [""],
-    "videoURL": "",
-    "readOnly": false,
-    "interactive": false,
-    "applyRegex": false
+    "description": "修是修飾，辭是文辭，修飾文辭即為修辭。為了使文字詞句表達得更準確、鮮明、生動、優美，引起讀者的共鳴，我們會運用不同的`修辭手法`。\\n\\n一般所說的修辭，是指運用各種`修辭格`，如比喻、誇張、對偶等，以提高語言表達效果。\\n\\n修辭格有特定的表達效果，也有特定的結構形式，常用的修辭格有十多種，我們必須好好掌握。",
+    "interactive": false
   },
   {
-    "image": "",
     "topic": "修辭手法",
-    "title": "比喻修辭",
-    "description": "",
-    "content": "",
-    "prefix": "",
-    "suffix": "",
-    "initialValue": "",
-    "placeholder": "",
-    "regexMatch": [""],
-    "suggestedAnswer": [""],
-    "videoURL": "",
-    "readOnly": false,
-    "interactive": true,
-    "applyRegex": false
+    "title": "比喻",
+    "description": "比喻是將一件事物指成另一件事物，使所寫的對象顯得具體。例如「友情如一罈醇酒，愈陳愈濃郁醉人」，就以`醇酒`比喻`友情`的恆久動人。\\n\\n比喻的句式組成，包含「本體」（所要說明的事物主體）、「喻體」（比喻物）、「喻詞」（用作連接喻體和喻詞：如、若、像等）。以上句為例，本體就是`友情`，喻體是`如`，而喻詞則是`醇酒`。\\n",
+    "content": "秘密就像烈日下的冰淇淋，無法長久保留。",
+    "prefix": "這句比喻的本體是",
+    "suffix": "。",
+    "placeholder": "本體",
+    "regexMatch": ["秘密"],
+    "suggestedAnswer": ["秘密"],
+    "applyRegex": true
+  },
+  {
+    "topic": "修辭手法",
+    "title": "暗喻",
+    "description": "比喻可分為`明喻`、`暗喻`和`借喻`。明喻句為本體、喻體和喻詞三者兼備，而暗喻句則將喻詞替換成`具有等化性質的連結詞`，讓本體和喻體連結成相等的狀態。\\n\\n這個「相等」的狀態，是作者「意有所指而刻意為之」的創造，是一種「概念的連結」，它跟明喻著眼於「本體與比喻物之間有明顯相似的特性」有著「目的與效應」的不同。",
+    "content": "我是天空裏的一片雲。",
+    "prefix": "這句暗喻的喻詞被替換成",
+    "suffix": "。",
+    "placeholder": "連接詞",
+    "regexMatch": ["是"],
+    "suggestedAnswer": ["是"],
+    "applyRegex": true
+  },
+  {
+    "topic": "修辭手法",
+    "title": "借喻",
+    "description": "省略了「本體」和「喻詞」，便是借喻。雖然只以「喻體」來表達，但我們仍能讀出「本體」，因為「本體」是主旨，而且「本體」和「喻體」的型態、特色、概念有相似之處。\\n\\n楊喚的〈夏夜〉裏有一段描述：「撒了滿天的珍珠和一枚又大又亮的銀幣」，將珍珠比喻星星，銀幣比喻月亮，便是運用了借喻。",
+    "content": "你不妨搖曳著一頭的蓬草，不妨縱容你滿腮的苔蘚。",
+    "prefix": "這句借喻省略了本體「頭髮」，而以喻體",
+    "suffix": "來代替，帶出頭髮的散亂。",
+    "placeholder": "相似物",
+    "regexMatch": ["蓬草"],
+    "suggestedAnswer": ["蓬草"],
+    "applyRegex": true
   }
 ]

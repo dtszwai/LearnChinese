@@ -15,8 +15,8 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
   const [match, setMatch] = useState(false);
 
   const applyRegex = () => {
-    if (!data.interactive) return;
-    const { isSuccess, isMatch, err, grouppedRegex } = checkRegex(data, inputValue);
+    if (data?.interactive === false) return;
+    const { isSuccess, isMatch, err } = checkRegex(data, inputValue);
     if (err) {
       setError(Boolean(err));
       return;
@@ -28,7 +28,7 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
     setContent(
       tagWrapper({
         value: data.content,
-        regex: inputValue ? grouppedRegex : null,
+        regex: inputValue ? new RegExp(`(${inputValue})`, 'gmi') : null,
         attributes: { class: styles.ResultTag },
       }),
     );
@@ -80,6 +80,7 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
   }, [inputValue, step, data, isChanged]);
 
   if (!isShow) return null;
+  inputRef?.current?.focus();
 
   const readableContent = (content || data.content || '').replace(/\n/gm, '<br />');
 
@@ -101,7 +102,7 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
             key={step}
             type='text'
             className={styles.Input}
-            style={{ width: Math.max(inputValue.length * 16, 60, data?.placeholder.length * 16) }}
+            style={{ width: Math.max(inputValue.length * 16, 60, data?.placeholder?.length * 16) }}
             readOnly={data.readOnly}
             value={inputValue}
             onChange={onChange}

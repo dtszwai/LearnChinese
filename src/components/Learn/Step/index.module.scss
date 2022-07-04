@@ -34,14 +34,14 @@
   display: block;
   font-size: 14px;
   font-weight: normal;
-  margin: 0;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .StepDescription {
   font-size: 16px;
   line-height: 1.5em;
   margin: 1rem auto;
+  text-align: justify;
 }
 
 .StepDescriptionWord {
@@ -51,7 +51,7 @@
   }
   border-radius: 6px;
   padding: 2px 6px;
-  font-size: 12px;
+  font-size: 14px;
   white-space: nowrap;
 }
 
