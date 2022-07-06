@@ -6,6 +6,7 @@ import styles from './index.module.scss';
 
 export default ({ lesson, data, step, error, onChangeSuccess }) => {
   const [modalIsOpen, setIsOpenModal] = useState(false);
+
   const handleCloseModal = (e) => e.key === 'Escape' && setIsOpenModal(false);
 
   useEffect(() => {

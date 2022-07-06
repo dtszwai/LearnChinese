@@ -8,7 +8,7 @@ export type LessonData = {
   suffix?: string;
   initialValue?: string;
   placeholder?: string;
-  regexMatch?: string[];
+  regexMatch?: string;
   suggestedAnswer?: string[];
   videoURL?: string;
   readOnly?: boolean;

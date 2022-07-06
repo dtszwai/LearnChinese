@@ -41,16 +41,15 @@
 .BlockRegex {
   composes: Block;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .InputWrapper {
   background: #e6e6e6;
   padding: 7px 15px;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: justify;
 }
 
 html[data-theme='dark'] {
@@ -62,12 +61,12 @@ html[data-theme='dark'] {
 
 .InputWrapper::before {
   content: attr(data-prefix);
-  color: gray;
+  color: var(--ifm-font-color-base);
 }
 
 .InputWrapper::after {
   content: attr(data-suffix);
-  color: gray;
+  color: var(--ifm-font-color-base);
 }
 
 .HiddenFlags::before,
@@ -87,6 +86,9 @@ html[data-theme='dark'] {
   overflow: hidden;
   outline: 1px #444 dotted;
   line-height: 1rem;
+  &::placeholder {
+    color: #80808070;
+  }
 }
 
 .Input:active,
@@ -126,7 +128,6 @@ html[data-theme='dark'] {
 .WatchButton {
   display: inline-flex;
   align-items: center;
-  margin-right: auto;
   cursor: pointer;
 }
 

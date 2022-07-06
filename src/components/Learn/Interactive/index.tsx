@@ -16,15 +16,24 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
 
   const applyRegex = () => {
     if (data?.interactive === false) return;
+    if (data.applyRegex === false) {
+      const isCorrect = data.suggestedAnswer.includes(inputValue);
+      setMatch(isCorrect);
+      setSuccess(isCorrect);
+      setError(isCorrect);
+      return;
+    }
+
     const { isSuccess, isMatch, err } = checkRegex(data, inputValue);
+
     if (err) {
       setError(Boolean(err));
       return;
     }
     setMatch(isMatch);
     setSuccess(isSuccess);
-    if (!data.applyRegex) return;
     setError(!((isChanged && isSuccess) || isMatch));
+
     setContent(
       tagWrapper({
         value: data.content,
@@ -39,7 +48,17 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
     setInputValue(e.target.value);
   };
 
+  const resetStep = () => {
+    setInputValue(data?.initialValue || '');
+    setContent('');
+    setIsChanged(false);
+    setError(false);
+    setSuccess(false);
+    setMatch(false);
+  };
+
   useEffect(() => {
+    resetStep();
     setError(false);
     if (data.interactive === false) {
       setSuccess(true);
@@ -80,7 +99,6 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
   }, [inputValue, step, data, isChanged]);
 
   if (!isShow) return null;
-  inputRef?.current?.focus();
 
   const readableContent = (content || data.content || '').replace(/\n/gm, '<br />');
 
@@ -95,7 +113,9 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
     >
       <div className={styles.BlockContent} data-title={`問題`} dangerouslySetInnerHTML={{ __html: readableContent }} />
       <div className={styles.BlockRegex} data-title={`答案`}>
-        {!data.noHint && <Hint answer={data.suggestedAnswer} />}
+        <div className={styles.WatchButton} onClick={() => setIsOpenModal(true)}>
+          {data.videoURL && `📹 觀看影片`}
+        </div>
         <div className={styles.InputWrapper} data-prefix={data?.prefix} data-suffix={data?.suffix}>
           <input
             ref={inputRef}
@@ -109,11 +129,7 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
             placeholder={data?.placeholder}
           />
         </div>
-        {data.videoURL && (
-          <div className={styles.WatchButton} onClick={() => setIsOpenModal(true)}>
-            📹 觀看影片
-          </div>
-        )}
+        {!data.noHint && <Hint answer={data.suggestedAnswer} />}
       </div>
     </div>
   );
