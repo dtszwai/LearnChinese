@@ -4,9 +4,10 @@ import Tooltip from '@mui/material/Tooltip';
 
 interface Props {
   answer: string[];
+  step: { currentStep: number; lastStep: number };
 }
 
-export default ({ answer }: Props) => {
+export default ({ answer, step }: Props) => {
   const [showStatus, setShowStatus] = useState(false);
 
   const toggleShow = (e) => {
@@ -24,6 +25,10 @@ export default ({ answer }: Props) => {
   useEffect(() => {
     setShowStatus(false);
   }, [answer]);
+
+  useEffect(() => {
+    setShowStatus(false);
+  }, [step]);
 
   const hint = (
     <div className={styles.HintAnswer}>

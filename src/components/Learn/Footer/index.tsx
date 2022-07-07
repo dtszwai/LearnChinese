@@ -6,18 +6,18 @@ import styles from './index.module.scss';
 
 interface Props {
   steps: object[];
-  step: number;
+  currentStep: number;
   success: boolean;
   error: boolean;
   nextStep: MouseEventHandler<HTMLDivElement>;
   prevStep: MouseEventHandler<HTMLDivElement>;
 }
 
-const LearnFooter = ({ steps, step, nextStep, prevStep, success, error }: Props) => (
+export default ({ steps, currentStep, nextStep, prevStep, success, error }: Props) => (
   <div className={styles.LearnFooter}>
     <div className={styles.LearnFooterRow}>
       <div className={styles.LearnFooterPrevWrapper}>
-        {step > 0 && (
+        {currentStep > 0 && (
           <div className={styles.NavigationStepPrev} onClick={prevStep}>
             <div className='Shortcut'>Shift + Enter</div>
             <div className={styles.NavigationStepText}>
@@ -28,7 +28,7 @@ const LearnFooter = ({ steps, step, nextStep, prevStep, success, error }: Props)
         )}
       </div>
       <div className={styles.LearnFooterNextWrapper}>
-        {step < steps.length - 1 && (
+        {currentStep < steps.length - 1 && (
           <div className={styles.NavigationStepNext} onClick={nextStep}>
             <div className={styles.NavigationStepNextWrapper}>
               <div className='Shortcut'>Enter</div>
@@ -56,5 +56,3 @@ const LearnFooter = ({ steps, step, nextStep, prevStep, success, error }: Props)
     </div>
   </div>
 );
-
-export default LearnFooter;

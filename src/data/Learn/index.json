@@ -1,8 +1,8 @@
 {
   "rhetoric": {
+    "key": "learn.rhetoric",
     "slug": "rhetoric",
     "title": "修辭手法",
-    "description": "學習十多種修辭手法。",
-    "disabled": true
+    "description": "學習十多種修辭手法。"
   }
 }

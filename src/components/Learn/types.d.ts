@@ -1,3 +1,10 @@
+export type Lesson = {
+  key: string;
+  slug: string;
+  title: string;
+  description: string;
+};
+
 export type LessonData = {
   image?: string;
   topic?: string;

@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 interface Props {
   title: string;
-  step: number;
+  step: { currentStep: number; lastStep: number };
 }
 
 export default ({ title, step }: Props) => (
@@ -13,7 +13,7 @@ export default ({ title, step }: Props) => (
     <Link
       className={styles.link}
       to={`https://docs.google.com/forms/d/e/1FAIpQLSewteJTEVkqRZux55d_-Z0UI2EncxfGvZtT4I1A5oKObqcy5Q/viewform?usp=pp_url&entry.1511255577=${title} Step:${
-        step + 1
+        step.currentStep + 1
       }`}
     >
       <MdOutlineFeedback size={16} style={{ verticalAlign: 'text-bottom' }} />

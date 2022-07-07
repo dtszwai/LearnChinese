@@ -5,25 +5,23 @@ import checkRegex from '../checkRegex';
 import cx from 'classnames';
 import styles from './index.module.scss';
 
-export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setIsOpenModal }) => {
+export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputValue, setInputValue] = useState(data?.initialValue || '');
   const [content, setContent] = useState('');
-  const [isChanged, setIsChanged] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [match, setMatch] = useState(false);
 
   const applyRegex = () => {
-    if (data?.interactive === false) return;
     if (data.applyRegex === false) {
       const isCorrect = data.suggestedAnswer.includes(inputValue);
       setMatch(isCorrect);
       setSuccess(isCorrect);
+      onChangeSuccess(isCorrect);
       setError(isCorrect);
       return;
     }
-
     const { isSuccess, isMatch, err } = checkRegex(data, inputValue);
 
     if (err) {
@@ -32,8 +30,8 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
     }
     setMatch(isMatch);
     setSuccess(isSuccess);
-    setError(!((isChanged && isSuccess) || isMatch));
-
+    onChangeSuccess(isSuccess);
+    setError(!(isSuccess || isMatch));
     setContent(
       tagWrapper({
         value: data.content,
@@ -43,62 +41,35 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
     );
   };
 
-  const onChange = (e) => {
-    setIsChanged(true);
-    setInputValue(e.target.value);
-  };
-
-  const resetStep = () => {
-    setInputValue(data?.initialValue || '');
-    setContent('');
-    setIsChanged(false);
-    setError(false);
-    setSuccess(false);
-    setMatch(false);
-  };
-
-  useEffect(() => {
-    resetStep();
-    setError(false);
-    if (data.interactive === false) {
-      setSuccess(true);
-      return;
-    }
-    setSuccess(false);
-
-    const lastStep = localStorage.getItem(`lesson.${lesson.slug}`)
-      ? JSON.parse(localStorage.getItem(`lesson.${lesson.slug}`))?.lastStep
-      : 0;
-
-    const isCompletedStep = step < lastStep;
-    const currentRegex = isCompletedStep ? data.suggestedAnswer[0] : data.initialValue;
-
-    applyRegex();
-    setInputValue(currentRegex || '');
-    setIsChanged(false);
-    inputRef?.current?.blur();
-  }, [step]);
-
-  useEffect(() => {
-    onChangeSuccess(success);
-  }, [success]);
-
   const handleFocus = (e) => {
     if (e.keyCode !== 9) return; // Tab
     e.preventDefault();
     inputRef?.current?.focus();
   };
 
+  const resetStep = () => {
+    setInputValue(data?.initialValue || '');
+    setContent('');
+    setError(false);
+    setSuccess(false);
+    onChangeSuccess(false);
+    setMatch(false);
+  };
+
   useEffect(() => {
-    window.addEventListener('keydown', handleFocus);
+    resetStep();
+    addEventListener('keydown', handleFocus);
+    const isCompletedStep = step.currentStep < step.lastStep;
+    const currentRegex = isCompletedStep ? data.suggestedAnswer[0] : data.initialValue;
+
+    setInputValue(currentRegex || '');
+    inputRef?.current?.blur();
     return () => window.removeEventListener('keydown', handleFocus);
-  }, []);
+  }, [step]);
 
   useEffect(() => {
     applyRegex();
-  }, [inputValue, step, data, isChanged]);
-
-  if (!isShow) return null;
+  }, [inputValue, step, data]);
 
   const readableContent = (content || data.content || '').replace(/\n/gm, '<br />');
 
@@ -119,13 +90,12 @@ export default ({ lesson, data, step, isShow, parentError, onChangeSuccess, setI
         <div className={styles.InputWrapper} data-prefix={data?.prefix} data-suffix={data?.suffix}>
           <input
             ref={inputRef}
-            key={step}
             type='text'
             className={styles.Input}
-            style={{ width: Math.max(inputValue.length * 16, 60, data?.placeholder?.length * 16) }}
+            style={{ width: Math.max(inputValue.length * 16, 60, data?.placeholder?.length * 16 || 0) }}
             readOnly={data.readOnly}
             value={inputValue}
-            onChange={onChange}
+            onChange={(e) => setInputValue(e.target.value)}
             placeholder={data?.placeholder}
           />
         </div>

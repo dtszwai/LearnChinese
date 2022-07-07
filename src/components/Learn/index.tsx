@@ -5,53 +5,49 @@ import Step from './Step';
 import Progress from './Progress';
 import styles from './index.module.scss';
 import { useLocation } from '@docusaurus/router';
-import clsx from 'clsx';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import { LessonData } from './types';
+import { Lesson, LessonData } from './types';
 
 export default () => {
   if (!ExecutionEnvironment.canUseDOM) return null;
-  const { pathname: location } = useLocation();
-  const slug = location.split('/')[location.split('/').length - 1];
+  const slug = useLocation().pathname.split('/').at(-1);
+  const lesson: Lesson = require('@site/src/data/Learn/index.json')[slug];
   const data: LessonData[] = require(`@site/src/data/Learn/${slug}.json`);
-  const lesson = require('@site/src/data/Learn/index.json')[slug];
-  const key = `lesson.${lesson.slug}`;
 
-  const record = localStorage.getItem(key);
-  const [step, setStep] = useState(0);
-  const [lastStep, setLastStep] = useState(0);
+  const [step, setStep] = useState({ currentStep: 0, lastStep: 0 });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-
-  let learnErrorTimer;
-
-  useEffect(() => {
-    const { lastStep = 0, currentStep = lastStep } = !record ? {} : JSON.parse(record);
-    setStep(currentStep);
-    setLastStep(lastStep);
-    setSuccess(currentStep < lastStep);
-  }, [key]);
+  const record = localStorage.getItem(lesson.key);
 
   useEffect(() => {
-    const progress = !record ? {} : JSON.parse(record);
-    progress.currentStep = step;
-    if (step > lastStep) progress.lastStep = step;
-    window.localStorage.setItem(key, JSON.stringify(progress));
-  }, [step, lastStep, key]);
+    const { lastStep = 0, currentStep = lastStep } = record ? JSON.parse(record) : {};
+    setStep({ currentStep: currentStep, lastStep: lastStep });
+  }, []);
 
-  const prevStep = () => step > 0 && setStep(step - 1);
+  useEffect(() => {
+    data[step.currentStep].interactive === false && setSuccess(true);
+    const progress = step;
+    if (step.currentStep > step.lastStep) progress.lastStep = step.currentStep;
+    window.localStorage.setItem(lesson.key, JSON.stringify(progress));
+  }, [step]);
+
+  const prevStep = () => {
+    if (step.currentStep > 0) {
+      setStep((prev) => ({ ...prev, currentStep: prev.currentStep - 1 }));
+    }
+  };
 
   const nextStep = () => {
-    if (!success) {
+    let learnErrorTimer;
+    if (!success && data[step.currentStep].interactive !== false) {
       setError(true);
       clearTimeout(learnErrorTimer);
       learnErrorTimer = setTimeout(() => setError(false), 1000);
       return;
     }
-    const nextStep = step + 1;
-    if (step < data.length - 1) {
+    if (step.currentStep < data.length - 1) {
       setError(false);
-      setStep(nextStep);
+      setStep((prev) => ({ ...prev, currentStep: prev.currentStep + 1 }));
     }
   };
 
@@ -65,14 +61,21 @@ export default () => {
   useEffect(() => {
     addEventListener('keypress', handleChangeStep);
     return () => removeEventListener('keypress', handleChangeStep);
-  }, [success]);
+  }, [step, success]);
 
   return (
     <Layout title={lesson.title}>
-      <main className={clsx('container', styles.container)}>
-        <Progress total={data.length} current={step + 1} />
-        <Step lesson={lesson} data={data[step]} step={step} onChangeSuccess={setSuccess} error={error} />
-        <LearnFooter steps={data} step={step} prevStep={prevStep} nextStep={nextStep} success={success} error={error} />
+      <main className={styles.container}>
+        <Progress total={data.length} current={step.currentStep + 1} />
+        <Step lesson={lesson} data={data[step.currentStep]} step={step} onChangeSuccess={setSuccess} error={error} />
+        <LearnFooter
+          steps={data}
+          currentStep={step.currentStep}
+          prevStep={prevStep}
+          nextStep={nextStep}
+          success={success}
+          error={error}
+        />
       </main>
     </Layout>
   );

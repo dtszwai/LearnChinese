@@ -40,31 +40,34 @@ export default ({ lesson, data, step, error, onChangeSuccess }) => {
           }).replace(/\\n/gim, '<br/>'),
         }}
       />
-      <InteractiveArea
-        lesson={lesson}
-        isShow={isInteractive}
-        data={data}
-        step={step}
-        parentError={error}
-        onChangeSuccess={onChangeSuccess}
-        setIsOpenModal={setIsOpenModal}
-      />
-      {data.videoURL && modalIsOpen && (
-        <div className={styles.StepVideoModal}>
-          <iframe
-            width='80%'
-            height='80%'
-            src={data.videoURL}
-            frameBorder={0}
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
+      {isInteractive && (
+        <>
+          <InteractiveArea
+            lesson={lesson}
+            data={data}
+            step={step}
+            parentError={error}
+            onChangeSuccess={onChangeSuccess}
+            setIsOpenModal={setIsOpenModal}
           />
-          <button className='button button--secondary' onClick={() => setIsOpenModal(false)}>
-            關閉
-          </button>
-        </div>
+          <Report title={lesson.title} step={step} />
+          {data.videoURL && modalIsOpen && (
+            <div className={styles.StepVideoModal}>
+              <iframe
+                width='80%'
+                height='80%'
+                src={data.videoURL}
+                frameBorder={0}
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowFullScreen
+              />
+              <button className='button button--secondary' onClick={() => setIsOpenModal(false)}>
+                關閉
+              </button>
+            </div>
+          )}
+        </>
       )}
-      {isInteractive && <Report title={lesson.title} step={step} />}
     </div>
   );
 };

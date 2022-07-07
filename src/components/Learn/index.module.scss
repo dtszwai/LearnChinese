@@ -3,4 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   height: calc(100vh - var(--ifm-navbar-height));
+  margin: 0 auto;
+  max-width: var(--ifm-container-width);
 }
