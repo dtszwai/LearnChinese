@@ -6,17 +6,11 @@ import { CommentaryContext } from '@site/src/theme/Root';
 type Tips = { children: any; group: string };
 type Display = { left?: boolean } & Target & Text;
 type Target = { all: true; group?: never } | { group: string; all?: never };
-type Text =
-  | { children: React.ReactNode; label?: never }
-  | { label: string; children?: never };
+type Text = { children: React.ReactNode; label?: never } | { label: string; children?: never };
 
 const Text = (props: Tips) => {
   const [show] = useContext(CommentaryContext);
-  return (
-    <div style={{ display: show[props.group] ? 'inherit' : 'none' }}>
-      {props.children}
-    </div>
-  );
+  return <div style={{ display: show[props.group] ? 'inherit' : 'none' }}>{props.children}</div>;
 };
 
 const Button = (props: Display) => {
@@ -36,35 +30,24 @@ const Button = (props: Display) => {
         color='success'
         variant='outlined'
         onClick={showComment}
-        label={
-          props.children ?? (show[props.group] ? '隱藏' : '顯示') + props.label
-        }
+        label={props.children ?? (show[props.group] ? '隱藏' : '顯示') + props.label}
       />
     </div>
   );
 };
 
-const Panel = (props) => {
-  return (
-    <div
-      className='Commentary_Panel'
-      style={{ display: 'flex', justifyContent: 'flex-end' }}
-    >
-      {props.children}
-    </div>
-  );
-};
+const Panel = (props) => (
+  <div className='Commentary_Panel' style={{ display: 'flex', justifyContent: 'flex-end' }}>
+    {props.children}
+  </div>
+);
 
 export default (props) => {
-  switch (props.type) {
-    case 'button':
-      return <Button {...props} />;
-    case 'text':
-      return <Text {...props} />;
-    case 'panel':
-      return <Panel {...props} />;
-    default:
-      console.log('Error: Commentary enter wrong type.');
-      return <div {...props} />;
-  }
+  const varientMap = {
+    button: <Button {...props} />,
+    text: <Text {...props} />,
+    panel: <Panel {...props} />,
+  };
+
+  return varientMap[props.type];
 };

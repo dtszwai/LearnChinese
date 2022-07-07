@@ -5,12 +5,7 @@ type TagWrapper = {
   attributes?: object;
 };
 
-const tagWrapper = ({
-  value,
-  regex,
-  tagName = 'span',
-  attributes = {},
-}: TagWrapper): string => {
+export default ({ value, regex, tagName = 'span', attributes = {} }: TagWrapper): string => {
   if (typeof value !== 'string') return value;
 
   const setAttributes = (attrs) =>
@@ -18,10 +13,5 @@ const tagWrapper = ({
       .map(([key, val]) => `${key === 'className' ? 'class' : key}="${val}"`)
       .join(' ');
 
-  return value.replace(
-    regex,
-    `<${tagName} ${setAttributes(attributes)}>$1</${tagName}>`,
-  );
+  return value.replace(regex, `<${tagName} ${setAttributes(attributes)}>$1</${tagName}>`);
 };
-
-export default tagWrapper;

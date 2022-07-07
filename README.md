@@ -1,4 +1,4 @@
-# [書目引得](https://rccttwd.github.io/library/)
+# [書目引得](https://learnchinese.vercel.app/)
 
 ## 中文科閱讀篇章
 

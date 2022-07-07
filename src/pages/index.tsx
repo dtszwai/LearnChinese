@@ -59,10 +59,7 @@ const Header = ({ siteConfig }) => (
 const TextList = ({ grade, title, Src, color = 'inherit' }) => (
   <div className={styles.TextList} id={grade}>
     <div className={styles.heading}>
-      <img
-        src={require(`@site/static/img/${grade}.png`).default}
-        style={{ alignSelf: 'center' }}
-      />
+      <img src={require(`@site/static/img/${grade}.png`).default} style={{ alignSelf: 'center' }} />
       <Link to={grade}>
         <h2 style={{ color: color }}>{title}級課文</h2>
       </Link>
@@ -74,10 +71,7 @@ const TextList = ({ grade, title, Src, color = 'inherit' }) => (
 const Settext = () => (
   <div className={styles.TextList} id='settext' style={{ color: '#0ea5e9' }}>
     <div className={styles.heading}>
-      <img
-        src={require(`@site/static/img/settext.png`).default}
-        style={{ alignSelf: 'center' }}
-      />
+      <img src={require(`@site/static/img/settext.png`).default} style={{ alignSelf: 'center' }} />
       <Link to='settext'>
         <h2 style={{ color: '#0ea5e9' }}>指定文言</h2>
       </Link>
@@ -85,9 +79,7 @@ const Settext = () => (
     <div className='text-list'>
       <ul>
         <li>
-          <Link to={'settext/廉頗藺相如列傳（節錄）'}>
-            廉頗藺相如列傳（節錄）
-          </Link>
+          <Link to={'settext/廉頗藺相如列傳（節錄）'}>廉頗藺相如列傳（節錄）</Link>
         </li>
         <li>
           <Link to={'settext/岳陽樓記'}>岳陽樓記</Link>

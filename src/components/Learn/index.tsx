@@ -5,30 +5,23 @@ import Step from './Step';
 import Progress from './Progress';
 import styles from './index.module.scss';
 import { useLocation } from '@docusaurus/router';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import { Lesson, LessonData } from './types';
+import useLocalStorage from '@site/src/utils/useLocalStorage';
 
 export default () => {
-  if (!ExecutionEnvironment.canUseDOM) return null;
   const slug = useLocation().pathname.split('/').at(-1);
   const lesson: Lesson = require('@site/src/data/Learn/index.json')[slug];
   const data: LessonData[] = require(`@site/src/data/Learn/${slug}.json`);
-
-  const [step, setStep] = useState({ currentStep: 0, lastStep: 0 });
+  const [record, setRecord] = useLocalStorage(lesson.key, { currentStep: 0, lastStep: 0 });
+  const [step, setStep] = useState(record);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-  const record = localStorage.getItem(lesson.key);
-
-  useEffect(() => {
-    const { lastStep = 0, currentStep = lastStep } = record ? JSON.parse(record) : {};
-    setStep({ currentStep: currentStep, lastStep: lastStep });
-  }, []);
 
   useEffect(() => {
     data[step.currentStep].interactive === false && setSuccess(true);
     const progress = step;
     if (step.currentStep > step.lastStep) progress.lastStep = step.currentStep;
-    window.localStorage.setItem(lesson.key, JSON.stringify(progress));
+    setRecord(progress);
   }, [step]);
 
   const prevStep = () => {
@@ -39,7 +32,7 @@ export default () => {
 
   const nextStep = () => {
     let learnErrorTimer;
-    if (!success && data[step.currentStep].interactive !== false) {
+    if (!success) {
       setError(true);
       clearTimeout(learnErrorTimer);
       learnErrorTimer = setTimeout(() => setError(false), 1000);
@@ -69,7 +62,7 @@ export default () => {
         <Progress total={data.length} current={step.currentStep + 1} />
         <Step lesson={lesson} data={data[step.currentStep]} step={step} onChangeSuccess={setSuccess} error={error} />
         <LearnFooter
-          steps={data}
+          totalSteps={data.length - 1}
           currentStep={step.currentStep}
           prevStep={prevStep}
           nextStep={nextStep}

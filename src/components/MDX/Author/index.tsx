@@ -10,15 +10,9 @@ interface Author {
   source?: string;
 }
 
-export default function ({ name, source, dynasty }: Author) {
+export default ({ name, source, dynasty }: Author) => {
   const data = Object(authorInfo[name]);
-
-  const Avatar = (props) =>
-    data.avatar ? (
-      <img {...props} src={useBaseUrl(data.avatar)} />
-    ) : (
-      <MdFace {...props} />
-    );
+  const Avatar = (props) => (data.avatar ? <img {...props} src={useBaseUrl(data.avatar)} /> : <MdFace {...props} />);
 
   return (
     <div className={styles.author}>
@@ -32,4 +26,4 @@ export default function ({ name, source, dynasty }: Author) {
       </div>
     </div>
   );
-}
+};

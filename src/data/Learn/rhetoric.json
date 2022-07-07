@@ -97,13 +97,11 @@
   {
     "image": "/img/congratulation.gif",
     "title": "你已完成`比喻`修辭練習！",
-    "description": "",
     "interactive": false
   },
   {
     "image": "/img/construction.gif",
     "title": "More Coming Soon!",
-    "description": "",
     "interactive": false
   }
 ]

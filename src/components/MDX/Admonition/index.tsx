@@ -2,13 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import clsx from 'clsx';
 import { useColorMode } from '@docusaurus/theme-common';
-import {
-  BsSticky,
-  BsJournalText,
-  BsChatSquareQuote,
-  BsTag,
-  BsLink45Deg,
-} from 'react-icons/bs';
+import { BsSticky, BsJournalText, BsChatSquareQuote, BsTag, BsLink45Deg } from 'react-icons/bs';
 
 type Props = {
   children: React.ReactNode;
@@ -52,10 +46,7 @@ const variantMap = {
 export default ({ children, type, title }: Props) => {
   const variant = variantMap[type];
   return (
-    <div
-      className={clsx(styles.Container, styles[type])}
-      style={variant[useColorMode().colorMode]}
-    >
+    <div className={clsx(styles.Container, styles[type])} style={variant[useColorMode().colorMode]}>
       <h3 className={styles.Heading}>
         <variant.Icon className={styles.Icon} />
         {title ?? variant.title}

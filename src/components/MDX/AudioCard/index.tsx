@@ -4,7 +4,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Controls from './Controls';
 import List from './List';
 import styles from './styles.module.scss';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 type trackProps = {
   title: string;
@@ -24,30 +23,20 @@ type Props =
     };
 
 export default ({ track, tracks }: Props) => {
-  if (!ExecutionEnvironment.canUseDOM) return null;
-
   const [trackIndex, setTrackIndex] = useState(0);
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState<boolean>();
   const [duration, setDuration] = useState(0);
-  const {
-    title,
-    author,
-    src: _src,
-    image = '/img/audio.svg',
-  } = track ?? tracks[trackIndex];
+  const { title, author, src: _src, image = '/img/audio.svg' } = track ?? tracks[trackIndex];
 
   const src = useBaseUrl(_src);
 
-  const audioRef = useRef(new Audio(src));
-  audioRef.current.onloadedmetadata = () =>
-    setDuration(audioRef.current.duration);
+  const audioRef = useRef(typeof Audio !== 'undefined' ? new Audio(src) : ({} as HTMLAudioElement));
+  audioRef.current.onloadedmetadata = () => setDuration(audioRef.current.duration);
 
   const intervalRef = useRef<NodeJS.Timer>();
 
-  const currentPercentage = duration
-    ? `${(trackProgress / duration) * 100}%`
-    : '0%';
+  const currentPercentage = duration ? `${(trackProgress / duration) * 100}%` : '0%';
   const progressStyling = `
     -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, var(--ifm-color-info)), color-stop(${currentPercentage}, #777))
   `;
@@ -87,7 +76,7 @@ export default ({ track, tracks }: Props) => {
   useEffect(() => {
     audioRef.current.pause();
     setIsPlaying(false);
-    audioRef.current = new Audio(src);
+    audioRef.current = typeof Audio !== 'undefined' && new Audio(src);
     setTrackProgress(audioRef.current.currentTime);
   }, [trackIndex]);
 
@@ -105,18 +94,8 @@ export default ({ track, tracks }: Props) => {
     <Card className={styles.Card}>
       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography
-            variant='h5'
-            component='div'
-            className={styles.title}
-            children={title}
-          />
-          <Typography
-            variant='subtitle1'
-            component='div'
-            className={styles.author}
-            children={author}
-          />
+          <Typography variant='h5' component='div' className={styles.title} children={title} />
+          <Typography variant='subtitle1' component='div' className={styles.author} children={author} />
         </CardContent>
         <Controls {...{ isPlaying, setIsPlaying, onScrub, audioRef }} />
         <div style={{ display: 'flex', alignItems: 'flex-end' }}>
@@ -135,11 +114,7 @@ export default ({ track, tracks }: Props) => {
         </div>
       </Box>
       {track ? (
-        <CardMedia
-          component='img'
-          sx={{ width: '151px', margin: '8px' }}
-          image={useBaseUrl(image)}
-        />
+        <CardMedia component='img' sx={{ width: '151px', margin: '8px' }} image={useBaseUrl(image)} />
       ) : (
         <CardMedia>
           <List {...{ tracks, setTrackIndex }} />

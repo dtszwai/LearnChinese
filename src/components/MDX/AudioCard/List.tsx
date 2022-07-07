@@ -4,13 +4,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 
-export default ({
-  tracks,
-  setTrackIndex,
-}: {
-  tracks: { cap: string }[];
-  setTrackIndex: any;
-}) => {
+export default ({ tracks, setTrackIndex }: { tracks: { cap: string }[]; setTrackIndex: any }) => {
   return (
     <List sx={{ width: 151, margin: '8px' }} aria-label='panel'>
       <Divider />

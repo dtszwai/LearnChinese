@@ -14,9 +14,7 @@ export function Navigation({
   currentChallenge: ChallengeContents;
 }) {
   const containerRef = React.useRef<HTMLDivElement>(null);
-  const challengesNavRef = React.useRef(
-    challenges.map(() => createRef<HTMLButtonElement>()),
-  );
+  const challengesNavRef = React.useRef(challenges.map(() => createRef<HTMLButtonElement>()));
   const scrollPos = currentChallenge.order - 1;
   const canScrollLeft = scrollPos > 0;
   const canScrollRight = scrollPos < challenges.length - 1;
@@ -48,9 +46,7 @@ export function Navigation({
   };
 
   const handleSelectNav = (id: string) => {
-    const selectedChallenge = challenges.findIndex(
-      (challenge) => challenge.id === id,
-    );
+    const selectedChallenge = challenges.findIndex((challenge) => challenge.id === id);
     const currentNavRef = challengesNavRef.current[selectedChallenge].current;
     if (containerRef.current) {
       containerRef.current.scrollLeft = currentNavRef?.offsetLeft || 0;
@@ -61,8 +57,7 @@ export function Navigation({
   const handleResize = React.useCallback(() => {
     if (containerRef.current) {
       const el = containerRef.current;
-      el.scrollLeft =
-        challengesNavRef.current[scrollPos].current?.offsetLeft || 0;
+      el.scrollLeft = challengesNavRef.current[scrollPos].current?.offsetLeft || 0;
     }
   }, [containerRef, challengesNavRef, scrollPos]);
 
@@ -94,10 +89,7 @@ export function Navigation({
         >
           {challenges.map(({ name, id, order }, index) => (
             <button
-              className={clsx(
-                styles.NavChallenge,
-                currentChallenge.id === id && styles.NavChallengeActive,
-              )}
+              className={clsx(styles.NavChallenge, currentChallenge.id === id && styles.NavChallengeActive)}
               onClick={() => handleSelectNav(id)}
               key={`button-${id}`}
               ref={challengesNavRef.current[index]}

@@ -13,13 +13,7 @@ export default function (props: Task) {
 
   return (
     <>
-      <Chip
-        label='答案'
-        color='primary'
-        variant='outlined'
-        onClick={() => setOpen(!open)}
-        className={styles.button}
-      />
+      <Chip label='答案' color='primary' variant='outlined' onClick={() => setOpen(!open)} className={styles.button} />
 
       {open && (
         <Box
@@ -31,11 +25,7 @@ export default function (props: Task) {
           }}
         >
           <div className={styles.answerBlock}>{props.children}</div>
-          <MdClose
-            className={styles.closeAnswer}
-            size={24}
-            onClick={() => setOpen(false)}
-          />
+          <MdClose className={styles.closeAnswer} size={24} onClick={() => setOpen(false)} />
         </Box>
       )}
     </>

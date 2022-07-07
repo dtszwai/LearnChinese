@@ -6,15 +6,11 @@ import styles from './index.module.scss';
 
 export default ({ lesson, data, step, error, onChangeSuccess }) => {
   const [modalIsOpen, setIsOpenModal] = useState(false);
-
   const handleCloseModal = (e) => e.key === 'Escape' && setIsOpenModal(false);
-
   useEffect(() => {
-    window.addEventListener('keyup', handleCloseModal);
-    return () => window.removeEventListener('keyup', handleCloseModal);
+    addEventListener('keyup', handleCloseModal);
+    return () => removeEventListener('keyup', handleCloseModal);
   }, []);
-
-  const isInteractive = data.interactive !== false;
 
   return (
     <div className={styles.Step}>
@@ -30,20 +26,21 @@ export default ({ lesson, data, step, error, onChangeSuccess }) => {
           }).replace(/\\n/gim, '<br/>'),
         }}
       />
-      <p
-        className={styles.StepDescription}
-        dangerouslySetInnerHTML={{
-          __html: tagWrapper({
-            value: data.description,
-            regex: /`(\S*?[^`]*)`/gim,
-            attributes: { className: styles.StepDescriptionWord },
-          }).replace(/\\n/gim, '<br/>'),
-        }}
-      />
-      {isInteractive && (
+      {data.description && (
+        <p
+          className={styles.StepDescription}
+          dangerouslySetInnerHTML={{
+            __html: tagWrapper({
+              value: data.description,
+              regex: /`(\S*?[^`]*)`/gim,
+              attributes: { className: styles.StepDescriptionWord },
+            }).replace(/\\n/gim, '<br/>'),
+          }}
+        />
+      )}
+      {data.interactive !== false && (
         <>
           <InteractiveArea
-            lesson={lesson}
             data={data}
             step={step}
             parentError={error}

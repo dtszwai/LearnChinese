@@ -36,8 +36,7 @@ export default ({ questions }) => {
           className={styles.Container}
           key={index}
           style={
-            selectedAnswer[index] === undefined ||
-            questions[index].answerOptions[selectedAnswer[index]]?.isCorrect //alert if the selected answer is wrong
+            selectedAnswer[index] === undefined || questions[index].answerOptions[selectedAnswer[index]]?.isCorrect //alert if the selected answer is wrong
               ? null
               : { borderColor: '#e27396' }
           }
@@ -46,9 +45,7 @@ export default ({ questions }) => {
             className={styles.Question}
             data-before={`${index + 1}. `}
             dangerouslySetInnerHTML={{
-              __html: `${question.questionText
-                .replace(/\\n/gm, '<br />')
-                .replace(/`(.*?)`/g, '<code>$1</code>')}`,
+              __html: `${question.questionText.replace(/\\n/gm, '<br />').replace(/`(.*?)`/g, '<code>$1</code>')}`,
             }}
           />
 
@@ -56,16 +53,9 @@ export default ({ questions }) => {
             {question.answerOptions.map((option, i) => (
               <p
                 key={i}
-                className={clsx(
-                  option.isCorrect ? styles.isCorrect : null,
-                  styles.Content,
-                )}
+                className={clsx(option.isCorrect ? styles.isCorrect : null, styles.Content)}
                 data-before={`${String.fromCharCode(i + 65)}. `}
-                data-after={renderedMessage(
-                  option.isCorrect,
-                  selectedAnswer[index],
-                  i,
-                )}
+                data-after={renderedMessage(option.isCorrect, selectedAnswer[index], i)}
               >
                 {option.answerText}
               </p>

@@ -27,10 +27,6 @@ const Video = ({ src, start, site }: VideoProps) => (
   </div>
 );
 
-export const Youtube = ({ children, id, start = 0 }) => (
-  <Video src={children ?? id} start={start} site='Youtube' />
-);
+export const Youtube = ({ children, id, start = 0 }) => <Video src={children ?? id} start={start} site='Youtube' />;
 
-export const Bilibili = ({ children, id }) => (
-  <Video src={children ?? id} site='Bilibili' />
-);
+export const Bilibili = ({ children, id }) => <Video src={children ?? id} site='Bilibili' />;

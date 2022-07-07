@@ -14,9 +14,7 @@ export interface ChallengeContents {
   hint?: React.ReactNode;
 }
 
-const parseChallengeContents = (
-  children: React.ReactElement[],
-): ChallengeContents[] => {
+const parseChallengeContents = (children: React.ReactElement[]): ChallengeContents[] => {
   const contents: ChallengeContents[] = [];
 
   if (!children) {
@@ -70,9 +68,7 @@ export function Challenges({ children }: { children: React.ReactElement[] }) {
   const challenges = parseChallengeContents(children);
   const [showHint, setShowHint] = React.useState(false);
   const [showSolution, setShowSolution] = React.useState(false);
-  const [activeChallenge, setActiveChallenge] = React.useState(
-    challenges[0].id,
-  );
+  const [activeChallenge, setActiveChallenge] = React.useState(challenges[0].id);
 
   const handleChallengeChange = (challengeId: string) => {
     setShowHint(false);
@@ -127,19 +123,13 @@ export function Challenges({ children }: { children: React.ReactElement[] }) {
         <div className={styles.Extend}>
           <div>
             {currentChallenge.hint && (
-              <button
-                onClick={toggleHint}
-                className={showHint ? styles.ButtonActive : styles.Button}
-              >
+              <button onClick={toggleHint} className={showHint ? styles.ButtonActive : styles.Button}>
                 <IoBulbOutline />
                 {showHint ? ' 隱藏提示' : ' 顯示提示'}
               </button>
             )}
             {currentChallenge.solution && (
-              <button
-                onClick={toggleSolution}
-                className={showSolution ? styles.ButtonActive : styles.Button}
-              >
+              <button onClick={toggleSolution} className={showSolution ? styles.ButtonActive : styles.Button}>
                 <IoFlagOutline />
                 {showSolution ? ' 隱藏答案' : ' 顯示答案'}
               </button>
@@ -159,20 +149,14 @@ export function Challenges({ children }: { children: React.ReactElement[] }) {
           )}
         </div>
 
-        {showHint && (
-          <div style={{ marginTop: '1.5rem' }}>{currentChallenge.hint}</div>
-        )}
+        {showHint && <div style={{ marginTop: '1.5rem' }}>{currentChallenge.hint}</div>}
 
         {showSolution && (
           <div style={{ marginTop: '1.5rem' }}>
             <h3 style={{ fontSize: '1.5rem', lineHeight: '2rem' }}>答案</h3>
             {currentChallenge.solution}
             <div className={styles.Extend}>
-              <button
-                className={styles.Button}
-                onClick={() => setShowSolution(false)}
-                children='摺疊答案'
-              />
+              <button className={styles.Button} onClick={() => setShowSolution(false)} children='摺疊答案' />
             </div>
           </div>
         )}

@@ -9,7 +9,7 @@ export type LessonData = {
   image?: string;
   topic?: string;
   title: string;
-  description: string;
+  description?: string;
   content?: string;
   prefix?: string;
   suffix?: string;

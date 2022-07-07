@@ -36,10 +36,7 @@ function ExpandableExample({ children, title, excerpt, type }: ExampleProps) {
           )}
         </h5>
         <div style={{ marginBottom: '1rem' }}>
-          <h3
-            className={styles.Title}
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
+          <h3 className={styles.Title} dangerouslySetInnerHTML={{ __html: title }} />
           {excerpt && <div dangerouslySetInnerHTML={{ __html: excerpt }} />}
         </div>
         <button

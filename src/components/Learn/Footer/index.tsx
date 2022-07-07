@@ -5,7 +5,7 @@ import { BsFillLockFill, BsFillUnlockFill } from 'react-icons/bs';
 import styles from './index.module.scss';
 
 interface Props {
-  steps: object[];
+  totalSteps: number;
   currentStep: number;
   success: boolean;
   error: boolean;
@@ -13,7 +13,7 @@ interface Props {
   prevStep: MouseEventHandler<HTMLDivElement>;
 }
 
-export default ({ steps, currentStep, nextStep, prevStep, success, error }: Props) => (
+export default ({ totalSteps, currentStep, nextStep, prevStep, success, error }: Props) => (
   <div className={styles.LearnFooter}>
     <div className={styles.LearnFooterRow}>
       <div className={styles.LearnFooterPrevWrapper}>
@@ -28,7 +28,7 @@ export default ({ steps, currentStep, nextStep, prevStep, success, error }: Prop
         )}
       </div>
       <div className={styles.LearnFooterNextWrapper}>
-        {currentStep < steps.length - 1 && (
+        {currentStep < totalSteps && (
           <div className={styles.NavigationStepNext} onClick={nextStep}>
             <div className={styles.NavigationStepNextWrapper}>
               <div className='Shortcut'>Enter</div>

@@ -12,9 +12,7 @@ export const Question = ({ header, text, excerpt }: Question) => (
     <h2>{header}</h2>
     <p
       dangerouslySetInnerHTML={{
-        __html: `${text
-          .replace(/\\n/gm, '<br />')
-          .replace(/`(.*?)`/g, '<code>$1</code>')}`,
+        __html: `${text.replace(/\\n/gm, '<br />').replace(/`(.*?)`/g, '<code>$1</code>')}`,
       }}
     />
     {excerpt}
@@ -30,12 +28,7 @@ interface Selection {
 export const Selection = ({ options, onSelect, isDisabled }: Selection) => (
   <div className={styles.Selection}>
     {options.map((option, i) => (
-      <button
-        className={styles.btn}
-        onClick={() => onSelect(i)}
-        key={i}
-        disabled={isDisabled}
-      >
+      <button className={styles.btn} onClick={() => onSelect(i)} key={i} disabled={isDisabled}>
         {String.fromCharCode(i + 65)}. {option}
       </button>
     ))}

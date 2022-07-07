@@ -10,33 +10,25 @@ interface Props {
   };
 }
 
-export default ({ data }: Props) => {
-  let regex = new RegExp(`(${data.regex?.replace(`\\1`, `\\2`)})`, 'gmi');
-
-  let renderedDescription = `<p>${data.description
-    .replace(/\\n/gm, '<br />')
-    .replace(/`(.*?)`/g, '<code>$1</code>')}</p>`;
-
-  let renderedPurpose = `<p>${data.purpose}</p>`;
-
-  let renderedExample = `<p>${data.example
-    .replace(regex, `<span class=${styles.Highlight}>$1</span>`)
-    .replace(/\\n/gm, '<br />')}</p>`;
-
-  return (
-    <div className={styles.Demo}>
-      <div
-        data-title='說明'
-        dangerouslySetInnerHTML={{ __html: renderedDescription }}
-      />
-      <div
-        data-title='作用'
-        dangerouslySetInnerHTML={{ __html: renderedPurpose }}
-      />
-      <div
-        data-title='例子'
-        dangerouslySetInnerHTML={{ __html: renderedExample }}
-      />
-    </div>
-  );
-};
+export default ({ data }: Props) => (
+  <div className={styles.Demo}>
+    <div
+      data-title='說明'
+      dangerouslySetInnerHTML={{
+        __html: `<p>${data.description.replace(/\\n/gim, '<br/>').replace(/`(.*?)`/g, '<code>$1</code>')}</p>`,
+      }}
+    />
+    <div data-title='作用' dangerouslySetInnerHTML={{ __html: `<p>${data.purpose}</p>` }} />
+    <div
+      data-title='例子'
+      dangerouslySetInnerHTML={{
+        __html: `<p>${data.example
+          .replace(
+            new RegExp(`(${data.regex?.replace(`\\1`, `\\2`)})`, 'gmi'),
+            `<span class=${styles.Highlight}>$1</span>`,
+          )
+          .replace(/\\n/gim, '<br/>')}</p>`,
+      }}
+    />
+  </div>
+);

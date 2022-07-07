@@ -15,8 +15,7 @@ declare global {
 
 export default ({ content }) => {
   const { metadata } = content;
-  if (!ExecutionEnvironment.canUseDOM || metadata.frontMatter.hide_rating)
-    return null;
+  if (!ExecutionEnvironment.canUseDOM || metadata.frontMatter.hide_rating) return null;
 
   const [value, setValue] = useState(-1);
   const [message, setMessage] = useState('');
@@ -72,9 +71,7 @@ export default ({ content }) => {
       </div>
       {value > -1 && (
         <div className={styles.reponse}>
-          <p>
-            {value > 1 ? '感謝您，讓我們知道做得很好！' : '很抱歉，讓您失望。'}
-          </p>
+          <p>{value > 1 ? '感謝您，讓我們知道做得很好！' : '很抱歉，讓您失望。'}</p>
           {!isSent || isReceived === null ? (
             <div className={styles.message}>
               <TextField

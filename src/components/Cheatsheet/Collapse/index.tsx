@@ -10,28 +10,21 @@ type CollapseProps = {
   defaultOpen: boolean;
 };
 
-export default function Collapse({
-  title,
-  id,
-  children,
-  defaultOpen,
-}: CollapseProps) {
+export default function Collapse({ title, id, children, defaultOpen }: CollapseProps) {
   const [show, setShow] = useState<boolean>();
 
   useLayoutEffect(() => {
     setShow(defaultOpen);
   }, []);
 
-  const ItemTitle = () => {
-    return (
-      <div className={styles.ItemTitle}>
-        <span className={styles.ItemTitleCodeWrapper}>
-          <code className={styles.ItemTitleCode}>{title.code}</code>
-        </span>
-        {title.title}
-      </div>
-    );
-  };
+  const ItemTitle = () => (
+    <div className={styles.ItemTitle}>
+      <span className={styles.ItemTitleCodeWrapper}>
+        <code className={styles.ItemTitleCode}>{title.code}</code>
+      </span>
+      {title.title}
+    </div>
+  );
 
   return (
     <Collapsible
@@ -42,12 +35,7 @@ export default function Collapse({
       trigger={
         <div className={styles.CollapseTitle} id={id}>
           {ItemTitle()}
-          <AiFillCaretDown
-            size={11}
-            className={
-              show ? styles.CollapseTitleIconActive : styles.CollapseTitleIcon
-            }
-          />
+          <AiFillCaretDown size={11} className={show ? styles.CollapseTitleIconActive : styles.CollapseTitleIcon} />
         </div>
       }
     >

@@ -41,8 +41,7 @@
 .BlockRegex {
   composes: Block;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .InputWrapper {
@@ -50,6 +49,13 @@
   padding: 7px 15px;
   border-radius: 5px;
   text-align: justify;
+  flex-wrap: wrap;
+  @media only screen and (min-width: 800px) {
+    & {
+      margin-left: 70px;
+      margin-right: 70px;
+    }
+  }
 }
 
 html[data-theme='dark'] {
@@ -67,11 +73,6 @@ html[data-theme='dark'] {
 .InputWrapper::after {
   content: attr(data-suffix);
   color: var(--ifm-font-color-base);
-}
-
-.HiddenFlags::before,
-.HiddenFlags::after {
-  display: none;
 }
 
 .Input {
@@ -128,6 +129,7 @@ html[data-theme='dark'] {
 .WatchButton {
   display: inline-flex;
   align-items: center;
+  margin-right: auto;
   cursor: pointer;
 }
 

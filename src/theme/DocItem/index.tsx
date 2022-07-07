@@ -14,12 +14,7 @@ import TOC from '@theme/TOC';
 import TOCCollapsible from '@theme/TOCCollapsible';
 import Heading from '@theme/Heading';
 import styles from './styles.module.scss';
-import {
-  PageMetadata,
-  HtmlClassNameProvider,
-  ThemeClassNames,
-  useWindowSize,
-} from '@docusaurus/theme-common';
+import { PageMetadata, HtmlClassNameProvider, ThemeClassNames, useWindowSize } from '@docusaurus/theme-common';
 import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import MDXContent from '@theme/MDXContent';
 
@@ -62,13 +57,10 @@ function DocItemContent(props) {
   const shouldAddAuthor = !hideAuthor && author;
   // - End
 
-  const shouldAddTitle =
-    !hideTitle && typeof DocContent.contentTitle === 'undefined';
+  const shouldAddTitle = !hideTitle && typeof DocContent.contentTitle === 'undefined';
   const windowSize = useWindowSize();
-  const canRenderTOC =
-    !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
-  const renderTocDesktop =
-    canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
+  const canRenderTOC = !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
+  const renderTocDesktop = canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
   return (
     <div className='row'>
       <div className={clsx('col', !hideTableOfContents && styles.docItemCol)}>
@@ -83,10 +75,7 @@ function DocItemContent(props) {
                 toc={DocContent.toc}
                 minHeadingLevel={tocMinHeadingLevel}
                 maxHeadingLevel={tocMaxHeadingLevel}
-                className={clsx(
-                  ThemeClassNames.docs.docTocMobile,
-                  styles.tocMobile,
-                )}
+                className={clsx(ThemeClassNames.docs.docTocMobile, styles.tocMobile)}
               />
             )}
 
@@ -102,9 +91,7 @@ function DocItemContent(props) {
                   <Heading as='h1'>{title}</Heading>
                 </header>
               )}
-              {shouldAddAuthor && (
-                <Author name={author} dynasty={dynasty} source={source} />
-              )}
+              {shouldAddAuthor && <Author name={author} dynasty={dynasty} source={source} />}
               <MDXContent>
                 <DocContent />
               </MDXContent>

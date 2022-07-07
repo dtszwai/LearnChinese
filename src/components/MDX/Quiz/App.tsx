@@ -30,9 +30,7 @@ export default ({ questions, checkAnswer = false }) => {
     setSelectedAnswer((prep) => ({ ...prep, [currentQuestion]: i }));
     setResult((prep) => [...prep, isCorrect]);
     const nextQuestion = currentQuestion + 1;
-    nextQuestion < questions.length
-      ? setCurrentQuestion(nextQuestion)
-      : setShowScore(true);
+    nextQuestion < questions.length ? setCurrentQuestion(nextQuestion) : setShowScore(true);
   };
 
   const reset = () => {
@@ -60,9 +58,7 @@ export default ({ questions, checkAnswer = false }) => {
             <button
               className={styles.btn}
               onClick={() => {
-                document
-                  .querySelector<HTMLElement>('[data-quiz="Answers"]')
-                  .click();
+                document.querySelector<HTMLElement>('[data-quiz="Answers"]').click();
               }}
               children='查看答案'
             />
@@ -75,9 +71,7 @@ export default ({ questions, checkAnswer = false }) => {
             text={questions[currentQuestion].questionText}
           />
           <Selection
-            options={questions[currentQuestion].answerOptions.map(
-              (option) => option.answerText,
-            )}
+            options={questions[currentQuestion].answerOptions.map((option) => option.answerText)}
             onSelect={handleAnswerOptionClick}
           />
         </>

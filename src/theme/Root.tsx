@@ -16,12 +16,8 @@ export default function ({ children }) {
   const [showComment, setShowComment] = React.useState({});
 
   return (
-    <QuizContext.Provider
-      value={{ selectedAnswer, setSelectedAnswer, result, setResult }}
-    >
-      <CommentaryContext.Provider value={[showComment, setShowComment]}>
-        {children}
-      </CommentaryContext.Provider>
+    <QuizContext.Provider value={{ selectedAnswer, setSelectedAnswer, result, setResult }}>
+      <CommentaryContext.Provider value={[showComment, setShowComment]}>{children}</CommentaryContext.Provider>
     </QuizContext.Provider>
   );
 }

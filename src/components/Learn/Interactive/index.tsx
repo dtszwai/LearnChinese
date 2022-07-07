@@ -82,11 +82,9 @@ export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) =>
         [styles.ParentError]: parentError,
       })}
     >
-      <div className={styles.BlockContent} data-title={`問題`} dangerouslySetInnerHTML={{ __html: readableContent }} />
+      <div className={styles.BlockContent} data-title={`內容`} dangerouslySetInnerHTML={{ __html: readableContent }} />
       <div className={styles.BlockRegex} data-title={`答案`}>
-        <div className={styles.WatchButton} onClick={() => setIsOpenModal(true)}>
-          {data.videoURL && `📹 觀看影片`}
-        </div>
+        {!data.noHint && <Hint answer={data.suggestedAnswer} step={step} />}
         <div className={styles.InputWrapper} data-prefix={data?.prefix} data-suffix={data?.suffix}>
           <input
             ref={inputRef}
@@ -99,7 +97,11 @@ export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) =>
             placeholder={data?.placeholder}
           />
         </div>
-        {!data.noHint && <Hint answer={data.suggestedAnswer} />}
+        {data.videoURL && (
+          <div className={styles.WatchButton} onClick={() => setIsOpenModal(true)}>
+            📹 觀看影片
+          </div>
+        )}
       </div>
     </div>
   );
