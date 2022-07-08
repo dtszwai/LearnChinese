@@ -7,8 +7,11 @@ import styles from './index.module.scss';
 import { useLocation } from '@docusaurus/router';
 import { Lesson, LessonData } from './types';
 import useLocalStorage from '@site/src/utils/useLocalStorage';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 export default () => {
+  if (!ExecutionEnvironment.canUseDOM) return null;
+
   const slug = useLocation().pathname.split('/').at(-1);
   const lesson: Lesson = require('@site/src/data/Learn/index.json')[slug];
   const data: LessonData[] = require(`@site/src/data/Learn/${slug}.json`);
