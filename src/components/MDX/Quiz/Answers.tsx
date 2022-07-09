@@ -33,13 +33,13 @@ export default ({ questions }) => {
       <p>{WrongAnswer(result)}</p>
       {questions.map((question, index) => (
         <section
-          className={styles.Container}
+          className={clsx(styles.Container, {
+            [styles.CorrectBlock]: questions[index].answerOptions[selectedAnswer[index]]?.isCorrect,
+            [styles.WrongBlock]: !(
+              selectedAnswer[index] === undefined || questions[index].answerOptions[selectedAnswer[index]]?.isCorrect
+            ),
+          })}
           key={index}
-          style={
-            selectedAnswer[index] === undefined || questions[index].answerOptions[selectedAnswer[index]]?.isCorrect //alert if the selected answer is wrong
-              ? null
-              : { borderColor: '#e27396' }
-          }
         >
           <div
             className={styles.Question}
@@ -48,12 +48,11 @@ export default ({ questions }) => {
               __html: `${question.questionText.replace(/\\n/gm, '<br />').replace(/`(.*?)`/g, '<code>$1</code>')}`,
             }}
           />
-
           <div className={styles.Answers}>
             {question.answerOptions.map((option, i) => (
               <p
                 key={i}
-                className={clsx(option.isCorrect ? styles.isCorrect : null, styles.Content)}
+                className={clsx({ [styles.isCorrect]: option.isCorrect }, styles.Content)}
                 data-before={`${String.fromCharCode(i + 65)}. `}
                 data-after={renderedMessage(option.isCorrect, selectedAnswer[index], i)}
               >

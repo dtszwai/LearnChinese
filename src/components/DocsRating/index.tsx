@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from '@docusaurus/Link';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import Fetch from '../Fetch';
+import usePost from '@site/src/utils/postData';
+import { useDoc } from '@docusaurus/theme-common/internal';
 import { TextField, Tooltip } from '@mui/material';
 import { MdOutlineFeedback } from 'react-icons/md';
 import { Useless, No, Yes, Amazing } from './icons';
@@ -13,49 +13,37 @@ declare global {
   }
 }
 
-export default ({ content }) => {
-  const { metadata } = content;
-  if (!ExecutionEnvironment.canUseDOM || metadata.frontMatter.hide_rating) return null;
+export default () => {
+  const { metadata } = useDoc();
+  if (metadata.frontMatter.hide_rating) return null;
 
-  const [value, setValue] = useState(-1);
+  const [data, setData] = useState({ Details: -1 });
   const [message, setMessage] = useState('');
-  const [isSent, setIsSent] = useState<boolean>(false);
+  const [isSent, setIsSent] = useState(false);
   const [isReceived, setIsReceived] = useState<boolean>(null);
 
-  const [formData] = useState(new FormData());
-  formData.append('Page', metadata.unversionedId);
-  formData.append('User', document.cookie);
+  const Vote = (value: number) => {
+    setData((prev) => ({ ...prev, Event: 'Rating', Details: value }));
+  };
 
   const formSubmit = async (e) => {
     e.preventDefault();
     setIsSent(true);
-    formData.set('Event', 'Feedback');
-    formData.append('Message', message);
-    setIsReceived(await Fetch(formData));
+    setData((prev) => ({ ...prev, Event: 'Feedback', Message: message }));
   };
 
-  const Vote = (value: number) => {
-    setValue(value);
-    formData.append('Event', 'Rating');
-    formData.append('Details', String(value));
-    Fetch(formData);
-    if (window.gtag) {
-      window.gtag('send', {
-        hitType: 'event',
-        eventCategory: 'button',
-        eventAction: 'feedback',
-        eventLabel: metadata.unversionedId,
-        eventValue: value,
-      });
-    }
-  };
+  useEffect(() => {
+    (async () => {
+      data.Details !== -1 && setIsReceived(await usePost(data));
+    })();
+  }, [data]);
 
-  const RenderedButton = ({ Icon, value: _value }) => (
+  const RenderedButton = ({ Icon, value }) => (
     <button
       className={styles.iconButton}
-      data-selected={value === _value}
-      onClick={() => Vote(_value)}
-      disabled={value > -1}
+      data-selected={value === data.Details}
+      onClick={() => Vote(value)}
+      disabled={data.Details > -1}
       children={<Icon />}
     />
   );
@@ -69,9 +57,9 @@ export default ({ content }) => {
         <RenderedButton value={2} Icon={Yes} />
         <RenderedButton value={3} Icon={Amazing} />
       </div>
-      {value > -1 && (
+      {data.Details > -1 && (
         <div className={styles.reponse}>
-          <p>{value > 1 ? '感謝您，讓我們知道做得很好！' : '很抱歉，讓您失望。'}</p>
+          <p>{data.Details > 1 ? '感謝您，讓我們知道做得很好！' : '很抱歉，讓您失望。'}</p>
           {!isSent || isReceived === null ? (
             <div className={styles.message}>
               <TextField

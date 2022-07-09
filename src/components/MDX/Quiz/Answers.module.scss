@@ -20,13 +20,17 @@
 
 .Answers {
   padding: var(--ifm-pre-padding);
-  font: var(--ifm-code-font-size) / var(--ifm-pre-line-height)
-    var(--ifm-font-family-monospace);
+  font: var(--ifm-code-font-size) / var(--ifm-pre-line-height) var(--ifm-font-family-monospace);
   p:last-of-type {
-    margin-bottom: calc(
-      var(--ifm-paragraph-margin-bottom) - var(--ifm-pre-padding)
-    );
+    margin-bottom: calc(var(--ifm-paragraph-margin-bottom) - var(--ifm-pre-padding));
   }
+}
+
+.WrongBlock {
+  border-color: #e27396;
+}
+.CorrectBlock {
+  border-color: #5ff59b;
 }
 
 .Content {

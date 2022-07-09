@@ -4,9 +4,8 @@ import TabItem from '@theme/TabItem';
 import App from './App';
 import Answers from './Answers';
 import Link from '@docusaurus/Link';
-import Fetch from '../../Fetch';
+import postData from '@site/src/utils/postData';
 import { useActiveDocContext } from '@docusaurus/plugin-content-docs/client';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import Review from './Review';
 
 const GoogleFormsIcon = (
@@ -20,21 +19,16 @@ const GoogleFormsIcon = (
   </svg>
 );
 
-const Copy = ({ href }) => {
-  if (!ExecutionEnvironment.canUseDOM) return null;
-  let form = new FormData();
-  form.append('Event', 'Quiz Copy');
-  return (
-    <Link
-      to={href}
-      className='button button--primary not-prose'
-      style={{ marginBottom: '1rem' }}
-      onClick={() => Fetch(form)}
-    >
-      複製至 Google Forms {GoogleFormsIcon}
-    </Link>
-  );
-};
+const Copy = ({ href }) => (
+  <Link
+    to={href}
+    className='button button--primary not-prose'
+    style={{ marginBottom: '1rem' }}
+    onClick={() => postData({ Event: 'Quiz Copy' })}
+  >
+    複製至 Google Forms {GoogleFormsIcon}
+  </Link>
+);
 
 const quizData = () => {
   const id = useActiveDocContext().activeDoc.id.split('/');
