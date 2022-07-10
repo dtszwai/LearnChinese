@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 import Chip from '@mui/material/Chip';
-import styles from './styles.module.scss';
 import Box from '@mui/material/Box';
+import styles from './styles.module.scss';
 import { MdClose } from 'react-icons/md';
 
-type Task = {
-  children: any;
-};
-
-export default function (props: Task) {
+export default ({ children }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
       <Chip label='答案' color='primary' variant='outlined' onClick={() => setOpen(!open)} className={styles.button} />
-
       {open && (
         <Box
           sx={{
@@ -24,10 +19,10 @@ export default function (props: Task) {
             position: 'relative',
           }}
         >
-          <div className={styles.answerBlock}>{props.children}</div>
+          <div className={styles.answerBlock}>{children}</div>
           <MdClose className={styles.closeAnswer} size={24} onClick={() => setOpen(false)} />
         </Box>
       )}
     </>
   );
-}
+};

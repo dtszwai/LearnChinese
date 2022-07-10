@@ -10,8 +10,8 @@ module.exports = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
   favicon: "img/logo.png",
-  organizationName: "rccttwd",
-  projectName: "rccttwd.github.io",
+  organizationName: "dtszwai",
+  projectName: "dtszwai.github.io",
   deploymentBranch: "gh-pages",
   trailingSlash: false,
   i18n: {

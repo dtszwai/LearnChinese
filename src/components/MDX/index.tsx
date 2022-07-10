@@ -7,7 +7,7 @@ import AudioCard from './AudioCard';
 import Task from './Task';
 import Admonition from './Admonition';
 import Commentary from './Commentary';
-import { QuizSet, Quiz, QuizAnswers, Review } from './Quiz';
+import { Quiz, QuizAnswers, Review } from './Quiz';
 import { Youtube, Bilibili } from './Video';
 import { Challenges, Hint, Solution, NoSolution } from './Challenges';
 import ExpandableExample from './ExpandableExample';
@@ -39,7 +39,6 @@ export default {
   Task,
   Tabs,
   TabItem,
-  QuizSet,
   Quiz,
   QuizAnswers,
   Review,

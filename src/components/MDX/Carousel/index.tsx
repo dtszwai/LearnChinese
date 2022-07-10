@@ -9,7 +9,7 @@ type Carousel = {
   children: [];
 };
 
-export default function ({ settings, children }: Carousel) {
+export default ({ settings, children }: Carousel) => {
   const defaultSettings = {
     dots: true,
     fade: true,
@@ -29,4 +29,4 @@ export default function ({ settings, children }: Carousel) {
       ))}
     </Slider>
   );
-}
+};

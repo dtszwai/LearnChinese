@@ -15,14 +15,14 @@ export default ({ name, source, dynasty }: Author) => {
   const Avatar = (props) => (data.avatar ? <img {...props} src={useBaseUrl(data.avatar)} /> : <MdFace {...props} />);
 
   return (
-    <div className={styles.author}>
-      <Avatar className={styles.avatar} />
-      <div className={styles.intro}>
-        <strong className={styles.title}>
+    <div className={styles.Author}>
+      <Avatar className={styles.AuthorPicture} />
+      <div className={styles.AuthorContent}>
+        <strong className={styles.AuthorTitle}>
           {(dynasty || data.dynasty) && `【${dynasty || data.dynasty}】`}
           {name}
         </strong>
-        {source && <small className={styles.subtitle}>{source}</small>}
+        {source && <small className={styles.AuthorSubtitle}>{source}</small>}
       </div>
     </div>
   );

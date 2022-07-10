@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Collapsible from 'react-collapsible';
 import styles from './Collapse.module.scss';
 import { AiFillCaretDown } from 'react-icons/ai';
@@ -11,11 +11,7 @@ type CollapseProps = {
 };
 
 export default function Collapse({ title, id, children, defaultOpen }: CollapseProps) {
-  const [show, setShow] = useState<boolean>();
-
-  useLayoutEffect(() => {
-    setShow(defaultOpen);
-  }, []);
+  const [show, setShow] = useState(defaultOpen);
 
   const ItemTitle = () => (
     <div className={styles.ItemTitle}>
@@ -34,12 +30,12 @@ export default function Collapse({ title, id, children, defaultOpen }: CollapseP
       onClosing={() => setShow(false)}
       trigger={
         <div className={styles.CollapseTitle} id={id}>
-          {ItemTitle()}
-          <AiFillCaretDown size={11} className={show ? styles.CollapseTitleIconActive : styles.CollapseTitleIcon} />
+          <ItemTitle />
+          <AiFillCaretDown size={11} className={styles.CollapseTitleIcon} />
         </div>
       }
     >
-      <div className={styles.CollapseContent}>{children}</div>
+      {children}
     </Collapsible>
   );
 }

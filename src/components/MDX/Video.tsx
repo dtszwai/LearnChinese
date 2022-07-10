@@ -17,7 +17,7 @@ const Video = ({ src, start, site }: VideoProps) => (
     <iframe
       src={
         site === 'Youtube'
-          ? `https://www.youtube-nocookie.com/embed/${src}?start=${start}&origin=http://rccttwd.github.io/`
+          ? `https://www.youtube-nocookie.com/embed/${src}?start=${start}&origin=https://learnchinese.vercel.app/`
           : `https://player.bilibili.com/player.html?bvid=${src}&high_quality=1&danmaku=0`
       }
       frameBorder='0'

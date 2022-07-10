@@ -1,6 +1,6 @@
 @use '@site/src/css/variables' as v;
 
-.author {
+.Author {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
@@ -9,28 +9,28 @@
   html[data-theme='dark'] & {
     color: v.$source-text-color-dark;
   }
+}
 
-  .avatar {
-    width: 3rem;
-    height: 3rem;
-    max-width: 100%;
-    margin: 0;
-    border-radius: 9999px;
-    vertical-align: middle;
+.AuthorPicture {
+  width: 3rem;
+  height: 3rem;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 9999px;
+  vertical-align: middle;
+}
+
+.AuthorContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .AuthorTitle {
+    line-height: 1.25;
   }
 
-  .intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .title {
-      line-height: 1.25;
-    }
-
-    .subtitle {
-      margin-top: 0.25rem;
-    }
+  .AuthorSubtitle {
+    margin-top: 0.25rem;
   }
 }

@@ -4,14 +4,8 @@ import usePost from '@site/src/utils/postData';
 import { useDoc } from '@docusaurus/theme-common/internal';
 import { TextField, Tooltip } from '@mui/material';
 import { MdOutlineFeedback } from 'react-icons/md';
-import { Useless, No, Yes, Amazing } from './icons';
+import Icon from './icons';
 import styles from './styles.module.scss';
-
-declare global {
-  interface Window {
-    gtag: any;
-  }
-}
 
 export default () => {
   const { metadata } = useDoc();
@@ -22,9 +16,11 @@ export default () => {
   const [isSent, setIsSent] = useState(false);
   const [isReceived, setIsReceived] = useState<boolean>(null);
 
-  const Vote = (value: number) => {
-    setData((prev) => ({ ...prev, Event: 'Rating', Details: value }));
-  };
+  useEffect(() => {
+    (async () => {
+      data.Details !== -1 && setIsReceived(await usePost(data));
+    })();
+  }, [data]);
 
   const formSubmit = async (e) => {
     e.preventDefault();
@@ -32,19 +28,13 @@ export default () => {
     setData((prev) => ({ ...prev, Event: 'Feedback', Message: message }));
   };
 
-  useEffect(() => {
-    (async () => {
-      data.Details !== -1 && setIsReceived(await usePost(data));
-    })();
-  }, [data]);
-
-  const RenderedButton = ({ Icon, value }) => (
+  const FeedbackButton = ({ value, Icon }) => (
     <button
       className={styles.iconButton}
       data-selected={value === data.Details}
-      onClick={() => Vote(value)}
+      onClick={() => setData((prev) => ({ ...prev, Event: 'Rating', Details: value }))}
       disabled={data.Details > -1}
-      children={<Icon />}
+      children={Icon}
     />
   );
 
@@ -52,10 +42,10 @@ export default () => {
     <form className={styles.form} onSubmit={formSubmit}>
       <p>本頁對您有幫助嗎？</p>
       <div className={styles.buttonGroup}>
-        <RenderedButton value={0} Icon={Useless} />
-        <RenderedButton value={1} Icon={No} />
-        <RenderedButton value={2} Icon={Yes} />
-        <RenderedButton value={3} Icon={Amazing} />
+        <FeedbackButton value={0} Icon={Icon.Useless} />
+        <FeedbackButton value={1} Icon={Icon.No} />
+        <FeedbackButton value={2} Icon={Icon.Yes} />
+        <FeedbackButton value={3} Icon={Icon.Amazing} />
       </div>
       {data.Details > -1 && (
         <div className={styles.reponse}>

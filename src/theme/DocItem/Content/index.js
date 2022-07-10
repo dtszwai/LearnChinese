@@ -30,9 +30,9 @@ function useSyntheticTitle() {
 // - Customization: add Author name after the title
 const DocAuthor = () => {
   const { frontMatter } = useDoc();
-  const { hide_author: hideAuthor, author, dynasty, source } = frontMatter;
-  const shouldRender = !hideAuthor && author;
-  return shouldRender ? <Author name={author} dynasty={dynasty} source={source} /> : null;
+  const { hide_author: hideAuthor, author: name, dynasty, source } = frontMatter;
+  const shouldRender = !hideAuthor && name;
+  return shouldRender ? <Author {...{ name, dynasty, source }} /> : null;
 }
 
 export default function DocItemContent({ children }) {

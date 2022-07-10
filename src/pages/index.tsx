@@ -39,10 +39,10 @@ const Typer = () => (
   />
 );
 
-const Header = ({ siteConfig }) => (
+const Header = ({ title }) => (
   <header className={styles.heroBanner}>
     <div className={styles.bannerCol}>
-      <h1 className={styles.title}>{siteConfig.tagline}</h1>
+      <h1 className={styles.title}>{title}</h1>
       <p className={styles.subtitle}>
         <Typer />
       </p>
@@ -100,7 +100,7 @@ const Settext = () => (
 
 export default () => (
   <Layout title={useDocusaurusContext().siteConfig.tagline}>
-    <Header {...useDocusaurusContext()} />
+    <Header title={useDocusaurusContext().siteConfig.tagline} />
     <section className={styles.TOC}>
       <div className={styles.Tab}>
         <a href='#S1'>中一級課文</a>

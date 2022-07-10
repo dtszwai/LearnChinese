@@ -6,21 +6,6 @@
   font-size: 14px;
 }
 
-.CollapseTitleIcon {
-  color: gray;
-  transition: 0.3s;
-}
-
-.CollapseTitleIconActive {
-  color: var(--ifm-color-primary-contrast-foreground);
-  transition: 0.3s;
-  transform: rotate(180deg);
-}
-
-.CollapseContent {
-  margin: 6px 0;
-}
-
 .ItemTitle {
   display: flex;
   align-items: center;
@@ -29,13 +14,20 @@
 
 .ItemTitleCodeWrapper {
   display: flex;
-  align-items: center;
-  width: 80px;
+  min-width: 80px;
 }
 
 .ItemTitleCode {
   border-radius: 6px;
   padding: 2px 6px;
   font-size: 12px;
-  margin-right: 10px;
+}
+
+.CollapseTitleIcon {
+  color: gray;
+  transition: 0.3s;
+  [aria-expanded='true'] & {
+    color: var(--ifm-color-primary-contrast-foreground);
+    transform: rotate(180deg);
+  }
 }
