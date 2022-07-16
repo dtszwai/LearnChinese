@@ -76,7 +76,7 @@ module.exports = {
         { type: "doc", docId: "S3/index", label: "中三級", position: "left" },
         { type: "docSidebar", sidebarId: "settext", label: "指定文言", position: "left" },
         { to: "learn", label: "學習", position: "right", className: "navbarRemark", "data-remark": "New" },
-        { to: "cheatsheet", label: "語基知識表", position: "right", className: "navbarRemark", "data-remark": "Updating" },
+        { to: "cheatsheet", label: "語基知識表", position: "right" },
         { href: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/", label: "粵音", position: "right", },
         { href: "https://www.moedict.tw/", label: "萌典", position: "right", },
       ],
