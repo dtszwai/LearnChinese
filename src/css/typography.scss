@@ -33,32 +33,39 @@
 }
 
 // 正文展現樣式
-.main {
-  font-size: 1.7rem;
-  font-family: KaiTi, DFKai-SB, KaiU, STKaiti, Serif;
-  margin: 1.8rem 0;
-  counter-reset: paragraph;
-
-  &.prose {
-    text-align: justify;
-    line-height: 1.7;
-    &:not([data-paragraph='true']) {
-      text-indent: 2em;
-    }
+.markdown {
+  & > p {
+    line-height: 30px;
+    font-size: 17px;
   }
 
-  &.poetry {
-    font-family: WenKai;
-    text-indent: 0;
-    line-height: 2;
-    text-align: center;
+  .main {
+    font-size: 1.7rem;
+    font-family: KaiTi, DFKai-SB, KaiU, STKaiti, Serif;
+    margin: 1.8rem 0;
+    counter-reset: paragraph;
 
-    & p {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 100%;
+    &.prose {
+      text-align: justify;
+      line-height: 1.7;
+      &:not([data-paragraph='true']) {
+        text-indent: 2em;
+      }
+    }
+
+    &.poetry {
+      font-family: WenKai;
+      text-indent: 0;
+      line-height: 2;
+      text-align: center;
+
+      & p {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100%;
+      }
     }
   }
 
