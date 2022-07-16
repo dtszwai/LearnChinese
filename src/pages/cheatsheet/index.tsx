@@ -7,7 +7,7 @@ import styles from './cheatsheet.module.scss';
 import { useLocation } from '@docusaurus/router';
 
 export default function cheatsheet() {
-  const columns = [data.slice(0, 1), data.slice(1, 5), data.slice(5)];
+  const columns = [data.slice(0, 1), data.slice(1, 4), data.slice(4, 6)];
   const title = '語文基礎知識';
   const hash = decodeURI(useLocation().hash);
 
