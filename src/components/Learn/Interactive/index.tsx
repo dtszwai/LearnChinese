@@ -85,7 +85,8 @@ export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) =>
       <div className={styles.BlockContent} data-title={`內容`} dangerouslySetInnerHTML={{ __html: readableContent }} />
       <div className={styles.BlockRegex} data-title={`答案`}>
         {!data.noHint && <Hint answer={data.suggestedAnswer} step={step} />}
-        <div className={styles.InputWrapper} data-prefix={data?.prefix} data-suffix={data?.suffix}>
+        <div className={styles.InputWrapper}>
+          {data.prefix}
           <input
             ref={inputRef}
             type='text'
@@ -96,6 +97,7 @@ export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) =>
             onChange={(e) => setInputValue(e.target.value)}
             placeholder={data?.placeholder}
           />
+          {data.suffix}
         </div>
         {data.videoURL && (
           <div className={styles.WatchButton} onClick={() => setIsOpenModal(true)}>

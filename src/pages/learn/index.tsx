@@ -5,6 +5,7 @@ import lessons from '@site/src/data/Learn/index.json';
 import Link from '@docusaurus/Link';
 import { ImFilesEmpty, ImArrowRight2 } from 'react-icons/im';
 import clsx from 'clsx';
+import useLocalStorage from '@site/src/utils/useLocalStorage';
 
 export default () => {
   const title = '學習';
@@ -27,7 +28,9 @@ export default () => {
 };
 
 const Card = ({ lesson }) => {
-  const stepCount = require(`@site/src/data/Learn/${lesson.slug}.json`).length ?? 0;
+  const [stepRecord] = useLocalStorage(lesson.key);
+  const lastStep = stepRecord?.lastStep ?? 0;
+  const totalStep = require(`@site/src/data/Learn/${lesson.slug}.json`).length ?? 0;
 
   return (
     <div className={clsx(styles.Card, { [styles.Disable]: lesson?.disabled })}>
@@ -39,7 +42,7 @@ const Card = ({ lesson }) => {
             <div className={styles.TopicStatsInfo}>
               <span>
                 <ImFilesEmpty size={15} />
-                {stepCount}
+                {lastStep + 1} / {totalStep}
               </span>
             </div>
             <span className={styles.TopicAction}>

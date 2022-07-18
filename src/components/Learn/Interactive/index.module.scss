@@ -50,6 +50,7 @@
   border-radius: 5px;
   text-align: justify;
   flex-wrap: wrap;
+  color: var(--ifm-font-color-base);
   @media only screen and (min-width: 800px) {
     & {
       margin-left: 70px;
@@ -63,16 +64,6 @@ html[data-theme='dark'] {
   & .InputWrapper {
     background: #272727;
   }
-}
-
-.InputWrapper::before {
-  content: attr(data-prefix);
-  color: var(--ifm-font-color-base);
-}
-
-.InputWrapper::after {
-  content: attr(data-suffix);
-  color: var(--ifm-font-color-base);
 }
 
 .Input {
@@ -108,6 +99,7 @@ html[data-theme='dark'] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: text-bottom;
 }
 
 .Error .ResultTag {
