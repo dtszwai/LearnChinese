@@ -41,22 +41,13 @@
       color: #8d93f9;
     }
   }
-
   &::after {
-    content: attr(data-after);
     color: #999;
   }
 }
 
-.Option {
-  color: #36acaa;
-  html[data-theme='dark'] & {
-    color: #8d93f9;
-  }
-}
-
-.isCorrect {
-  color: #e31163;
+.CorrectTag {
+  &,
   &::before {
     color: #e31163;
   }
@@ -69,9 +60,18 @@
   }
 }
 
-.Comment {
-  color: #999;
-  html[data-theme='dark'] & {
-    color: #6272a4;
-  }
+.CorrectTag::after {
+  content: ' // 正確答案';
+}
+
+.CorrectBlock .CorrectTag::after {
+  content: ' ✔️ 回答正確';
+}
+
+.WrongBlock .CorrectTag::after {
+  content: ' ⭕️ 正確答案';
+}
+
+.WrongBlock .SelectedTag::after {
+  content: ' ❌ 你的選擇';
 }

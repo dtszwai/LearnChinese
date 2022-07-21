@@ -4,28 +4,6 @@ import { WrongAnswer } from './utils';
 import { QuizContext } from '@site/src/theme/Root';
 import clsx from 'clsx';
 
-const renderedMessage = (isCorrect, selectedOption, currentOption) => {
-  let comment = '';
-
-  if (isCorrect) {
-    switch (selectedOption) {
-      case undefined:
-        comment = ' // 正確答案';
-        break;
-      case currentOption:
-        comment = ' ✔️ 回答正確';
-        break;
-      default:
-        comment = ' ⭕️ 正確答案';
-        break;
-    }
-  } else if (selectedOption === currentOption) {
-    comment = ' ❌ 你的選擇';
-  }
-
-  return comment;
-};
-
 export default ({ questions }) => {
   const { selectedAnswer, result } = React.useContext(QuizContext);
   return (
@@ -52,9 +30,11 @@ export default ({ questions }) => {
             {question.answerOptions.map((option, i) => (
               <p
                 key={i}
-                className={clsx({ [styles.isCorrect]: option.isCorrect }, styles.Content)}
+                className={clsx(styles.Content, {
+                  [styles.CorrectTag]: option.isCorrect,
+                  [styles.SelectedTag]: selectedAnswer[index] === i,
+                })}
                 data-before={`${String.fromCharCode(i + 65)}. `}
-                data-after={renderedMessage(option.isCorrect, selectedAnswer[index], i)}
               >
                 {option.answerText}
               </p>
