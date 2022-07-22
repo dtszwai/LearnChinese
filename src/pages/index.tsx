@@ -68,35 +68,36 @@ const TextList = ({ grade, title, Src, color = 'inherit' }) => (
   </div>
 );
 
-const Settext = () => (
-  <div className={styles.TextList} id='settext' style={{ color: '#0ea5e9' }}>
-    <div className={styles.heading}>
-      <img src={require(`@site/static/img/settext.png`).default} style={{ alignSelf: 'center' }} />
-      <Link to='settext'>
-        <h2 style={{ color: '#0ea5e9' }}>指定文言</h2>
-      </Link>
+const Settext = () => {
+  const settext = [
+    '廉頗藺相如列傳（節錄）',
+    '出師表',
+    '始得西山宴遊記',
+    '岳陽樓記',
+    '念奴嬌．赤壁懷古',
+    '聲聲慢．秋情',
+    '青玉案．元夕',
+  ];
+  return (
+    <div className={styles.TextList} id='settext' style={{ color: '#0ea5e9' }}>
+      <div className={styles.heading}>
+        <img src={require(`@site/static/img/settext.png`).default} style={{ alignSelf: 'center' }} />
+        <Link to='settext'>
+          <h2 style={{ color: '#0ea5e9' }}>指定文言</h2>
+        </Link>
+      </div>
+      <div className='text-list'>
+        <ul>
+          {settext.map((text) => (
+            <li key={text}>
+              <Link to={`settext/${text}`}>{text}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-    <div className='text-list'>
-      <ul>
-        <li>
-          <Link to={'settext/廉頗藺相如列傳（節錄）'}>廉頗藺相如列傳（節錄）</Link>
-        </li>
-        <li>
-          <Link to={'settext/岳陽樓記'}>岳陽樓記</Link>
-        </li>
-        <li>
-          <Link to={'settext/念奴嬌．赤壁懷古'}>念奴嬌．赤壁懷古</Link>
-        </li>
-        <li>
-          <Link to={'settext/聲聲慢．秋情'}>聲聲慢．秋情</Link>
-        </li>
-        <li>
-          <Link to={'settext/青玉案．元夕'}>青玉案．元夕</Link>
-        </li>
-      </ul>
-    </div>
-  </div>
-);
+  );
+};
 
 export default () => (
   <Layout title={useDocusaurusContext().siteConfig.tagline}>
