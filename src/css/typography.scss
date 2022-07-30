@@ -69,7 +69,7 @@
     }
   }
 
-  &[data-paragraph='true'] p::before,
+  & [data-paragraph='true'] > p::before,
   span.paragraph::before {
     display: block;
     text-transform: uppercase;

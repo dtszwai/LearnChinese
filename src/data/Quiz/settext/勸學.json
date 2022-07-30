@@ -1,0 +1,17 @@
+{
+  "title": "勸學",
+  "author": "荀子",
+  "grade": "高中",
+  "questions": [
+    {
+      "questionText": "「騏驥一躍，不能十步；駑馬十駕，功在不舍。」意喻：",
+      "answerOptions": [
+        { "answerText": "學貴專一，勤能補拙", "isCorrect": true },
+        { "answerText": "一傅眾咻，難有所成" },
+        { "answerText": "物有本性，不可勉強" },
+        { "answerText": "勝者勿驕，敗者勿餒" }
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}

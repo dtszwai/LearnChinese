@@ -1,0 +1,57 @@
+{
+  "title": "桃花源記",
+  "author": "陶淵明",
+  "grade": "中二",
+  "questions": [
+    {
+      "questionText": "「阡陌交通」意為：",
+      "answerOptions": [
+        { "answerText": "大路寬敞通達" },
+        { "answerText": "田間道路交錯連連", "isCorrect": true },
+        { "answerText": "羊腸小徑彎曲交通" },
+        { "answerText": "家家戶戶來來往往" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「黃髮垂髫」意為：",
+      "answerOptions": [
+        { "answerText": "長髮垂肩" },
+        { "answerText": "男人與女人" },
+        { "answerText": "老人與小孩", "isCorrect": true },
+        { "answerText": "少女與婦人" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「便要還家，設酒殺雞作食」中的「要」意為：",
+      "answerOptions": [
+        { "answerText": "要求" },
+        { "answerText": "懇求" },
+        { "answerText": "命令" },
+        { "answerText": "邀請", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「此人一一為具言所聞」中的「具言」意為：",
+      "answerOptions": [
+        { "answerText": "具體的話" },
+        { "answerText": "真實的話" },
+        { "answerText": "詳詳細細地講", "isCorrect": true },
+        { "answerText": "誇誇其談地講" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「不足為外人道也」中的「不足」意為：",
+      "answerOptions": [
+        { "answerText": "不值得", "isCorrect": true },
+        { "answerText": "不滿足" },
+        { "answerText": "不足夠" },
+        { "answerText": "不可能" }
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}
