@@ -6,23 +6,27 @@ import Link from '@docusaurus/Link';
 import { ImFilesEmpty, ImArrowRight2 } from 'react-icons/im';
 import clsx from 'clsx';
 import useLocalStorage from '@site/src/utils/useLocalStorage';
+import Footer from '@site/src/components/Footer';
 
 export default () => {
   const title = '學習';
 
   return (
     <Layout title={title}>
-      <main className='container'>
-        <header className={styles.header}>
-          <h1 className={styles.title}>{title}</h1>
-          <p className={styles.description}>練好基本功，打穩語文根基。</p>
-        </header>
-        <div className={styles.row}>
-          {Object.keys(lessons).map((key) => (
-            <Card key={lessons[key].title} lesson={lessons[key]} />
-          ))}
-        </div>
-      </main>
+      <div className={styles.main}>
+        <main className='container'>
+          <header className={styles.header}>
+            <h1 className={styles.title}>{title}</h1>
+            <p className={styles.description}>練好基本功，打穩語文根基。</p>
+          </header>
+          <div className={styles.row}>
+            {Object.keys(lessons).map((key) => (
+              <Card key={lessons[key].title} lesson={lessons[key]} />
+            ))}
+          </div>
+        </main>
+        <Footer />
+      </div>
     </Layout>
   );
 };

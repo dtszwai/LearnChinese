@@ -5,6 +5,13 @@
   font-family: WenKai;
 }
 
+.main {
+  height: calc(100vh - var(--ifm-navbar-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .title {
   font-size: 1.8rem;
   color: #1e0d26;
