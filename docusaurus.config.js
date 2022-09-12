@@ -85,7 +85,6 @@ module.exports = {
             { href: "https://www.moedict.tw/", label: "萌典" },
             { href: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/", label: "粵音" },
             { href: "https://www.edbchinese.hk/lexlist_ch/index.jsp", label: "學習字詞表" },
-            { href: "https://learningenglish.vercel.app/", label: "Learn English" },
           ],
         },
       ],
