@@ -89,5 +89,15 @@ module.exports = {
         },
       ],
     },
+    footer: {
+      logo: {
+        src: "img/logo.png",
+        href: "/",
+        width: 32,
+        height: 32,
+      },
+      style: 'light',
+      copyright: `<a href="/about">About</a>`,
+    },
   },
 };

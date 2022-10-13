@@ -5,7 +5,6 @@ import Collapse from '@site/src/components/Cheatsheet/Collapse';
 import Demo from '@site/src/components/Cheatsheet/Demo';
 import styles from './cheatsheet.module.scss';
 import { useLocation } from '@docusaurus/router';
-import Footer from '@site/src/components/Footer';
 
 export default function cheatsheet() {
   const columns = [data.slice(0, 1), data.slice(1, 4), data.slice(4, 6)];
@@ -44,7 +43,6 @@ export default function cheatsheet() {
           ))}
         </div>
       </main>
-      <Footer />
     </Layout>
   );
 }

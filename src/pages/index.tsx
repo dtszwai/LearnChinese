@@ -8,7 +8,6 @@ import S2Text from '@site/docs/S2/index.mdx';
 import S3Text from '@site/docs/S3/index.mdx';
 import styles from './index.module.scss';
 import TypeIt from 'typeit-react';
-import Footer from '@site/src/components/Footer';
 
 const Typer = () => (
   <TypeIt
@@ -123,6 +122,5 @@ export default () => (
       <TextList grade='S3' title='中三' Src={S3Text} color='#6366f1' />
       <Settext />
     </section>
-    <Footer />
   </Layout>
 );

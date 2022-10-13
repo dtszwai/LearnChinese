@@ -6,7 +6,6 @@ import Link from '@docusaurus/Link';
 import { ImFilesEmpty, ImArrowRight2 } from 'react-icons/im';
 import clsx from 'clsx';
 import useLocalStorage from '@site/src/utils/useLocalStorage';
-import Footer from '@site/src/components/Footer';
 
 export default () => {
   const title = '學習';
@@ -25,7 +24,6 @@ export default () => {
             ))}
           </div>
         </main>
-        <Footer />
       </div>
     </Layout>
   );
