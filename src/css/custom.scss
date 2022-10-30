@@ -34,6 +34,18 @@ html[class*='docs-doc-id-S3'] {
 .footer {
   padding: 0;
   background-color: transparent;
+  border-top: 1px solid var(--ifm-toc-border-color);
+  .footer__bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.collapseSidebarButton_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-CollapseButton-styles-module {
+  border-bottom: 0 !important;
 }
 
 h1:first-child {
