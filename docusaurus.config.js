@@ -79,9 +79,10 @@ module.exports = {
         { to: "cheatsheet", label: "語基知識表", position: "right" },
         {
           type: 'dropdown',
-          label: '工具',
+          label: '更多',
           position: 'right',
           items: [
+            { to: "about", label: "關於本站" },
             { href: "https://www.moedict.tw/", label: "萌典" },
             { href: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/", label: "粵音" },
             { href: "https://www.edbchinese.hk/lexlist_ch/index.jsp", label: "學習字詞表" },
