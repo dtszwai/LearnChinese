@@ -5,11 +5,16 @@
   margin-bottom: 2rem;
   border-radius: 0;
   box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  background-color: #f6f7f9;
 
   @media (min-width: 640px) {
     padding-left: 2rem;
     padding-right: 2rem;
     border-radius: 0.5rem;
+  }
+
+  html[data-theme="dark"] & {
+    background-color: #343a46;
   }
 }
 

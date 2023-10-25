@@ -46,7 +46,7 @@ const variantMap = {
 export default ({ children, type, title }: Props) => {
   const variant = variantMap[type];
   return (
-    <div className={clsx(styles.Container, styles[type])} style={variant[useColorMode().colorMode]}>
+    <div className={clsx(styles.Container, styles[type])}>
       <h3 className={styles.Heading}>
         <variant.Icon className={styles.Icon} />
         {title ?? variant.title}
