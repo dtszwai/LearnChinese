@@ -11,6 +11,7 @@ import { Quiz, QuizAnswers, Review } from './Quiz';
 import { Youtube, Bilibili } from './Video';
 import { Challenges, Hint, Solution, NoSolution } from './Challenges';
 import ExpandableExample from './ExpandableExample';
+import { Jypt } from './Lexis';
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -55,6 +56,7 @@ export default {
       <div className='content'>{children}</div>
     </div>
   ),
+  Jypt,
   Py: ({ children }) => (
     <>
       <span className={styles.pyCircle}>粵</span>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Controls from './Controls';
@@ -30,9 +30,8 @@ export default ({ track, tracks }: Props) => {
   const { title, author, src: _src, image = '/img/audio.svg' } = track ?? tracks[trackIndex];
 
   const src = useBaseUrl(_src);
-  const audio = useMemo(() => new Audio(src), [])
 
-  const audioRef = useRef(typeof Audio !== 'undefined' ? audio : ({} as HTMLAudioElement));
+  const audioRef = useRef(typeof Audio !== 'undefined' ? new Audio(src) : ({} as HTMLAudioElement));
   audioRef.current.onloadedmetadata = () => setDuration(audioRef.current.duration);
 
   const intervalRef = useRef<NodeJS.Timer>();
