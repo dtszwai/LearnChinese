@@ -1,6 +1,6 @@
 import React from 'react';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 
@@ -11,9 +11,9 @@ export default ({ tracks, setTrackIndex }: { tracks: { cap: string }[]; setTrack
       {tracks.map((obj, i) => {
         return (
           <React.Fragment key={i}>
-            <ListItem button onClick={() => setTrackIndex(i)}>
+            <ListItemButton onClick={() => setTrackIndex(i)}>
               <ListItemText primary={obj.cap} />
-            </ListItem>
+            </ListItemButton>
             <Divider />
           </React.Fragment>
         );
