@@ -5,7 +5,7 @@ module.exports = {
   title: "書目引得",
   tagline: "中文科閱讀篇章",
   url: "http://learnchinese.vercel.app/",
-  titleDelimiter: '-',
+  titleDelimiter: "-",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
@@ -39,7 +39,7 @@ module.exports = {
       },
     ],
     "docusaurus-plugin-sass",
-    './src/components/plugin/dynamicRoutes.js'
+    "./src/components/plugin/dynamicRoutes.js",
   ],
 
   presets: [
@@ -51,20 +51,36 @@ module.exports = {
           sidebarCollapsed: false,
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
-          beforeDefaultRemarkPlugins: [require('./src/components/plugin/TOC')],
+          beforeDefaultRemarkPlugins: [require("./src/components/plugin/TOC")],
         },
         blog: false,
-        theme: { customCss: [require.resolve("./src/css/custom.scss"), require.resolve("./src/css/typography.scss")] },
-        googleAnalytics: { trackingID: 'G-Y6KYGQ0T4T', anonymizeIP: true, },
+        theme: {
+          customCss: [
+            require.resolve("./src/css/custom.scss"),
+            require.resolve("./src/css/typography.scss"),
+          ],
+        },
+        googleAnalytics: { trackingID: "G-Y6KYGQ0T4T", anonymizeIP: true },
         gtag: { trackingID: "G-Y6KYGQ0T4T", anonymizeIP: true },
       },
     ],
   ],
 
   themeConfig: {
-    metadata: [{ name: 'keywords', content: '書目引得, 中文科, 中國語文, 閱讀篇章, 初中, 高中, 中學, 文憑試, DSE, Chinese, 語文基礎, 語基, 指定文言, 文言文, 白話文, 語譯, 練習, 答案' }],
+    metadata: [
+      {
+        name: "keywords",
+        content:
+          "書目引得, 中文科, 中國語文, 閱讀篇章, 初中, 高中, 中學, 文憑試, DSE, Chinese, 語文基礎, 語基, 指定文言, 文言文, 白話文, 語譯, 練習, 答案",
+      },
+    ],
     docs: {
-      sidebar: { hideable: true }
+      sidebar: { hideable: true },
+    },
+    announcementBar: {
+      id: "questionnaire",
+      content: `📢 我們想聽聽你的聲音！讓我們知道你的意見；或者只是告訴我們一個笑話，我們都聽。感謝你的支持！<a href="https://forms.gle/FzYfySqYG7nrzgYU8" target="_blank" rel="noopener">📝 填寫問卷</a>`,
+      isCloseable: false,
     },
     navbar: {
       title: "書目引得",
@@ -79,9 +95,9 @@ module.exports = {
         { to: "learn", label: "學習", position: "right" },
         { to: "cheatsheet", label: "語基知識表", position: "right" },
         {
-          type: 'dropdown',
-          label: '更多',
-          position: 'right',
+          type: "dropdown",
+          label: "更多",
+          position: "right",
           items: [
             { to: "about", label: "關於本站" },
             { href: "https://www.moedict.tw/", label: "萌典" },
