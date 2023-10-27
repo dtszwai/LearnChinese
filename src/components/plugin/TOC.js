@@ -1,5 +1,6 @@
 const Heading = (section) => {
   const title = {
+    MainText: "📖 正文",
     Translation: "📝 語譯",
     Dictionary: "📜 字詞釋義",
     Media: "📺 影片導讀",
@@ -16,6 +17,9 @@ const plugin = (options) => {
     for (let i = 0; i < ast.children.length; i++) {
       const jsx = ast.children[i].value ?? '';
       switch (jsx) {
+        case jsx.match(/^<MainText/)?.input:
+          ast.children.splice(i++, 0, Heading('MainText'));
+          break;
         case jsx.match(/^<Translation/)?.input:
           ast.children.splice(i++, 0, Heading('Translation'));
           break;

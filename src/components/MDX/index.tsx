@@ -71,6 +71,8 @@ export default {
   Biography: (props) => <div className={styles.Section} {...props} />,
   Appreciation: (props) => <div className={styles.Section} {...props} />,
   Media: (props) => <div {...props} />,
+  MainText: (props) => <div {...props} />,
+  Extension: (props) => <div {...props} />,
   Dictionary: ({ children }) => (
     <ExpandableExample
       children={children}
