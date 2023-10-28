@@ -51,7 +51,10 @@ module.exports = {
           sidebarCollapsed: false,
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
-          beforeDefaultRemarkPlugins: [require("./src/components/plugin/TOC")],
+          beforeDefaultRemarkPlugins: [
+            require("./src/components/plugin/TOC"),
+            require("./src/components/plugin/Annotation"),
+          ],
         },
         blog: false,
         theme: {
