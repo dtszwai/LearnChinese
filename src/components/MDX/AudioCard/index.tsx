@@ -7,28 +7,23 @@ import styles from './styles.module.scss';
 
 type trackProps = {
   title: string;
-  author: string;
+  subtitle: string;
   src: string;
   image?: string;
 };
 
-type Props =
-  | {
-    track: trackProps;
-    tracks?: never;
-  }
-  | {
-    tracks: trackProps[] & { cap: string }[];
-    track?: never;
-  };
+type Props = {
+  track?: trackProps;
+  tracks?: (trackProps & { cap: string })[];
+};
 
 export default ({ track, tracks }: Props) => {
   const [trackIndex, setTrackIndex] = useState(0);
   const [trackProgress, setTrackProgress] = useState(0);
-  const [isPlaying, setIsPlaying] = useState<boolean>();
+  const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
-  const { title, author, src: _src, image = '/img/audio.svg' } = track ?? tracks[trackIndex];
 
+  const { title, subtitle, src: _src, image = '/img/audio.svg' } = track ?? tracks[trackIndex];
   const src = useBaseUrl(_src);
 
   const audioRef = useRef(typeof Audio !== 'undefined' ? new Audio(src) : ({} as HTMLAudioElement));
@@ -42,7 +37,6 @@ export default ({ track, tracks }: Props) => {
   `;
 
   const startTimer = () => {
-    clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       setTrackProgress(audioRef.current.currentTime);
       if (audioRef.current.ended) {
@@ -69,7 +63,6 @@ export default ({ track, tracks }: Props) => {
   useEffect(() => {
     return () => {
       audioRef.current.pause();
-      clearInterval(intervalRef.current);
     };
   }, []);
 
@@ -95,11 +88,11 @@ export default ({ track, tracks }: Props) => {
       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography variant='h5' component='div' className={styles.title} children={title} />
-          <Typography variant='subtitle1' component='div' className={styles.author} children={author} />
+          <Typography variant='subtitle1' component='div' className={styles.subtitle} children={subtitle} />
         </CardContent>
         <Controls {...{ isPlaying, setIsPlaying, onScrub, audioRef }} />
         <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-          {Number.isNaN(duration) ? '00:00' : toTime(trackProgress)}
+          <span className={styles.timer}>{Number.isNaN(duration) ? '00:00' : toTime(trackProgress)}</span>
           <input
             type='range'
             value={trackProgress}
@@ -110,11 +103,11 @@ export default ({ track, tracks }: Props) => {
             onChange={(e) => onScrub(Number(e.target.value))}
             style={{ background: progressStyling }}
           />
-          {Number.isNaN(duration) ? '00:00' : toTime(duration)}
+          <span className={styles.timer}>{Number.isNaN(duration) ? '00:00' : toTime(duration)}</span>
         </div>
       </Box>
       {track ? (
-        <CardMedia component='img' sx={{ width: '151px', margin: '8px' }} image={useBaseUrl(image)} />
+        <CardMedia component='img' className={styles.trackInfo} image={useBaseUrl(image)} />
       ) : (
         <CardMedia>
           <List {...{ tracks, setTrackIndex }} />

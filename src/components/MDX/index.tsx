@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './styles.module.scss';
 
+import Annotate from './Annotate';
 import Carousel from './Carousel';
 import Author from './Author';
 import AudioCard from './AudioCard';
@@ -11,26 +12,9 @@ import { Quiz, QuizAnswers, Review } from './Quiz';
 import { Youtube, Bilibili } from './Video';
 import { Challenges, Hint, Solution, NoSolution } from './Challenges';
 import ExpandableExample from './ExpandableExample';
-import { Jypt } from './Lexis';
-
+import { Jypt, Py } from './Lexis';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Tooltip from '@mui/material/Tooltip';
-
-const Annotate = ({ children, title }) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <Tooltip
-      open={open}
-      title={title}
-      onOpen={() => setOpen(true)}
-      onClose={() => setOpen(false)}
-      onClick={() => setOpen(!open)}
-    >
-      <span className={styles.Tooltip}>{children}</span>
-    </Tooltip>
-  );
-};
 
 export default {
   Author,
@@ -45,46 +29,25 @@ export default {
   Review,
   Youtube,
   Bilibili,
-  Remark: ({ children, title }) => (
-    <p className={styles.remark} data-title={title}>
-      {children}
-    </p>
-  ),
-  Text: ({ title, children }) => (
-    <div className='text-block'>
-      {title && <div className='title'>{title}</div>}
-      <div className='content'>{children}</div>
-    </div>
-  ),
   Jypt,
-  Py: ({ children }) => (
-    <>
-      <span className={styles.pyCircle}>粵</span>
-      {children}
-    </>
-  ),
+  Py,
   Challenges,
   Hint,
   Solution,
   NoSolution,
+  Commentary,
+  Remark: ({ children, title }) => <p className={styles.remark} data-title={title}> {children}</p>,
   Translation: (props) => <div className={styles.Section} {...props} />,
   Biography: (props) => <div className={styles.Section} {...props} />,
   Appreciation: (props) => <div className={styles.Section} {...props} />,
   Media: (props) => <div {...props} />,
   MainText: (props) => <div {...props} />,
   Extension: (props) => <div {...props} />,
-  Dictionary: ({ children }) => (
-    <ExpandableExample
-      children={children}
-      title={`<span style="fontSize: '1.5rem'">📜 字詞釋義</span>`}
-      type='Dictionary'
-    />
-  ),
+  Dictionary: ({ children }) => <ExpandableExample title="📜 字詞釋義" type='Dictionary' children={children} />,
   DeepDive: (props) => <ExpandableExample {...props} type='DeepDive' />,
   Intro: (props) => <Admonition type='Intro' {...props} />,
   Quote: (props) => <Admonition type='Quote' {...props} />,
   Note: (props) => <Admonition type='Note' {...props} />,
   YouWillLearn: (props) => <Admonition type='YouWillLearn' {...props} />,
   Resources: (props) => <Admonition type='Resources' {...props} />,
-  Commentary,
 };

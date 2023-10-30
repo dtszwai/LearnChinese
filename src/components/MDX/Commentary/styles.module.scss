@@ -1,5 +1,10 @@
 .button {
-  html[data-theme='dark'] & {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttonChip {
+  html[data-theme="dark"] & {
     border-color: rgba(102, 187, 106, 0.7);
     color: rgb(102, 187, 106);
   }

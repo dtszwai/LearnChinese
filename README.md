@@ -2,7 +2,7 @@
 
 ## 中文科閱讀篇章
 
-稽古有得，隨時劄記，久而類次成書。
+「稽古有得，隨時劄記，久而類次成書。」——顧炎武《日知錄》
 
 ## MDX Components
 
@@ -24,23 +24,23 @@ You can change title by passing `title` prop.
 
 ### AudioCard
 
-| props  | description                       |
-| ------ | --------------------------------- |
-| title  | Title of the AudioCard            |
-| src    | URL of the file to play           |
-| author | author of the music               |
-| image  | Image to show (single track only) |
-|        |                                   |
-| cap    | track caption (multi tracks only) |
+| props    | description                       |
+| -------- | --------------------------------- |
+| title    | Title of the AudioCard            |
+| src      | URL of the file to play           |
+| subtitle | Subtitle of the AudioCard         |
+| image    | Image to show (single track only) |
+|          |                                   |
+| cap      | track caption (multi tracks only) |
 
 ```jsx examples
 // single track
-<AudioCard track={{title:'【普】〈背影〉', author:'朱自清', src:'/audio/背影(普通話).m4a'}} />
+<AudioCard track={{title:'【普】〈背影〉', subtitle:'朱自清', src:'/audio/背影(普通話).m4a'}} />
 
 //multi tracks
 <AudioCard tracks={[
-    {title: "【粵】〈登樓〉", src: "/audio/登樓(粵語).mp3", author: "杜甫(EDB)", cap: "粵語",},
-    {title: "【普】〈登樓〉", src: "/audio/登樓(普通話).mp3", author: "杜甫(EDB)", cap: "普通話",},
+    {title: "【粵】〈登樓〉", src: "/audio/登樓(粵語).mp3", subtitle: "杜甫(EDB)", cap: "粵語",},
+    {title: "【普】〈登樓〉", src: "/audio/登樓(普通話).mp3", subtitle: "杜甫(EDB)", cap: "普通話",},
     ]}/>
 ```
 
@@ -85,14 +85,12 @@ Props for `DeepDive`
 | py       | The pinyin Jyutping of the character.                                          |
 | children | The Chinese character to display, typically a homophone. It can be left empty. |
 
-## Usage
-
 ```jsx example
 <Jypt py="joeng4">羊</Jypt>
 ```
 
 This will render as a clickable button that, when clicked, plays the audio of the Jyutping pronunciation.
-
+Fetching Audio from [粵語審音配詞字庫](https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/)
 
 <!--
 ### Challenges

@@ -9,21 +9,23 @@ type Carousel = {
   children: [];
 };
 
+const defaultCarouselSettings = {
+  dots: true,
+  fade: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: true,
+};
+
 export default ({ settings, children }: Carousel) => {
-  const defaultSettings = {
-    dots: true,
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
-  };
+  const combinedSettings = { ...defaultCarouselSettings, ...settings };
 
   return (
-    <Slider {...defaultSettings} {...settings}>
+    <Slider {...combinedSettings}>
       {children.map((photo, id) => (
         <img src={useBaseUrl(photo)} key={id} />
       ))}

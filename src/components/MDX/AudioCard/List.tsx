@@ -1,12 +1,15 @@
 import React from 'react';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
+import { List, ListItemButton, ListItemText, Divider } from '@mui/material';
+import styles from './styles.module.scss';
 
-export default ({ tracks, setTrackIndex }: { tracks: { cap: string }[]; setTrackIndex: any }) => {
+type TrackListProps = {
+  tracks: { cap: string }[];
+  setTrackIndex: (index: number) => void;
+};
+
+export default ({ tracks, setTrackIndex }: TrackListProps) => {
   return (
-    <List sx={{ width: 151, margin: '8px' }} aria-label='panel'>
+    <List className={styles.trackInfo} aria-label='panel'>
       <Divider />
       {tracks.map((obj, i) => {
         return (

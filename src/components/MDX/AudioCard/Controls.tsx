@@ -11,6 +11,11 @@ export default function ({ isPlaying, setIsPlaying, onScrub, audioRef }) {
     setIsPlaying(!isPlaying);
   };
 
+  const stopAudio = () => {
+    onScrub(0);
+    setIsPlaying(false);
+  }
+
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
       <IconButton
@@ -22,10 +27,7 @@ export default function ({ isPlaying, setIsPlaying, onScrub, audioRef }) {
       <IconButton
         sx={{ color: 'inherit', marginTop: '8px' }}
         aria-label='Stop'
-        onClick={() => {
-          onScrub(0);
-          setIsPlaying(false);
-        }}
+        onClick={stopAudio}
         children={<MdStop />}
       />
     </Box>

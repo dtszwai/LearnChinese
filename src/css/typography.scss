@@ -1,4 +1,4 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 @font-face {
   font-family: WenKai;
@@ -24,12 +24,12 @@
 }
 
 @font-face {
-  font-family: 'Inter var';
+  font-family: "Inter var";
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/src/font/InterVar.woff2') format('woff2');
-  font-named-instance: 'Regular';
+  src: url("/src/font/InterVar.woff2") format("woff2");
+  font-named-instance: "Regular";
 }
 
 // 正文展現樣式
@@ -48,7 +48,7 @@
     &.prose {
       text-align: justify;
       line-height: 1.7;
-      &:not([data-paragraph='true']) {
+      &:not([data-paragraph="true"]) {
         text-indent: 2em;
       }
     }
@@ -69,18 +69,18 @@
     }
   }
 
-  & [data-paragraph='true'] > p::before,
+  & [data-paragraph="true"] > p::before,
   span.paragraph::before {
     display: block;
     text-transform: uppercase;
     color: var(--ifm-font-color-base);
     text-align: center;
-    font: 1.5rem 'Cabin Sketch';
+    font: 1.5rem "Cabin Sketch";
     font-weight: var(--ifm-heading-font-weight);
     line-height: var(--ifm-heading-line-height);
     margin-bottom: var(--ifm-heading-margin-bottom);
     counter-increment: paragraph;
-    content: '-' counter(paragraph) '-';
+    content: "-" counter(paragraph) "-";
   }
 }
 
@@ -105,32 +105,40 @@
   text-align: right;
   margin-bottom: 1.5rem;
   display: block;
-  html[data-theme='dark'] & {
+  html[data-theme="dark"] & {
     color: v.$source-text-color-dark;
   }
 }
 
-.text-block {
+.language-txt {
   margin-bottom: var(--ifm-leading);
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-lw);
-  color: rgb(57, 58, 52);
-  background-color: rgb(246, 248, 250);
-  html[data-theme='dark'] & {
-    color: rgb(191, 199, 213);
-    background-color: rgb(41, 45, 62);
+  [class^="codeBlockTitle"],
+  [class^="codeBlockLines"] span {
+    color: rgb(57, 58, 52);
+    html[data-theme="dark"] & {
+      color: rgb(191, 199, 213);
+    }
   }
-  .title {
+  &,
+  [class^="codeBlockTitle"],
+  [class^="codeBlockLines"] {
+    background-color: rgb(246, 248, 250);
+    html[data-theme="dark"] & {
+      background-color: rgb(41, 45, 62);
+    }
+  }
+  [class^="codeBlockTitle"] {
     border-bottom: 1px solid var(--ifm-color-emphasis-300);
-    font-size: var(--ifm-code-font-size);
     padding: 0.75rem var(--ifm-pre-padding);
-    font-family: 'SmallCaps';
+    font-family: "SmallCaps";
   }
-  .content {
+  [class^="codeBlockLines"] {
     padding: var(--ifm-pre-padding);
-    font: var(--ifm-code-font-size) / var(--ifm-pre-line-height) 'Inter var';
-    p:last-child {
-      margin-bottom: 0;
+    span {
+      font-family: "Palatino";
+      line-height: var(--ifm-pre-line-height);
     }
   }
 }

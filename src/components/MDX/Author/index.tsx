@@ -13,14 +13,14 @@ interface Author {
 export default ({ name, source, dynasty }: Author) => {
   const data = Object(authorInfo[name]);
   const Avatar = (props) => (data.avatar ? <img {...props} src={useBaseUrl(data.avatar)} /> : <MdFace {...props} />);
+  const authorPrefix = (dynasty || data.dynasty) && `【${dynasty || data.dynasty}】` || ''
 
   return (
     <div className={styles.Author}>
       <Avatar className={styles.AuthorPicture} />
       <div className={styles.AuthorContent}>
         <strong className={styles.AuthorTitle}>
-          {(dynasty || data.dynasty) && `【${dynasty || data.dynasty}】`}
-          {name}
+          {authorPrefix + name}
         </strong>
         {source && <small className={styles.AuthorSubtitle}>{source}</small>}
       </div>

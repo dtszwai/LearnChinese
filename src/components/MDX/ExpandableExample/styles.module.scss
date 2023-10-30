@@ -7,7 +7,7 @@
 
   &.DeepDive {
     background-color: #f3f4fd;
-    html[data-theme='dark'] & {
+    html[data-theme="dark"] & {
       background-color: #2b349133;
     }
   }
@@ -15,7 +15,7 @@
   &.Dictionary {
     background-color: #e8f1f9;
     margin-top: 1rem;
-    html[data-theme='dark'] & {
+    html[data-theme="dark"] & {
       background-color: #2e4052;
     }
     ol li {
@@ -35,7 +35,7 @@
 
   &.DeepDive {
     color: #575fb7;
-    html[data-theme='dark'] & {
+    html[data-theme="dark"] & {
       color: #e0c3fc;
     }
   }
@@ -45,7 +45,7 @@
   display: inline;
   margin-right: 0.5rem;
   color: #6b75db;
-  html[data-theme='dark'] & {
+  html[data-theme="dark"] & {
     color: #8891ec;
   }
 }
@@ -54,7 +54,7 @@
   color: #23272f;
   font-weight: 700;
   font-size: 20px;
-  html[data-theme='dark'] & {
+  html[data-theme="dark"] & {
     color: #f6f7f9;
   }
 }
@@ -92,9 +92,14 @@
   }
 }
 
-.Expand {
-  border-top-color: #e9ebfb;
-  html[data-theme='dark'] & {
+.Opened {
+  padding: 1rem 2rem;
+  border-top: 1px solid #e9ebfb;
+  html[data-theme="dark"] & {
     border-top-color: #272727;
   }
+}
+
+.Closed {
+  display: none;
 }

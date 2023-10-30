@@ -1,0 +1,7 @@
+@use "@site/src/css/variables" as v;
+
+.Annotate {
+  background-color: v.$annotate-color;
+  margin-left: 1px;
+  margin-right: 1px;
+}

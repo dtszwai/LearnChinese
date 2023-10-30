@@ -3,30 +3,31 @@ import Chip from '@mui/material/Chip';
 import styles from './styles.module.scss';
 import { CommentaryContext } from '@site/src/theme/Root';
 
-type Tips = { children: any; group: string };
-type Display = { left?: boolean } & Target & Text;
-type Target = { all: true; group?: never } | { group: string; all?: never };
-type Text = { children: React.ReactNode; label?: never } | { label: string; children?: never };
+type TipsProps = { children: React.ReactNode; group: string };
+type DisplayProps = { left?: boolean } & TargetProps & TextProps;
+type TargetProps = { all: true; group?: never } | { group: string; all?: never };
+type TextProps = { children: React.ReactNode; label?: never } | { label: string; children?: never };
 
-const Text = (props: Tips) => {
+const TextComponent = (props: TipsProps) => {
   const [show] = useContext(CommentaryContext);
   return <div style={{ display: show[props.group] ? 'inherit' : 'none' }}>{props.children}</div>;
 };
 
-const Button = (props: Display) => {
+const ButtonComponent = (props: DisplayProps) => {
   const [show, setShow] = useContext(CommentaryContext);
-  React.useEffect(() => {
-    return () => setShow({});
-  }, []);
 
   const showComment = () => {
     setShow({ ...show, [props.group]: !show[props.group] });
   };
 
+  React.useEffect(() => {
+    return () => setShow({});
+  }, []);
+
   return (
     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
       <Chip
-        className={styles.button}
+        className={styles.buttonChip}
         color='success'
         variant='outlined'
         onClick={showComment}
@@ -37,15 +38,15 @@ const Button = (props: Display) => {
 };
 
 const Panel = (props) => (
-  <div className='Commentary_Panel' style={{ display: 'flex', justifyContent: 'flex-end' }}>
+  <div className={styles.Commentary_Panel}>
     {props.children}
   </div>
 );
 
 export default (props) => {
   const varientMap = {
-    button: <Button {...props} />,
-    text: <Text {...props} />,
+    button: <ButtonComponent {...props} />,
+    text: <TextComponent {...props} />,
     panel: <Panel {...props} />,
   };
 

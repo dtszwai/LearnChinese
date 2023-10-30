@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   color: rgba(0, 0, 0, 0.87);
-  html[data-theme='dark'] & {
+  html[data-theme="dark"] & {
     color: #fff;
   }
 }
@@ -17,12 +17,13 @@
   font-weight: bold !important;
 }
 
-.author {
+.subtitle {
   color: var(--ifm-color-emphasis-700);
 }
 
 .progress {
   height: 5px;
+  appearance: none;
   -webkit-appearance: none;
   width: 100%;
   margin-bottom: 10px;
@@ -30,4 +31,14 @@
   background: #3b7677;
   transition: background 0.2s ease;
   cursor: pointer;
+}
+
+.timer {
+  width: 5em;
+  text-align: center;
+}
+
+.trackInfo {
+  width: 151px !important;
+  margin: 8px;
 }

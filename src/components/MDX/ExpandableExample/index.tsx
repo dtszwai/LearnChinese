@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 import { AiOutlineSearch as IconDeepDive } from 'react-icons/ai';
@@ -15,37 +15,37 @@ function ExpandableExample({ children, title, excerpt, type }: ExampleProps) {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const isDeepDive = type === 'DeepDive';
   const isDictionary = type === 'Dictionary';
+
+  const containerClassNames = clsx(styles.Container, {
+    [styles.DeepDive]: isDeepDive,
+    [styles.Dictionary]: isDictionary,
+  });
+
+  const headerClassNames = clsx(styles.Header, {
+    [styles.DeepDive]: isDeepDive,
+  });
+
+  const buttonClassNames = clsx(styles.Button, {
+    [styles.DeepDive]: isDeepDive,
+    [styles.Dictionary]: isDictionary,
+  });
+
+  const DeepDiveHeader = () => <h5 className={headerClassNames}>
+    <IconDeepDive className={styles.DeepDiveIcon} />
+    深入探討
+  </h5>
+
+  const toggleExpanded = () => setIsExpanded((current) => !current);
+
   return (
-    <div
-      className={clsx(styles.Container, {
-        [styles.DeepDive]: isDeepDive,
-        [styles.Dictionary]: isDictionary,
-      })}
-    >
+    <div className={containerClassNames}>
       <div style={{ padding: '2rem' }}>
-        <h5
-          className={clsx(styles.Header, {
-            [styles.DeepDive]: isDeepDive,
-          })}
-        >
-          {isDeepDive && (
-            <>
-              <IconDeepDive className={styles.DeepDiveIcon} />
-              深入探討
-            </>
-          )}
-        </h5>
+        {isDeepDive && <DeepDiveHeader />}
         <div style={{ marginBottom: '1rem' }}>
-          <h3 className={styles.Title} dangerouslySetInnerHTML={{ __html: title }} />
+          <h3 className={styles.Title}>{title}</h3>
           {excerpt && <div dangerouslySetInnerHTML={{ __html: excerpt }} />}
         </div>
-        <button
-          className={clsx(styles.Button, {
-            [styles.DeepDive]: isDeepDive,
-            [styles.Dictionary]: isDictionary,
-          })}
-          onClick={() => setIsExpanded((current) => !current)}
-        >
+        <button className={buttonClassNames} onClick={toggleExpanded}>
           <IoChevronDown
             style={{
               verticalAlign: 'text-bottom',
@@ -56,18 +56,7 @@ function ExpandableExample({ children, title, excerpt, type }: ExampleProps) {
           {isExpanded ? '隱藏資訊' : '顯示詳情'}
         </button>
       </div>
-      <div
-        style={
-          !isExpanded
-            ? { display: 'none' }
-            : {
-                padding: '1rem 2rem',
-                borderTopWidth: '1px',
-                borderTopStyle: 'solid',
-              }
-        }
-        className={styles.Expand}
-      >
+      <div className={isExpanded ? styles.Opened : styles.Closed}>
         {children}
       </div>
     </div>

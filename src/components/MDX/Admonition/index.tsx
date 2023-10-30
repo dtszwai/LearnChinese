@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import clsx from 'clsx';
-import { useColorMode } from '@docusaurus/theme-common';
 import { BsSticky, BsJournalText, BsChatSquareQuote, BsTag, BsLink45Deg } from 'react-icons/bs';
+import { IconType } from 'react-icons';
 
 type Props = {
   children: React.ReactNode;
@@ -10,7 +10,14 @@ type Props = {
   title?: string;
 };
 
-const variantMap = {
+type Variant = {
+  title: string;
+  Icon: IconType;
+  light: { backgroundColor: string };
+  dark: { backgroundColor: string };
+};
+
+const variantMap: Record<Props['type'], Variant> = {
   Intro: {
     title: '題引',
     Icon: BsSticky,

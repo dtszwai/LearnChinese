@@ -1,4 +1,4 @@
-@use '@site/src/css/variables' as v;
+@use "@site/src/css/variables" as v;
 
 .remark {
   text-indent: 0;
@@ -14,32 +14,13 @@
     border-radius: 6px;
     padding: 0.2rem;
   }
-  html[data-theme='dark'] & {
+  html[data-theme="dark"] & {
     color: v.$remark-color-dark;
   }
 }
 
-.Tooltip {
-  background-color: v.$annotate-color;
-  margin-left: 1px;
-  margin-right: 1px;
-}
-
-.pyCircle {
-  display: inline-block;
-  color: dodgerblue;
-  font-size: 0.875em;
-  width: 1.25rem;
-  line-height: 125%;
-  background-color: white;
-  text-align: center;
-  border: 1.5px solid dodgerblue;
-  border-radius: 100%;
-  margin-right: 0.3rem;
-}
-
 .Section {
   font-size: 1.2em;
-  text-align: 'justify';
+  text-align: "justify";
   margin: 1.8rem auto;
 }
