@@ -1,6 +1,6 @@
 {
   "name": "learnchinese",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -13,28 +13,26 @@
     "clear": "docusaurus clear"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.4.3",
-    "@docusaurus/plugin-content-docs": "^2.4.3",
-    "@docusaurus/plugin-google-analytics": "^2.4.3",
-    "@docusaurus/plugin-google-gtag": "^2.4.3",
-    "@docusaurus/preset-classic": "^2.4.3",
-    "@easyops-cn/docusaurus-search-local": "^0.23.0",
+    "@docusaurus/core": "^3.0.0",
+    "@docusaurus/plugin-content-docs": "^3.0.0",
+    "@docusaurus/plugin-google-analytics": "^3.0.0",
+    "@docusaurus/plugin-google-gtag": "^3.0.0",
+    "@docusaurus/preset-classic": "^3.0.0",
+    "@easyops-cn/docusaurus-search-local": "^0.36.0",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
-    "@mdx-js/react": "^1.6.21",
-    "@mui/material": "^5.5.2",
-    "clsx": "^1.1.1",
-    "docusaurus-plugin-sass": "^0.2.2",
-    "node-gyp": "^9.0.0",
-    "nodejieba": "^2.6.0",
-    "prism-react-renderer": "^1.3.1",
-    "react": "^17.0.1",
+    "@mdx-js/react": "^3.0.0",
+    "@mui/material": "^5.14.16",
+    "clsx": "^2.0.0",
+    "docusaurus-plugin-sass": "^0.2.5",
+    "prism-react-renderer": "^2.1.0",
+    "react": "^18.2.0",
     "react-collapsible": "^2.8.4",
-    "react-dom": "^17.0.1",
-    "react-icons": "^4.3.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
     "react-slick": "^0.28.1",
-    "sass": "^1.49.9",
-    "typeit-react": "^2.3.3"
+    "sass": "^1.69.5",
+    "typeit-react": "^2.6.4"
   },
   "browserslist": {
     "production": [
@@ -49,8 +47,13 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.4.3",
-    "@tsconfig/docusaurus": "^1.0.4",
-    "typescript": "^4.6.2"
+    "@docusaurus/module-type-aliases": "^3.0.0",
+    "@docusaurus/types": "3.0.0",
+    "@docusaurus/tsconfig": "3.0.0",
+    "@types/react": "^18.2.29",
+    "typescript": "~5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0"
   }
 }

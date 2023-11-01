@@ -1,0 +1,90 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.S1.category.單元二：敘事寫人": {
+    "message": "單元二：敘事寫人",
+    "description": "The label for category 單元二：敘事寫人 in sidebar S1"
+  },
+  "sidebar.S1.category.單元三：借事抒情": {
+    "message": "單元三：借事抒情",
+    "description": "The label for category 單元三：借事抒情 in sidebar S1"
+  },
+  "sidebar.S1.category.單元四：詩歌欣賞": {
+    "message": "單元四：詩歌欣賞",
+    "description": "The label for category 單元四：詩歌欣賞 in sidebar S1"
+  },
+  "sidebar.S1.category.單元六：景物描寫（一）": {
+    "message": "單元六：景物描寫（一）",
+    "description": "The label for category 單元六：景物描寫（一） in sidebar S1"
+  },
+  "sidebar.S1.category.單元七：說明的方法和順序": {
+    "message": "單元七：說明的方法和順序",
+    "description": "The label for category 單元七：說明的方法和順序 in sidebar S1"
+  },
+  "sidebar.S1.category.單元八：借事說理": {
+    "message": "單元八：借事說理",
+    "description": "The label for category 單元八：借事說理 in sidebar S1"
+  },
+  "sidebar.S3.category.單元一：說明的語言": {
+    "message": "單元一：說明的語言",
+    "description": "The label for category 單元一：說明的語言 in sidebar S3"
+  },
+  "sidebar.S3.category.單元二：記敘的方法和詳略": {
+    "message": "單元二：記敘的方法和詳略",
+    "description": "The label for category 單元二：記敘的方法和詳略 in sidebar S3"
+  },
+  "sidebar.S3.category.單元四：詞曲欣賞": {
+    "message": "單元四：詞曲欣賞",
+    "description": "The label for category 單元四：詞曲欣賞 in sidebar S3"
+  },
+  "sidebar.S3.category.單元六：小說與戲劇欣賞": {
+    "message": "單元六：小說與戲劇欣賞",
+    "description": "The label for category 單元六：小說與戲劇欣賞 in sidebar S3"
+  },
+  "sidebar.S3.category.單元七：論證的方法": {
+    "message": "單元七：論證的方法",
+    "description": "The label for category 單元七：論證的方法 in sidebar S3"
+  },
+  "sidebar.S3.category.單元九：文言選讀（三）": {
+    "message": "單元九：文言選讀（三）",
+    "description": "The label for category 單元九：文言選讀（三） in sidebar S3"
+  },
+  "sidebar.S3.category.作品選讀": {
+    "message": "作品選讀",
+    "description": "The label for category 作品選讀 in sidebar S3"
+  },
+  "sidebar.settext.category.指定文言經典學習材料": {
+    "message": "指定文言經典學習材料",
+    "description": "The label for category 指定文言經典學習材料 in sidebar settext"
+  },
+  "sidebar.dse.category.歷屆文憑試閱讀篇章": {
+    "message": "歷屆文憑試閱讀篇章",
+    "description": "The label for category 歷屆文憑試閱讀篇章 in sidebar dse"
+  },
+  "sidebar.dse.category.2018": {
+    "message": "2018",
+    "description": "The label for category 2018 in sidebar dse"
+  },
+  "sidebar.dse.category.2019": {
+    "message": "2019",
+    "description": "The label for category 2019 in sidebar dse"
+  },
+  "sidebar.dse.category.2020": {
+    "message": "2020",
+    "description": "The label for category 2020 in sidebar dse"
+  },
+  "sidebar.dse.category.2021": {
+    "message": "2021",
+    "description": "The label for category 2021 in sidebar dse"
+  },
+  "sidebar.dse.category.2022": {
+    "message": "2022",
+    "description": "The label for category 2022 in sidebar dse"
+  },
+  "sidebar.dse.category.2023": {
+    "message": "2023",
+    "description": "The label for category 2023 in sidebar dse"
+  }
+}

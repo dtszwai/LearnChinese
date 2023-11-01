@@ -2,15 +2,15 @@ import React from 'react';
 
 type VideoProps =
   | {
-      src: string;
-      start: number;
-      site: 'Youtube';
-    }
+    src: string;
+    start: number;
+    site: 'Youtube';
+  }
   | {
-      src: string;
-      start?: never;
-      site: 'Bilibili';
-    };
+    src: string;
+    start?: never;
+    site: 'Bilibili';
+  };
 
 const Video = ({ src, start, site }: VideoProps) => (
   <div className='video-responsive'>

@@ -7,7 +7,7 @@ interface Question {
   excerpt?: React.ReactNode;
 }
 
-export const Question = ({ header, text, excerpt }: Question) => (
+export const Question = ({ header, text, excerpt }: Question) =>
   <div className={styles.Question}>
     <h2>{header}</h2>
     <p
@@ -17,11 +17,10 @@ export const Question = ({ header, text, excerpt }: Question) => (
     />
     {excerpt}
   </div>
-);
 
 interface Selection {
   options: React.ReactNode[];
-  onSelect: (arg0: number) => void;
+  onSelect: (selectedOptionIndex: number) => void;
   isDisabled?: boolean;
 }
 

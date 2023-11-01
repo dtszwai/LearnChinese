@@ -1,8 +1,8 @@
-const visit = require("unist-util-visit");
+const { visit } = require("unist-util-visit");
 
-module.exports = function customRemarkPlugin() {
-  return (tree) => {
-    visit(tree, "text", (node, index, parent) => {
+const Annotation = () => {
+  const transformer = (root) => {
+    visit(root, "text", (node, index, parent) => {
       // Regular expression to match {{ABC|XYZ}}
       const regex = /\{\{(.+?)\|(.+?)\}\}/g;
       const content = node.value;
@@ -40,4 +40,7 @@ module.exports = function customRemarkPlugin() {
       parent.children.splice(index, 1, ...newChildren);
     });
   };
+  return transformer;
 };
+
+export default Annotation;

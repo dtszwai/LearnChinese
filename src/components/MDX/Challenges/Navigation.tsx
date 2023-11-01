@@ -18,7 +18,6 @@ export function Navigation({
   const scrollPos = currentChallenge.order - 1;
   const canScrollLeft = scrollPos > 0;
   const canScrollRight = scrollPos < challenges.length - 1;
-
   const handleScrollRight = () => {
     if (scrollPos < challenges.length - 1) {
       const currentNavRef = challengesNavRef.current[scrollPos + 1].current;

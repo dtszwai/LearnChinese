@@ -54,3 +54,15 @@
     color: #888;
   }
 }
+
+.CorrectOption {
+  color: #0070f3;
+  display: flex;
+  align-items: center;
+}
+
+.WrongOption {
+  color: #e00;
+  display: flex;
+  align-items: center;
+}

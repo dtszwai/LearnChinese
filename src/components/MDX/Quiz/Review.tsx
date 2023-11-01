@@ -6,8 +6,6 @@ import { useActiveDocContext } from '@docusaurus/plugin-content-docs/client';
 import { BsCheckCircleFill, BsXCircleFill } from 'react-icons/bs';
 
 interface Review {
-  question: string;
-  label?: string;
   children: React.ReactElement[];
   Correct: number;
 }
@@ -18,25 +16,26 @@ interface Questions {
   answerOptions: { answerText: string; isCorrect?: boolean }[];
 }
 
-const parseReviewContents = (children: React.ReactElement[], correctOption: number) => {
+const parseReviewContents = (data, correctOption: number) => {
   const content = { answerOptions: [] } as Questions;
-  if (!children) return content;
-  React.Children.forEach(children, (item) => {
+  React.Children.forEach(data, (item) => {
     const { props } = item;
-    switch (props.mdxType) {
+    const { children } = props
+    switch (item.type?.name || item.type) {
       case 'h2':
-        content.label = props.children;
+        content.label = children;
         break;
       case 'p':
-        content.questionText = props.children;
+        content.questionText = children;
         break;
       case 'ol':
       case 'ul':
-        props.children.forEach((child, i) => {
-          content.answerOptions.push({
-            answerText: child.props.children,
-            isCorrect: correctOption === i,
-          });
+        React.Children.forEach(children, (options) => {
+          if ('li' == options?.type)
+            content.answerOptions.push({
+              answerText: options.props.children,
+              isCorrect: correctOption === content.answerOptions.length,
+            });
         });
         break;
     }
@@ -48,25 +47,23 @@ export default ({ Correct, children }: Review) => {
   const questions = parseReviewContents(children, Correct - 1);
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [options, setOptions] = useState<React.ReactNode[]>(questions.answerOptions.map((option) => option.answerText));
-  const {
-    activeDoc: { id },
-  } = useActiveDocContext();
+  const { id } = useActiveDocContext(undefined).activeDoc;
   const [data, setData] = useLocalStorage('Points');
 
-  const handleSelect = (index: number) => {
-    setData({ ...data, [id]: { checked: true, response: index, isCorrect: questions.answerOptions[index].isCorrect } });
-    renderedReview(index);
+  const handleSelect = (selectedChoice: number) => {
+    setData({ ...data, [id]: { checked: true, response: selectedChoice, isCorrect: questions.answerOptions[selectedChoice].isCorrect } });
+    renderedReview(selectedChoice);
   };
 
-  const renderedReview = (index) => {
-    const isCorrect = questions.answerOptions[index].isCorrect;
+  const renderedReview = (selectedChoice) => {
+    const isCorrect = questions.answerOptions[selectedChoice].isCorrect;
     setOptions(
       questions.answerOptions.map((option, i) => {
         return option.isCorrect ? (
           <>
             {option.answerText} <BsCheckCircleFill color='#0070f3' />
           </>
-        ) : i === index ? (
+        ) : i === selectedChoice ? (
           <>
             {option.answerText} <BsXCircleFill color='#e00' />
           </>
@@ -77,12 +74,12 @@ export default ({ Correct, children }: Review) => {
     );
     setMessage(
       isCorrect ? (
-        <p style={{ color: '#0070f3', display: 'flex', alignItems: 'center' }}>
+        <p className={styles.CorrectOption}>
           <BsCheckCircleFill style={{ marginRight: '5px' }} />
           答對了，做得不錯！
         </p>
       ) : (
-        <p style={{ color: '#e00', display: 'flex', alignItems: 'center' }}>
+        <p className={styles.WrongOption}>
           <BsXCircleFill style={{ marginRight: '5px' }} />
           答錯了，但是個很好的嘗試！
         </p>
@@ -95,9 +92,9 @@ export default ({ Correct, children }: Review) => {
   }, []);
 
   return (
-    <div className={styles.Quiz} id={questions.label ?? '鞏固所學'}>
-      <Question header={questions.label ?? '鞏固所學'} text={questions.questionText} excerpt={message} />
-      <Selection options={options} onSelect={handleSelect} isDisabled={message !== null} />
+    <div className={styles.Quiz} id={questions.label}>
+      <Question header={questions.label} text={questions.questionText} excerpt={message} />
+      <Selection options={options} onSelect={handleSelect} isDisabled={data?.[id]?.checked} />
     </div>
   );
 };

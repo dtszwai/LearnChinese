@@ -36,6 +36,7 @@ export default {
   Solution,
   NoSolution,
   Commentary,
+  ChallengeItem: ({ props }) => <div {...props}></div>,
   Remark: ({ children, title }) => <p className={styles.remark} data-title={title}> {children}</p>,
   Translation: (props) => <div className={styles.Section} {...props} />,
   Biography: (props) => <div className={styles.Section} {...props} />,

@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "書目引得",
+    "description": "The title in the navbar"
+  },
+  "item.label.中一級": {
+    "message": "中一級",
+    "description": "Navbar item with label 中一級"
+  },
+  "item.label.中三級": {
+    "message": "中三級",
+    "description": "Navbar item with label 中三級"
+  },
+  "item.label.指定文言": {
+    "message": "指定文言",
+    "description": "Navbar item with label 指定文言"
+  },
+  "item.label.歷屆文憑篇章": {
+    "message": "歷屆文憑篇章",
+    "description": "Navbar item with label 歷屆文憑篇章"
+  },
+  "item.label.學習": {
+    "message": "學習",
+    "description": "Navbar item with label 學習"
+  },
+  "item.label.語基知識表": {
+    "message": "語基知識表",
+    "description": "Navbar item with label 語基知識表"
+  },
+  "item.label.更多": {
+    "message": "更多",
+    "description": "Navbar item with label 更多"
+  },
+  "item.label.關於本站": {
+    "message": "關於本站",
+    "description": "Navbar item with label 關於本站"
+  },
+  "item.label.萌典": {
+    "message": "萌典",
+    "description": "Navbar item with label 萌典"
+  },
+  "item.label.粵音": {
+    "message": "粵音",
+    "description": "Navbar item with label 粵音"
+  },
+  "item.label.學習字詞表": {
+    "message": "學習字詞表",
+    "description": "Navbar item with label 學習字詞表"
+  }
+}

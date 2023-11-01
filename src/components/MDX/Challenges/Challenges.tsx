@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import clsx from 'clsx';
 
 import { Navigation } from './Navigation';
 import { IoFlagOutline, IoBulbOutline, IoArrowForward } from 'react-icons/io5';
 import styles from './styles.module.scss';
 
-export interface ChallengeContents {
+export type ChallengeContents = {
   id: string;
   name: string;
   order: number;
@@ -14,41 +14,17 @@ export interface ChallengeContents {
   hint?: React.ReactNode;
 }
 
-const parseChallengeContents = (children: React.ReactElement[]): ChallengeContents[] => {
+const parseChallengeContents = (challengeItem): ChallengeContents[] => {
   const contents: ChallengeContents[] = [];
-
-  if (!children) {
-    return contents;
-  }
-
-  let challenge: Partial<ChallengeContents> = {};
-  let content: React.ReactElement[] = [];
-
-  React.Children.forEach(children, (item) => {
+  React.Children.forEach(challengeItem, (item) => {
+    if (item.type.name !== 'ChallengeItem') return;
+    let [content, challenge]: [React.ReactElement[], Partial<ChallengeContents>] = [[], {}];
     const { props: itemProps } = item;
-    if (itemProps.mdxType !== 'ChallengeItem') {
-      return;
-    }
-    challenge.order = contents.length + 1;
-    challenge.name = itemProps.label;
-    challenge.id = itemProps.label;
-    itemProps.children.forEach((child) => {
-      const { props } = child;
-      switch (props.mdxType) {
+    [challenge.order, challenge.name, challenge.id] = [contents.length + 1, itemProps.label, itemProps.label]
+    React.Children.forEach((itemProps.children), (child) => {
+      switch (child.type?.name || child.type) {
         case 'Solution': {
           challenge.solution = child;
-          challenge.content = content;
-          contents.push(challenge as ChallengeContents);
-          challenge = {};
-          content = [];
-          break;
-        }
-        case 'NoSolution': {
-          challenge.solution = null;
-          challenge.content = content;
-          contents.push(challenge as ChallengeContents);
-          challenge = {};
-          content = [];
           break;
         }
         case 'Hint': {
@@ -60,6 +36,8 @@ const parseChallengeContents = (children: React.ReactElement[]): ChallengeConten
         }
       }
     });
+    challenge.content = content;
+    contents.push(challenge as ChallengeContents);
   });
   return contents;
 };
@@ -97,7 +75,6 @@ export function Challenges({ children }: { children: React.ReactElement[] }) {
   const nextChallenge = challenges.find(({ order }) => {
     return order === currentChallenge.order + 1;
   });
-
   return (
     <div className={styles.Container}>
       <div className={styles.Header}>
