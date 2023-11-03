@@ -3,9 +3,6 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Sketch from '/img/index.svg';
-import S1Text from '@site/docs/S1/index.mdx';
-import S2Text from '@site/docs/S2/index.mdx';
-import S3Text from '@site/docs/S3/index.mdx';
 import styles from './index.module.scss';
 import TypeIt from 'typeit-react';
 
@@ -111,15 +108,15 @@ export default () => (
   <Layout title={useDocusaurusContext().siteConfig.tagline}>
     <Header title={useDocusaurusContext().siteConfig.tagline} />
     <section className={styles.TOC}>
-      <div className={styles.Tab}>
+      {/* <div className={styles.Tab}>
         <a href='#S1'>中一級課文</a>
-        {/* <a href='#S2'>中二級課文</a> */}
+        <a href='#S2'>中二級課文</a>
         <a href='#S3'>中三級課文</a>
         <a href='#settext'>指定文言</a>
-      </div>
-      <TextList grade='S1' title='中一' Src={S1Text} color='#ec4899' />
+      </div> */}
+      {/* <TextList grade='S1' title='中一' Src={S1Text} color='#ec4899' /> */}
       {/* <TextList grade='S2' title='中二' Src={S2Text} /> */}
-      <TextList grade='S3' title='中三' Src={S3Text} color='#6366f1' />
+      {/* <TextList grade='S3' title='中三' Src={S3Text} color='#6366f1' /> */}
       <Settext />
     </section>
   </Layout>
