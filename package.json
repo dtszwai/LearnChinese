@@ -23,6 +23,7 @@
     "@emotion/styled": "^11.6.0",
     "@mdx-js/react": "^3.0.0",
     "@mui/material": "^5.14.16",
+    "@vercel/analytics": "^1.1.1",
     "clsx": "^2.0.0",
     "docusaurus-plugin-sass": "^0.2.5",
     "prism-react-renderer": "^2.1.0",
@@ -48,8 +49,8 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.0.0",
-    "@docusaurus/types": "3.0.0",
     "@docusaurus/tsconfig": "3.0.0",
+    "@docusaurus/types": "3.0.0",
     "@types/react": "^18.2.29",
     "typescript": "~5.2.2"
   },
