@@ -1,0 +1,96 @@
+{
+  "title": "爸爸的花兒落了",
+  "author": "林海音",
+  "grade": "中三",
+  "chapter": "單元二",
+  "questions": [
+    {
+      "questionText": "林海音的小名是什麼？",
+      "answerOptions": [
+        { "answerText": "花兒" },
+        { "answerText": "含英" },
+        { "answerText": "英子", "isCorrect": true },
+        { "answerText": "瘦雞" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈爸爸的花兒落了〉的主題為何？",
+      "answerOptions": [
+        { "answerText": "健康" },
+        { "answerText": "愛情" },
+        { "answerText": "和平" },
+        { "answerText": "成長", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "林海音在〈爸爸的花兒落了〉以「花」象徵父親，更進一步以「爸爸的花兒落了」象徵什麼？",
+      "answerOptions": [
+        { "answerText": "父親的病逝", "isCorrect": true },
+        { "answerText": "父親的年邁" },
+        { "answerText": "父親的感歎" },
+        { "answerText": "父親的成就" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "承上題，「花」的象徵之意也暗喻：",
+      "answerOptions": [
+        { "answerText": "英子沒盡孝道" },
+        { "answerText": "英子童年的結束", "isCorrect": true },
+        { "answerText": "英子延誤了學習" },
+        { "answerText": "英子影響父親的心情" }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "〈爸爸的花兒落了〉一文中，作者利用「花兒」串連全文，然而除了「花兒」之外，作者還利用什麼串連整篇文章？",
+      "answerOptions": [
+        { "answerText": "驪歌" },
+        { "answerText": "正金銀行" },
+        { "answerText": "畢業典禮", "isCorrect": true },
+        { "answerText": "瘦雞妹妹" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "下列何者不是〈爸爸的花兒落了〉中主角回憶的往事？",
+      "answerOptions": [
+        { "answerText": "被父親體罰" },
+        { "answerText": "幫母親買菜煮飯", "isCorrect": true },
+        { "answerText": "父親送衣服到學校" },
+        { "answerText": "寄錢給在日本讀書的陳叔叔" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈爸爸的花兒落了〉一文中，現實與過去的場景交錯，作者在現況描寫時，不斷回憶過往，下列何者不是作者對過往的回憶？",
+      "answerOptions": [
+        { "answerText": "爸爸愛花如痴" },
+        { "answerText": "因賴床不起被爸爸懲罰" },
+        { "answerText": "爸爸要她闖練，交代她到銀行匯款" },
+        {
+          "answerText": "瘦雞妹妹在搶燕燕的小玩意兒，弟弟把沙土灌進玻璃瓶裡",
+          "isCorrect": true
+        }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈爸爸的花兒落了〉全文並未出現有關爸爸病危或去世的字詞，但文章中處處可見伏筆，下列何者並非與此相關的伏筆？",
+      "answerOptions": [
+        { "answerText": "媽媽今早的眼睛為什麼紅腫著？" },
+        { "answerText": "不要怕，英子，你要學做許多事，將來好幫著妳媽媽。" },
+        {
+          "answerText": "沒有爸爸，你更要自己管自己，並且管弟弟和妹妹，你已經大了，是不是，英子？"
+        },
+        {
+          "answerText": "爸沒說什麼，打開了手中的包袱，拿出來的是我的花夾襖。他遞給我，看我穿上，又拿出兩個銅子兒來給我。",
+          "isCorrect": true
+        }
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}

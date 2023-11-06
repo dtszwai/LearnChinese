@@ -1,0 +1,111 @@
+{
+  "title": "海濱仲夏夜",
+  "author": "峻青",
+  "grade": "中一",
+  "chapter": "單元六",
+  "questions": [
+    {
+      "questionText": "文中的第一段交代了甚麼內容？",
+      "answerOptions": [
+        { "answerText": "時間、地點、 人物" },
+        { "answerText": "時間、人物、描寫對象" },
+        { "answerText": "時間、地點、 描寫對象", "isCorrect": true },
+        { "answerText": "時間、地點、 事件起因" }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "作者主要運用以下哪個方法來描寫海濱仲夏夜的景色？",
+      "answerOptions": [
+        { "answerText": "步移法、定點描寫" },
+        { "answerText": "步移法、感官描寫" },
+        { "answerText": "定點描寫、感官描寫" },
+        { "answerText": "隨時推移法、感官描寫", "isCorrect": true }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "文中的第六段，作者覺得威海有何獨特之處？",
+      "answerOptions": [
+        { "answerText": "安靜、遙遠、幽美、和諧" },
+        { "answerText": "安靜、清潔、幽美、和諧", "isCorrect": true },
+        { "answerText": "幽美、清潔、熱鬧、和諧" },
+        { "answerText": "死寂、清潔、遙遠、和諧" }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "作者在第五段中，運用了以下哪些詞語來表現他對威海的感覺？",
+      "answerOptions": [
+        { "answerText": "興奮、愉快", "isCorrect": true },
+        { "answerText": "興奮、開心" },
+        { "answerText": "興奮、高興" },
+        { "answerText": "焦急、愉快" }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "作者描寫海濱仲夏的夜色，抒發了甚麼感情？",
+      "answerOptions": [
+        { "answerText": "抒發熱愛威海的感情，表達對寧靜生活的嚮往。" },
+        { "answerText": "抒發熱愛威海的感情，表達對和諧生活的嚮往。" },
+        { "answerText": "抒發熱愛威海的感情，表達對美好生活的嚮往。" },
+        {
+          "answerText": "抒發熱愛威海的感情，表達對寧靜和諧生活的嚮往。",
+          "isCorrect": true
+        }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "以下句子運用了什麼感官描寫？\\n「在這幽美的夜色中，我踏着軟綿綿的沙灘。」（第五段）",
+      "answerOptions": [
+        { "answerText": "味覺" },
+        { "answerText": "聽覺" },
+        { "answerText": "觸覺", "isCorrect": true },
+        { "answerText": "視覺" }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "以下句子運用了甚麼修辭手法？\\n「深紅的顏色變成了緋紅，緋紅又變為淺紅。」",
+      "answerOptions": [
+        { "answerText": "比喻" },
+        { "answerText": "頂真", "isCorrect": true },
+        { "answerText": "誇張" },
+        { "answerText": "擬人" }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "以下句子運用了甚麼修辭手法？\\n「夕陽落山不久，西方的天空，還燃燒着一片桔紅色的晚霞。」",
+      "answerOptions": [
+        { "answerText": "擬人" },
+        { "answerText": "比喻" },
+        { "answerText": "擬物", "isCorrect": true },
+        { "answerText": "反問" }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "以下句子運用了甚麼修辭手法？\\n「它是那麼大，那麼亮，整個廣漠的天幕上只有它一個在那裏放射着令人注目的光輝，活像一盞懸掛在高空的明燈。」",
+      "answerOptions": [
+        { "answerText": "明喻", "isCorrect": true },
+        { "answerText": "暗喻" },
+        { "answerText": "擬人" },
+        { "answerText": "排比" }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "以下哪一項不屬於文章的題目所交代的內容？",
+      "answerOptions": [
+        { "answerText": "時段" },
+        { "answerText": "地點" },
+        { "answerText": "季節" },
+        { "answerText": "天氣", "isCorrect": true }
+      ],
+      "difficulty": ""
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "title": "送友人",
+  "author": "李白",
+  "grade": "中一",
+  "chapter": "單元四",
+  "questions": [
+    {
+      "questionText": "〈送友人〉的體裁是？",
+      "answerOptions": [
+        { "answerText": "七言絕句" },
+        { "answerText": "五言絕句" },
+        { "answerText": "七言律詩" },
+        { "answerText": "五言律詩", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「青山橫北郭」中的「郭」是指？",
+      "answerOptions": [
+        { "answerText": "城門" },
+        { "answerText": "內城" },
+        { "answerText": "外城", "isCorrect": true },
+        { "answerText": "城牆" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「白水繞東城」中的「白水」是指？",
+      "answerOptions": [
+        { "answerText": "白色的水" },
+        { "answerText": "洶湧的大海" },
+        { "answerText": "波光粼粼的河水", "isCorrect": true },
+        { "answerText": "水面泛起的白色水花" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「浮雲遊子意」中「浮雲」和「遊子」有什麼共同特點？",
+      "answerOptions": [
+        { "answerText": "白白淨淨" },
+        { "answerText": "行蹤不定", "isCorrect": true },
+        { "answerText": "自由自在" },
+        { "answerText": "無拘無束" }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "「落日故人情」一句，李白感嘆和友人的情誼像「落日」一樣",
+      "answerOptions": [
+        { "answerText": "讓人不捨。", "isCorrect": true },
+        { "answerText": "絢麗美好。" },
+        { "answerText": "慢慢消失。" },
+        { "answerText": "朝氣蓬勃。" }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "〈送友人〉全詩哪幾個字押韻？",
+      "answerOptions": [
+        { "answerText": "郭、別、意、去" },
+        { "answerText": "別、征、去、鳴" },
+        { "answerText": "意、情、去、鳴" },
+        { "answerText": "城、征、情、鳴", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈送友中〉中，以下哪項不是作者用以表達心情的意象？",
+      "answerOptions": [
+        { "answerText": "孤蓬" },
+        { "answerText": "青山", "isCorrect": true },
+        { "answerText": "落日" },
+        { "answerText": "浮雲" }
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}
