@@ -1,8 +1,11 @@
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+
+// Plugin
 import Annotation from "./src/components/plugin/Annotation";
-import Heading from "./src/components/plugin/heading";
 import redirect from "./src/components/plugin/redirect";
+import Section from "./src/components/plugin/Section";
+import dynamicRoutes from "./src/components/plugin/dynamicRoutes";
 
 const title = "書目引得";
 const keywords =
@@ -22,10 +25,8 @@ const config: Config = {
     defaultLocale: "zh-Hant",
     locales: ["zh-Hant"],
   },
-  plugins: [
-    "docusaurus-plugin-sass",
-    "./src/components/plugin/dynamicRoutes.js",
-    redirect,
+  plugins: ["docusaurus-plugin-sass", dynamicRoutes, redirect],
+  themes: [
     [
       "@easyops-cn/docusaurus-search-local",
       {
@@ -45,7 +46,7 @@ const config: Config = {
           sidebarCollapsed: false,
           sidebarPath: "sidebars.ts",
           routeBasePath: "/",
-          beforeDefaultRemarkPlugins: [Heading, Annotation],
+          beforeDefaultRemarkPlugins: [Section, Annotation],
         },
 
         blog: false,
