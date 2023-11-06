@@ -1,0 +1,38 @@
+{
+  "title": "從軍行七首（其二）",
+  "author": "王昌齡",
+  "grade": "中一",
+  "chapter": "單元四",
+  "questions": [
+    {
+      "questionText": "〈從軍行七首（其二）〉的體裁是？",
+      "answerOptions": [
+        { "answerText": "五言律詩" },
+        { "answerText": "七言律詩" },
+        { "answerText": "七言古詩" },
+        { "answerText": "七言絕句", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「琵琶起舞換新聲」中的「聲」是指？",
+      "answerOptions": [
+        { "answerText": "樂曲", "isCorrect": true },
+        { "answerText": "聲音" },
+        { "answerText": "樂器" },
+        { "answerText": "聲調" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「撩亂邊愁聽不盡」中的「邊愁」是指？",
+      "answerOptions": [
+        { "answerText": "分隔兩地的愁苦" },
+        { "answerText": "久居邊彊的愁苦", "isCorrect": true },
+        { "answerText": "妻離子散的愁苦" },
+        { "answerText": "生死有命的愁苦" }
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}

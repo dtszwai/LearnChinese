@@ -1,0 +1,88 @@
+{
+  "title": "虞美人．春花秋月何時了",
+  "author": "李煜",
+  "grade": "中三",
+  "chapter": "單元四",
+  "questions": [
+    {
+      "questionText": "〈虞美人〉是一首描述什麼的詞？",
+      "answerOptions": [
+        { "answerText": "悼亡詞" },
+        { "answerText": "抒情詞", "isCorrect": true },
+        { "answerText": "懷古詞" },
+        { "answerText": "詠物詞" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "以下哪項是〈虞美人〉的情調？",
+      "answerOptions": [
+        { "answerText": "平淡" },
+        { "answerText": "豪放" },
+        { "answerText": "悲痛", "isCorrect": true },
+        { "answerText": "輕鬆" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "以下哪項不是〈虞美人〉的內容？",
+      "answerOptions": [
+        { "answerText": "故國之思" },
+        { "answerText": "及時行樂", "isCorrect": true },
+        { "answerText": "物是人非" },
+        { "answerText": "亡國之痛" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "李煜寫〈虞美人〉時，是身處在什麼境況下？",
+      "answerOptions": [
+        { "answerText": "被人軟禁", "isCorrect": true },
+        { "answerText": "身陷天牢" },
+        { "answerText": "離鄉背井" },
+        { "answerText": "遊山玩水" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈虞美人〉「雕欄玉砌」這一意象指的是什麼？",
+      "answerOptions": [
+        { "answerText": "寺廟的欄杆" },
+        { "answerText": "南唐的宮殿", "isCorrect": true },
+        { "answerText": "江南的園林" },
+        { "answerText": "作者被囚禁的地方" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈虞美人〉「小樓昨夜又東風」中的「小樓」指的是？",
+      "answerOptions": [
+        { "answerText": "寺廟" },
+        { "answerText": "南唐的宮殿" },
+        { "answerText": "江南的園林" },
+        { "answerText": "作者被囚禁的地方", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈虞美人〉「小樓昨夜又東風」中的「東風」指的是？",
+      "answerOptions": [
+        { "answerText": "春天的風", "isCorrect": true },
+        { "answerText": "夏天的風" },
+        { "answerText": "秋天的風" },
+        { "answerText": "冬天的風" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "〈虞美人〉「問君能有幾多愁，恰似一江春水向東流。」以下哪項不是本句所運用的修辭手法？",
+      "answerOptions": [
+        { "answerText": "誇張" },
+        { "answerText": "比喻" },
+        { "answerText": "對偶", "isCorrect": true },
+        { "answerText": "設問" }
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}

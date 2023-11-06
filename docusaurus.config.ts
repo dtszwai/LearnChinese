@@ -3,11 +3,11 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 // Plugin
 import Annotation from "./src/components/plugin/Annotation";
+import redirect from "./src/components/plugin/redirect";
 import Section from "./src/components/plugin/Section";
 import dynamicRoutes from "./src/components/plugin/dynamicRoutes";
 
 const title = "書目引得";
-
 const keywords =
   "書目引得, 中文科, 中國語文, 閱讀篇章, 初中, 高中, 新高中, 中學, 文憑試, DSE, Chinese, 語文基礎, 語基, 指定文言, 文言語譯, 文言文, 白話文, 語譯, 練習, 答案, 課文";
 
@@ -25,7 +25,7 @@ const config: Config = {
     defaultLocale: "zh-Hant",
     locales: ["zh-Hant"],
   },
-  plugins: ["docusaurus-plugin-sass", dynamicRoutes],
+  plugins: ["docusaurus-plugin-sass", dynamicRoutes, redirect],
   themes: [
     [
       "@easyops-cn/docusaurus-search-local",
@@ -48,6 +48,7 @@ const config: Config = {
           routeBasePath: "/",
           beforeDefaultRemarkPlugins: [Section, Annotation],
         },
+
         blog: false,
         theme: {
           customCss: ["./src/css/custom.scss"],
@@ -76,8 +77,8 @@ const config: Config = {
       hideOnScroll: true,
       logo: { src: "img/logo.png" },
       items: [
-        { type: "doc", docId: "S1/index", label: "中一級", position: "left" },
-        { type: "doc", docId: "S3/index", label: "中三級", position: "left" },
+        { type: "doc", docId: "contents/S1/index", label: "中一級", position: "left" },
+        { type: "doc", docId: "contents/S3/index", label: "中三級", position: "left" },
         { type: "docSidebar", sidebarId: "settext", label: "指定文言", position: "left" },
         { type: "docSidebar", sidebarId: "dse", label: "歷屆文憑篇章", position: "left" },
         { to: "learn", label: "學習", position: "right" },

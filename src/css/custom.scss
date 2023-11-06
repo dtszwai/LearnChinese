@@ -86,11 +86,15 @@ h1:first-child {
     font-weight: bold;
     line-height: 24px;
     margin-bottom: 1rem;
+    color: #0f172a !important;
+    html[data-theme="dark"] & {
+      color: #fff !important;
+    }
     a {
       border-bottom: none !important;
-      color: #0f172a;
+      color: inherit;
       html[data-theme="dark"] & {
-        color: #fff;
+        color: inherit;
       }
     }
   }

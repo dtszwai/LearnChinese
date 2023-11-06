@@ -1,0 +1,84 @@
+{
+  "title": "曾子殺豬",
+  "author": "韓非",
+  "grade": "中一",
+  "chapter": "單元八",
+  "questions": [
+    {
+      "questionText": "曾子的兒子因何哭泣？",
+      "answerOptions": [
+        { "answerText": "母親打罵兒子" },
+        { "answerText": "怕母親離棄自己" },
+        { "answerText": "母親屠宰了一隻豬" },
+        { "answerText": "想跟隨母親一同前往市場", "isCorrect": true }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "妻子阻止曾子殺豬的理由是什麼？",
+      "answerOptions": [
+        { "answerText": "跟小朋友開玩笑", "isCorrect": true },
+        { "answerText": "屠宰豬隻太血腥" },
+        { "answerText": "小朋友不愛吃豬" },
+        { "answerText": "家中仍有肉類貨存" }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "「特與嬰兒戲耳」中的「特」是甚麼意思？",
+      "answerOptions": [
+        { "answerText": "於是" },
+        { "answerText": "將會" },
+        { "answerText": "只是", "isCorrect": true },
+        { "answerText": "特別" }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "「待父母而學者也」中的「待」是甚麼意思？",
+      "answerOptions": [
+        { "answerText": "依靠", "isCorrect": true },
+        { "answerText": "根據" },
+        { "answerText": "等待" },
+        { "answerText": "向著" }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "「遂烹彘也」中的「遂」是甚麼意思？",
+      "answerOptions": [
+        { "answerText": "所以" },
+        { "answerText": "就是" },
+        { "answerText": "於是", "isCorrect": true },
+        { "answerText": "最後" }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "為甚麼曾子不贊成妻子欺騙兒子？",
+      "answerOptions": [
+        { "answerText": "曾子怕兒子不懂得欺騙其他人。" },
+        { "answerText": "曾子擔心欺騙兒子後會遭受惡報。" },
+        { "answerText": "如果父母欺騙他，他日後會對父母不孝。" },
+        {
+          "answerText": "如果父母欺騙他，他會學父母一樣欺騙別人。",
+          "isCorrect": true
+        }
+      ],
+      "difficulty": ""
+    },
+    {
+      "questionText": "〈曾子殺豬〉想說明什麼道理？",
+      "answerOptions": [
+        { "answerText": "父母要用人學習，才是教育子女的方法" },
+        {
+          "answerText": "父母要信守承諾，才是教育子女的方法",
+          "isCorrect": true
+        },
+        { "answerText": "父母要隨機應變，才是教育子女的方法" },
+        { "answerText": "父母要慷慨大方，才是教育子女的方法" }
+      ],
+      "difficulty": ""
+    }
+  ]
+}

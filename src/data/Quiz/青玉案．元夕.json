@@ -1,0 +1,107 @@
+{
+  "title": "青玉案．元夕",
+  "author": "辛棄疾",
+  "grade": "高中",
+  "questions": [
+    {
+      "questionText": "從下列何句可以看出〈青玉案〉的季節？",
+      "answerOptions": [
+        { "answerText": "東風夜放花千樹", "isCorrect": true },
+        { "answerText": "寶馬雕車香滿路" },
+        { "answerText": "蛾兒雪柳黃金縷" },
+        { "answerText": "笑語盈盈暗香去" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "下列那一句「沒有」使用誇張的寫法？",
+      "answerOptions": [
+        { "answerText": "更吹落，星如雨" },
+        { "answerText": "寶馬雕車香滿路" },
+        { "answerText": "眾裡尋他千百度" },
+        { "answerText": "那人卻在，燈火闌珊處", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「蛾兒雪柳黃金縷」用以借代甚麼？",
+      "answerOptions": [
+        { "answerText": "元宵時節的花燈" },
+        { "answerText": "元宵時節的煙火" },
+        { "answerText": "元宵時節的女士", "isCorrect": true },
+        { "answerText": "元宵時節的攤檔" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "關於〈青玉案．元夕〉中的名詞解釋，下列何者有誤？",
+      "answerOptions": [
+        { "answerText": "寶馬雕車是華美的車馬" },
+        { "answerText": "蛾兒雪柳是婦人頭上的飾物" },
+        { "answerText": "燈火闌珊處是燈光輝耀的地方", "isCorrect": true },
+        { "answerText": "一夜魚龍舞指燈的造形，各有異彩" }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "「笑語盈盈暗香去」的「暗香」本指梅花香，根據上下文可知在此借指的是：",
+      "answerOptions": [
+        { "answerText": "東風" },
+        { "answerText": "月影" },
+        { "answerText": "美人", "isCorrect": true },
+        { "answerText": "燈火" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「驀然回首」中的「驀然」指的是？",
+      "answerOptions": [
+        { "answerText": "慌忙" },
+        { "answerText": "忽然", "isCorrect": true },
+        { "answerText": "靜靜地" },
+        { "answerText": "慢慢地" }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "「那人卻在燈火䦨珊處」中的「䦨珊」指的是？",
+      "answerOptions": [
+        { "answerText": "幽暗", "isCorrect": true },
+        { "answerText": "閃爍" },
+        { "answerText": "明亮" },
+        { "answerText": "跳動" }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "以下哪一項不是〈青玉案．元夕〉下片塑造「那人」的形象？",
+      "answerOptions": [
+        { "answerText": "超凡脫俗" },
+        { "answerText": "不黯世事", "isCorrect": true },
+        { "answerText": "不慕繁華" },
+        { "answerText": "自甘寂寞" }
+      ],
+      "difficulty": "medium"
+    },
+    {
+      "questionText": "〈青玉案．元夕〉的下片刻畫「那人」的形象時，也描述了其他婦女，作者在這裏運用了甚麼修辭手法？",
+      "answerOptions": [
+        { "answerText": "對比" },
+        { "answerText": "比擬" },
+        { "answerText": "正襯" },
+        { "answerText": "反襯", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "questionText": "辛棄疾在〈青玉案．元夕〉詞末表現了怎樣的人生態度？",
+      "answerOptions": [
+        { "answerText": "豁達樂觀、隨遇而安" },
+        { "answerText": "堅守信念、孤高不羣", "isCorrect": true },
+        { "answerText": "灑脫恬淡、不慕功名" },
+        { "answerText": "自憐自傷、斯人憔悴" }
+      ],
+      "difficulty": "medium"
+    }
+  ]
+}

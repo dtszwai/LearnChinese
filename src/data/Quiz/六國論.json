@@ -1,0 +1,17 @@
+{
+  "title": "六國論",
+  "author": "蘇洵",
+  "grade": "高中",
+  "questions": [
+    {
+      "questionText": "以地事秦，猶抱薪救火，薪不盡，火不滅。「抱薪救火」是比喻：",
+      "answerOptions": [
+        { "answerText": "為達目的，不擇手段" },
+        { "answerText": "面臨危難，不知所措" },
+        { "answerText": "以小博大，徒勞無功" },
+        { "answerText": "欲除其害，反助其勢", "isCorrect": true }
+      ],
+      "difficulty": "easy"
+    }
+  ]
+}

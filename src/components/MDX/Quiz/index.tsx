@@ -37,7 +37,7 @@ const Copy = ({ href }) => {
 }
 const quizData = () => {
   const id = useDoc().metadata.id.split('/');
-  const path = `${id[0]}/${id.at(-1)}`;
+  const path = `${id.at(-1)}`;
   return require(`@site/src/data/Quiz/${path}`);
 };
 
