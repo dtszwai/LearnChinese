@@ -77,7 +77,7 @@ const config: Config = {
       logo: { src: "img/logo.png" },
       items: [
         { type: "doc", docId: "contents/S1/index", label: "中一級", position: "left" },
-        // { type: "docSidebar", sidebarId: "text", label: "文章", position: "left" },
+        { type: "doc", docId: "contents/S3/index", label: "中三級", position: "left" },
         { type: "docSidebar", sidebarId: "settext", label: "指定文言", position: "left" },
         { type: "docSidebar", sidebarId: "dse", label: "歷屆文憑篇章", position: "left" },
         { to: "learn", label: "學習", position: "right" },
