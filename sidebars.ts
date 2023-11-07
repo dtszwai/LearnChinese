@@ -7,7 +7,7 @@ const sidebar: SidebarsConfig = {
       type: "category",
       label: "單元二：敘事寫人",
       // link: { type: "doc", id: "S1/敘事寫人/index" },
-      items: ["passages/岳飛之少年時代"],
+      items: ["passages/岳飛之少年時代", "passages/木蘭辭"],
     },
     {
       type: "category",
@@ -77,7 +77,11 @@ const sidebar: SidebarsConfig = {
       type: "category",
       label: "單元四：詞曲欣賞",
       link: { type: "doc", id: "contents/S3/詞曲欣賞" },
-      items: ["passages/水調歌頭．明月幾時有", "passages/天淨沙．秋思", "passages/虞美人．春花秋月何時了"],
+      items: [
+        "passages/水調歌頭．明月幾時有",
+        "passages/天淨沙．秋思",
+        "passages/虞美人．春花秋月何時了",
+      ],
     },
     {
       type: "category",
