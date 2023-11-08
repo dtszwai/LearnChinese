@@ -1,0 +1,48 @@
+[
+  "contents/S3/index",
+  {
+    "type": "category",
+    "label": "單元一：說明的方法、順序和層次",
+    "items": ["passages/核工記"]
+  },
+  {
+    "type": "category",
+    "label": "單元二：記敘的方法和詳略",
+    "items": ["passages/爸爸的花兒落了", "passages/閒情記趣（節錄）"]
+  },
+  {
+    "type": "category",
+    "label": "單元四：詞曲欣賞",
+    "link": { "type": "doc", "id": "contents/S3/詞曲欣賞" },
+    "items": [
+      "passages/水調歌頭．明月幾時有",
+      "passages/天淨沙．秋思",
+      "passages/虞美人．春花秋月何時了"
+    ]
+  },
+  {
+    "type": "category",
+    "label": "單元六：小說與戲劇欣賞",
+    "items": ["passages/孔明借箭", "passages/一碗陽春麵"]
+  },
+  {
+    "type": "category",
+    "label": "單元七：論證的方法",
+    "items": ["passages/最苦與最樂"]
+  },
+  {
+    "type": "category",
+    "label": "單元八：議論的應用",
+    "items": ["passages/鄒忌諷齊王納諫"]
+  },
+  {
+    "type": "category",
+    "label": "單元九：文言選讀（六）",
+    "items": ["passages/論語八則", "passages/論四端"]
+  },
+  {
+    "type": "category",
+    "label": "作品選讀",
+    "items": ["passages/燭之武退秦師", "passages/四塊玉．閑適", "passages/大鐵椎傳"]
+  }
+]
