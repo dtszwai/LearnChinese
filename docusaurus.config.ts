@@ -2,7 +2,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 // Plugin
-import Annotation from "./src/components/plugin/Annotation";
+import Annotate from "./src/components/plugin/Annotate";
 import redirect from "./src/components/plugin/redirect";
 import Section from "./src/components/plugin/Section";
 import dynamicRoutes from "./src/components/plugin/dynamicRoutes";
@@ -46,7 +46,7 @@ const config: Config = {
           sidebarCollapsed: false,
           sidebarPath: "sidebars.ts",
           routeBasePath: "/",
-          beforeDefaultRemarkPlugins: [Section, Annotation],
+          beforeDefaultRemarkPlugins: [Section],
         },
 
         blog: false,
@@ -98,6 +98,13 @@ const config: Config = {
       ],
     },
   } satisfies Preset.ThemeConfig,
+  markdown: {
+    format: "mdx",
+    preprocessor: ({ filePath, fileContent }) => {
+      const AnnotatedContent = Annotate(fileContent);
+      return AnnotatedContent;
+    },
+  },
 };
 
 export default config;

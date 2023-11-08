@@ -6,6 +6,23 @@
 
 ## MDX Components
 
+### Annotate
+
+| Props    | Description                |
+| -------- | -------------------------- |
+| title    | Tooltip title              |
+| children | Tooltip reference element. |
+
+The `<Annotate>` component allows you to create tooltips for text. You can use it in two ways:
+
+```jsx example
+// Component Syntax
+<Annotate title="This is a tooltip">Hover over me</Annotate>
+
+// Double Parentheses Syntax
+((Hover over me||This is a tooltip))
+```
+
 ### Admonition
 
 | Name         | Title                     | Usage                                       |
@@ -24,7 +41,7 @@ You can change title by passing `title` prop.
 
 ### AudioCard
 
-| props    | description                       |
+| Props    | Description                       |
 | -------- | --------------------------------- |
 | title    | Title of the AudioCard            |
 | src      | URL of the file to play           |
@@ -46,7 +63,7 @@ You can change title by passing `title` prop.
 
 ### Carousel
 
-| props    | description                                             |
+| Props    | Description                                             |
 | -------- | ------------------------------------------------------- |
 | children | An array of image URLs to be displayed in the carousel. |
 
@@ -78,9 +95,9 @@ Props for `DeepDive`
 </DeepDive>
 ```
 
-## Lexis
+### Lexis
 
-| props    | Usage                                                                          |
+| Props    | Description                                                                    |
 | -------- | ------------------------------------------------------------------------------ |
 | py       | The pinyin Jyutping of the character.                                          |
 | children | The Chinese character to display, typically a homophone. It can be left empty. |
