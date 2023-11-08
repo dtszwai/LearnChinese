@@ -1,0 +1,116 @@
+{
+  "title": "木蘭辭",
+  "author": "佚名",
+  "grade": "中一",
+  "chapter": "詩歌欣賞",
+  "questions": [
+    {
+      "questionText": "下列關於「樂府」的說明，何者有誤？",
+      "answerOptions": [
+        { "answerText": "原為官署名" },
+        { "answerText": "語言華麗生動", "isCorrect": true },
+        { "answerText": "內容反映當時社會現況" },
+        { "answerText": "包括官方、私人採錄的民間歌謠與文人擬作" }
+      ]
+    },
+    {
+      "questionText": "木蘭辭的描寫順序為何？",
+      "answerOptions": [
+        { "answerText": "倒敘" },
+        { "answerText": "插敘" },
+        { "answerText": "順敘", "isCorrect": true },
+        { "answerText": "補敘" }
+      ]
+    },
+    {
+      "questionText": "木蘭辭中，說明木蘭代父從軍之原因的是哪一句？",
+      "answerOptions": [
+        { "answerText": "不聞機杼聲，惟聞女嘆息" },
+        { "answerText": "阿爺無大兒，木蘭無長兄", "isCorrect": true },
+        { "answerText": "將軍百戰死，壯士十年歸" },
+        { "answerText": "願為市鞍馬，從此替爺征" }
+      ]
+    },
+    {
+      "questionText": "下列何句描繪出木蘭的思親情懷？",
+      "answerOptions": [
+        { "answerText": "唧唧復唧唧，木蘭當戶織" },
+        { "answerText": "策勳十二轉，賞賜百千強" },
+        { "answerText": "同行十二年，不知木蘭是女郎" },
+        { "answerText": "不聞爺孃喚女聲，但聞黃河流水鳴濺濺", "isCorrect": true }
+      ]
+    },
+    {
+      "questionText": "下列「 」中的數字，何者表示實數？",
+      "answerOptions": [
+        { "answerText": "策勳「十二」轉" },
+        { "answerText": "賞賜「百」千強" },
+        { "answerText": "明駝「千」里足" },
+        { "answerText": "「兩」兔傍地走", "isCorrect": true }
+      ]
+    },
+    {
+      "questionText": "「朝辭爺孃去，暮宿黃河邊。」這是在描寫什麼情況？",
+      "answerOptions": [
+        { "answerText": "木蘭一行行軍快速", "isCorrect": true },
+        { "answerText": "木蘭思歸心情急切" },
+        { "answerText": "木蘭深具英雄氣概" },
+        { "answerText": "木蘭征戍生活精采" }
+      ]
+    },
+    {
+      "questionText": "從木蘭辭的對話中，可以看出木蘭是怎樣的人？",
+      "answerOptions": [
+        { "answerText": "溫婉柔弱" },
+        { "answerText": "眼界高遠" },
+        { "answerText": "智勇純孝", "isCorrect": true },
+        { "answerText": "豪邁狂放" }
+      ]
+    },
+    {
+      "questionText": "對聽到木蘭返鄉消息的家人反應，何者說明正確？",
+      "answerOptions": [
+        { "answerText": "爺：殺豬宰羊" },
+        { "answerText": "孃：出城迎接", "isCorrect": true },
+        { "answerText": "阿姊：烹飪好菜" },
+        { "answerText": "小弟：清理房間" }
+      ]
+    },
+    {
+      "questionText": "「不聞機杼聲」是因木蘭如何？",
+      "answerOptions": [
+        { "answerText": "倦怠" },
+        { "answerText": "轉職" },
+        { "answerText": "休息" },
+        { "answerText": "憂心", "isCorrect": true }
+      ]
+    },
+    {
+      "questionText": "木蘭征戰多年，為什麼描述篇幅卻少？",
+      "answerOptions": [
+        { "answerText": "征戰並非本詩主題", "isCorrect": true },
+        { "answerText": "作者不善描寫戰事" },
+        { "answerText": "戰事消息流傳不多" },
+        { "answerText": "木蘭不願他人多知" }
+      ]
+    },
+    {
+      "questionText": "從下列哪一點無法看出木蘭辭的民歌情調？",
+      "answerOptions": [
+        { "answerText": "反覆吟詠" },
+        { "answerText": "敘事詳略得宜", "isCorrect": true },
+        { "answerText": "使用大量疊字" },
+        { "answerText": "以人物問答展開情節" }
+      ]
+    },
+    {
+      "questionText": "由哪一句可看出木蘭從軍不是為了功名利祿？",
+      "answerOptions": [
+        { "answerText": "歸來見天子" },
+        { "answerText": "脫我戰時袍" },
+        { "answerText": "木蘭不用尚書郎", "isCorrect": true },
+        { "answerText": "願借明駝千里足" }
+      ]
+    }
+  ]
+}
