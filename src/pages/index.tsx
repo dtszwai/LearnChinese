@@ -6,6 +6,7 @@ import Sketch from '/img/index.svg';
 import styles from './index.module.scss';
 import TypeIt from 'typeit-react';
 import S1Text from '../../docs/contents/S1/index.mdx';
+import S2Text from '../../docs/contents/S2/index.mdx';
 import S3Text from '../../docs/contents/S3/index.mdx';
 
 const Typer = () => (
@@ -112,10 +113,12 @@ export default () => (
     <section className={styles.TOC}>
       <div className={styles.Tab}>
         <a href='#S1'>中一級課文</a>
+        <a href='#S2'>中二級課文</a>
         <a href='#S3'>中三級課文</a>
         <a href='#settext'>指定文言</a>
       </div>
       <TextList grade='S1' title='中一' Src={S1Text} color='#ec4899' />
+      <TextList grade='S2' title='中二' Src={S2Text} color='#82735C' />
       <TextList grade='S3' title='中三' Src={S3Text} color='#6366f1' />
       <Settext />
     </section>
