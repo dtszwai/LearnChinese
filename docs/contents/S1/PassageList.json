@@ -34,7 +34,7 @@
     "type": "category",
     "label": "單元八：借事說理",
     "link": { "type": "doc", "id": "contents/S1/借事說理" },
-    "items": ["passages/賣油翁"]
+    "items": ["passages/傷仲永","passages/賣油翁"]
   },
   {
     "type": "category",

@@ -1,0 +1,116 @@
+{
+  "title": "陋室銘",
+  "author": "劉禹錫",
+  "grade": "中二",
+  "chapter": "文言選讀（三）",
+  "questions": [
+    {
+      "questionText": "下列「丁」字，何者不是指「人」？",
+      "answerOptions": [
+        { "answerText": "目不識「丁」", "isCorrect": true },
+        { "answerText": "添「丁」之喜" },
+        { "answerText": "往來無白「丁」" },
+        { "answerText": "花園的園「丁」" }
+      ]
+    },
+    {
+      "questionText": "「談笑有鴻儒，往來無白丁」，寫出作者的哪種生活情形？",
+      "answerOptions": [
+        { "answerText": "來往的人都學問淵博，不庸俗", "isCorrect": true },
+        { "answerText": "和讀書人、平民都能相處愉快" },
+        { "answerText": "只與讀書人往來，不與遊民接觸" },
+        { "answerText": "有知名文人來拜訪時，總有百姓幫忙接待" }
+      ]
+    },
+    {
+      "questionText": "下列句子中，何者不是對偶句？",
+      "answerOptions": [
+        { "answerText": "斯是陋室，惟吾德馨", "isCorrect": true },
+        { "answerText": "談笑有鴻儒，往來無白丁" },
+        { "answerText": "南陽諸葛廬，西蜀子雲亭" },
+        { "answerText": "苔痕上階綠，草色入簾青" }
+      ]
+    },
+    {
+      "questionText": "「李經理公務繁忙，飽受〇〇〇〇之苦，因此非常希望早日退休。」缺空處宜填入哪一個詞語？",
+      "answerOptions": [
+        { "answerText": "白丁往來" },
+        { "answerText": "案牘勞形", "isCorrect": true },
+        { "answerText": "絲竹亂耳" },
+        { "answerText": "居室鄙陋" }
+      ]
+    },
+    {
+      "questionText": "陋室銘中，用來貫串全文的是哪一句？",
+      "answerOptions": [
+        { "answerText": "有仙則名" },
+        { "answerText": "有龍則靈" },
+        { "answerText": "斯是陋室" },
+        { "answerText": "惟吾德馨", "isCorrect": true }
+      ]
+    },
+    {
+      "questionText": "「孔子云:『何陋之有？』」使用了何種修辭法？",
+      "answerOptions": [
+        { "answerText": "譬喻" },
+        { "answerText": "感嘆" },
+        { "answerText": "引用", "isCorrect": true },
+        { "answerText": "映襯" }
+      ]
+    },
+    {
+      "questionText": "「南陽諸葛廬，西蜀子雲亭」暗示作者具何種態度？",
+      "answerOptions": [
+        { "answerText": "孤芳自賞，不與人交" },
+        { "answerText": "欲待時機，一展抱負", "isCorrect": true },
+        { "answerText": "熱中富貴，不甘淡泊" },
+        { "answerText": "隱居離群，與世隔絕" }
+      ]
+    },
+    {
+      "questionText": "「苔痕上階綠，草色入簾青」營造出何種情境？",
+      "answerOptions": [
+        { "answerText": "裝潢精緻" },
+        { "answerText": "高雅貴氣" },
+        { "answerText": "荒廢淒涼" },
+        { "answerText": "生意盎然", "isCorrect": true }
+      ]
+    },
+    {
+      "questionText": "下列「 」中借代對象的說明，何者錯誤？",
+      "answerOptions": [
+        { "answerText": "「布衣」卿相──平民" },
+        { "answerText": "慘遭「祝融」──車禍", "isCorrect": true },
+        { "answerText": "造福「桑梓」──鄉里" },
+        { "answerText": "功在「社稷」──國家" }
+      ]
+    },
+    {
+      "questionText": "「山不在高」、「水不在深」的「不在高」、「不在深」，是暗指陋室銘一文中的哪個字？",
+      "answerOptions": [
+        { "answerText": "德" },
+        { "answerText": "有" },
+        { "answerText": "馨" },
+        { "answerText": "陋", "isCorrect": true }
+      ]
+    },
+    {
+      "questionText": "下列關於銘體的說明，何者正確？",
+      "answerOptions": [
+        { "answerText": "一種屬於對話類的文體" },
+        { "answerText": "用於描寫場景或抒發感想" },
+        { "answerText": "形式短小，文字簡潔", "isCorrect": true },
+        { "answerText": "屬於散文類" }
+      ]
+    },
+    {
+      "questionText": "下列何者不是陋室銘的特色？",
+      "answerOptions": [
+        { "answerText": "立意新穎" },
+        { "answerText": "寫景精采", "isCorrect": true },
+        { "answerText": "節奏感強" },
+        { "answerText": "主題明確" }
+      ]
+    }
+  ]
+}
