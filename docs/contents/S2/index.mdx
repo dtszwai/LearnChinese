@@ -3,10 +3,25 @@ title: 課文目錄
 hide_rating: true
 ---
 
-<div className="text-list" style={{color:'#82735C'}}>
+```mdx-code-block
+import PassageList from "./PassageList.json";
+import Link from '@docusaurus/Link';
 
-單元五：文言選讀（三）
+export const RenderList = () =>
+  PassageList.filter((item) => typeof item === "object").map((item, i) => (
+    <div className="text-list" style={{ color: "#82735C" }} key={i}>
+      <p>
+        <Link to={`/contents/S2/${item.label.split("：").at(-1)}`}>{item.label}</Link>
+      </p>
+      <ul>
+        {item.items.map((passage, j) => (
+          <li key={j}>
+            <Link to={`/${passage}`}>{passage.split("/")[1]}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ));
 
-- [5.14 習慣說](/passages/習慣說.mdx)
-
-</div>
+<RenderList />
+```

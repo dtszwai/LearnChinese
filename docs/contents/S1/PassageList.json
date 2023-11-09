@@ -3,11 +3,13 @@
   {
     "type": "category",
     "label": "單元二：敘事寫人",
+    "link": { "type": "doc", "id": "contents/S1/敘事寫人" },
     "items": ["passages/岳飛之少年時代", "passages/木蘭辭"]
   },
   {
     "type": "category",
     "label": "單元三：借事抒情",
+    "link": { "type": "doc", "id": "contents/S1/借事抒情" },
     "items": ["passages/背影"]
   },
   {
@@ -25,21 +27,24 @@
   {
     "type": "category",
     "label": "單元七：說明的方法和順序",
+    "link": { "type": "doc", "id": "contents/S1/說明的方法和順序" },
     "items": ["passages/生物之間的微妙關係（節錄）"]
   },
   {
     "type": "category",
     "label": "單元八：借事說理",
+    "link": { "type": "doc", "id": "contents/S1/借事說理" },
     "items": ["passages/賣油翁"]
   },
   {
     "type": "category",
     "label": "作品選讀",
+    "link": { "type": "doc", "id": "contents/S1/作品選讀" },
     "items": [
       "passages/客至",
-      "passages/從軍行七首（其二）",
       "passages/曾子殺豬",
-      "passages/涉江采芙蓉"
+      "passages/涉江采芙蓉",
+      "passages/從軍行七首（其二）"
     ]
   }
 ]

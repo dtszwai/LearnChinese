@@ -3,49 +3,25 @@ title: 課文目錄
 hide_rating: true
 ---
 
-<div className="text-list" style={{color:'#ec4899'}}>
+```mdx-code-block
+import PassageList from "./PassageList.json";
+import Link from '@docusaurus/Link';
 
-單元二：敘事寫人
+export const RenderList = () =>
+  PassageList.filter((item) => typeof item === "object").map((item, i) => (
+    <div className="text-list" style={{ color: "#ec4899" }} key={i}>
+      <p>
+        <Link to={`/contents/S1/${item.label.split("：").at(-1)}`}>{item.label}</Link>
+      </p>
+      <ul>
+        {item.items.map((passage, j) => (
+          <li key={j}>
+            <Link to={`/${passage}`}>{passage.split("/")[1]}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ));
 
-- [2.5 岳飛之少年時代](/passages/岳飛之少年時代.mdx)
-
-- [2.29 木蘭辭](/passages/木蘭辭.mdx)
-
-單元三：借事抒情
-
-- [3.5 背影](/passages/背影.mdx)
-
-[單元四：詩歌欣賞](S1/詩歌欣賞)
-
-- [4.6 燕詩](/passages/燕詩.mdx)
-
-- [4.37 送友人](/passages/送友人.mdx)
-
-[單元六：景物描寫（一）](S1/景物描寫（一）)
-
-- [6.5 風雪中的北平](/passages/風雪中的北平.mdx)
-
-- [6.27 海濱仲夏夜](/passages/海濱仲夏夜.mdx)
-
-- [海上的日出](/passages/海上的日出.mdx)
-
-單元七：說明的方法和順序
-
-- [生物之間的微妙關係（節錄）](/passages/生物之間的微妙關係（節錄）.mdx)
-
-單元八：借事說理
-
-- [8.10 賣油翁](/passages/賣油翁.mdx)
-
-課外篇章
-
-- [客至](/passages/客至.mdx)
-
-- [從軍行七首（其二）](/passages/從軍行七首（其二）.mdx)
-
-- [曾子殺豬](/passages/曾子殺豬.mdx)
-
-- [涉江采芙蓉](/passages/涉江采芙蓉.mdx)
-
-
-</div>
+<RenderList />
+```
