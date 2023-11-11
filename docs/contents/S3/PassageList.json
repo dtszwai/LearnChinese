@@ -14,12 +14,19 @@
   },
   {
     "type": "category",
+    "label": "單元三：通過記敘和描寫來抒情",
+    "link": { "type": "doc", "id": "contents/S3/通過記敘和描寫來抒情" },
+    "items": ["passages/記承天寺夜遊"]
+  },
+  {
+    "type": "category",
     "label": "單元四：詞曲欣賞",
     "link": { "type": "doc", "id": "contents/S3/詞曲欣賞" },
     "items": [
       "passages/水調歌頭．明月幾時有",
       "passages/天淨沙．秋思",
-      "passages/虞美人．春花秋月何時了"
+      "passages/虞美人．春花秋月何時了",
+      "passages/水仙子．尋梅"
     ]
   },
   {
