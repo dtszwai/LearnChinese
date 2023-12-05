@@ -1,5 +1,7 @@
 # About
 
+<div style={{float: "right"}}>![blah](/img/foof-an.gif)</div>
+
 This site was created in December 2021 by Tam Tsz Wai in response to the students' desire to learn more about the subject, and regularly updated since then.
 
 The site is built with [Docusaurus](https://docusaurus.io/). All of the code for the website is open source and available on [GitHub](https://github.com/dtszwai/LearnChinese). Everyone is welcome to contribute.
