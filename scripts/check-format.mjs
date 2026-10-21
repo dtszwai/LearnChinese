@@ -25,6 +25,12 @@ for (const file of files.filter((file) => /\.(?:[cm]?[jt]sx?|json|s?css|ya?ml)$/
     if (error.code === 'ENOENT') continue;
     throw error;
   }
+  // Vercel rewrites its build-time config; check the authored file locally and in CI.
+  if (file === 'vercel.json' && process.env.VERCEL === '1') {
+    JSON.parse(source);
+    console.log('Formatting: vercel.json syntax validated; build-time formatting is managed by Vercel.');
+    continue;
+  }
   const options = { ...(await prettier.resolveConfig(file)), filepath: file };
   if (await prettier.check(source, options)) continue;
   const hash = createHash('sha256').update(source).digest('hex');
