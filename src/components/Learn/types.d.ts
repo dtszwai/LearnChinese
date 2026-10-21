@@ -3,9 +3,15 @@ export type Lesson = {
   slug: string;
   title: string;
   description: string;
+  published?: boolean;
 };
 
 export type LessonData = {
+  id?: string;
+  interaction?: 'choice' | 'passage' | 'sequence';
+  options?: { value: string; label: string }[];
+  correctOrder?: string[];
+  explanation?: string;
   image?: string;
   topic?: string;
   title: string;
@@ -15,10 +21,10 @@ export type LessonData = {
   suffix?: string;
   initialValue?: string;
   placeholder?: string;
-  regexMatch?: string;
+  regexMatch?: string[];
   suggestedAnswer?: string[];
   videoURL?: string;
-  readOnly?: boolean;
+  noHint?: boolean;
   interactive?: boolean;
   applyRegex?: boolean;
 };

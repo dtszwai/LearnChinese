@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh - var(--ifm-navbar-height));
+  // Fill the space left by Docusaurus after its navbar and optional announcement.
+  // Content can still grow beyond the viewport when a lesson needs more room.
+  flex: 1 0 auto;
   margin: 0 auto;
-  max-width: var(--ifm-container-width);
+  max-width: min(100%, var(--ifm-container-width));
 }

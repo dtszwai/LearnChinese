@@ -1,0 +1,2 @@
+# Docusaurus 3.0's mdx-code-block unwrapping requires LF on every platform.
+/docs/contents/**/*.mdx text eol=lf

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import InteractiveArea from '../Interactive';
+import Activities from '../Activities';
 import Report from '../ReportStep';
 import tagWrapper from '@site/src/utils/tagWrapper';
 import styles from './index.module.scss';
 
-export default ({ lesson, data, step, error, onChangeSuccess }) => {
+export default ({ lesson, data, step, error, onChangeSuccess, onRestart }) => {
   const [modalIsOpen, setIsOpenModal] = useState(false);
   const handleCloseModal = (e) => e.key === 'Escape' && setIsOpenModal(false);
   useEffect(() => {
@@ -38,15 +39,27 @@ export default ({ lesson, data, step, error, onChangeSuccess }) => {
           }}
         />
       )}
+      {data.id?.endsWith('-complete') && (
+        <div>
+          <button type='button' className='button button--secondary' onClick={onRestart}>重新學習</button>
+        </div>
+      )}
       {data.interactive !== false && (
         <>
-          <InteractiveArea
+          {data.interaction ? <Activities
+            key={data.id || step.currentStep}
+            data={data}
+            step={step}
+            parentError={error}
+            onChangeSuccess={onChangeSuccess}
+          /> : <InteractiveArea
+            key={data.id || step.currentStep}
             data={data}
             step={step}
             parentError={error}
             onChangeSuccess={onChangeSuccess}
             setIsOpenModal={setIsOpenModal}
-          />
+          />}
           <Report title={lesson.title} step={step} />
           {data.videoURL && modalIsOpen && (
             <div className={styles.StepVideoModal}>

@@ -1,53 +1,77 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Layout from '@theme/Layout';
+import Outline from './Outline';
 import LearnFooter from './Footer';
 import Step from './Step';
 import Progress from './Progress';
 import styles from './index.module.scss';
 import { useLocation } from '@docusaurus/router';
 import { Lesson, LessonData } from './types';
-import useLocalStorage from '@site/src/utils/useLocalStorage';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import useLocalStorage from './useLocalStorage';
+import { readLessonProgress, LessonProgress } from './lessonProgress';
 
-export default () => {
-  if (!ExecutionEnvironment.canUseDOM) return null;
-
-  const slug = useLocation().pathname.split('/').at(-1);
+export default function LearnPage() {
+  const slug = useLocation().pathname.split('/').filter(Boolean).at(-1);
   const lesson: Lesson = require('@site/src/data/Learn/index.json')[slug];
-  const data: LessonData[] = require(`@site/src/data/Learn/${slug}.json`);
-  const [record, setRecord] = useLocalStorage(lesson.key, { currentStep: 0, lastStep: 0 });
-  const [step, setStep] = useState(record);
+  return <Layout title={lesson.title}><Learn key={slug} lesson={lesson} /></Layout>;
+}
+
+function Learn({ lesson }: { lesson: Lesson }) {
+  const data: LessonData[] = require(`@site/src/data/Learn/${lesson.slug}.json`);
+  const [record, setRecord, loaded] = useLocalStorage<LessonProgress | undefined>(
+    lesson.key, undefined, value => readLessonProgress(value, data.length),
+  );
+  if (!loaded) return <p role='status'>正在載入課程……</p>;
+  return <LearningSession lesson={lesson} data={data} initialProgress={record ?? { currentStep: 0, lastStep: 0 }} onSave={setRecord} />;
+}
+
+function LearningSession({ lesson, data, initialProgress, onSave }: {
+  lesson: Lesson;
+  data: LessonData[];
+  initialProgress: LessonProgress;
+  onSave: (progress: LessonProgress) => void;
+}) {
+  const [step, setStep] = useState(initialProgress);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const errorTimer = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     data[step.currentStep].interactive === false && setSuccess(true);
-    const progress = step;
-    if (step.currentStep > step.lastStep) progress.lastStep = step.currentStep;
-    setRecord(progress);
   }, [step]);
+  useEffect(() => () => clearTimeout(errorTimer.current), []);
+
+  const navigate = (index: number) => {
+    if (index === step.currentStep || index < 0 || index >= data.length) return;
+    if (index > step.lastStep && !(success && index === step.currentStep + 1)) return;
+    setError(false);
+    setSuccess(false);
+    const next = { currentStep: index, lastStep: Math.max(step.lastStep, index) };
+    setStep(next);
+    onSave(next);
+  };
 
   const prevStep = () => {
     if (step.currentStep > 0) {
-      setStep((prev) => ({ ...prev, currentStep: prev.currentStep - 1 }));
+      navigate(step.currentStep - 1);
     }
   };
 
   const nextStep = () => {
-    let learnErrorTimer;
     if (!success) {
       setError(true);
-      clearTimeout(learnErrorTimer);
-      learnErrorTimer = setTimeout(() => setError(false), 1000);
+      clearTimeout(errorTimer.current);
+      errorTimer.current = setTimeout(() => setError(false), 1000);
       return;
     }
     if (step.currentStep < data.length - 1) {
-      setError(false);
-      setStep((prev) => ({ ...prev, currentStep: prev.currentStep + 1 }));
+      navigate(step.currentStep + 1);
     }
   };
 
   const handleChangeStep = (e) => {
+    // Let focused activity buttons handle Enter, and let IMEs commit Chinese text.
+    if (e.isComposing || e.target?.closest?.('button')) return;
     if (e.key === 'Enter') {
       e.preventDefault();
       e.shiftKey ? prevStep() : nextStep();
@@ -60,10 +84,23 @@ export default () => {
   }, [step, success]);
 
   return (
-    <Layout title={lesson.title}>
       <main className={styles.container}>
         <Progress total={data.length} current={step.currentStep + 1} />
-        <Step lesson={lesson} data={data[step.currentStep]} step={step} onChangeSuccess={setSuccess} error={error} />
+        <Outline data={data} step={step} success={success} onNavigate={navigate} />
+        <Step
+          key={step.currentStep}
+          lesson={lesson}
+          data={data[step.currentStep]}
+          step={step}
+          onChangeSuccess={setSuccess}
+          error={error}
+          onRestart={() => {
+            setError(false);
+            setSuccess(false);
+            setStep({ currentStep: 0, lastStep: 0 });
+            onSave({ currentStep: 0, lastStep: 0 });
+          }}
+        />
         <LearnFooter
           totalSteps={data.length - 1}
           currentStep={step.currentStep}
@@ -73,6 +110,5 @@ export default () => {
           error={error}
         />
       </main>
-    </Layout>
   );
 };

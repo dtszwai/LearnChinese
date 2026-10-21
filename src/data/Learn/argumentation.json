@@ -1,0 +1,365 @@
+[
+  {
+    "id": "argumentation-intro",
+    "topic": "論證手法",
+    "title": "從主張到說理",
+    "description": "議論要提出觀點，並用理由或材料支持。本課依次學習`論點、論據、論證`，再辨析常見論證手法及其作用。\\n本課標明「自擬情境」的事例只供分析，不是實際調查結果。",
+    "interactive": false
+  },
+  {
+    "id": "argumentation-claim-demo",
+    "topic": "論證手法",
+    "title": "論點：作者要你接受甚麼？",
+    "description": "`論點`是作者要提出和證明的主張。先找作者對問題的看法。\\n答案已預填，你可以在答案欄修改；答錯或清空時，須改正後才可進入下一題。",
+    "content": "我們應愛惜公共圖書。圖書由不同讀者共用，若任意塗畫，便會妨礙下一位讀者閱讀。",
+    "prefix": "首句「我們應愛惜公共圖書」是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "論點"
+    ],
+    "applyRegex": false,
+    "initialValue": "論點"
+  },
+  {
+    "id": "argumentation-claim-try",
+    "topic": "論證手法",
+    "title": "試一試：找出論點",
+    "description": "以下哪句直接提出主張？\\n請點選最恰當的答案。",
+    "content": "① 學校應設置清楚的回收指示。\n② 不同物料需要放進不同回收箱。\n③ 清楚的指示能幫助同學辨別投放位置。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "①"
+      },
+      {
+        "value": "B",
+        "label": "②"
+      },
+      {
+        "value": "C",
+        "label": "③"
+      }
+    ],
+    "explanation": "①提出學校應怎樣做；②③解釋原因。"
+  },
+  {
+    "id": "argumentation-evidence",
+    "topic": "論證手法",
+    "title": "論據：用甚麼支持主張？",
+    "description": "`論據`是用來支持論點的材料或理由。請填出下段括號內部分的角色。",
+    "content": "論點：學校應改善飲水機附近的防滑措施。\n支持材料：【當值老師記錄，過去一星期有三名學生在該處積水旁滑倒。】（自擬情境）",
+    "prefix": "括號內的材料是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "論據"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "argumentation-reasoning",
+    "topic": "論證手法",
+    "title": "論證：把材料與主張連起來",
+    "description": "`論證`是運用論據說明論點的過程。只有材料還不夠，還要解釋材料怎樣支持主張。\\n例如：積水旁有人滑倒 → 存在滑倒風險 → 有需要改善防滑措施。",
+    "interactive": false
+  },
+  {
+    "id": "argumentation-relevance",
+    "topic": "論證手法",
+    "title": "試一試：論據是否相關？",
+    "description": "要支持「圖書館應增加考試期間的座位」，哪項材料較直接相關？\\n請點選最恰當的答案。",
+    "content": "以下均為自擬情境：",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "考試前多天都有學生因座位已滿而離開。"
+      },
+      {
+        "value": "B",
+        "label": "圖書館門口種了兩棵樹。"
+      },
+      {
+        "value": "C",
+        "label": "閱覽室的牆壁是白色。"
+      }
+    ],
+    "explanation": "A反映座位需求，B、C與增設座位缺乏直接關係。"
+  },
+  {
+    "id": "argumentation-example-demo",
+    "topic": "論證手法",
+    "title": "舉例論證：用具體事例支持",
+    "description": "`舉例論證`用具體事例支持觀點，也稱例證法。真實寫作須選取可信、恰當且與論點相關的事例。",
+    "content": "閱讀能幫助人解決生活問題。例如在這個自擬情境中，阿明查閱植物護理書，按書中方法調整澆水時間，令盆栽恢復生機。",
+    "prefix": "這段主要用",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "舉例論證"
+    ],
+    "applyRegex": false,
+    "initialValue": "舉例論證"
+  },
+  {
+    "id": "argumentation-example-try",
+    "topic": "論證手法",
+    "title": "試一試：具體事例的用途",
+    "description": "判斷下段用來支持首句的主要論證手法。",
+    "content": "合作有助解決困難。在一次班際活動中，一組同學把資料搜集、海報設計和口頭報告分工，再互相檢查，終於按時完成原本一人難以完成的工作。（自擬情境）",
+    "prefix": "主要運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "舉例論證",
+      "例證法",
+      "例證"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "argumentation-quotation-demo",
+    "topic": "論證手法",
+    "title": "引用論證：引語要支持觀點",
+    "description": "`引用論證`引用名言、典籍中的道理等支持論點。要說清引文與主張的關係。",
+    "content": "學習應結合思考。《論語》說：「學而不思則罔。」只接收知識而不加思考，難以真正理解所學。",
+    "prefix": "這段運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "引用論證"
+    ],
+    "applyRegex": false,
+    "initialValue": "引用論證"
+  },
+  {
+    "id": "argumentation-quotation-trap",
+    "topic": "論證手法",
+    "title": "易混淆：有引號就是引用論證？",
+    "description": "哪一項真正以引語支持觀點？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "小文說：「今天的午餐很好吃。」"
+      },
+      {
+        "value": "B",
+        "label": "學習應結合思考；《論語》「學而不思則罔」正提醒我們只學不思的不足。"
+      }
+    ],
+    "explanation": "A是記錄對話；B把引語用作支持主張的道理。"
+  },
+  {
+    "id": "argumentation-contrast-demo",
+    "topic": "論證手法",
+    "title": "對比論證：比較相反情況",
+    "description": "`對比論證`把相對或相反的情況放在一起，透過差異說明觀點。",
+    "content": "遇到錯誤便反省，才能改善：願意檢討的人能找出問題並改正；拒絕面對錯誤的人，則容易重犯。",
+    "prefix": "這段主要運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "對比論證"
+    ],
+    "applyRegex": false,
+    "initialValue": "對比論證"
+  },
+  {
+    "id": "argumentation-contrast-effect",
+    "topic": "論證手法",
+    "title": "試一試：對比支持甚麼？",
+    "description": "上題比較兩種面對錯誤的態度，主要為了說明甚麼？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "所有人都一定會犯同樣的錯。"
+      },
+      {
+        "value": "B",
+        "label": "反省並改正錯誤有助進步。"
+      },
+      {
+        "value": "C",
+        "label": "犯錯後甚麼也不用做。"
+      }
+    ],
+    "explanation": "由兩種態度及後果推出反省的價值，不擴大為絕對斷言。"
+  },
+  {
+    "id": "argumentation-analogy-demo",
+    "topic": "論證手法",
+    "title": "比喻論證：用具體事物說理",
+    "description": "`比喻論證`借具體事物的道理，幫助讀者理解要論述的抽象道理。分析時要找相似的關係。",
+    "content": "求學要先打好基礎。建屋若地基不穩，樓房便難以穩固；學習若基本概念不清，進一步理解也容易出錯。",
+    "prefix": "這段運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "比喻論證"
+    ],
+    "applyRegex": false,
+    "initialValue": "比喻論證"
+  },
+  {
+    "id": "argumentation-analogy-link",
+    "topic": "論證手法",
+    "title": "試一試：比喻的關鍵聯繫",
+    "description": "上題把學習比作建屋，兩者的相似關係是甚麼？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "都要先有穩固基礎，才能支持進一步發展。"
+      },
+      {
+        "value": "B",
+        "label": "學生一定要親自建一座樓。"
+      },
+      {
+        "value": "C",
+        "label": "樓房愈高，學生的分數便愈高。"
+      }
+    ],
+    "explanation": "地基支撐樓房，基本概念支撐進一步學習。兩者都需要先打好基礎，這個相似關係使抽象的學習道理更容易理解。"
+  },
+  {
+    "id": "argumentation-explain-or-argue",
+    "topic": "論證手法",
+    "title": "易混淆：舉例說明與舉例論證",
+    "description": "先看例子用來介紹事物，還是支持主張。哪段主要用例子支持主張？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "校內有不同學會，例如合唱團、棋藝學會和科學學會。"
+      },
+      {
+        "value": "B",
+        "label": "參與學會有助練習合作。例如合唱團成員要互相聆聽、配合節奏，才能完成合唱。"
+      }
+    ],
+    "explanation": "A列舉學會種類；B用合唱活動說明合作的學習機會以支持主張。"
+  },
+  {
+    "id": "argumentation-limits",
+    "topic": "論證手法",
+    "title": "再想一步：一個事例能證明多少？",
+    "description": "某同學一次提早溫習後成績進步。下列哪個結論較審慎？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "所有人只要提早溫習，都必定得到滿分。"
+      },
+      {
+        "value": "B",
+        "label": "這個事例可用來說明提早準備的可能好處，但不足以保證人人得到相同結果。"
+      }
+    ],
+    "explanation": "一名同學的經驗可以說明可能的好處，但其他人的情況和成績也受不同因素影響，不能由此保證人人取得滿分。"
+  },
+  {
+    "id": "argumentation-integrated",
+    "topic": "論證手法",
+    "title": "綜合練習：選出完整分析",
+    "description": "哪個答案把手法、材料及論點連起來？\\n請點選最恰當的答案。",
+    "content": "學習應結合思考。《論語》說：「學而不思則罔。」只學不思，便難以理解所學。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "有引號，句子很生動。"
+      },
+      {
+        "value": "B",
+        "label": "運用引用論證，以《論語》指出只學不思的不足，支持學思結合的主張。"
+      },
+      {
+        "value": "C",
+        "label": "運用外貌描寫，突出孔子的樣子。"
+      }
+    ],
+    "explanation": "完整分析需說明引文如何支持論點。"
+  },
+  {
+    "id": "argumentation-complete",
+    "topic": "論證手法",
+    "title": "你已完成`論證手法`練習！",
+    "description": "先找論點，再看論據，最後分析兩者如何連起來。\\n辨認手法後，要進一步問：材料是否相關可信？推論是否合理？",
+    "image": "/img/congratulation.gif",
+    "interactive": false
+  }
+]

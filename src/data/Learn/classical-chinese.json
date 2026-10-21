@@ -1,0 +1,358 @@
+[
+  {
+    "id": "classical-chinese-intro",
+    "topic": "文言閱讀入門",
+    "title": "先讀語境，再解字詞",
+    "description": "文言閱讀要把字詞放回句子理解。本課借〈傷仲永〉和〈岳陽樓記〉的短句，練習`單音詞、一詞多義、古今異義、虛詞和省略成分`。\\n不需要先背熟兩篇課文；每題都提供所需語境。",
+    "interactive": false
+  },
+  {
+    "id": "classical-chinese-single-demo",
+    "topic": "文言閱讀入門",
+    "title": "單音詞：一個字可以是一個詞",
+    "description": "文言常用一個字表達現代漢語的一個詞。〈傷仲永〉寫仲永立即寫出四句詩：「即書詩四句。」這裏的「書」是動作。\\n答案已預填，你可以在答案欄修改；答錯或清空時，須改正後才可進入下一題。",
+    "content": "即書詩四句。——〈傷仲永〉",
+    "prefix": "「書」的意思是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "書寫"
+    ],
+    "applyRegex": false,
+    "initialValue": "書寫"
+  },
+  {
+    "id": "classical-chinese-single-try",
+    "topic": "文言閱讀入門",
+    "title": "試一試：在句中解字",
+    "description": "〈傷仲永〉寫仲永「指物作詩立就」，即指着物品讓他作詩，他很快便完成。請解釋「就」。",
+    "content": "自是指物作詩立就。——〈傷仲永〉",
+    "prefix": "「就」解作",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "完成",
+      "寫成",
+      "作成"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "classical-chinese-single-trap",
+    "topic": "文言閱讀入門",
+    "title": "易混淆：照搬現代常用意思",
+    "description": "下列哪個解釋符合「即書詩四句」的句意？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "「書」是一本書，意思是拿起四本詩集。"
+      },
+      {
+        "value": "B",
+        "label": "「書」是書寫，意思是立即寫了四句詩。"
+      }
+    ],
+    "explanation": "「書」後面接「詩四句」，指書寫的動作；整句是立即寫出四句詩。"
+  },
+  {
+    "id": "classical-chinese-ancient-modern",
+    "topic": "文言閱讀入門",
+    "title": "古今異義：熟悉的字，也要重看",
+    "description": "有些字詞的古代用法，與今天常用的意思不同。\\n例如〈傷仲永〉的「稍稍」指`逐漸`；〈岳陽樓記〉的「去國懷鄉」，「去」指`離開`，「國」在這裏指`國都`。不能直接套用今天「去某地」的意思。",
+    "interactive": false
+  },
+  {
+    "id": "classical-chinese-gradually",
+    "topic": "文言閱讀入門",
+    "title": "試一試：「稍稍」",
+    "description": "邑人逐漸把仲永的父親當作賓客款待。根據這個語境，解釋「稍稍」。",
+    "content": "邑人奇之，稍稍賓客其父。——〈傷仲永〉",
+    "prefix": "「稍稍」解作",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "逐漸",
+      "漸漸"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "classical-chinese-leave",
+    "topic": "文言閱讀入門",
+    "title": "換個情況：「去」",
+    "description": "這裏寫被貶官者離開國都、思念家鄉的心情。請解釋「去」。",
+    "content": "去國懷鄉。——〈岳陽樓記〉",
+    "prefix": "「去」解作",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "離開",
+      "離去"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "classical-chinese-country",
+    "topic": "文言閱讀入門",
+    "title": "再試一步：「國」",
+    "description": "承接上題，在「去國懷鄉」這個語境中，「國」指甚麼？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "國都"
+      },
+      {
+        "value": "B",
+        "label": "外國"
+      },
+      {
+        "value": "C",
+        "label": "國籍"
+      }
+    ],
+    "explanation": "「去國懷鄉」寫被貶離京後思念家鄉，這裏的「國」是國都。"
+  },
+  {
+    "id": "classical-chinese-polysemy",
+    "topic": "文言閱讀入門",
+    "title": "一詞多義：同一字，要看搭配",
+    "description": "同一個字可因語境而有不同意思。比較〈岳陽樓記〉中的「觀」：\\n「予`觀`夫巴陵勝狀」：看、觀賞，是動作。\\n「此則岳陽樓之大`觀`也」：景象，這裏的「大觀」指壯觀的景象。\\n解字時先看它與前後哪些字組合，不要只背一個固定答案。",
+    "interactive": false
+  },
+  {
+    "id": "classical-chinese-polysemy-try",
+    "topic": "文言閱讀入門",
+    "title": "試一試：同一字的另一意思",
+    "description": "這裏總結前文所寫的洞庭湖景色。「大觀」指壯觀的甚麼？",
+    "content": "此則岳陽樓之大觀也。——〈岳陽樓記〉",
+    "prefix": "「觀」在這裏指",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "景象",
+      "景觀",
+      "景色"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "classical-chinese-zhi-demo",
+    "topic": "文言閱讀入門",
+    "title": "「之」：可以代替前文的事物",
+    "description": "「仲永生五年，未嘗識書具，忽啼求之」寫五歲的仲永從未認識書寫工具，卻忽然哭着索取。\\n代詞「之」的指代，要從前文找。",
+    "content": "未嘗識書具，忽啼求之。——〈傷仲永〉",
+    "prefix": "「之」指的是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "書具"
+    ],
+    "applyRegex": false,
+    "initialValue": "書具"
+  },
+  {
+    "id": "classical-chinese-zhi-try",
+    "topic": "文言閱讀入門",
+    "title": "試一試：「之」指誰？",
+    "description": "父親見仲永想要書寫工具，便向鄰人借來交給仲永。以下「與之」的「之」指誰？",
+    "content": "父異焉，借旁近與之。——〈傷仲永〉",
+    "prefix": "「之」指",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "仲永",
+      "方仲永"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "classical-chinese-zhi-structural",
+    "topic": "文言閱讀入門",
+    "title": "換個用法：「之」表示修飾關係",
+    "description": "「岳陽樓之大觀」指岳陽樓的壯麗景象。這裏的「之」連接修飾語與中心語，可以譯作「的」。",
+    "content": "此則岳陽樓之大觀也。——〈岳陽樓記〉",
+    "prefix": "這裏的「之」可譯作",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "的"
+    ],
+    "applyRegex": false,
+    "initialValue": "的"
+  },
+  {
+    "id": "classical-chinese-zhi-compare",
+    "topic": "文言閱讀入門",
+    "title": "辨一辨：不要把「之」全譯作「的」",
+    "description": "哪一組解釋符合語境？\\n請點選最恰當的答案。",
+    "content": "甲：未嘗識書具，忽啼求之。\n乙：此則岳陽樓之大觀也。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "甲指書具；乙可譯作「的」。"
+      },
+      {
+        "value": "B",
+        "label": "甲乙都指仲永。"
+      },
+      {
+        "value": "C",
+        "label": "甲乙都只能譯作「的」。"
+      }
+    ],
+    "explanation": "甲的「之」代替前文的書具；乙的「之」連接「岳陽樓」和「大觀」，可譯作「的」。同一個字要按句意理解。"
+  },
+  {
+    "id": "classical-chinese-qi",
+    "topic": "文言閱讀入門",
+    "title": "「其」：也要找指代",
+    "description": "〈岳陽樓記〉寫重修樓宇，並把前人與當代人的詩賦刻在樓上。本題問「其上」的「其」指甚麼。",
+    "content": "乃重修岳陽樓，增其舊制，刻唐賢、今人詩賦於其上。——〈岳陽樓記〉",
+    "prefix": "「其」指",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "岳陽樓",
+      "樓",
+      "樓宇"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "classical-chinese-yi",
+    "topic": "文言閱讀入門",
+    "title": "「以」：在這句表示原因",
+    "description": "「不以物喜，不以己悲」說不因外物的好壞或自己的得失而或喜或悲。本題只解釋這兩句中的「以」。",
+    "content": "不以物喜，不以己悲。——〈岳陽樓記〉",
+    "prefix": "這裏的「以」解作",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "因為",
+      "因",
+      "由於"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "classical-chinese-omission",
+    "topic": "文言閱讀入門",
+    "title": "省略成分：用上下文補回來",
+    "description": "文言有時省略已可從語境知道的成分。翻譯時，可以補出來，讓意思清楚。\\n〈傷仲永〉先寫王安石在舅家看見十二三歲的仲永，接着寫「令作詩」。根據上下文，可理解為王安石讓仲永作詩。",
+    "interactive": false
+  },
+  {
+    "id": "classical-chinese-omission-try",
+    "topic": "文言閱讀入門",
+    "title": "試一試：誰作詩？",
+    "description": "王安石在舅家見到仲永，接着「令作詩」。這裏讓誰作詩？",
+    "content": "於舅家見之，十二三矣。令作詩，不能稱前時之聞。——〈傷仲永〉",
+    "prefix": "省略的作詩者是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "仲永",
+      "方仲永"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "classical-chinese-translate",
+    "topic": "文言閱讀入門",
+    "title": "綜合練習：選擇合乎語境的語譯",
+    "description": "請把字詞放回整句理解。\\n請點選最恰當的答案。",
+    "content": "自是指物作詩立就。——〈傷仲永〉",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "從此，指着物品讓他作詩，他立即就能完成。"
+      },
+      {
+        "value": "B",
+        "label": "他站在物品旁邊，等待別人給他一本詩集。"
+      },
+      {
+        "value": "C",
+        "label": "這件物品從此變成一首詩。"
+      }
+    ],
+    "explanation": "「自是」指從此，「立」是立即，「就」是完成。連起來才是整句的意思。"
+  },
+  {
+    "id": "classical-chinese-transfer",
+    "topic": "文言閱讀入門",
+    "title": "回顧：遇到熟字，先做甚麼？",
+    "description": "遇到「之」「其」「以」等字，哪種讀法較可靠？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "把所有「之」譯成「的」，所有「以」譯成「用」。"
+      },
+      {
+        "value": "B",
+        "label": "先找前後文、人物和句子關係，再判斷該字在這一句的意思。"
+      },
+      {
+        "value": "C",
+        "label": "只看單字，不看句子。"
+      }
+    ],
+    "explanation": "同一字可以有不同用法。先理清人物、上下句和語法關係，才能選出合適的解釋。"
+  },
+  {
+    "id": "classical-chinese-complete",
+    "topic": "文言閱讀入門",
+    "title": "你已完成`文言閱讀入門`練習！",
+    "description": "你已練習從語境解字、辨別古今詞義、找代詞指代，以及補出省略成分。\\n回到文言課文時，可以逐句問：誰在做甚麼？代詞指甚麼？這個字在此處應怎樣解？",
+    "image": "/img/congratulation.gif",
+    "interactive": false
+  }
+]

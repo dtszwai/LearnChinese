@@ -10,17 +10,17 @@ interface Props {
 export default ({ answer, step }: Props) => {
   const [showStatus, setShowStatus] = useState(false);
 
-  const toggleShow = (e) => {
+  const toggleShow = (e: KeyboardEvent) => {
     if (e.altKey && e.key.toLowerCase() === 'h') {
       e.preventDefault();
-      setShowStatus(!showStatus);
+      setShowStatus(shown => !shown);
     }
   };
 
   useEffect(() => {
     addEventListener('keydown', toggleShow);
     return () => removeEventListener('keydown', toggleShow);
-  }, [showStatus]);
+  }, []);
 
   useEffect(() => {
     setShowStatus(false);
@@ -41,11 +41,11 @@ export default ({ answer, step }: Props) => {
   );
 
   return (
-    <Tooltip open={showStatus} title={hint} placement='top' className={styles.Hint} onKeyDown={toggleShow}>
-      <span className={styles.ShowHint} onClick={() => setShowStatus(!showStatus)}>
+    <Tooltip describeChild open={showStatus} title={hint} placement='top' className={styles.Hint}>
+      <button type='button' className={styles.ShowHint} onClick={() => setShowStatus(shown => !shown)} aria-expanded={showStatus}>
         顯示答案
-        <div className='Shortcut'>ALT + H</div>
-      </span>
+        <span className='Shortcut'>ALT + H</span>
+      </button>
     </Tooltip>
   );
 };

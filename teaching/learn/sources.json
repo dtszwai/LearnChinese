@@ -1,0 +1,68 @@
+{
+  "checkedOn": "2026-10-20",
+  "sources": {
+    "edb-learning": {
+      "publisher": "香港教育局／課程發展議會",
+      "title": "中學中國語文建議學習重點（2021年修訂）",
+      "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/SEC_LO_2021.pdf",
+      "locator": "印刷頁3、5、8–9：語文基礎、閱讀能力、布局謀篇、表達方式",
+      "use": "界定香港中學程度及學習目標；支持文言語境理解、描寫、抒情、記敘次序、篇章結構和議論的課程相關性。不是逐題標準答案。"
+    },
+    "hku-narrative": {
+      "publisher": "香港大學教育學院中文教育研究中心（CACLER）",
+      "title": "表達能力與課業為主寫作教學法：記敘能力",
+      "url": "https://www.cacler.hku.hk/en/wiki/secondary-school-writing-education/expression-and-assessment-oriented-pedagogies/narrative",
+      "locator": "二、記敘能力的要素：1. 記敘文的類型；4. 記敘文的結構",
+      "use": "核對人物外貌／語言／行動／心理描寫，以及順敘、倒敘、插敘的辨析依據。"
+    },
+    "edb-description": {
+      "publisher": "教育局發布；佛教大雄中學彭偉諾、林俊華老師分享",
+      "title": "中國語文科：課程詮釋及學習評估——學校分享",
+      "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/resources/secondary-edu/lang/curriculum_assessment_TH_2021.pdf",
+      "locator": "描寫能力單元，投影片5–9（PDF第5–9頁）",
+      "use": "核對直接／間接、多感官描寫及借景抒情的教學方向；要求描寫與人物、感情和主題相扣。屬校本實踐分享，不是統一評卷準則。"
+    },
+    "edb-lyricism": {
+      "publisher": "教育局發布；佛教茂峰法師紀念中學蔡鳳詩老師分享",
+      "title": "中學中國語文科新任教師導引：課程詮釋及學習評估（修訂）——校本課程發展經驗分享，2021-01-05",
+      "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/resources/secondary-edu/lang/20210105_PDF2.pdf",
+      "locator": "整體規劃：六級單元編排（PDF第12頁）；中一級單元四「中國傳統節慶飲食（借物抒情）」",
+      "use": "確認借事、借物、景物與心情等單元在香港中學的教學連繫。作為校本示例，不把其中的年級編排當作全港規定。"
+    },
+    "hku-expressive": {
+      "publisher": "香港大學教育學院中文教育研究中心（CACLER）",
+      "title": "表達能力與課業為主寫作教學法：抒情能力",
+      "url": "https://www.cacler.hku.hk/hk/wiki/secondary-school-writing-education/expression-and-assessment-oriented-pedagogies/expressive",
+      "locator": "一、定義；二、抒情能力的要素",
+      "use": "核對從處境、經歷及反應理解情感的方向。頁內「直接關係／間接關係」不是本課「直接抒情／間接抒情」的分類依據。"
+    },
+    "edb-yueyang": {
+      "publisher": "香港教育局",
+      "title": "建議篇章：范仲淹〈岳陽樓記〉——原文、注釋及賞析",
+      "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/recommended-passages/KS4_14.pdf",
+      "locator": "原文第1頁；注釋12、22、36；賞析重點第4–7頁",
+      "use": "核對大觀、去國、不以物喜等字詞和上下文；賞析用作前後銜接、照應、伏線與鋪墊的實例依據。文言短句保留出處，練習說明另行撰寫。"
+    },
+    "edb-zhongyong": {
+      "publisher": "香港教育局",
+      "title": "建議篇章：王安石〈傷仲永〉——原文、注釋及賞析",
+      "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/recommended-passages/KS3_16.pdf",
+      "locator": "原文第1頁；注釋3、7、11、14、20；賞析重點",
+      "use": "核對書、就、稍稍及仲永故事中的指代、省略；「之」的所指由原文前後句確定。"
+    },
+    "edb-argumentation": {
+      "publisher": "教育局語文教學支援組",
+      "title": "挑戰一：關注學習差異，促進全人發展",
+      "url": "https://cd1.edb.hkedcity.net/cd/languagesupport/downloads/0911/Chi/0911_cht_part01.pdf",
+      "locator": "議論文教學案例及「議論三要素」工作紙，可搜尋論點、論據、比喻論證、引用論證",
+      "use": "參考先學議論要素、再運用及評估論證的教學編排。沒有複製工作紙題目或答案。"
+    },
+    "hku-argumentation": {
+      "publisher": "香港大學教育學院中文教育研究中心（CACLER）",
+      "title": "讀寫能力、任務表徵與策略對中學生的綜合寫作表現的影響：研究成果",
+      "url": "https://www.cacler.hku.hk/hk/content/basic/5969",
+      "locator": "研究成果：立好論點、用好論據、寫好論證的教學建議",
+      "use": "核對論據與論點相連、論據可信、避免空泛及片面結論的出題原則。"
+    }
+  }
+}

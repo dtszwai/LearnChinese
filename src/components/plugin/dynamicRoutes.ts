@@ -1,7 +1,7 @@
 const lessons = require("../../data/Learn/index.json");
 
 const dynamicRoutes = () => {
-  const list = Object.keys(lessons).map((key) => ({
+  const list = Object.keys(lessons).filter((key) => lessons[key].published !== false).map((key) => ({
     path: `/learn/${lessons[key].slug}`,
     exact: true,
     component: "@site/src/components/Learn",

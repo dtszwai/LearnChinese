@@ -1,0 +1,383 @@
+[
+  {
+    "id": "lyricism-intro",
+    "topic": "抒情手法",
+    "title": "感情如何寫出來？",
+    "description": "抒情是透過文字表達感受。本課由`直接抒情`開始，再學習透過景物、事件和物件表達感情。\\n每次都要同時留意：`藉甚麼表達`，以及`表達甚麼感情`。",
+    "interactive": false
+  },
+  {
+    "id": "lyricism-direct-demo",
+    "topic": "抒情手法",
+    "title": "先看示範：直接抒情",
+    "description": "直接說出自己的喜愛、思念、感激等感受，稱為`直接抒情`，也叫直抒胸臆。\\n答案已預填，你可以在答案欄修改；答錯或清空時，須改正後才可進入下一題。",
+    "content": "母親，我多麼感激您這些年的照顧！",
+    "prefix": "這句運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "直接抒情"
+    ],
+    "applyRegex": false,
+    "initialValue": "直接抒情"
+  },
+  {
+    "id": "lyricism-direct-try",
+    "topic": "抒情手法",
+    "title": "試一試：找出感情詞",
+    "description": "請在原句中點選下句中直接表示情感的兩個字。",
+    "content": "每次想起你的鼓勵，我心中仍充滿感激。",
+    "prefix": "這個詞是",
+    "suffix": "。",
+    "placeholder": "摘錄原文",
+    "suggestedAnswer": [
+      "感激"
+    ],
+    "applyRegex": false,
+    "interaction": "passage",
+    "options": [
+      {
+        "value": "鼓勵",
+        "label": "鼓勵"
+      },
+      {
+        "value": "心中",
+        "label": "心中"
+      },
+      {
+        "value": "感激",
+        "label": "感激"
+      }
+    ],
+    "explanation": "「感激」直接說出作者的感受，屬於直接抒情。"
+  },
+  {
+    "id": "lyricism-direct-without-exclamation",
+    "topic": "抒情手法",
+    "title": "換個情況：沒有感嘆號",
+    "description": "判斷抒情方式，應看文字如何表達感情。哪一句直接表白思念？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "我很想念遠方的祖母。"
+      },
+      {
+        "value": "B",
+        "label": "窗邊放着一張祖母的照片。"
+      },
+      {
+        "value": "C",
+        "label": "祖母去年搬到另一個城市。"
+      }
+    ],
+    "explanation": "直接抒情不必使用感嘆號；其餘只交代物件或事情。"
+  },
+  {
+    "id": "lyricism-indirect",
+    "topic": "抒情手法",
+    "title": "間接抒情：讓事物承載感情",
+    "description": "作者也可以把感情寄託在景物、事件或物件之中，讓讀者從描寫、敘述及上下文感受出來。這是`間接抒情`。\\n以下分別練習借景、借事和借物抒情。實際文章可以兼用多種方式。",
+    "interactive": false
+  },
+  {
+    "id": "lyricism-scene-demo",
+    "topic": "抒情手法",
+    "title": "先看示範：借景抒情",
+    "description": "`借景抒情`透過景物及其描寫表達感情。留意下句的離別背景，以及「空蕩蕩」「孤零零」的感情色彩。",
+    "content": "好友遠行後，窗外的長街空蕩蕩的，只有一盞孤零零的燈伴着夜雨。",
+    "prefix": "這裏透過街景表達離愁，主要運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "借景抒情"
+    ],
+    "applyRegex": false,
+    "initialValue": "借景抒情"
+  },
+  {
+    "id": "lyricism-scene-evidence",
+    "topic": "抒情手法",
+    "title": "試一試：景物中的感情",
+    "description": "請在原句中點選形容燈、最能呼應離別後孤寂感的三字詞語。",
+    "content": "好友遠行後，窗外的長街空蕩蕩的，只有一盞孤零零的燈伴着夜雨。",
+    "prefix": "這個詞語是",
+    "suffix": "。",
+    "placeholder": "摘錄原文",
+    "suggestedAnswer": [
+      "孤零零"
+    ],
+    "applyRegex": false,
+    "interaction": "passage",
+    "options": [
+      {
+        "value": "好友",
+        "label": "好友"
+      },
+      {
+        "value": "空蕩蕩",
+        "label": "空蕩蕩"
+      },
+      {
+        "value": "孤零零",
+        "label": "孤零零"
+      },
+      {
+        "value": "夜雨",
+        "label": "夜雨"
+      }
+    ],
+    "explanation": "「孤零零」不只寫一盞燈，也呼應好友遠行後的孤寂心情。"
+  },
+  {
+    "id": "lyricism-scene-effect",
+    "topic": "抒情手法",
+    "title": "再想一步：景與情的聯繫",
+    "description": "哪項分析最有文字根據？\\n請點選最恰當的答案。",
+    "content": "好友遠行後，窗外的長街空蕩蕩的，只有一盞孤零零的燈伴着夜雨。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "街燈亮着，表現作者興奮。"
+      },
+      {
+        "value": "B",
+        "label": "空街、孤燈和夜雨呼應好友離去後的孤寂。"
+      },
+      {
+        "value": "C",
+        "label": "下雨說明作者不喜歡這座城市。"
+      }
+    ],
+    "explanation": "B把背景、景物特徵和情感聯繫起來；A、C屬無根據推斷。"
+  },
+  {
+    "id": "lyricism-scene-counterexample",
+    "topic": "抒情手法",
+    "title": "易混淆：有景物就一定抒情？",
+    "description": "僅根據以下文字，哪項判斷最穩妥？\\n請點選最恰當的答案。",
+    "content": "公園東面有一個荷花池，西面設有兩座涼亭，北門旁是洗手間。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "C",
+      "c"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "一定是借景抒情，表達喜愛。"
+      },
+      {
+        "value": "B",
+        "label": "一定是借景抒情，表達哀傷。"
+      },
+      {
+        "value": "C",
+        "label": "主要交代設施位置，沒有足夠證據判斷抒情。"
+      }
+    ],
+    "explanation": "不能僅因有景物名詞便推定情感。"
+  },
+  {
+    "id": "lyricism-event",
+    "topic": "抒情手法",
+    "title": "借事抒情：感情藏在經歷裏",
+    "description": "`借事抒情`透過事情的經過和細節流露感情。請從「借景／借事／借物」中選出下段主要採用的方式。",
+    "content": "那夜我發高燒，母親一次次替我換毛巾，直到天亮仍守在床邊。多年後，那一夜的每個細節依然留在我心裏。",
+    "prefix": "這段主要運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "借事抒情",
+      "借事"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "lyricism-event-evidence",
+    "topic": "抒情手法",
+    "title": "試一試：事件中的細節",
+    "description": "哪項最能顯示母親照顧得長久而細心？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "事情發生在夜裏。"
+      },
+      {
+        "value": "B",
+        "label": "多次換毛巾，並一直守到天亮。"
+      },
+      {
+        "value": "C",
+        "label": "作者多年後回憶此事。"
+      }
+    ],
+    "explanation": "B直接支持母親付出的時間及行動；C表明回憶而非照顧方式。"
+  },
+  {
+    "id": "lyricism-object",
+    "topic": "抒情手法",
+    "title": "借物抒情：物件承載回憶",
+    "description": "`借物抒情`藉物件及其與人的聯繫寄託感情。本題着眼於下段反覆凝視的物件。",
+    "content": "祖父留下的舊鋼筆早已寫不出字，我卻一直珍藏。筆桿那道熟悉的磨痕，彷彿仍留着他掌心的溫度。",
+    "prefix": "這段主要運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "借物抒情",
+      "借物"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "lyricism-object-evidence",
+    "topic": "抒情手法",
+    "title": "試一試：找出寄情的物件",
+    "description": "請在原句中點選上段承載對祖父懷念的三字物件名稱。",
+    "content": "祖父留下的舊鋼筆早已寫不出字，我卻一直珍藏。",
+    "prefix": "這件物品是",
+    "suffix": "。",
+    "placeholder": "摘錄原文",
+    "suggestedAnswer": [
+      "舊鋼筆"
+    ],
+    "applyRegex": false,
+    "interaction": "passage",
+    "options": [
+      {
+        "value": "祖父",
+        "label": "祖父"
+      },
+      {
+        "value": "舊鋼筆",
+        "label": "舊鋼筆"
+      },
+      {
+        "value": "珍藏",
+        "label": "珍藏"
+      }
+    ],
+    "explanation": "鋼筆是祖父留下的物件。作者保留已不能書寫的鋼筆，藉此流露對祖父的懷念。"
+  },
+  {
+    "id": "lyricism-object-counterexample",
+    "topic": "抒情手法",
+    "title": "易混淆：介紹物件與借物抒情",
+    "description": "哪一段有較明確的借物抒情證據？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "這支鋼筆長十四厘米，筆身以金屬製成。"
+      },
+      {
+        "value": "B",
+        "label": "每逢看見祖父留下的舊鋼筆，我便把它輕放掌心，捨不得收起。"
+      }
+    ],
+    "explanation": "B有祖父留下的背景及珍惜的反應；A僅介紹物件資料。"
+  },
+  {
+    "id": "lyricism-coexist",
+    "topic": "抒情手法",
+    "title": "同一段可以兼用兩種方式",
+    "description": "「母親那夜守在床邊，不斷替我換毛巾。母親，我永遠感激您！」\\n前句可以透過照顧的事件流露感情；後句直接表白感激。`借事抒情與直接抒情可以並用`。\\n作答時先看題目指定的句子或部分，不必把整段硬歸入唯一類別。",
+    "interactive": false
+  },
+  {
+    "id": "lyricism-mixed",
+    "topic": "抒情手法",
+    "title": "綜合練習：只判斷末句",
+    "description": "本題只問末句「母親，我永遠感激您！」的抒情方式。",
+    "content": "母親那夜守在床邊，不斷替我換毛巾。母親，我永遠感激您！",
+    "prefix": "末句運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "直接抒情",
+      "直接",
+      "直抒胸臆"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "lyricism-avoid-formula",
+    "topic": "抒情手法",
+    "title": "分析效果：回到這段文字",
+    "description": "哪項最能說明舊鋼筆在文中的作用？\\n請點選最恰當的答案。",
+    "content": "祖父留下的舊鋼筆早已寫不出字，我卻一直珍藏。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "所有舊物都代表悲傷。"
+      },
+      {
+        "value": "B",
+        "label": "鋼筆雖失去實用功能仍被珍藏，寄託作者對祖父的懷念與珍惜。"
+      },
+      {
+        "value": "C",
+        "label": "作者認為鋼筆比鉛筆好用。"
+      }
+    ],
+    "explanation": "保留無法使用的遺物，結合人物關係支持懷念；不把物件象徵固定化。"
+  },
+  {
+    "id": "lyricism-complete",
+    "topic": "抒情手法",
+    "title": "你已完成`抒情手法`練習！",
+    "description": "辨認抒情手法時，先找感情，再找表達途徑。\\n分析效果時，說清楚哪些景物、事件或物件，怎樣表達這一段的感情。",
+    "image": "/img/congratulation.gif",
+    "interactive": false
+  }
+]

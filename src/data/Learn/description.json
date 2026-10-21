@@ -1,0 +1,375 @@
+[
+  {
+    "id": "description-intro",
+    "topic": "描寫手法",
+    "title": "從文字看見人物",
+    "description": "描寫把人物或景物的特徵具體呈現出來。這一課先學人物的`外貌、動作、語言、心理`描寫，再分辨`直接與間接描寫`，最後嘗試結合文字分析效果。\\n每次只處理一個問題；遇到摘錄題，請按要求輸入原文。",
+    "interactive": false
+  },
+  {
+    "id": "description-actions-demo",
+    "topic": "描寫手法",
+    "title": "先看示範：動作描寫",
+    "description": "`動作描寫`（又稱行動描寫）寫人物做了甚麼。分析時，先找動作，再結合處境理解人物。\\n下句寫阿晴如何幫同學拾東西，具體呈現她主動幫忙的表現。\\n答案已預填，你可以在答案欄修改；答錯或清空時，須改正後才可進入下一題。",
+    "content": "同學的課本散落一地，阿晴蹲下來，逐本拾起，放回同學的書包。",
+    "prefix": "從人物描寫的類別看，這是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "動作描寫"
+    ],
+    "applyRegex": false,
+    "initialValue": "動作描寫"
+  },
+  {
+    "id": "description-actions-try",
+    "topic": "描寫手法",
+    "title": "試一試：找出動作",
+    "description": "請在原句中點選下句中表示「把雨傘移向妹妹」的四字動作短語。",
+    "content": "雨越下越大，哥哥把傘推向妹妹，自己的半邊肩膀卻濕透了。",
+    "prefix": "這個動作是",
+    "suffix": "。",
+    "placeholder": "摘錄原文",
+    "suggestedAnswer": [
+      "推向妹妹"
+    ],
+    "applyRegex": false,
+    "interaction": "passage",
+    "options": [
+      {
+        "value": "哥哥",
+        "label": "哥哥"
+      },
+      {
+        "value": "推向妹妹",
+        "label": "推向妹妹"
+      },
+      {
+        "value": "半邊肩膀",
+        "label": "半邊肩膀"
+      },
+      {
+        "value": "濕透",
+        "label": "濕透"
+      }
+    ],
+    "explanation": "「推向妹妹」寫哥哥移動雨傘的動作。接着寫他的肩膀濕透，讓讀者看出他把遮雨的位置留給妹妹。"
+  },
+  {
+    "id": "description-actions-effect",
+    "topic": "描寫手法",
+    "title": "再想一步：動作的作用",
+    "description": "根據雨傘的位置和哥哥淋濕的情況，哪項理解最有根據？\\n請點選最恰當的答案。",
+    "content": "哥哥把傘推向妹妹，自己的半邊肩膀卻濕透了。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "哥哥關心妹妹，寧願自己淋濕。"
+      },
+      {
+        "value": "B",
+        "label": "哥哥討厭雨天，所以生氣。"
+      },
+      {
+        "value": "C",
+        "label": "哥哥急於回家，沒有留意妹妹。"
+      }
+    ],
+    "explanation": "推傘保護妹妹而讓自己淋濕，支持關懷的解讀；其餘選項沒有文字根據。"
+  },
+  {
+    "id": "description-appearance",
+    "topic": "描寫手法",
+    "title": "外貌描寫：人物的樣子",
+    "description": "`外貌描寫`着眼於容貌、身形、衣着等外在特徵。下句集中寫老伯的哪一類特徵？",
+    "content": "老伯滿頭銀髮，額角布滿皺紋，身上穿着一件褪色的灰布衫。",
+    "prefix": "這是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "外貌描寫",
+      "外貌",
+      "肖像描寫"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "description-speech",
+    "topic": "描寫手法",
+    "title": "語言描寫：人物說的話",
+    "description": "`語言描寫`透過人物說話的內容、語氣等呈現人物。請判斷引號內的說話主要屬於哪類人物描寫。",
+    "content": "班長說：「你先去保健室休息，值日的工作交給我吧。」",
+    "prefix": "引號內的說話屬於",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "語言描寫",
+      "語言",
+      "對話描寫"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "description-thought",
+    "topic": "描寫手法",
+    "title": "心理描寫：人物心裏的話",
+    "description": "`心理描寫`直接寫出人物的念頭、顧慮、願望等內心活動。",
+    "content": "阿文心想：假如這次又失敗，大家會不會對我失去信心？",
+    "prefix": "這是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "心理描寫",
+      "心理"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "description-speech-thought",
+    "topic": "描寫手法",
+    "title": "辨一辨：說出來，還是心裏想？",
+    "description": "判斷依據是文字有沒有直接寫出內心活動；引號本身不能決定描寫類別。哪一句是心理描寫？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "他對隊友說：「我一定會努力。」"
+      },
+      {
+        "value": "B",
+        "label": "他暗自盤算：還有三天，我該怎樣分配練習時間？"
+      },
+      {
+        "value": "C",
+        "label": "他把練習表貼在書桌前。"
+      }
+    ],
+    "explanation": "A是實際說話，B直接寫盤算內容，C是動作。"
+  },
+  {
+    "id": "description-inference-trap",
+    "topic": "描寫手法",
+    "title": "易混淆：看得出緊張，就是心理描寫？",
+    "description": "讀者能從動作推測心情，但分類仍須看作者怎樣寫。下句直接寫出的是甚麼？\\n請點選最恰當的答案。",
+    "content": "輪到他上台了。他反覆搓着衣角，又把講稿摺起、攤開。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "動作"
+      },
+      {
+        "value": "B",
+        "label": "心裏的念頭"
+      },
+      {
+        "value": "C",
+        "label": "外貌特徵"
+      }
+    ],
+    "explanation": "搓、摺、攤開是動作；能推測緊張不等於直接呈現心理活動。"
+  },
+  {
+    "id": "description-direct-indirect",
+    "topic": "描寫手法",
+    "title": "換個角度：直接與間接描寫",
+    "description": "分析`描寫途徑`時，可以分為直接與間接。\\n直接描寫：直接寫主要對象本身的外貌、動作、語言、心理等。\\n間接描寫（側面描寫）：透過其他人的反應、周圍事物等，呈現主要對象的特點。\\n這與「動作／語言／心理」是不同的分類角度；同一句可以既是動作描寫，又直接描寫主角。",
+    "interactive": false
+  },
+  {
+    "id": "description-direct",
+    "topic": "描寫手法",
+    "title": "試一試：直接寫主角",
+    "description": "本題的描寫對象是「跑手阿健」。從直接／間接的角度判斷。",
+    "content": "阿健雙臂急擺，跨着大步，衝過終點線。",
+    "prefix": "作者對阿健運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "直接描寫",
+      "直接",
+      "正面描寫"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "description-indirect",
+    "topic": "描寫手法",
+    "title": "換個情況：透過觀眾寫演奏",
+    "description": "本題要分析作者如何表現「小琴演奏的吸引力」。",
+    "content": "小琴演奏時，原本交談的觀眾都安靜下來；一曲終了，大家仍坐着，久久不願離開。",
+    "prefix": "作者透過觀眾的反應，運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "間接描寫",
+      "間接",
+      "側面描寫"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "description-indirect-evidence",
+    "topic": "描寫手法",
+    "title": "試一試：找出側面的證據",
+    "description": "哪項最能支持「演奏吸引觀眾」這個判斷？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "演奏者名叫小琴。"
+      },
+      {
+        "value": "B",
+        "label": "觀眾安靜聆聽，曲終仍不願離開。"
+      },
+      {
+        "value": "C",
+        "label": "場地設有座位。"
+      }
+    ],
+    "explanation": "觀眾停止交談、曲終不願離開，是演奏吸引他們的具體反應。相對於演奏本身，這是側面的證據。"
+  },
+  {
+    "id": "description-senses",
+    "topic": "描寫手法",
+    "title": "景物描寫：留意感官",
+    "description": "寫景也可以從`視覺、聽覺、嗅覺、味覺、觸覺`入手。\\n感官角度與直接／間接描寫也不是互相排斥的分類。作答前要看清題目問哪個角度。",
+    "interactive": false
+  },
+  {
+    "id": "description-hearing",
+    "topic": "描寫手法",
+    "title": "試一試：聽見甚麼？",
+    "description": "只從感官角度判斷下句。",
+    "content": "雨點敲在鐵皮簷篷上，發出密集的滴答聲。",
+    "prefix": "主要運用了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "聽覺",
+      "聽覺描寫"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "description-smell",
+    "topic": "描寫手法",
+    "title": "換個情況：聞到甚麼？",
+    "description": "只判斷「清淡的桂花香」所訴諸的感官。",
+    "content": "走近花圃，一陣清淡的桂花香隨風飄來。",
+    "prefix": "這是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "嗅覺",
+      "嗅覺描寫"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "description-mixed",
+    "topic": "描寫手法",
+    "title": "綜合練習：按指定部分作答",
+    "description": "以下段落兼用不同描寫。本題只問第②句。\\n請點選最恰當的答案。",
+    "content": "① 阿澄穿着整潔的校服。\n② 他心想：我要把這件事解釋清楚。\n③ 他站起來說：「老師，我想補充。」\n\n第②句是：",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "外貌描寫"
+      },
+      {
+        "value": "B",
+        "label": "心理描寫"
+      },
+      {
+        "value": "C",
+        "label": "語言描寫"
+      }
+    ],
+    "explanation": "第②句直接寫出阿澄心裏的念頭，所以是心理描寫。同段的外貌和說話描寫，不影響對這一句的判斷。"
+  },
+  {
+    "id": "description-analysis",
+    "topic": "描寫手法",
+    "title": "從辨認走向分析",
+    "description": "分析效果，要把「手法、文字內容、人物特點」連起來。哪個答案最完整？\\n請點選最恰當的答案。",
+    "content": "同學的課本散落一地，阿晴蹲下來，逐本拾起，放回同學的書包。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "用了動作描寫，非常生動。"
+      },
+      {
+        "value": "B",
+        "label": "用了動作描寫，透過蹲下、拾起和放回課本，表現阿晴主動幫助同學。"
+      },
+      {
+        "value": "C",
+        "label": "用了心理描寫，寫出阿晴的想法。"
+      }
+    ],
+    "explanation": "B提供具體文字及相應性格表現；A只有籠統評語，C分類錯誤。"
+  },
+  {
+    "id": "description-complete",
+    "topic": "描寫手法",
+    "title": "你已完成`描寫手法`練習！",
+    "description": "你已練習辨認人物描寫、分辨直接與間接描寫，以及從文字證據分析效果。\\n閱讀課文時，先找描寫對象，再看題目要求的角度，最後用具體內容支持判斷。",
+    "image": "/img/congratulation.gif",
+    "interactive": false
+  }
+]

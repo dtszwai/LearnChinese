@@ -109,7 +109,6 @@
     "prefix": "校園和詩畫的相似點在於",
     "initialValue": "美",
     "suffix": "。",
-    "readOnly": true,
     "suggestedAnswer": ["美"],
     "applyRegex": true
   },
@@ -169,7 +168,6 @@
     "prefix": "這句話運用了比擬中的",
     "initialValue": "擬人",
     "suffix": "法。",
-    "readOnly": true,
     "suggestedAnswer": ["擬人"],
     "applyRegex": false
   },

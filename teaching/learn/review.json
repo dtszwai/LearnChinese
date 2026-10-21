@@ -1,0 +1,1198 @@
+{
+  "reviewedOn": "2026-10-20",
+  "status": "Source-checked author review; not an independent teacher endorsement.",
+  "lessons": {
+    "description": [
+      {
+        "stepId": "description-intro",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "描寫把人物或景物的特徵具體呈現出來。這一課先學人物的外貌、動作、語言、心理描寫，再分辨直接與間接描寫，最後嘗試結合文字分析效果。\\n每次只處理一個問題；遇到摘錄題，請按要求輸入原文。"
+      },
+      {
+        "stepId": "description-actions-demo",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "蹲下、拾起、放回均為人物的行動；主動幫忙的判斷有具體情境支持。",
+        "acceptedAnswers": [
+          "動作描寫"
+        ]
+      },
+      {
+        "stepId": "description-actions-try",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "題目限定四字及動作方向，避免「把傘推向妹妹」等不同摘錄範圍。",
+        "acceptedAnswers": [
+          "推向妹妹"
+        ],
+        "interaction": "passage"
+      },
+      {
+        "stepId": "description-actions-effect",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "推傘保護妹妹而讓自己淋濕，支持關懷的解讀；其餘選項沒有文字根據。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "description-appearance",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "例句只有可見的外在特徵；接受外貌與肖像的常見稱呼。",
+        "acceptedAnswers": [
+          "外貌描寫",
+          "外貌",
+          "肖像描寫"
+        ]
+      },
+      {
+        "stepId": "description-speech",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "題幹限定引號內實際說出的話，不要求分類整句的其他成分。",
+        "acceptedAnswers": [
+          "語言描寫",
+          "語言",
+          "對話描寫"
+        ]
+      },
+      {
+        "stepId": "description-thought",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "心想及其後內容直接呈現內心顧慮。",
+        "acceptedAnswers": [
+          "心理描寫",
+          "心理"
+        ]
+      },
+      {
+        "stepId": "description-speech-thought",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "A是實際說話，B直接寫盤算內容，C是動作。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "description-inference-trap",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "搓、摺、攤開是動作；能推測緊張不等於直接呈現心理活動。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "description-direct-indirect",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "分析描寫途徑時，可以分為直接與間接。\\n直接描寫：直接寫主要對象本身的外貌、動作、語言、心理等。\\n間接描寫（側面描寫）：透過其他人的反應、周圍事物等，呈現主要對象的特點。\\n這與「動作／語言／心理」是不同的分類角度；同一句可以既是動作描寫，又直接描寫主角。"
+      },
+      {
+        "stepId": "description-direct",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "句子直接呈現阿健本人的動作，不借旁人反應。",
+        "acceptedAnswers": [
+          "直接描寫",
+          "直接",
+          "正面描寫"
+        ]
+      },
+      {
+        "stepId": "description-indirect",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "相對演奏這個主要對象，觀眾安靜及不願離開是側面反應。",
+        "acceptedAnswers": [
+          "間接描寫",
+          "間接",
+          "側面描寫"
+        ]
+      },
+      {
+        "stepId": "description-indirect-evidence",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "選項B才包含能支持演奏效果的聽眾反應。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "description-senses",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "寫景也可以從視覺、聽覺、嗅覺、味覺、觸覺入手。\\n感官角度與直接／間接描寫也不是互相排斥的分類。作答前要看清題目問哪個角度。"
+      },
+      {
+        "stepId": "description-hearing",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "聲音是例句的重點。",
+        "acceptedAnswers": [
+          "聽覺",
+          "聽覺描寫"
+        ]
+      },
+      {
+        "stepId": "description-smell",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "香氣對應嗅覺；不因隨風飄來而判作動作描寫。",
+        "acceptedAnswers": [
+          "嗅覺",
+          "嗅覺描寫"
+        ]
+      },
+      {
+        "stepId": "description-mixed",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "明確指定句號，避免把整段多種手法硬判成一種。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "description-analysis",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "B提供具體文字及相應性格表現；A只有籠統評語，C分類錯誤。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "description-complete",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-description"
+        ],
+        "rationale": "回顧本單元概念；完成頁不另設作答。"
+      }
+    ],
+    "lyricism": [
+      {
+        "stepId": "lyricism-intro",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "抒情是透過文字表達感受。本課由直接抒情開始，再學習透過景物、事件和物件表達感情。\\n每次都要同時留意：藉甚麼表達，以及表達甚麼感情。"
+      },
+      {
+        "stepId": "lyricism-direct-demo",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "感激一詞直接表白對母親的情感。",
+        "acceptedAnswers": [
+          "直接抒情"
+        ]
+      },
+      {
+        "stepId": "lyricism-direct-try",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "限定兩字摘錄；答案在原句出現一次。",
+        "acceptedAnswers": [
+          "感激"
+        ],
+        "interaction": "passage"
+      },
+      {
+        "stepId": "lyricism-direct-without-exclamation",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "直接抒情不必使用感嘆號；其餘只交代物件或事情。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "lyricism-indirect",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "作者也可以把感情寄託在景物、事件或物件之中，讓讀者從描寫、敘述及上下文感受出來。這是間接抒情。\\n以下分別練習借景、借事和借物抒情。實際文章可以兼用多種方式。"
+      },
+      {
+        "stepId": "lyricism-scene-demo",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "離別背景和孤寂景物共同支持離愁；不是只因句中有景物。",
+        "acceptedAnswers": [
+          "借景抒情"
+        ]
+      },
+      {
+        "stepId": "lyricism-scene-evidence",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "限定形容燈的三字詞，排除空蕩蕩。",
+        "acceptedAnswers": [
+          "孤零零"
+        ],
+        "interaction": "passage"
+      },
+      {
+        "stepId": "lyricism-scene-effect",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "B把背景、景物特徵和情感聯繫起來；A、C屬無根據推斷。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "lyricism-scene-counterexample",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "不能僅因有景物名詞便推定情感。",
+        "acceptedAnswers": [
+          "C",
+          "c"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "lyricism-event",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "敘述照顧生病孩子的經歷，借往事流露對母親的感念。",
+        "acceptedAnswers": [
+          "借事抒情",
+          "借事"
+        ]
+      },
+      {
+        "stepId": "lyricism-event-evidence",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "B直接支持母親付出的時間及行動；C表明回憶而非照顧方式。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "lyricism-object",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "核心是祖父留下的鋼筆與磨痕，寄託懷念；不是敘述一段完整事件。",
+        "acceptedAnswers": [
+          "借物抒情",
+          "借物"
+        ]
+      },
+      {
+        "stepId": "lyricism-object-evidence",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "指定三字物件名稱，答案清楚。",
+        "acceptedAnswers": [
+          "舊鋼筆"
+        ],
+        "interaction": "passage"
+      },
+      {
+        "stepId": "lyricism-object-counterexample",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "B有祖父留下的背景及珍惜的反應；A僅介紹物件資料。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "lyricism-coexist",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "「母親那夜守在床邊，不斷替我換毛巾。母親，我永遠感激您！」\\n前句可以透過照顧的事件流露感情；後句直接表白感激。借事抒情與直接抒情可以並用。\\n作答時先看題目指定的句子或部分，不必把整段硬歸入唯一類別。"
+      },
+      {
+        "stepId": "lyricism-mixed",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "指定末句明說感激；段落前部的敘事不改變末句的方式。",
+        "acceptedAnswers": [
+          "直接抒情",
+          "直接",
+          "直抒胸臆"
+        ]
+      },
+      {
+        "stepId": "lyricism-avoid-formula",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "保留無法使用的遺物，結合人物關係支持懷念；不把物件象徵固定化。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "lyricism-complete",
+        "sources": [
+          "edb-learning",
+          "edb-lyricism",
+          "edb-description",
+          "hku-expressive"
+        ],
+        "rationale": "回顧本單元概念；完成頁不另設作答。"
+      }
+    ],
+    "narrative": [
+      {
+        "stepId": "narrative-intro",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "事件發生的先後，與作者寫出來的先後，可以不同。本課先練習順敘、倒敘、插敘，再學過渡、照應、伏筆與鋪墊。\\n判斷記敘次序要看一段或全文的安排，不能只看「昨天」「回想」等字眼。"
+      },
+      {
+        "stepId": "narrative-chronological-demo",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "三個階段按時間先後排列。",
+        "acceptedAnswers": [
+          "順敘"
+        ]
+      },
+      {
+        "stepId": "narrative-chronological-try",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "先借書，再回家吃飯，最後閱讀。把事件依發生次序寫出來，就是順敘。",
+        "acceptedAnswers": [
+          "圖書館借書 → 乘巴士回家 → 晚飯後閱讀"
+        ],
+        "interaction": "sequence"
+      },
+      {
+        "stepId": "narrative-flashback-demo",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "明確提供全文安排：結果在先，再回起點順述，排除只憑回憶一詞判斷。",
+        "acceptedAnswers": [
+          "倒敘"
+        ]
+      },
+      {
+        "stepId": "narrative-flashback-effect",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "作用具體連繫先展示結果及後敘經過。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "narrative-interpolation",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "插敘在敘述主線時，暫時插入相關的往事或資料，再接回原來的敘述。\\n要辨認它，找三部分：主線 → 插入內容 → 返回主線。插入內容可以交代人物背景或事件原因。"
+      },
+      {
+        "stepId": "narrative-interpolation-try",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "有明確主線、中斷及接回，符合插敘。",
+        "acceptedAnswers": [
+          "插敘",
+          "插敘法",
+          "插敍"
+        ]
+      },
+      {
+        "stepId": "narrative-return-to-main",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "插敘中途暫離搬家的主線，補充圍巾的來歷，再接回今天的行動。故事發生的時間順序與作者敘述的順序並不相同。",
+        "acceptedAnswers": [
+          "今天看見圍巾 → 回想祖母織圍巾 → 返回今天繼續收拾"
+        ],
+        "interaction": "sequence"
+      },
+      {
+        "stepId": "narrative-past-is-not-flashback",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "故事雖發生在過去，敘述仍依次排列，沒有先寫結果或中途插入。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "narrative-compare-order",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "區別依據是內容在整體敘述中的位置和是否返回既有主線。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "narrative-structure",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "除了先後次序，也要看段落怎樣相連。\\n過渡銜接上下文；照應讓前後內容互相呼應；伏筆預先留下與後文有關的線索；鋪墊為後文的重要內容作準備。\\n這些作用可能重疊，分析時要交代具體的前後關係。"
+      },
+      {
+        "stepId": "narrative-transition",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "外觀連上段、關懷領下段，不只因句子位於中間便判過渡。",
+        "acceptedAnswers": [
+          "承上啟下",
+          "過渡",
+          "承上啟下的過渡"
+        ]
+      },
+      {
+        "stepId": "narrative-transition-analysis",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "要求連繫上下段內容，避免套語。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "narrative-echo",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "明信片承諾前提出、後兌現，有內容關係而非僅重複詞語。",
+        "acceptedAnswers": [
+          "首尾照應",
+          "首尾呼應",
+          "照應",
+          "前後照應"
+        ]
+      },
+      {
+        "stepId": "narrative-foreshadow-demo",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "備用鑰匙是後文解決入屋困境的具體線索；亦具有前後照應關係。",
+        "acceptedAnswers": [
+          "伏筆"
+        ]
+      },
+      {
+        "stepId": "narrative-foreshadow-try",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "四字物件與後文照路明確對應。",
+        "acceptedAnswers": [
+          "小型電筒"
+        ],
+        "interaction": "passage"
+      },
+      {
+        "stepId": "narrative-preparation-demo",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "前面累積努力及挫敗，為後文強烈喜悅提供情感基礎。",
+        "acceptedAnswers": [
+          "鋪墊"
+        ]
+      },
+      {
+        "stepId": "narrative-overlap",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "避免把有爭議的伏筆／鋪墊界線當作絕對二選一；以具體關係分析。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "narrative-integrated",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "A說清前後情節和情感關係；B、C只靠表面位置或詞語。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "narrative-complete",
+        "sources": [
+          "edb-learning",
+          "hku-narrative",
+          "edb-yueyang"
+        ],
+        "rationale": "回顧本單元概念；完成頁不另設作答。"
+      }
+    ],
+    "argumentation": [
+      {
+        "stepId": "argumentation-intro",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "議論要提出觀點，並用理由或材料支持。本課依次學習論點、論據、論證，再辨析常見論證手法及其作用。\\n本課標明「自擬情境」的事例只供分析，不是實際調查結果。"
+      },
+      {
+        "stepId": "argumentation-claim-demo",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "首句提出主張，後句提供理由。",
+        "acceptedAnswers": [
+          "論點"
+        ]
+      },
+      {
+        "stepId": "argumentation-claim-try",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "①提出學校應怎樣做；②③解釋原因。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "argumentation-evidence",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "具體事故記錄支持改善措施的必要性；自擬標示避免虛構統計冒充事實。",
+        "acceptedAnswers": [
+          "論據"
+        ]
+      },
+      {
+        "stepId": "argumentation-reasoning",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "論證是運用論據說明論點的過程。只有材料還不夠，還要解釋材料怎樣支持主張。\\n例如：積水旁有人滑倒 → 存在滑倒風險 → 有需要改善防滑措施。"
+      },
+      {
+        "stepId": "argumentation-relevance",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "A反映座位需求，B、C與增設座位缺乏直接關係。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "argumentation-example-demo",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "事例用來支持閱讀解決問題的觀點；明示虛構練習情境，不當實證。",
+        "acceptedAnswers": [
+          "舉例論證"
+        ]
+      },
+      {
+        "stepId": "argumentation-example-try",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "一組完成活動的具體情境支持合作的益處。",
+        "acceptedAnswers": [
+          "舉例論證",
+          "例證法",
+          "例證"
+        ]
+      },
+      {
+        "stepId": "argumentation-quotation-demo",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "古典引文支持學思結合；引文為公版原典，解說為自撰。",
+        "acceptedAnswers": [
+          "引用論證"
+        ]
+      },
+      {
+        "stepId": "argumentation-quotation-trap",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "A是記錄對話；B把引語用作支持主張的道理。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "argumentation-contrast-demo",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "檢討與拒絕面對錯誤的相反做法和後果，支持反省的價值。",
+        "acceptedAnswers": [
+          "對比論證"
+        ]
+      },
+      {
+        "stepId": "argumentation-contrast-effect",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "由兩種態度及後果推出反省的價值，不擴大為絕對斷言。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "argumentation-analogy-demo",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "建屋地基與學習基本概念在支撐後續發展上相似。",
+        "acceptedAnswers": [
+          "比喻論證"
+        ]
+      },
+      {
+        "stepId": "argumentation-analogy-link",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "要求理解喻體與論點的關係，避免只記名稱。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "argumentation-explain-or-argue",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "A列舉學會種類；B用合唱活動說明合作的學習機會以支持主張。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "argumentation-limits",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "避免從單一自擬事例作過度概括，教學生評估論據力量。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "argumentation-integrated",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "完整分析需說明引文如何支持論點。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "argumentation-complete",
+        "sources": [
+          "edb-learning",
+          "edb-argumentation",
+          "hku-argumentation"
+        ],
+        "rationale": "回顧本單元概念；完成頁不另設作答。"
+      }
+    ],
+    "classical-chinese": [
+      {
+        "stepId": "classical-chinese-intro",
+        "sources": [
+          "edb-learning",
+          "edb-zhongyong",
+          "edb-yueyang"
+        ],
+        "rationale": "文言閱讀要把字詞放回句子理解。本課借〈傷仲永〉和〈岳陽樓記〉的短句，練習單音詞、一詞多義、古今異義、虛詞和省略成分。\\n不需要先背熟兩篇課文；每題都提供所需語境。"
+      },
+      {
+        "stepId": "classical-chinese-single-demo",
+        "sources": [
+          "edb-zhongyong"
+        ],
+        "rationale": "依教育局〈傷仲永〉注釋7，書在句中作動詞。",
+        "acceptedAnswers": [
+          "書寫"
+        ]
+      },
+      {
+        "stepId": "classical-chinese-single-try",
+        "sources": [
+          "edb-zhongyong"
+        ],
+        "rationale": "教育局注釋11：立是立即，就是完成。",
+        "acceptedAnswers": [
+          "完成",
+          "寫成",
+          "作成"
+        ]
+      },
+      {
+        "stepId": "classical-chinese-single-trap",
+        "sources": [
+          "edb-zhongyong"
+        ],
+        "rationale": "用後面的詩四句判斷書為動詞。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "classical-chinese-ancient-modern",
+        "sources": [
+          "edb-zhongyong",
+          "edb-yueyang"
+        ],
+        "rationale": "有些字詞的古代用法，與今天常用的意思不同。\\n例如〈傷仲永〉的「稍稍」指逐漸；〈岳陽樓記〉的「去國懷鄉」，「去」指離開，「國」在這裏指國都。不能直接套用今天「去某地」的意思。"
+      },
+      {
+        "stepId": "classical-chinese-gradually",
+        "sources": [
+          "edb-zhongyong"
+        ],
+        "rationale": "教育局〈傷仲永〉注釋14；不是稍微。",
+        "acceptedAnswers": [
+          "逐漸",
+          "漸漸"
+        ]
+      },
+      {
+        "stepId": "classical-chinese-leave",
+        "sources": [
+          "edb-yueyang"
+        ],
+        "rationale": "教育局〈岳陽樓記〉注釋22：去國為離開國都。",
+        "acceptedAnswers": [
+          "離開",
+          "離去"
+        ]
+      },
+      {
+        "stepId": "classical-chinese-country",
+        "sources": [
+          "edb-yueyang"
+        ],
+        "rationale": "題目提供被貶離京語境並依注釋22，避免把國一律譯為國家。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "classical-chinese-polysemy",
+        "sources": [
+          "edb-yueyang"
+        ],
+        "rationale": "同一個字可因語境而有不同意思。比較〈岳陽樓記〉中的「觀」：\\n「予觀夫巴陵勝狀」：看、觀賞，是動作。\\n「此則岳陽樓之大觀也」：景象，這裏的「大觀」指壯觀的景象。\\n解字時先看它與前後哪些字組合，不要只背一個固定答案。"
+      },
+      {
+        "stepId": "classical-chinese-polysemy-try",
+        "sources": [
+          "edb-yueyang"
+        ],
+        "rationale": "依教育局〈岳陽樓記〉注釋12，名詞大觀與動詞予觀的用法不同。",
+        "acceptedAnswers": [
+          "景象",
+          "景觀",
+          "景色"
+        ]
+      },
+      {
+        "stepId": "classical-chinese-zhi-demo",
+        "sources": [
+          "edb-zhongyong"
+        ],
+        "rationale": "之承接前文的書寫工具；不是泛指仲永。",
+        "acceptedAnswers": [
+          "書具"
+        ]
+      },
+      {
+        "stepId": "classical-chinese-zhi-try",
+        "sources": [
+          "edb-zhongyong"
+        ],
+        "rationale": "與之為給他，依上下文指仲永；與上題所指事物不同。",
+        "acceptedAnswers": [
+          "仲永",
+          "方仲永"
+        ]
+      },
+      {
+        "stepId": "classical-chinese-zhi-structural",
+        "sources": [
+          "edb-yueyang"
+        ],
+        "rationale": "此處之為結構助詞，不能解作代詞他。",
+        "acceptedAnswers": [
+          "的"
+        ]
+      },
+      {
+        "stepId": "classical-chinese-zhi-compare",
+        "sources": [
+          "edb-zhongyong",
+          "edb-yueyang"
+        ],
+        "rationale": "分辨代詞與結構助詞，不宣稱已涵蓋之的全部用法。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "classical-chinese-qi",
+        "sources": [
+          "edb-yueyang"
+        ],
+        "rationale": "其上依前文指岳陽樓上，不是詩賦上。",
+        "acceptedAnswers": [
+          "岳陽樓",
+          "樓",
+          "樓宇"
+        ]
+      },
+      {
+        "stepId": "classical-chinese-yi",
+        "sources": [
+          "edb-yueyang"
+        ],
+        "rationale": "依教育局注釋36，這裏表原因；不概括以的所有用法。",
+        "acceptedAnswers": [
+          "因為",
+          "因",
+          "由於"
+        ]
+      },
+      {
+        "stepId": "classical-chinese-omission",
+        "sources": [
+          "edb-learning",
+          "edb-zhongyong"
+        ],
+        "rationale": "文言有時省略已可從語境知道的成分。翻譯時，可以補出來，讓意思清楚。\\n〈傷仲永〉先寫王安石在舅家看見十二三歲的仲永，接着寫「令作詩」。根據上下文，可理解為王安石讓仲永作詩。"
+      },
+      {
+        "stepId": "classical-chinese-omission-try",
+        "sources": [
+          "edb-zhongyong"
+        ],
+        "rationale": "根據見之的指代和前文人物補足，不按最近名詞舅家猜測。",
+        "acceptedAnswers": [
+          "仲永",
+          "方仲永"
+        ]
+      },
+      {
+        "stepId": "classical-chinese-translate",
+        "sources": [
+          "edb-zhongyong"
+        ],
+        "rationale": "整合自是、指物、立、就的含義，避免逐字套現代義。",
+        "acceptedAnswers": [
+          "A",
+          "a"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "classical-chinese-transfer",
+        "sources": [
+          "edb-learning",
+          "edb-zhongyong",
+          "edb-yueyang"
+        ],
+        "rationale": "總結語境閱讀策略，承認常見虛詞多義。",
+        "acceptedAnswers": [
+          "B",
+          "b"
+        ],
+        "interaction": "choice"
+      },
+      {
+        "stepId": "classical-chinese-complete",
+        "sources": [
+          "edb-learning",
+          "edb-zhongyong",
+          "edb-yueyang"
+        ],
+        "rationale": "回顧本單元概念；完成頁不另設作答。"
+      }
+    ]
+  }
+}

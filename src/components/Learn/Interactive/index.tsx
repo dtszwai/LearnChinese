@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Hint from '../Hint';
 import tagWrapper from '@site/src/utils/tagWrapper';
-import checkRegex from '../checkRegex';
+import checkRegex, { findAnswer, getHighlightRegex } from '../checkRegex';
 import cx from 'classnames';
 import styles from './index.module.scss';
 
@@ -15,36 +15,24 @@ export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) =>
 
   const applyRegex = () => {
     if (data.applyRegex === false) {
-      const isCorrect = data.suggestedAnswer.includes(inputValue);
+      const isCorrect = findAnswer(data.suggestedAnswer, inputValue) !== undefined;
       setMatch(isCorrect);
       setSuccess(isCorrect);
       onChangeSuccess(isCorrect);
-      setError(isCorrect);
+      setError(!isCorrect);
       return;
     }
-    const { isSuccess, isMatch, err } = checkRegex(data, inputValue);
-
-    if (err) {
-      setError(Boolean(err));
-      return;
-    }
+    const { isSuccess, isMatch } = checkRegex(data, inputValue);
     setMatch(isMatch);
     setSuccess(isSuccess);
     onChangeSuccess(isSuccess);
     setError(!(isSuccess || isMatch));
-    setContent(
-      tagWrapper({
+    const highlightRegex = getHighlightRegex(data, inputValue);
+    setContent(highlightRegex ? tagWrapper({
         value: data.content,
-        regex: inputValue ? new RegExp(`(${inputValue})`, 'gmi') : null,
+        regex: highlightRegex,
         attributes: { class: styles.ResultTag },
-      }),
-    );
-  };
-
-  const handleFocus = (e) => {
-    if (e.keyCode !== 9) return; // Tab
-    e.preventDefault();
-    inputRef?.current?.focus();
+      }) : data.content);
   };
 
   const resetStep = () => {
@@ -58,13 +46,11 @@ export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) =>
 
   useEffect(() => {
     resetStep();
-    addEventListener('keydown', handleFocus);
     const isCompletedStep = step.currentStep < step.lastStep;
     const currentRegex = isCompletedStep ? data.suggestedAnswer[0] : data.initialValue;
 
     setInputValue(currentRegex || '');
     inputRef?.current?.blur();
-    return () => window.removeEventListener('keydown', handleFocus);
   }, [step]);
 
   useEffect(() => {
@@ -76,14 +62,14 @@ export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) =>
   return (
     <div
       className={cx({
-        [styles.Error]: error,
+        [styles.Error]: Boolean(inputValue && error),
         [styles.Match]: match,
         [styles.Success]: success,
         [styles.ParentError]: parentError,
       })}
     >
-      <div className={styles.BlockContent} data-title={`內容`} dangerouslySetInnerHTML={{ __html: readableContent }} />
-      <div className={styles.BlockRegex} data-title={`答案`}>
+      <div className={styles.BlockContent} data-title='內容' dangerouslySetInnerHTML={{ __html: readableContent }} />
+      <div className={styles.BlockRegex} data-title='答案'>
         {!data.noHint && <Hint answer={data.suggestedAnswer} step={step} />}
         <div className={styles.InputWrapper}>
           {data.prefix}
@@ -91,8 +77,10 @@ export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) =>
             ref={inputRef}
             type='text'
             className={styles.Input}
-            style={{ width: Math.max(inputValue.length * 16, 60, data?.placeholder?.length * 16 || 0) }}
-            readOnly={data.readOnly}
+            style={{ width: `calc(${Math.max([...inputValue].length, data?.placeholder?.length || 0, 3)} * 1.1em + 12px)` }}
+            aria-label='你的答案'
+            aria-invalid={Boolean(inputValue && error)}
+            autoComplete='off'
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder={data?.placeholder}

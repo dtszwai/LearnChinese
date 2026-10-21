@@ -4,5 +4,40 @@
     "slug": "rhetoric",
     "title": "修辭手法",
     "description": "學習比喻、借代和比擬修辭手法。"
+  },
+  "description": {
+    "published": false,
+    "key": "learn.description",
+    "slug": "description",
+    "title": "描寫手法",
+    "description": "從人物描寫到直接、間接描寫，學習找證據、析效果。"
+  },
+  "lyricism": {
+    "published": false,
+    "key": "learn.lyricism",
+    "slug": "lyricism",
+    "title": "抒情手法",
+    "description": "逐步認識直接抒情、借景、借事和借物抒情。"
+  },
+  "narrative": {
+    "published": false,
+    "key": "learn.narrative",
+    "slug": "narrative",
+    "title": "記敘與篇章結構",
+    "description": "辨析順敘、倒敘、插敘，以及過渡、照應、伏筆和鋪墊。"
+  },
+  "argumentation": {
+    "published": false,
+    "key": "learn.argumentation",
+    "slug": "argumentation",
+    "title": "論證手法",
+    "description": "由論點與論據入手，學習常見論證手法及其作用。"
+  },
+  "classical-chinese": {
+    "published": false,
+    "key": "learn.classical-chinese",
+    "slug": "classical-chinese",
+    "title": "文言閱讀入門",
+    "description": "結合篇章短句，練習字詞、虛詞指代和省略成分。"
   }
 }

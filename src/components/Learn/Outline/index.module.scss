@@ -1,0 +1,77 @@
+// Match the supplied RegexLearn geometry; use only this site's neutral and primary colors.
+.Viewport { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 10; }
+.Outline {
+  position: absolute; top: 50%; transform: translateY(-50%); width: 224px;
+  font-size: 12px; line-height: 16px; user-select: none;
+  transition: right .15s cubic-bezier(.4, 0, .2, 1);
+}
+.Open { right: 0; }
+.Closed { right: -244px; }
+.Panel {
+  box-sizing: border-box; width: 224px; height: 360px; max-height: calc(100dvh - 160px);
+  position: relative; padding: 40px 0 40px 20px; pointer-events: auto;
+  background: var(--ifm-code-background); border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px; box-shadow: 0 25px 50px -12px #0000001f;
+  overflow-y: scroll; overflow-x: hidden; scrollbar-width: none; scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  &::-webkit-scrollbar { display: none; }
+  ol { list-style: none; margin: 0; padding: 0; }
+  li {
+    position: relative; overflow: hidden; max-width: 80%; margin: 0; padding: 0 0 24px;
+    &::after {
+      content: ''; display: block; position: absolute; right: 7px; top: 32px;
+      width: 2px; height: 32px; border-radius: 2px; background: var(--ifm-color-emphasis-300);
+    }
+    &:last-child { padding-bottom: 0; &::after { display: none; } }
+  }
+  button {
+    box-sizing: border-box; width: 100%; min-width: 0; height: 32px; padding: 0; margin: 0;
+    display: flex; flex-direction: row-reverse; align-items: center;
+    background: none; border: 0; border-radius: 0; box-shadow: none;
+    color: var(--ifm-font-color-base); font: inherit; text-align: right; cursor: pointer;
+    &:hover:not(:disabled) { background: var(--ifm-color-emphasis-200); }
+    &:focus-visible { outline: 1px solid var(--ifm-color-primary); outline-offset: -1px; }
+    &:disabled { color: #606673; cursor: not-allowed; }
+    &[aria-current] {
+      color: color-mix(in srgb, var(--ifm-color-primary) 80%, #000);
+      background: color-mix(in srgb, var(--ifm-color-primary) 8%, var(--ifm-code-background));
+      font-weight: 700;
+      .ActiveIcon { color: inherit; }
+    }
+    &[aria-current] .Title { padding-right: 8px; }
+  }
+}
+.Title {
+  min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  padding: 8px 0; transition: color .15s cubic-bezier(.4, 0, .2, 1);
+}
+.Term { font-family: var(--ifm-font-family-monospace); font-size: 10px; padding: 2px 4px; border-radius: 6px; background: var(--ifm-color-emphasis-200); color: var(--ifm-color-primary); }
+.Icon, .ActiveIcon { display: inline-block; width: 16px; height: 16px; margin-left: 8px; flex-shrink: 0; }
+.Icon { color: #606673; }
+.ActiveIcon { color: var(--ifm-color-primary); }
+.FadeTop, .FadeBottom {
+  position: absolute; left: 21px; width: 288px; height: 40px;
+  pointer-events: none; z-index: 2;
+}
+.FadeTop { top: 0; background: linear-gradient(var(--ifm-code-background), transparent); }
+.FadeBottom { bottom: 0; background: linear-gradient(to top, var(--ifm-code-background), transparent); }
+.Toggle {
+  position: absolute; top: 50%; right: -40px; transform: translateX(-50%);
+  width: 40px; height: 40px; padding: 0; margin: 0; border: 0; border-radius: 50%;
+  display: flex; align-items: center; background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-font-color-base); cursor: pointer; pointer-events: auto;
+  transition: right .05s cubic-bezier(.4, 0, .2, 1), background-color .15s;
+  svg { display: inline-block; width: 15px; height: 15px; margin: auto auto auto 4px; transform: rotate(180deg); }
+  &:hover { background: var(--ifm-color-emphasis-300); }
+  &:focus-visible { outline: 2px solid var(--ifm-color-primary); outline-offset: -2px; }
+}
+.Closed .Toggle {
+  right: 204px; background: var(--ifm-color-primary); color: #fff;
+  svg { transform: none; }
+  &:hover { background: var(--ifm-color-primary-light); }
+}
+@media (max-width: 1099px) { .Viewport { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .Outline, .Toggle, .Title { transition: none; }
+  .Panel { scroll-behavior: auto; }
+}

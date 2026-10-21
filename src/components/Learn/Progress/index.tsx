@@ -10,7 +10,7 @@ interface Props {
 
 const Progress = ({ current, total }: Props) => (
   <div className={styles.Progress}>
-    <div className={styles.ProgressBar}>
+    <div className={styles.ProgressBar} role='progressbar' aria-label='目前學習步驟' aria-valuemin={1} aria-valuemax={total} aria-valuenow={current}>
       <div className={styles.ProgressLine} style={{ width: `${toPercent(current, total)}%` }} />
     </div>
     <div className={styles.ProgressStatus}>{`${current} / ${total}`}</div>

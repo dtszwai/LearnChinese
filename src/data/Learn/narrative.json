@@ -1,0 +1,424 @@
+[
+  {
+    "id": "narrative-intro",
+    "topic": "記敘與篇章結構",
+    "title": "故事可以怎樣安排？",
+    "description": "事件發生的先後，與作者寫出來的先後，可以不同。本課先練習`順敘、倒敘、插敘`，再學`過渡、照應、伏筆與鋪墊`。\\n判斷記敘次序要看一段或全文的安排，不能只看「昨天」「回想」等字眼。",
+    "interactive": false
+  },
+  {
+    "id": "narrative-chronological-demo",
+    "topic": "記敘與篇章結構",
+    "title": "順敘：按發生次序寫",
+    "description": "`順敘`按事件發生、發展的先後敘述。下例先報名，再練習，最後參賽。\\n答案已預填，你可以在答案欄修改；答錯或清空時，須改正後才可進入下一題。",
+    "content": "九月，我報名參加朗誦比賽。十月，我每天練習。十一月，我第一次踏上比賽台。",
+    "prefix": "這種安排是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "順敘"
+    ],
+    "applyRegex": false,
+    "initialValue": "順敘"
+  },
+  {
+    "id": "narrative-chronological-try",
+    "topic": "記敘與篇章結構",
+    "title": "排一排：按事件發生次序",
+    "description": "順敘依事件發生的先後寫。請依照下列時間線索，排列三件事。",
+    "content": "同一天放學後的經過：",
+    "suggestedAnswer": [
+      "圖書館借書 → 乘巴士回家 → 晚飯後閱讀"
+    ],
+    "applyRegex": false,
+    "options": [
+      {
+        "value": "dinner",
+        "label": "晚飯後，讀完借來的書的第一章。"
+      },
+      {
+        "value": "library",
+        "label": "放學後，先到圖書館借書。"
+      },
+      {
+        "value": "home",
+        "label": "借書後，乘巴士回家吃晚飯。"
+      }
+    ],
+    "correctOrder": [
+      "library",
+      "home",
+      "dinner"
+    ],
+    "explanation": "先借書，再回家吃飯，最後閱讀。把事件依發生次序寫出來，就是順敘。",
+    "interaction": "sequence"
+  },
+  {
+    "id": "narrative-flashback-demo",
+    "topic": "記敘與篇章結構",
+    "title": "倒敘：先亮出結果",
+    "description": "`倒敘`先寫結果或某個突出的片段，再回到較早的起點交代經過。它可以突出重要場面，或使讀者想知道事情如何發展至此。",
+    "content": "文章開頭：我捧着獎盃，想起第一次練習時的狼狽。\n接着全文從三個月前報名寫起，依次敘述練習、失敗和比賽，最後回到領獎的一刻。",
+    "prefix": "全文主要採用",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "倒敘"
+    ],
+    "applyRegex": false,
+    "initialValue": "倒敘"
+  },
+  {
+    "id": "narrative-flashback-effect",
+    "topic": "記敘與篇章結構",
+    "title": "試一試：為甚麼先寫領獎？",
+    "description": "結合這篇文章的安排，哪項說法最恰當？\\n請點選最恰當的答案。",
+    "content": "開頭先寫捧盃，之後交代從失敗到獲獎的經過。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "把練習的經過完全省去。"
+      },
+      {
+        "value": "B",
+        "label": "先突出獲獎的一刻，引起讀者了解奮鬥經過的興趣。"
+      },
+      {
+        "value": "C",
+        "label": "表示所有事情都在同一天發生。"
+      }
+    ],
+    "explanation": "先展示領獎的一刻，能突出重要場面，也讓讀者想知道主角如何從失敗走到成功。後面的經過仍然會交代。"
+  },
+  {
+    "id": "narrative-interpolation",
+    "topic": "記敘與篇章結構",
+    "title": "插敘：暫離主線，再接回來",
+    "description": "`插敘`在敘述主線時，暫時插入相關的往事或資料，再接回原來的敘述。\\n要辨認它，找三部分：`主線 → 插入內容 → 返回主線`。插入內容可以交代人物背景或事件原因。",
+    "interactive": false
+  },
+  {
+    "id": "narrative-interpolation-try",
+    "topic": "記敘與篇章結構",
+    "title": "試一試：找出記敘方法",
+    "description": "主線是「今天搬家」。判斷中間插入童年往事的安排。",
+    "content": "① 今天搬家，我打開木箱，看見一條舊圍巾。\n② 小時候，祖母怕我受寒，花了幾晚替我織好這條圍巾。\n③ 門外的搬運聲把我拉回眼前，我把圍巾放進行李，繼續收拾。",
+    "prefix": "第②部分相對今天搬家的主線，是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "插敘",
+      "插敘法",
+      "插敍"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "narrative-return-to-main",
+    "topic": "記敘與篇章結構",
+    "title": "排一排：插敘怎樣接回主線？",
+    "description": "請排列作者寫出各片段的次序：先開始「今天搬家」的主線，中間插入往事，再返回搬家。這題問的是敘述次序。",
+    "content": "依「主線 → 插入往事 → 返回主線」排列：",
+    "suggestedAnswer": [
+      "今天看見圍巾 → 回想祖母織圍巾 → 返回今天繼續收拾"
+    ],
+    "applyRegex": false,
+    "options": [
+      {
+        "value": "memory",
+        "label": "回想小時候，祖母花了幾晚織這條圍巾。"
+      },
+      {
+        "value": "return",
+        "label": "搬運工的叫聲把我拉回眼前，我繼續收拾。"
+      },
+      {
+        "value": "main",
+        "label": "今天搬家，我在木箱裏看見一條舊圍巾。"
+      }
+    ],
+    "correctOrder": [
+      "main",
+      "memory",
+      "return"
+    ],
+    "explanation": "插敘中途暫離搬家的主線，補充圍巾的來歷，再接回今天的行動。故事發生的時間順序與作者敘述的順序並不相同。",
+    "interaction": "sequence"
+  },
+  {
+    "id": "narrative-past-is-not-flashback",
+    "topic": "記敘與篇章結構",
+    "title": "易混淆：寫往事就是倒敘？",
+    "description": "請根據整段的排列判斷。\\n請點選最恰當的答案。",
+    "content": "去年暑假，我先到外婆家住了三天，然後跟表哥去郊遊，最後乘船回家。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "順敘"
+      },
+      {
+        "value": "B",
+        "label": "倒敘"
+      },
+      {
+        "value": "C",
+        "label": "插敘"
+      }
+    ],
+    "explanation": "故事雖發生在過去，敘述仍依次排列，沒有先寫結果或中途插入。"
+  },
+  {
+    "id": "narrative-compare-order",
+    "topic": "記敘與篇章結構",
+    "title": "比較：倒敘與插敘",
+    "description": "哪項最能區別這兩個例子？\\n請點選最恰當的答案。",
+    "content": "甲：開頭先寫領獎，再從報名開始交代整個比賽經過。\n乙：寫搬家時插入祖母織圍巾的往事，之後繼續寫搬家。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "甲倒敘；乙插敘。"
+      },
+      {
+        "value": "B",
+        "label": "甲插敘；乙倒敘。"
+      },
+      {
+        "value": "C",
+        "label": "只要涉及往事，兩者都是倒敘。"
+      }
+    ],
+    "explanation": "區別依據是內容在整體敘述中的位置和是否返回既有主線。"
+  },
+  {
+    "id": "narrative-structure",
+    "topic": "記敘與篇章結構",
+    "title": "從次序走向結構",
+    "description": "除了先後次序，也要看段落怎樣相連。\\n`過渡`銜接上下文；`照應`讓前後內容互相呼應；`伏筆`預先留下與後文有關的線索；`鋪墊`為後文的重要內容作準備。\\n這些作用可能重疊，分析時要交代具體的前後關係。",
+    "interactive": false
+  },
+  {
+    "id": "narrative-transition",
+    "topic": "記敘與篇章結構",
+    "title": "過渡：連接上下文",
+    "description": "上段寫校舍的外觀，下段寫老師的關懷。中間這句既承接上文，又引出下文。請填其結構作用。",
+    "content": "校舍的面貌固然難忘，老師給我的關懷更一直留在心中。",
+    "prefix": "這句起",
+    "suffix": "的作用。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "承上啟下",
+      "過渡",
+      "承上啟下的過渡"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "narrative-transition-analysis",
+    "topic": "記敘與篇章結構",
+    "title": "試一試：說清承甚麼、啟甚麼",
+    "description": "哪個分析具體說明了這句的過渡作用？\\n請點選最恰當的答案。",
+    "content": "校舍的面貌固然難忘，老師給我的關懷更一直留在心中。",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "承接校舍外觀的描寫，引出老師關懷的往事。"
+      },
+      {
+        "value": "B",
+        "label": "在中間出現的句子必定承上啟下。"
+      },
+      {
+        "value": "C",
+        "label": "句子很長，因此連接上下文。"
+      }
+    ],
+    "explanation": "「校舍的面貌」承接上段的外觀描寫，「老師給我的關懷」引出下段的往事，所以這句能承上啟下。"
+  },
+  {
+    "id": "narrative-echo",
+    "topic": "記敘與篇章結構",
+    "title": "照應：前後互相呼應",
+    "description": "以下是同一篇文章的開頭和結尾。結尾再次回應開頭的承諾，屬於甚麼結構手法？",
+    "content": "開頭：出發前，我答應妹妹，一定寄一張明信片給她。\n結尾：回程前，我把寫滿見聞的明信片投進郵箱，終於兌現了對妹妹的承諾。",
+    "prefix": "這是",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "首尾照應",
+      "首尾呼應",
+      "照應",
+      "前後照應"
+    ],
+    "applyRegex": false
+  },
+  {
+    "id": "narrative-foreshadow-demo",
+    "topic": "記敘與篇章結構",
+    "title": "伏筆：前面的線索，後面的發展",
+    "description": "伏筆是作者預先留下的線索，後文發展使它的意義變得清楚。要連同後文一起判斷。",
+    "content": "前文：出門前，阿成把一把備用鑰匙塞進書包夾層。\n後文：大門被風吹關，大家無法入屋，阿成從夾層取出鑰匙開門。",
+    "prefix": "前文的備用鑰匙，為後文開門埋下",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "伏筆"
+    ],
+    "applyRegex": false,
+    "initialValue": "伏筆"
+  },
+  {
+    "id": "narrative-foreshadow-try",
+    "topic": "記敘與篇章結構",
+    "title": "試一試：找出伏筆的線索",
+    "description": "請在原句中點選前文中四字物件名稱，指出後來發揮作用的線索。",
+    "content": "前文：他在背囊放了一支小型電筒。\n後文：山路天黑了，他取出電筒照路，帶大家走回營地。",
+    "prefix": "這個線索是",
+    "suffix": "。",
+    "placeholder": "摘錄原文",
+    "suggestedAnswer": [
+      "小型電筒"
+    ],
+    "applyRegex": false,
+    "interaction": "passage",
+    "options": [
+      {
+        "value": "背囊",
+        "label": "背囊"
+      },
+      {
+        "value": "小型電筒",
+        "label": "小型電筒"
+      },
+      {
+        "value": "山路",
+        "label": "山路"
+      },
+      {
+        "value": "營地",
+        "label": "營地"
+      }
+    ],
+    "explanation": "前文先交代帶了電筒，後文才讓它在天黑時發揮作用。前面的細節為後面的發展留下線索。"
+  },
+  {
+    "id": "narrative-preparation-demo",
+    "topic": "記敘與篇章結構",
+    "title": "鋪墊：為重要場面作準備",
+    "description": "鋪墊可以先交代背景、渲染氣氛或累積情節，使後文的發展或感情更容易理解。",
+    "content": "作者先寫全班多次練習、屢次失敗，以及大家互相鼓勵；接着詳寫表演成功後眾人相擁而泣的場面。",
+    "prefix": "前面累積的艱辛經歷，為後文的感動作了",
+    "suffix": "。",
+    "placeholder": "請填答案",
+    "suggestedAnswer": [
+      "鋪墊"
+    ],
+    "applyRegex": false,
+    "initialValue": "鋪墊"
+  },
+  {
+    "id": "narrative-overlap",
+    "topic": "記敘與篇章結構",
+    "title": "辨析：不要只靠篇幅分類",
+    "description": "關於伏筆和鋪墊，哪項說法較恰當？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "B",
+      "b"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "只有短句能作伏筆，只有長段能作鋪墊。"
+      },
+      {
+        "value": "B",
+        "label": "先看前文怎樣預示或準備後文；同一處文字可能兼有相關作用。"
+      },
+      {
+        "value": "C",
+        "label": "任何放在開頭的文字都是伏筆。"
+      }
+    ],
+    "explanation": "伏筆着重預先留下與後文發展有關的線索；鋪墊着重為後文作準備。兩者可能同時發揮作用，應看具體的前後關係。"
+  },
+  {
+    "id": "narrative-integrated",
+    "topic": "記敘與篇章結構",
+    "title": "綜合練習：從結構看作用",
+    "description": "作者先寫自己屢次失敗、幾乎放棄，再寫重拾信心後完成比賽。以下分析何者較完整？\\n請點選最恰當的答案。",
+    "content": "",
+    "prefix": "答案是",
+    "suffix": "",
+    "placeholder": "A / B / C",
+    "suggestedAnswer": [
+      "A",
+      "a"
+    ],
+    "applyRegex": false,
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "前面的失敗經歷為後來完成比賽的喜悅作鋪墊，使轉變有根據。"
+      },
+      {
+        "value": "B",
+        "label": "失敗寫在前面，所以一定是倒敘。"
+      },
+      {
+        "value": "C",
+        "label": "任何提到失敗的句子都屬伏筆。"
+      }
+    ],
+    "explanation": "A說清前後情節和情感關係；B、C只靠表面位置或詞語。"
+  },
+  {
+    "id": "narrative-complete",
+    "topic": "記敘與篇章結構",
+    "title": "你已完成`記敘與篇章結構`練習！",
+    "description": "判斷順敘、倒敘、插敘，要看敘述的整體安排。\\n分析結構作用，要指出前後哪些內容互相連繫，以及這種安排怎樣幫助表達。",
+    "image": "/img/congratulation.gif",
+    "interactive": false
+  }
+]

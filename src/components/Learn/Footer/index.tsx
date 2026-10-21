@@ -9,8 +9,8 @@ interface Props {
   currentStep: number;
   success: boolean;
   error: boolean;
-  nextStep: MouseEventHandler<HTMLDivElement>;
-  prevStep: MouseEventHandler<HTMLDivElement>;
+  nextStep: MouseEventHandler<HTMLButtonElement>;
+  prevStep: MouseEventHandler<HTMLButtonElement>;
 }
 
 export default ({ totalSteps, currentStep, nextStep, prevStep, success, error }: Props) => (
@@ -18,39 +18,38 @@ export default ({ totalSteps, currentStep, nextStep, prevStep, success, error }:
     <div className={styles.LearnFooterRow}>
       <div className={styles.LearnFooterPrevWrapper}>
         {currentStep > 0 && (
-          <div className={styles.NavigationStepPrev} onClick={prevStep}>
+          <button type='button' aria-label='上一題' className={styles.NavigationStepPrev} onClick={prevStep}>
             <div className='Shortcut'>Shift + Enter</div>
             <div className={styles.NavigationStepText}>
               <AiOutlineArrowLeft className={styles.NavigationStepIcon} size={20} />
               上一題
             </div>
-          </div>
+          </button>
         )}
       </div>
       <div className={styles.LearnFooterNextWrapper}>
         {currentStep < totalSteps && (
-          <div className={styles.NavigationStepNext} onClick={nextStep}>
+          <button type='button' aria-label='下一題' aria-disabled={!success} className={cx(styles.NavigationStepNext, { [styles.NextReady]: success })} onClick={nextStep}>
+            {success ? <>
+              <BsFillUnlockFill className={styles.ReadyUnlock} aria-hidden='true' />
+              <span>下一題</span>
+              <kbd className='Shortcut'>Enter</kbd>
+              <AiOutlineArrowRight className={styles.ReadyArrow} size={18} aria-hidden='true' />
+            </> : <>
             <div className={styles.NavigationStepNextWrapper}>
               <div className='Shortcut'>Enter</div>
-              {success ? (
-                <BsFillUnlockFill
-                  className={cx(styles.NavigationStepStatusIcon, {
-                    [styles.NavigationStepStatusIconUnlock]: success,
-                  })}
-                />
-              ) : (
                 <BsFillLockFill
                   className={cx(styles.NavigationStepStatusIcon, {
                     [styles.NavigationStepStatusIconError]: error,
                   })}
                 />
-              )}
             </div>
             <div className={styles.NavigationStepText}>
               下一題
               <AiOutlineArrowRight className={styles.NavigationStepIcon} size={20} />
             </div>
-          </div>
+            </>}
+          </button>
         )}
       </div>
     </div>

@@ -2,8 +2,9 @@
   background: var(--ifm-code-background);
   border-radius: 6px;
   padding: 12px;
-  font-size: 12px;
-  color: #999;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ifm-font-color-base);
   letter-spacing: 1px;
   margin: 20px 0;
   min-height: 50px;
@@ -23,7 +24,9 @@
   top: -6px;
   left: 11px;
   background: #e6e6e6;
-  color: #999;
+  color: #606673;
+  font-size: 13px;
+  line-height: 1.5;
   padding: 2px 5px;
   border-radius: 5px;
 }
@@ -34,7 +37,7 @@
   text-align: left;
   padding: 25px 20px 12px;
   min-height: 65px;
-  line-height: 20px;
+  line-height: 1.7;
   color: var(--ifm-font-color-base);
 }
 
@@ -42,6 +45,9 @@
   composes: Block;
   display: flex;
   flex-direction: column;
+  // Keep the answer centered, with room for its badge and the original right-hand hint.
+  padding: 24px 105px 12px;
+  overflow-wrap: anywhere;
 }
 
 .InputWrapper {
@@ -51,12 +57,7 @@
   text-align: justify;
   flex-wrap: wrap;
   color: var(--ifm-font-color-base);
-  @media only screen and (min-width: 800px) {
-    & {
-      margin-left: 70px;
-      margin-right: 70px;
-    }
-  }
+  max-width: 100%;
 }
 
 html[data-theme='dark'] {
@@ -72,14 +73,16 @@ html[data-theme='dark'] {
   margin: 3px;
   text-align: center;
   background: none;
-  color: #2a87d8;
-  max-width: 440px;
+  color: color-mix(in srgb, var(--ifm-color-primary) 80%, #000);
+  font: inherit;
+  max-width: min(440px, calc(100% - 6px));
   min-width: 60px;
   overflow: hidden;
   outline: 1px #444 dotted;
-  line-height: 1rem;
+  line-height: 1.5;
   &::placeholder {
-    color: #80808070;
+    color: #606673;
+    opacity: 1;
   }
 }
 
@@ -91,7 +94,8 @@ html[data-theme='dark'] {
 .ResultTag {
   box-shadow: 2px 2px 1px #21212173;
   min-width: 10px;
-  height: 20px;
+  min-height: 20px;
+  line-height: 1.4;
   margin: 1px 3px;
   color: #000;
   padding: 2px 5px;
@@ -131,4 +135,9 @@ html[data-theme='dark'] {
 
 .WatchButton svg {
   margin-right: 5px;
+}
+
+@media (max-width: 800px) {
+  // Retain the hint at the lower right without overlapping the answer or report link.
+  .BlockRegex { padding: 24px 16px 48px; }
 }
