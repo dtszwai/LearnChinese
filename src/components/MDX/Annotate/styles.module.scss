@@ -4,4 +4,9 @@
   background-color: v.$annotate-color;
   margin-left: 1px;
   margin-right: 1px;
+  cursor: pointer;
+  &:focus-visible {
+    outline: 2px solid var(--ifm-color-primary);
+    outline-offset: 2px;
+  }
 }

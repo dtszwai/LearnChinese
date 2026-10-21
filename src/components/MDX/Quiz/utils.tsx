@@ -3,20 +3,25 @@ import styles from './styles.module.scss';
 
 interface Question {
   header: string;
-  text: string;
+  text: React.ReactNode;
   excerpt?: React.ReactNode;
 }
 
-export const Question = ({ header, text, excerpt }: Question) =>
+export const Question = ({ header, text, excerpt }: Question) => (
   <div className={styles.Question}>
     <h2>{header}</h2>
-    <p
-      dangerouslySetInnerHTML={{
-        __html: `${text.replace(/\\n/gm, '<br />').replace(/`(.*?)`/g, '<code>$1</code>')}`,
-      }}
-    />
+    {typeof text === 'string' ? (
+      <p
+        dangerouslySetInnerHTML={{
+          __html: `${text.replace(/\\n/gm, '<br />').replace(/`(.*?)`/g, '<code>$1</code>')}`,
+        }}
+      />
+    ) : (
+      <p>{text}</p>
+    )}
     {excerpt}
   </div>
+);
 
 interface Selection {
   options: React.ReactNode[];

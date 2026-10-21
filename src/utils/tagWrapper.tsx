@@ -1,14 +1,14 @@
 type TagWrapper = {
   value: string;
-  regex: RegExp;
+  regex: RegExp | null;
   tagName?: string;
-  attributes?: object;
+  attributes?: Record<string, string>;
 };
 
 export default ({ value, regex, tagName = 'span', attributes = {} }: TagWrapper): string => {
-  if (typeof value !== 'string') return value;
+  if (!regex) return value;
 
-  const setAttributes = (attrs) =>
+  const setAttributes = (attrs: Record<string, string>) =>
     Object.entries(attrs)
       .map(([key, val]) => `${key === 'className' ? 'class' : key}="${val}"`)
       .join(' ');

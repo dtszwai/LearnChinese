@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-const Py = ({ children }) => (
+type Props = { children?: React.ReactNode };
+const Py = ({ children }: Props) => (
   <>
     <span className={styles.pyCircle}>粵</span>
     {children}
   </>
-)
+);
 
-export default Py
+export default Py;

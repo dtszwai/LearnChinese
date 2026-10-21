@@ -1,5 +1,9 @@
 @use "@site/src/css/variables" as v;
 
+.remarkBlock {
+  margin: 0 0 var(--ifm-paragraph-margin-bottom);
+}
+
 .remark {
   text-indent: 0;
   color: v.$remark-color;

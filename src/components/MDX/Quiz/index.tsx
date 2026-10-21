@@ -3,20 +3,19 @@ import App from './App';
 import Answers from './Answers';
 import Link from '@docusaurus/Link';
 import postData from '@site/src/utils/postData';
-import { useDoc } from '@docusaurus/theme-common/internal';
 import Review from './Review';
+import { readQuizData } from './types';
 
-const Copy = ({ href }) => {
+type CopyProps = { href: string };
+type Props = { data: unknown; href?: string; checkAnswer?: boolean };
+type AnswersProps = Pick<Props, 'data'>;
+
+const Copy = ({ href }: CopyProps) => {
   const handleCopy = () => {
     postData({ Event: 'Quiz Copy' });
   };
   return (
-    <Link
-      to={href}
-      className='button button--primary not-prose'
-      style={{ marginBottom: '1rem' }}
-      onClick={handleCopy}
-    >
+    <Link to={href} className='button button--primary not-prose' style={{ marginBottom: '1rem' }} onClick={handleCopy}>
       複製至 Google Forms
       {
         <svg
@@ -34,24 +33,16 @@ const Copy = ({ href }) => {
       }
     </Link>
   );
-}
-const quizData = () => {
-  const id = useDoc().metadata.id.split('/');
-  const path = `${id.at(-1)}`;
-  return require(`@site/src/data/Quiz/${path}`);
 };
-
-const Quiz = ({ data, href, checkAnswer = false }) => {
-  const quizQuestions = data ?? quizData().questions;
-
+const Quiz = ({ data, href, checkAnswer = false }: Props) => {
   return (
     <>
       {href && <Copy href={href} />}
-      <App questions={quizQuestions} checkAnswer={checkAnswer} />
+      <App questions={readQuizData({ questions: data }).questions} checkAnswer={checkAnswer} />
     </>
-  )
-}
+  );
+};
 
-const QuizAnswers = ({ data }) => <Answers questions={data ?? quizData().questions} />;
+const QuizAnswers = ({ data }: AnswersProps) => <Answers questions={readQuizData({ questions: data }).questions} />;
 
 export { Quiz, QuizAnswers, Review };

@@ -4,7 +4,8 @@ import Box from '@mui/material/Box';
 import styles from './styles.module.scss';
 import { MdClose } from 'react-icons/md';
 
-export default ({ children }) => {
+type Props = { children?: React.ReactNode };
+const Task = ({ children }: Props) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -26,3 +27,5 @@ export default ({ children }) => {
     </>
   );
 };
+
+export default Task;

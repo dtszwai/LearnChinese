@@ -2,18 +2,21 @@ import React from 'react';
 import tagWrapper from '@site/src/utils/tagWrapper';
 import styles from './Demo.module.scss';
 
-interface Props {
+type Props = {
   data: {
     regex?: string;
     description: string;
     purpose: string;
     example: string;
   };
-}
+};
 
-export default ({ data }: Props) => {
-  const InnerBlock = ({ title, content }) => <div data-title={title} dangerouslySetInnerHTML={{ __html: content }} />;
+type InnerBlockProps = { title: string; content: string };
+const InnerBlock = ({ title, content }: InnerBlockProps) => (
+  <div data-title={title} dangerouslySetInnerHTML={{ __html: content }} />
+);
 
+const Demo = ({ data }: Props) => {
   return (
     <div className={styles.Demo}>
       <InnerBlock
@@ -32,3 +35,5 @@ export default ({ data }: Props) => {
     </div>
   );
 };
+
+export default Demo;

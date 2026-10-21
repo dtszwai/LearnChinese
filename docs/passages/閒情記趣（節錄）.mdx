@@ -7,6 +7,8 @@ author: 沈復
 dynasty: 清
 ---
 
+import quizData from '@site/src/data/Quiz/閒情記趣（節錄）.json';
+
 ![景紹宗](/img/S3/2.24閒情記趣（節錄）/picture2.jpg)
 
 <MainText>
@@ -121,11 +123,11 @@ dynasty: 清
 
 <ChallengeItem label="評估練習">
 
-<Quiz href="https://docs.google.com/forms/d/1C19DEc7M5mj_EZwFxwE_AIhjYHInWTpdi14I2NLwj3g/copy" />
+<Quiz data={quizData.questions} href="https://docs.google.com/forms/d/1C19DEc7M5mj_EZwFxwE_AIhjYHInWTpdi14I2NLwj3g/copy" />
 
 <Solution>
 
-<QuizAnswers />
+<QuizAnswers data={quizData.questions} />
 
 </Solution>
 

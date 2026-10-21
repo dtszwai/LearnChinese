@@ -1,11 +1,23 @@
 {
-  "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true,
     "jsx": "react",
+    "types": ["node", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic"],
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
-    "baseUrl": ".",
     "paths": {
       "@site/*": ["./*"]
     }
-  }
+  },
+  "include": ["src/**/*", "docusaurus.config.ts", "sidebars.ts", "tests/**/*.ts", "playwright.config.ts"],
+  "exclude": ["node_modules", "build", ".docusaurus", ".validation"]
 }

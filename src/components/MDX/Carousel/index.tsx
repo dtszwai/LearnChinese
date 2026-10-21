@@ -1,12 +1,12 @@
 import React from 'react';
-import Slider from 'react-slick';
+import Slider, { type Settings } from 'react-slick';
 import './slick.scss';
 import './slick-theme.scss';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 
 type Carousel = {
-  settings?: {};
-  children: [];
+  settings?: Settings;
+  children: string[];
 };
 
 const defaultCarouselSettings = {
@@ -22,12 +22,13 @@ const defaultCarouselSettings = {
 };
 
 export default ({ settings, children }: Carousel) => {
+  const { withBaseUrl } = useBaseUrlUtils();
   const combinedSettings = { ...defaultCarouselSettings, ...settings };
 
   return (
     <Slider {...combinedSettings}>
       {children.map((photo, id) => (
-        <img src={useBaseUrl(photo)} key={id} />
+        <img src={withBaseUrl(photo)} key={id} alt='' />
       ))}
     </Slider>
   );

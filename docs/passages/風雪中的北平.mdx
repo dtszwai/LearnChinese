@@ -6,6 +6,8 @@ tags: [描寫文, 隨時推移法, 動態描寫, 靜態描寫]
 author: 金兆梓
 ---
 
+import quizData from '@site/src/data/Quiz/風雪中的北平.json';
+
 <Carousel>
   {[
     '/img/S1/6.5風雪中的北平/北平1.jpg',
@@ -130,9 +132,9 @@ author: 金兆梓
 
 <Challenges>
   <ChallengeItem label='評估練習'>
-    <Quiz href="https://docs.google.com/forms/d/1It9on5tKa_tgMTSm0QPhzbs1oSGqDUllb8y_WOKRzp0/copy" />
+    <Quiz data={quizData.questions} href="https://docs.google.com/forms/d/1It9on5tKa_tgMTSm0QPhzbs1oSGqDUllb8y_WOKRzp0/copy" />
     <Solution>
-      <QuizAnswers />
+      <QuizAnswers data={quizData.questions} />
     </Solution>
   </ChallengeItem>
   <ChallengeItem label='字詞配對'>

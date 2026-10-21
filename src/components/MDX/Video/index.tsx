@@ -2,15 +2,15 @@ import React from 'react';
 
 type VideoProps =
   | {
-    src: string;
-    start: number;
-    site: 'Youtube';
-  }
+      src: string;
+      start: number;
+      site: 'Youtube';
+    }
   | {
-    src: string;
-    start?: never;
-    site: 'Bilibili';
-  };
+      src: string;
+      start?: never;
+      site: 'Bilibili';
+    };
 
 const Video = ({ src, start, site }: VideoProps) => (
   <div className='video-responsive'>
@@ -27,6 +27,11 @@ const Video = ({ src, start, site }: VideoProps) => (
   </div>
 );
 
-export const Youtube = ({ children, id, start = 0 }) => <Video src={children ?? id} start={start} site='Youtube' />;
+type EmbedProps = { children: string; id?: string } | { id: string; children?: string };
+type YoutubeProps = EmbedProps & { start?: number };
 
-export const Bilibili = ({ children, id }) => <Video src={children ?? id} site='Bilibili' />;
+export const Youtube = ({ children, id, start = 0 }: YoutubeProps) => (
+  <Video src={children ?? id ?? ''} start={start} site='Youtube' />
+);
+
+export const Bilibili = ({ children, id }: EmbedProps) => <Video src={children ?? id ?? ''} site='Bilibili' />;

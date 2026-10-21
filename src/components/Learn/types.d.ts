@@ -6,6 +6,8 @@ export type Lesson = {
   published?: boolean;
 };
 
+export type PublishedLesson = Lesson & { total: number };
+
 export type LessonData = {
   id?: string;
   interaction?: 'choice' | 'passage' | 'sequence';

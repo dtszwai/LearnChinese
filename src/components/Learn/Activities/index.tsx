@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import cx from 'classnames';
+import cx from 'clsx';
 import Panel from '../Panel';
 import { LessonData } from '../types';
 import styles from './index.module.scss';
@@ -13,21 +13,28 @@ type Props = {
 
 export default function Activities({ data, step, parentError, onChangeSuccess }: Props) {
   const completed = step.currentStep < step.lastStep;
-  const [selected, setSelected] = useState(completed ? data.suggestedAnswer[0] : '');
+  const [selected, setSelected] = useState(completed ? (data.suggestedAnswer?.[0] ?? '') : '');
   const [order, setOrder] = useState<string[]>(completed ? data.correctOrder || [] : []);
   const options = data.options || [];
   const sequence = data.interaction === 'sequence';
   const ready = sequence ? order.length === options.length : Boolean(selected);
   const success = sequence
-    ? ready && order.every((value, i) => value === data.correctOrder[i])
-    : data.suggestedAnswer.includes(selected);
+    ? ready && order.every((value, i) => value === data.correctOrder?.[i])
+    : (data.suggestedAnswer?.includes(selected) ?? false);
 
   useEffect(() => {
     onChangeSuccess(success);
   }, [success, onChangeSuccess]);
 
-  const hintAnswers = useMemo(() => data.interaction === 'sequence' ? data.suggestedAnswer :
-    (data.options || []).filter((option) => data.suggestedAnswer.includes(option.value)).map((option) => option.label), [data]);
+  const hintAnswers = useMemo(
+    () =>
+      data.interaction === 'sequence'
+        ? data.suggestedAnswer
+        : (data.options || [])
+            .filter((option) => data.suggestedAnswer?.includes(option.value))
+            .map((option) => option.label),
+    [data],
+  );
 
   const optionButton = (value: string, label: string, inline = false) => (
     <button
@@ -69,49 +76,76 @@ export default function Activities({ data, step, parentError, onChangeSuccess }:
 
   return (
     <>
-    <Panel title='內容' answer={null} step={step}>
-    <section className={styles.Activity} aria-label='互動練習'>
-      {data.content && <div className={styles.Passage}>{data.interaction === 'passage' ? passage() : data.content}</div>}
-      {data.interaction === 'choice' && (
-        <div className={styles.Options} role='group' aria-label='選擇答案'>
-          {options.map((option) => optionButton(option.value, `${option.value}. ${option.label}`))}
+      <Panel title='內容' answer={null} step={step}>
+        <section className={styles.Activity} aria-label='互動練習'>
+          {data.content && (
+            <div className={styles.Passage}>{data.interaction === 'passage' ? passage() : data.content}</div>
+          )}
+          {data.interaction === 'choice' && (
+            <div className={styles.Options} role='group' aria-label='選擇答案'>
+              {options.map((option) => optionButton(option.value, `${option.value}. ${option.label}`))}
+            </div>
+          )}
+          {sequence && (
+            <>
+              <p className={styles.Instruction}>按先後次序點選事件；可撤回或重新排列。</p>
+              <ol className={styles.Order} aria-label='已排列的事件'>
+                {order.map((value) => (
+                  <li key={value}>{options.find((option) => option.value === value)?.label}</li>
+                ))}
+              </ol>
+              <div className={styles.Options} role='group' aria-label='待排列的事件'>
+                {options.map((option) => (
+                  <button
+                    className={styles.Option}
+                    type='button'
+                    key={option.value}
+                    disabled={order.includes(option.value)}
+                    onClick={() => setOrder((previous) => [...previous, option.value])}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+              <div className={styles.Actions}>
+                <button
+                  type='button'
+                  disabled={!order.length}
+                  onClick={() => setOrder((previous) => previous.slice(0, -1))}
+                >
+                  撤回一步
+                </button>
+                <button type='button' disabled={!order.length} onClick={() => setOrder([])}>
+                  重新排列
+                </button>
+              </div>
+            </>
+          )}
+        </section>
+      </Panel>
+      <Panel
+        title='答案'
+        answer={!data.noHint && hintAnswers}
+        step={step}
+        status={parentError || (ready && !success) ? 'error' : success ? 'correct' : ''}
+      >
+        <div className={styles.Feedback} role='status' aria-live='polite'>
+          {success ? (
+            <>
+              <strong>答對了！</strong>
+              {data.explanation && <p>{data.explanation}</p>}
+            </>
+          ) : ready ? (
+            '再想一想，留意題目要求和文字線索。你可以修改答案。'
+          ) : sequence ? (
+            `已排列 ${order.length} / ${options.length} 項`
+          ) : data.interaction === 'passage' ? (
+            '請點選原句中符合題意的詞語。'
+          ) : (
+            '請點選一個答案。'
+          )}
         </div>
-      )}
-      {sequence && (
-        <>
-          <p className={styles.Instruction}>按先後次序點選事件；可撤回或重新排列。</p>
-          <ol className={styles.Order} aria-label='已排列的事件'>
-            {order.map((value) => <li key={value}>{options.find((option) => option.value === value)?.label}</li>)}
-          </ol>
-          <div className={styles.Options} role='group' aria-label='待排列的事件'>
-            {options.map((option) => (
-              <button
-                className={styles.Option}
-                type='button'
-                key={option.value}
-                disabled={order.includes(option.value)}
-                onClick={() => setOrder((previous) => [...previous, option.value])}
-              >
-                {option.label}
-              </button>
-            ))}
-          </div>
-          <div className={styles.Actions}>
-            <button type='button' disabled={!order.length} onClick={() => setOrder((previous) => previous.slice(0, -1))}>撤回一步</button>
-            <button type='button' disabled={!order.length} onClick={() => setOrder([])}>重新排列</button>
-          </div>
-        </>
-      )}
-    </section>
-    </Panel>
-    <Panel title='答案' answer={!data.noHint && hintAnswers} step={step} status={parentError || (ready && !success) ? 'error' : success ? 'correct' : ''}>
-      <div className={styles.Feedback} role='status' aria-live='polite'>
-        {success ? <><strong>答對了！</strong>{data.explanation && <p>{data.explanation}</p>}</> :
-          ready ? '再想一想，留意題目要求和文字線索。你可以修改答案。' :
-            sequence ? `已排列 ${order.length} / ${options.length} 項` :
-              data.interaction === 'passage' ? '請點選原句中符合題意的詞語。' : '請點選一個答案。'}
-      </div>
-    </Panel>
+      </Panel>
     </>
   );
 }

@@ -5,7 +5,6 @@ import type * as Preset from "@docusaurus/preset-classic";
 import Annotate from "./src/components/plugin/Annotate";
 import redirect from "./src/components/plugin/redirect";
 import Section from "./src/components/plugin/Section";
-import dynamicRoutes from "./src/components/plugin/dynamicRoutes";
 
 const title = "書目引得";
 const keywords =
@@ -14,18 +13,18 @@ const keywords =
 const config: Config = {
   title: title,
   tagline: "中文科閱讀篇章",
-  url: "http://learnchinese.vercel.app/",
+  url: "https://learnchinese.vercel.app",
   titleDelimiter: "-",
   baseUrl: "/",
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "throw",
+  onBrokenAnchors: "throw",
   favicon: "img/logo.png",
   trailingSlash: false,
   i18n: {
     defaultLocale: "zh-Hant",
     locales: ["zh-Hant"],
   },
-  plugins: ["docusaurus-plugin-sass", dynamicRoutes, redirect],
+  plugins: ["docusaurus-plugin-sass", require.resolve("./src/components/plugin/dynamicRoutes.ts"), redirect],
   themes: [
     [
       "@easyops-cn/docusaurus-search-local",
@@ -46,14 +45,14 @@ const config: Config = {
           sidebarCollapsed: false,
           sidebarPath: "sidebars.ts",
           routeBasePath: "/",
-          beforeDefaultRemarkPlugins: [Section],
+          beforeDefaultRemarkPlugins: [Section, Annotate],
         },
 
         blog: false,
+        pages: { beforeDefaultRemarkPlugins: [Annotate] },
         theme: {
           customCss: ["./src/css/custom.scss"],
         },
-        googleAnalytics: { trackingID: "G-Y6KYGQ0T4T", anonymizeIP: true },
         gtag: { trackingID: "G-Y6KYGQ0T4T", anonymizeIP: true },
       } satisfies Preset.Options,
     ],
@@ -70,6 +69,8 @@ const config: Config = {
     },
     announcementBar: {
       id: "questionnaire",
+      backgroundColor: "#7f7ff0",
+      textColor: "#fff",
       content: `📢 我們想聽聽你的聲音！讓我們知道你的意見；或者只是告訴我們一個笑話，我們都聽。感謝你的支持！<a href="https://forms.gle/FzYfySqYG7nrzgYU8" target="_blank" rel="noopener">📝 填寫問卷</a>`,
     },
     navbar: {
@@ -99,11 +100,8 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
   markdown: {
+    hooks: { onBrokenMarkdownLinks: "throw" },
     format: "mdx",
-    preprocessor: ({ filePath, fileContent }) => {
-      const AnnotatedContent = Annotate(fileContent);
-      return AnnotatedContent;
-    },
   },
 };
 

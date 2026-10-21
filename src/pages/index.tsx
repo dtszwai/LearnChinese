@@ -4,41 +4,13 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Sketch from '/img/index.svg';
 import styles from './index.module.scss';
-import TypeIt from 'typeit-react';
+import Typer from '@site/src/components/HomeTypewriter';
 import S1Text from '../../docs/contents/S1/index.mdx';
 import S2Text from '../../docs/contents/S2/index.mdx';
 import S3Text from '../../docs/contents/S3/index.mdx';
 
-const Typer = () => (
-  <TypeIt
-    getBeforeInit={(instance) =>
-      instance
-        .pause(700)
-        .type('鳥宿池邊樹，', { speed: 300, delay: 900 })
-        .type('僧推月下門。', { speed: 300, delay: 1200 })
-        .move(-4, { speed: 150, delay: 800 })
-        .delete(1, { delay: 700 })
-        .type('<strong style="color:#8783D1">敲</strong>', { delay: 300 })
-        .move(4, { delay: 1000 })
-        .break({ delay: 700 })
-        .type('水田飛白鷺，夏木囀黃鸝。', { speed: 300, delay: 1200 })
-        .move(-12, { speed: 150, delay: 600 })
-        .type('<strong style="color:#E27396">漠漠</strong>', {
-          speed: 500,
-          delay: 1200,
-        })
-        .move(6, { speed: 200, delay: 500 })
-        .type('<strong style="color:#E27396">陰陰</strong>', {
-          speed: 500,
-          delay: 700,
-        })
-        .move(6, { speed: 200 })
-    }
-    options={{ speed: 100, waitUntilVisible: true }}
-  />
-);
-
-const Header = ({ title }) => (
+type HeaderProps = { title: string };
+const Header = ({ title }: HeaderProps) => (
   <header className={styles.heroBanner}>
     <div className={styles.bannerCol}>
       <h1 className={styles.title}>{title}</h1>
@@ -55,7 +27,8 @@ const Header = ({ title }) => (
   </header>
 );
 
-const TextList = ({ grade, title, Src, color = 'inherit' }) => (
+type TextListProps = { grade: string; title: string; Src: React.ComponentType; color?: string };
+const TextList = ({ grade, title, Src, color = 'inherit' }: TextListProps) => (
   <div className={styles.TextList} id={grade}>
     <div className={styles.heading}>
       <img src={require(`@site/static/img/${grade}.png`).default} style={{ alignSelf: 'center' }} />

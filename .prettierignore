@@ -1,0 +1,14 @@
+node_modules/
+.docusaurus/
+build/
+.validation/
+test-results/
+playwright-report/
+package-lock.json
+# Editorial content has its own MDX/LF checks; do not mass-format it.
+docs/
+teaching/
+src/data/
+i18n/
+static/
+*.md

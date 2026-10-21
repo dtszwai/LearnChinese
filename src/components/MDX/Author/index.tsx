@@ -4,26 +4,31 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import { MdFace } from 'react-icons/md';
 import authorInfo from '@site/src/data/author.json';
 
-interface Author {
+type Props = {
   name: string;
   dynasty?: string;
   source?: string;
-}
+};
 
-export default ({ name, source, dynasty }: Author) => {
-  const data = Object(authorInfo[name]);
-  const Avatar = (props) => (data.avatar ? <img {...props} src={useBaseUrl(data.avatar)} /> : <MdFace {...props} />);
-  const authorPrefix = (dynasty || data.dynasty) && `【${dynasty || data.dynasty}】` || ''
+const Author = ({ name, source, dynasty }: Props) => {
+  const authors: Record<string, { avatar?: string; dynasty?: string } | undefined> = authorInfo;
+  const data = authors[name] ?? {};
+  const avatar = useBaseUrl(data.avatar || '/');
+  const authorPrefix = ((dynasty || data.dynasty) && `【${dynasty || data.dynasty}】`) || '';
 
   return (
     <div className={styles.Author}>
-      <Avatar className={styles.AuthorPicture} />
+      {data.avatar ? (
+        <img className={styles.AuthorPicture} src={avatar} alt='' />
+      ) : (
+        <MdFace className={styles.AuthorPicture} />
+      )}
       <div className={styles.AuthorContent}>
-        <strong className={styles.AuthorTitle}>
-          {authorPrefix + name}
-        </strong>
+        <strong className={styles.AuthorTitle}>{authorPrefix + name}</strong>
         {source && <small className={styles.AuthorSubtitle}>{source}</small>}
       </div>
     </div>
   );
 };
+
+export default Author;

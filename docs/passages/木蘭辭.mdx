@@ -6,6 +6,8 @@ tags: [傳記, 樂府詩]
 author: 佚名
 ---
 
+import quizData from '@site/src/data/Quiz/木蘭辭.json';
+
 <Intro>
 
 〈木蘭辭〉的創作時代有很多爭論，大抵起源於北魏。其實像這種民間敘事詩，故事產生的時間和詩歌本身寫作的時間也不一定相同。詩歌在流傳的過程，可能不斷經人增益和修改，所以詩中有些關於朝廷制度的描述，並不統一。我們讀這首詩時，要欣賞的是詩中所表現剛強堅毅的婦女形象。
@@ -122,9 +124,9 @@ author: 佚名
 
 <Challenges>
   <ChallengeItem label="評估練習">
-    <Quiz />
+    <Quiz data={quizData.questions} />
     <Solution>
-      <QuizAnswers />
+      <QuizAnswers data={quizData.questions} />
     </Solution>
   </ChallengeItem>
 </Challenges>

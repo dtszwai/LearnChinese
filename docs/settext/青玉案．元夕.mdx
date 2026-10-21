@@ -9,6 +9,8 @@ author: 辛棄疾
 hide_author: true
 ---
 
+import quizData from '@site/src/data/Quiz/青玉案．元夕.json';
+
 # <span className="KeepAll" data-annotation="詞牌"><Annotate title="本指青玉所製的短腳盤子。名貴的食用器具。後用作詞牌名。">青玉案</Annotate></span>．<span className="KeepAll"><Annotate title="舊稱農曆正月十五日為上元節，是夜稱元夕，與「元夜」、「元宵」同。">元夕</Annotate></span>
 
 <Author name='辛棄疾' />
@@ -26,14 +28,9 @@ hide_author: true
 
 ## 📖 正文
 
-<p className='main prose'>
-  ((東風||指春風。花千樹：花燈多如千樹開花。))夜放花千樹，更吹落、((星||指煙花，一說指燈。))如雨。((寶馬||名貴的駿馬。))((雕車||飾有雕花、彩繪的車；裝飾華麗的車。))((香||指車中人的衣鬢之香。))滿路。((鳳簫||簫的美稱。))聲動，((玉壺||喻明月，一說指白玉造的燈，一說指漏壺，即古代計時器。))光((轉||粵 [囀]，[zyun2]))一夜((魚龍||指舞動魚形、龍形的彩燈。))舞。
-</p>
+<p className='main prose'>((東風||指春風。花千樹：花燈多如千樹開花。))夜放花千樹，更吹落、((星||指煙花，一說指燈。))如雨。((寶馬||名貴的駿馬。))((雕車||飾有雕花、彩繪的車；裝飾華麗的車。))((香||指車中人的衣鬢之香。))滿路。((鳳簫||簫的美稱。))聲動，((玉壺||喻明月，一說指白玉造的燈，一說指漏壺，即古代計時器。))光((轉||粵 [囀]，[zyun2]))一夜((魚龍||指舞動魚形、龍形的彩燈。))舞。</p>
 
-<p className='main prose'>
-    ((蛾兒||古代婦女於元宵節前後插戴在頭上，用烏金紙剪裁成蝶或蛾狀的應時飾物。))((雪柳||宋代婦女在立春日和元宵節時插戴的一種絹或紙製成的頭花。))
-    ((黃金縷||古代婦女戴在頭上的金色頭飾。縷：泛指線狀物。粵 [侶]，[leoi5]。))，笑語((盈盈||含情的樣子。))暗香去。眾裏尋他千百((度||量詞，次、回。))。((驀然||突然，忽然。))迴首，那人卻在，燈火((闌珊||暗淡、零落、將盡。))處。
-</p>
+<p className='main prose'>((蛾兒||古代婦女於元宵節前後插戴在頭上，用烏金紙剪裁成蝶或蛾狀的應時飾物。))((雪柳||宋代婦女在立春日和元宵節時插戴的一種絹或紙製成的頭花。)) ((黃金縷||古代婦女戴在頭上的金色頭飾。縷：泛指線狀物。粵 [侶]，[leoi5]。))，笑語((盈盈||含情的樣子。))暗香去。眾裏尋他千百((度||量詞，次、回。))。((驀然||突然，忽然。))迴首，那人卻在，燈火((闌珊||暗淡、零落、將盡。))處。</p>
 
 <DeepDive title="內容大要">
 
@@ -170,11 +167,11 @@ hide_author: true
 
 <ChallengeItem label="評估練習">
 
-<Quiz href='https://docs.google.com/forms/d/1QnJN7VFh15ZMcK7Ji3QtAuo80R-DSgoo_jUDq-2Zo5I/copy' />
+<Quiz data={quizData.questions} href='https://docs.google.com/forms/d/1QnJN7VFh15ZMcK7Ji3QtAuo80R-DSgoo_jUDq-2Zo5I/copy' />
 
 <Solution>
 
-<QuizAnswers />
+<QuizAnswers data={quizData.questions} />
 
 </Solution>
 

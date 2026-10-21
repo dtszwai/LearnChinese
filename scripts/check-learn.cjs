@@ -2,19 +2,13 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const vm = require('node:vm');
-const ts = require('typescript');
+const loadSource = require('../tests/load-source.cjs');
 const root = path.resolve(__dirname, '..');
 const read = (file) => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
 const index = read('src/data/Learn/index.json');
 const sources = read('teaching/learn/sources.json').sources;
 const reviews = read('teaching/learn/review.json').lessons;
-const moduleExports = {};
-const checker = ts.transpileModule(
-  fs.readFileSync(path.join(root, 'src/components/Learn/checkRegex.tsx'), 'utf8'),
-  { compilerOptions: { module: ts.ModuleKind.CommonJS, esModuleInterop: true } },
-).outputText;
-vm.runInNewContext(checker, { exports: moduleExports, require });
+const moduleExports = loadSource(path.join(root, 'src/components/Learn/checkRegex.tsx'));
 const checkRegex = moduleExports.default;
 const { findAnswer, normalizeAnswer, getHighlightRegex } = moduleExports;
 assert.equal(findAnswer(['動作描寫'], '动作描写'), '動作描寫', 'Simplified short answer');
@@ -24,7 +18,10 @@ assert.equal(findAnswer(['動作描寫'], ''), undefined, 'Empty answer must sta
 assert.equal(findAnswer(['動作描寫'], '.*'), undefined, 'Patterns cannot bypass accepted answers');
 const literalStep = { content: '甲(乙)+ 甲乙乙 <b>頭髮</b>', suggestedAnswer: ['甲(乙)+'], regexMatch: ['甲(乙)+'] };
 assert(checkRegex(literalStep, '甲(乙)+').isSuccess, 'Accepted punctuation is literal text');
-assert.deepEqual(Array.from(literalStep.content.matchAll(getHighlightRegex(literalStep, '甲(乙)+')), match => match[0]), ['甲(乙)+']);
+assert.deepEqual(
+  Array.from(literalStep.content.matchAll(getHighlightRegex(literalStep, '甲(乙)+')), (match) => match[0]),
+  ['甲(乙)+'],
+);
 for (const input of ['[', '(', '\\', '.*', '(a+)+$', '甲|乙', '^甲']) {
   assert(!checkRegex(literalStep, input).isSuccess, 'Regex syntax cannot unlock an answer');
   assert.doesNotThrow(() => getHighlightRegex(literalStep, input), 'Any student input is safe literal text');
@@ -32,16 +29,26 @@ for (const input of ['[', '(', '\\', '.*', '(a+)+$', '甲|乙', '^甲']) {
 const separateStep = { content: '原句沒有答案', suggestedAnswer: ['動作描寫'], regexMatch: ['其他標示'] };
 assert(checkRegex(separateStep, '动作描写').isSuccess, 'Answer correctness is independent of highlighting');
 assert(!checkRegex(separateStep, '动作描写').isMatch, 'Highlighting still reports its own match state');
-assert.equal('頭髮'.match(getHighlightRegex({ suggestedAnswer: ['頭髮'] }, '头发'))?.[0], '頭髮', 'Highlight original traditional text');
+assert.equal(
+  '頭髮'.match(getHighlightRegex({ suggestedAnswer: ['頭髮'] }, '头发'))?.[0],
+  '頭髮',
+  'Highlight original traditional text',
+);
 
-const progressExports = {};
-vm.runInNewContext(ts.transpileModule(
-  fs.readFileSync(path.join(root, 'src/components/Learn/lessonProgress.ts'), 'utf8'),
-  { compilerOptions: { module: ts.ModuleKind.CommonJS } },
-).outputText, { exports: progressExports });
+const progressExports = loadSource(path.join(root, 'src/components/Learn/lessonProgress.ts'));
 const { readLessonProgress } = progressExports;
-const progressEqual = (input, expected) => assert.equal(JSON.stringify(readLessonProgress(input, 21)), JSON.stringify(expected));
-for (const invalid of [null, [], '3', 4, {}, { currentStep: '2', lastStep: NaN }, { currentStep: 1.5, lastStep: Infinity }]) progressEqual(invalid, undefined);
+const progressEqual = (input, expected) =>
+  assert.equal(JSON.stringify(readLessonProgress(input, 21)), JSON.stringify(expected));
+for (const invalid of [
+  null,
+  [],
+  '3',
+  4,
+  {},
+  { currentStep: '2', lastStep: NaN },
+  { currentStep: 1.5, lastStep: Infinity },
+])
+  progressEqual(invalid, undefined);
 progressEqual({ currentStep: 5, lastStep: 12 }, { currentStep: 5, lastStep: 12 });
 progressEqual({ currentStep: 90, lastStep: 100 }, { currentStep: 20, lastStep: 20 });
 progressEqual({ currentStep: -5, lastStep: 9 }, { currentStep: 0, lastStep: 9 });
@@ -66,8 +73,14 @@ for (const [slug, lesson] of Object.entries(index)) {
     assert.equal(steps[0].interactive, false, `${slug}: needs introduction`);
     assert.equal(steps.at(-1).interactive, false, `${slug}: needs completion page`);
     assert(steps.at(-1).title.includes('已完成'), `${slug}: completed ending`);
-    assert(steps.some((step) => step.initialValue), `${slug}: needs editable worked example`);
-    assert(steps.some((step) => /辨|混淆/.test(step.title)), `${slug}: needs contrast case`);
+    assert(
+      steps.some((step) => step.initialValue),
+      `${slug}: needs editable worked example`,
+    );
+    assert(
+      steps.some((step) => /辨|混淆/.test(step.title)),
+      `${slug}: needs contrast case`,
+    );
   }
   for (const [i, step] of steps.entries()) {
     const label = `${slug} step ${i + 1}`;
@@ -81,8 +94,10 @@ for (const [slug, lesson] of Object.entries(index)) {
       assert(review, `${label}: missing review`);
       assert(review.rationale?.length > 0, `${label}: answer rationale`);
       assert(review.sources.length > 0, `${label}: source required`);
-      for (const source of review.sources) assert(sources[source]?.url?.startsWith('https://'), `${label}: unknown source ${source}`);
-      if (step.interactive !== false) assert.deepEqual(review.acceptedAnswers, step.suggestedAnswer, `${label}: stale answer review`);
+      for (const source of review.sources)
+        assert(sources[source]?.url?.startsWith('https://'), `${label}: unknown source ${source}`);
+      if (step.interactive !== false)
+        assert.deepEqual(review.acceptedAnswers, step.suggestedAnswer, `${label}: stale answer review`);
     }
     if (step.interactive === false) continue;
     exercises++;
@@ -97,13 +112,23 @@ for (const [slug, lesson] of Object.entries(index)) {
         const result = checkRegex(step, answer);
         assert(!result.err && result.isSuccess, `${label}: accepted answer cannot unlock: ${answer}`);
         assert(result.isMatch, `${label}: original passage highlighting changed: ${answer}`);
-        assert(checkRegex(step, normalizeAnswer(answer)).isSuccess, `${label}: simplified extraction answer cannot unlock: ${answer}`);
-        assert(checkRegex(step, normalizeAnswer(answer)).isMatch, `${label}: simplified input must highlight the original text: ${answer}`);
+        assert(
+          checkRegex(step, normalizeAnswer(answer)).isSuccess,
+          `${label}: simplified extraction answer cannot unlock: ${answer}`,
+        );
+        assert(
+          checkRegex(step, normalizeAnswer(answer)).isMatch,
+          `${label}: simplified input must highlight the original text: ${answer}`,
+        );
       }
-      assert(findAnswer(step.suggestedAnswer, normalizeAnswer(answer)) !== undefined, `${label}: simplified answer rejected`);
+      assert(
+        findAnswer(step.suggestedAnswer, normalizeAnswer(answer)) !== undefined,
+        `${label}: simplified answer rejected`,
+      );
     }
     assert(!step.readOnly, `${label}: answers must remain editable, including demonstrations`);
-    if (step.initialValue) assert(step.suggestedAnswer.includes(step.initialValue), `${label}: demonstration cannot unlock`);
+    if (step.initialValue)
+      assert(step.suggestedAnswer.includes(step.initialValue), `${label}: demonstration cannot unlock`);
     if (step.applyRegex !== false) {
       for (const wrong of ['', '錯誤答案', '[']) {
         assert(!checkRegex(step, wrong).isSuccess, `${label}: wrong answer unlocks`);
@@ -111,23 +136,43 @@ for (const [slug, lesson] of Object.entries(index)) {
     }
     if (step.interaction) {
       assert(step.options?.length >= 2, `${label}: meaningful options required`);
-      assert.equal(new Set(step.options.map((option) => option.value)).size, step.options.length, `${label}: duplicate options`);
-      assert(step.options.every((option) => option.label && option.value), `${label}: empty option`);
+      assert.equal(
+        new Set(step.options.map((option) => option.value)).size,
+        step.options.length,
+        `${label}: duplicate options`,
+      );
+      assert(
+        step.options.every((option) => option.label && option.value),
+        `${label}: empty option`,
+      );
       assert(step.explanation?.length > 0, `${label}: feedback required`);
       const values = step.options.map((option) => option.value);
       if (step.interaction === 'sequence') {
-        assert.deepEqual([...step.correctOrder].sort(), [...values].sort(), `${label}: ordering must use every event once`);
+        assert.deepEqual(
+          [...step.correctOrder].sort(),
+          [...values].sort(),
+          `${label}: ordering must use every event once`,
+        );
         assert.notDeepEqual(step.correctOrder, values, `${label}: events already in answer order`);
       } else {
         assert(values.includes(step.suggestedAnswer[0]), `${label}: correct option missing`);
-        assert(values.some((value) => !step.suggestedAnswer.includes(value)), `${label}: needs a distractor`);
+        assert(
+          values.some((value) => !step.suggestedAnswer.includes(value)),
+          `${label}: needs a distractor`,
+        );
       }
       if (step.interaction === 'passage') {
-        for (const option of step.options) assert(step.content.includes(option.label), `${label}: clickable text absent`);
+        for (const option of step.options)
+          assert(step.content.includes(option.label), `${label}: clickable text absent`);
       }
     }
   }
   console.log(`${slug}: ${steps.length} steps validated`);
 }
-assert(Object.keys(reviews).every((slug) => index[slug]), 'Orphan lesson reviews');
-console.log(`PASS: ${total} steps, ${exercises} interactive steps, ${accepted} accepted answers; source mappings and extraction checks passed.`);
+assert(
+  Object.keys(reviews).every((slug) => index[slug]),
+  'Orphan lesson reviews',
+);
+console.log(
+  `PASS: ${total} steps, ${exercises} interactive steps, ${accepted} accepted answers; source mappings and extraction checks passed.`,
+);

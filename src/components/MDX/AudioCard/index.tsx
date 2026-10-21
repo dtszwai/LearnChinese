@@ -12,66 +12,79 @@ type trackProps = {
   image?: string;
 };
 
-type Props = {
-  track?: trackProps;
-  tracks?: (trackProps & { cap: string })[];
-};
+type Props = { track: trackProps; tracks?: never } | { track?: never; tracks: (trackProps & { cap: string })[] };
 
-export default ({ track, tracks }: Props) => {
+const AudioCard = ({ track, tracks }: Props) => {
   const [trackIndex, setTrackIndex] = useState(0);
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
 
-  const { title, subtitle, src: _src, image = '/img/audio.svg' } = track ?? tracks[trackIndex];
+  const {
+    title,
+    subtitle,
+    src: _src,
+    image = '/img/audio.svg',
+  } = track ?? tracks?.[trackIndex] ?? { title: '', subtitle: '', src: '' };
   const src = useBaseUrl(_src);
 
-  const audioRef = useRef(typeof Audio !== 'undefined' ? new Audio(src) : ({} as HTMLAudioElement));
-  audioRef.current.onloadedmetadata = () => setDuration(audioRef.current.duration);
-
-  const intervalRef = useRef<NodeJS.Timer>();
-
+  const imageSrc = useBaseUrl(image);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const currentPercentage = duration ? `${(trackProgress / duration) * 100}%` : '0%';
-  const progressStyling = `
-    -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, var(--ifm-color-info)), color-stop(${currentPercentage}, #777))
-  `;
+  const progressStyling = `-webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, var(--ifm-color-info)), color-stop(${currentPercentage}, #777))`;
 
-  const startTimer = () => {
-    intervalRef.current = setInterval(() => {
-      setTrackProgress(audioRef.current.currentTime);
-      if (audioRef.current.ended) {
-        onScrub(0);
-        setIsPlaying(false);
-      }
-    }, 1000);
-  };
+  useEffect(() => {
+    const audio = new Audio(src);
+    audioRef.current = audio;
+    setIsPlaying(false);
+    setDuration(0);
+    setTrackProgress(0);
+    const metadata = () => setDuration(Number.isFinite(audio.duration) ? audio.duration : 0);
+    const progress = () => setTrackProgress(audio.currentTime);
+    const play = () => setIsPlaying(true);
+    const pause = () => setIsPlaying(false);
+    const ended = () => {
+      audio.currentTime = 0;
+      setTrackProgress(0);
+      setIsPlaying(false);
+    };
+    audio.addEventListener('loadedmetadata', metadata);
+    audio.addEventListener('timeupdate', progress);
+    audio.addEventListener('play', play);
+    audio.addEventListener('pause', pause);
+    audio.addEventListener('ended', ended);
+    audio.addEventListener('error', pause);
+    return () => {
+      audio.removeEventListener('loadedmetadata', metadata);
+      audio.removeEventListener('timeupdate', progress);
+      audio.removeEventListener('play', play);
+      audio.removeEventListener('pause', pause);
+      audio.removeEventListener('ended', ended);
+      audio.removeEventListener('error', pause);
+      audio.pause();
+      audio.removeAttribute('src');
+      audio.load();
+      audioRef.current = null;
+    };
+  }, [src]);
 
   const onScrub = (value: number) => {
-    audioRef.current.currentTime = value;
-    setTrackProgress(audioRef.current.currentTime);
+    const audio = audioRef.current;
+    if (!audio || !Number.isFinite(value)) return;
+    audio.currentTime = Math.max(0, Math.min(value, duration));
+    setTrackProgress(audio.currentTime);
   };
-
-  useEffect(() => {
-    if (isPlaying) {
-      audioRef.current.play();
-      startTimer();
-    } else {
-      audioRef.current.pause();
-    }
-  }, [isPlaying]);
-
-  useEffect(() => {
-    return () => {
-      audioRef.current.pause();
-    };
-  }, []);
-
-  useEffect(() => {
-    audioRef.current.pause();
-    setIsPlaying(false);
-    audioRef.current = typeof Audio !== 'undefined' && new Audio(src);
-    setTrackProgress(audioRef.current.currentTime);
-  }, [trackIndex]);
+  const onToggle = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    // Call synchronously in the user gesture for iOS, and handle blocked playback.
+    if (audio.paused) void audio.play().catch(() => setIsPlaying(false));
+    else audio.pause();
+  };
+  const onStop = () => {
+    audioRef.current?.pause();
+    onScrub(0);
+  };
 
   const toTime = (e: number) => {
     let m = Math.floor(Math.ceil(e) / 60)
@@ -90,11 +103,12 @@ export default ({ track, tracks }: Props) => {
           <Typography variant='h5' component='div' className={styles.title} children={title} />
           <Typography variant='subtitle1' component='div' className={styles.subtitle} children={subtitle} />
         </CardContent>
-        <Controls {...{ isPlaying, setIsPlaying, onScrub, audioRef }} />
+        <Controls {...{ isPlaying, onToggle, onStop }} />
         <div style={{ display: 'flex', alignItems: 'flex-end' }}>
           <span className={styles.timer}>{Number.isNaN(duration) ? '00:00' : toTime(trackProgress)}</span>
           <input
             type='range'
+            aria-label='播放進度'
             value={trackProgress}
             step='1'
             min='0'
@@ -107,12 +121,14 @@ export default ({ track, tracks }: Props) => {
         </div>
       </Box>
       {track ? (
-        <CardMedia component='img' className={styles.trackInfo} image={useBaseUrl(image)} />
+        <CardMedia component='img' className={styles.trackInfo} image={imageSrc} />
       ) : (
         <CardMedia>
-          <List {...{ tracks, setTrackIndex }} />
+          <List tracks={tracks ?? []} setTrackIndex={setTrackIndex} />
         </CardMedia>
       )}
     </Card>
   );
 };
+
+export default AudioCard;

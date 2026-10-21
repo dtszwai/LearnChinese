@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import data from '@site/src/data/cheatsheet.json';
 import Layout from '@theme/Layout';
 import Collapse from '@site/src/components/Cheatsheet/Collapse';
@@ -6,10 +6,23 @@ import Demo from '@site/src/components/Cheatsheet/Demo';
 import styles from './cheatsheet.module.scss';
 import { useLocation } from '@docusaurus/router';
 
-export default function cheatsheet() {
+export default function Cheatsheet() {
   const columns = [data.slice(0, 1), data.slice(1, 4), data.slice(4, 6)];
   const title = '語文基礎知識';
-  const hash = decodeURI(useLocation().hash);
+  const location = useLocation();
+  const [hash, setHash] = useState('');
+  useEffect(() => {
+    const syncHash = () => {
+      try {
+        setHash(decodeURIComponent(window.location.hash));
+      } catch {
+        setHash('');
+      }
+    };
+    syncHash();
+    window.addEventListener('hashchange', syncHash);
+    return () => window.removeEventListener('hashchange', syncHash);
+  }, [location.hash]);
 
   return (
     <Layout title={title}>

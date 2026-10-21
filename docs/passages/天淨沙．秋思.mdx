@@ -10,6 +10,8 @@ hide_title: true
 hide_author: true
 ---
 
+import quizData from '@site/src/data/Quiz/天淨沙．秋思.json';
+
 # <span className="KeepAll" data-annotation="曲牌">天淨沙</span>．秋<Annotate title="粵 [肆]，[si3]。">思</Annotate>
 
 <Author dynasty="元" name="馬致遠" />
@@ -93,11 +95,11 @@ hide_author: true
 
 <ChallengeItem label="評估練習">
 
-<Quiz href="https://docs.google.com/forms/d/1JIM8LvkYcnwd-84crc9UUW5tujx_V8_6y2RBDmmhqNk/copy" />
+<Quiz data={quizData.questions} href="https://docs.google.com/forms/d/1JIM8LvkYcnwd-84crc9UUW5tujx_V8_6y2RBDmmhqNk/copy" />
 
 <Solution>
 
-<QuizAnswers />
+<QuizAnswers data={quizData.questions} />
 
 </Solution>
 

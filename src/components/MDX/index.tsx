@@ -8,13 +8,17 @@ import AudioCard from './AudioCard';
 import Task from './Task';
 import Admonition from './Admonition';
 import Commentary from './Commentary';
+import Remark from './Remark';
 import { Quiz, QuizAnswers, Review } from './Quiz';
 import { Youtube, Bilibili } from './Video';
-import { Challenges, Hint, Solution, NoSolution } from './Challenges';
+import { Challenges, ChallengeItem, Hint, Solution, NoSolution } from './Challenges';
 import ExpandableExample from './ExpandableExample';
 import { Jypt, Py } from './Lexis';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+type SectionProps = React.HTMLAttributes<HTMLDivElement>;
+type AdmonitionProps = Omit<React.ComponentProps<typeof Admonition>, 'type'>;
 
 export default {
   Author,
@@ -36,19 +40,23 @@ export default {
   Solution,
   NoSolution,
   Commentary,
-  ChallengeItem: ({ props }) => <div {...props}></div>,
-  Remark: ({ children, title }) => <p className={styles.remark} data-title={title}> {children}</p>,
-  Translation: (props) => <div className={styles.Section} {...props} />,
-  Biography: (props) => <div className={styles.Section} {...props} />,
-  Appreciation: (props) => <div className={styles.Section} {...props} />,
-  Media: (props) => <div {...props} />,
-  MainText: (props) => <div {...props} />,
-  Extension: (props) => <div {...props} />,
-  Dictionary: ({ children }) => <ExpandableExample title="📜 字詞釋義" type='Dictionary' children={children} />,
-  DeepDive: (props) => <ExpandableExample {...props} type='DeepDive' />,
-  Intro: (props) => <Admonition type='Intro' {...props} />,
-  Quote: (props) => <Admonition type='Quote' {...props} />,
-  Note: (props) => <Admonition type='Note' {...props} />,
-  YouWillLearn: (props) => <Admonition type='YouWillLearn' {...props} />,
-  Resources: (props) => <Admonition type='Resources' {...props} />,
+  ChallengeItem,
+  Remark,
+  Translation: (props: SectionProps) => <div className={styles.Section} {...props} />,
+  Biography: (props: SectionProps) => <div className={styles.Section} {...props} />,
+  Appreciation: (props: SectionProps) => <div className={styles.Section} {...props} />,
+  Media: (props: SectionProps) => <div {...props} />,
+  MainText: (props: SectionProps) => <div {...props} />,
+  Extension: (props: SectionProps) => <div {...props} />,
+  Dictionary: ({ children }: React.PropsWithChildren) => (
+    <ExpandableExample title='📜 字詞釋義' type='Dictionary' children={children} />
+  ),
+  DeepDive: (props: Omit<React.ComponentProps<typeof ExpandableExample>, 'type'>) => (
+    <ExpandableExample {...props} type='DeepDive' />
+  ),
+  Intro: (props: AdmonitionProps) => <Admonition type='Intro' {...props} />,
+  Quote: (props: AdmonitionProps) => <Admonition type='Quote' {...props} />,
+  Note: (props: AdmonitionProps) => <Admonition type='Note' {...props} />,
+  YouWillLearn: (props: AdmonitionProps) => <Admonition type='YouWillLearn' {...props} />,
+  Resources: (props: AdmonitionProps) => <Admonition type='Resources' {...props} />,
 };

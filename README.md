@@ -4,7 +4,35 @@
 
 「稽古有得，隨時劄記，久而類次成書。」——顧炎武《日知錄》
 
+## 本機開發與驗證
+
+使用 `.nvmrc` 指定的 Node 24.22.0 與 npm 11.19.1，執行 `npm ci` 安裝；本專案以 `package-lock.json` 為唯一鎖檔。
+
+`npm run typecheck` 與 `npx tsc` 使用 TypeScript 7.0.2 原生編譯器。ESLint 用 Babel parser 檢查 TS／TSX，保留 Hooks 規則；現有測試與 Learn 資料檢查也改用 Babel 轉譯，不依賴舊 TypeScript API。編輯器的 TS 7 語言伺服器須另外由編輯器支援；MDX 語言外掛仍可能需要舊 API。
+
+```sh
+npm start
+npm run check
+npm run build
+npm run check:build
+npx playwright install chromium
+npm run test:browser
+```
+
+`check` 包含全專案 strict 型別、Hooks/lint、增量格式、六課 Learn 資料與 Testing Library DOM 測試。瀏覽器測試使用 production build，並攔截評分與分析請求。專案使用 React 19；元件採 `type Props` 與 `const Component = ({ ... }: Props) => ...`。依賴選擇、已知 audit 問題與升級流程見 [維護紀錄](MAINTENANCE.md)；協作規範見 [AGENTS.md](AGENTS.md)。
+
 ## MDX Components
+
+### Quiz 資料
+
+每篇文章直接匯入自己的題庫，`Quiz` 與 `QuizAnswers` 傳入同一份 `questions`；不再依文章檔名動態載入整個題庫目錄。
+
+```mdx
+import quizData from '@site/src/data/Quiz/背影.json';
+
+<Quiz data={quizData.questions} />
+<QuizAnswers data={quizData.questions} />
+```
 
 ### Annotate
 
@@ -22,6 +50,23 @@ The `<Annotate>` component allows you to create tooltips for text. You can use i
 // Double Parentheses Syntax
 ((Hover over me||This is a tooltip))
 ```
+
+簡寫由 remark 處理文字節點，支援解釋中的雙引號；行內程式碼、一般 fenced code blocks 與 JSX attributes 不會被替換。MDX 的特殊字元仍依 Markdown／MDX 規則跳脫；需要複雜內容時使用完整 `<Annotate>`。註釋支援 Tab 聚焦、Enter／Space 切換及 Escape 關閉。
+
+### 字體資源
+
+原始字體保留在 `src/font`。`src/font/web` 和 `src/css/_fonts.scss` 是預先產生的 WOFF2 與 unicode-range：現有公開內容使用較小字集，其餘字元按需載入完整字體，不會因日後新增文字而失去原有字元覆蓋。一般 npm build 不需要 Python。
+
+只有需要更新小字集時才執行（Windows）：
+
+```powershell
+python -m venv .validation/font-tools
+.validation/font-tools/Scripts/python.exe -m pip install fonttools==4.67.0 brotli==1.2.0
+.validation/font-tools/Scripts/python.exe scripts/prepare-fonts.py
+npx prettier --write src/css/_fonts.scss
+```
+
+產生器只掃描公開內容，不讀取 `teaching` 或未公開 Learn 課程；保留字型輪廓、hinting、OpenType layout features 與名稱／版權資訊。
 
 ### Admonition
 

@@ -6,6 +6,8 @@ tags: [唐詩, 白居易]
 author: 白居易
 ---
 
+import quizData from '@site/src/data/Quiz/燕詩.json';
+
 <YouWillLearn>
 
 - 認識借事說理／詠物說理的寫作手法
@@ -16,7 +18,7 @@ author: 白居易
 <Intro>
 
 本篇題又作〈燕詩示劉叟〉。劉因愛子離家逃去，悲痛思念，不能自已，劉本人少年時亦是逃離父母而去，詩人遂為作此詩，以作曉諭。本篇亦可視作一篇「勸世文」。
-<p style={{fontFamily:'KaiTi'}}>叟有愛子。背叟而去，叟甚念之。叟少年時亦嘗如是，故作〈燕詩〉以諭之。</p>
+<span style={{fontFamily:'KaiTi', display:'block'}}>叟有愛子。背叟而去，叟甚念之。叟少年時亦嘗如是，故作〈燕詩〉以諭之。</span>
 
 </Intro>
 
@@ -127,11 +129,11 @@ author: 白居易
 
 <ChallengeItem label="評估練習">
 
-<Quiz href="https://docs.google.com/forms/d/1Uv8HPhnMrgBwQkQtR5b_eEkV8lSzGu4Wiuebb5qFJrA/copy" />
+<Quiz data={quizData.questions} href="https://docs.google.com/forms/d/1Uv8HPhnMrgBwQkQtR5b_eEkV8lSzGu4Wiuebb5qFJrA/copy" />
 
 <Solution>
 
-<QuizAnswers />
+<QuizAnswers data={quizData.questions} />
 
 </Solution>
 

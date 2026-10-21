@@ -1,3 +1,19 @@
+.Trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+
+  &:focus-visible {
+    outline: 2px solid var(--ifm-color-primary);
+    outline-offset: 2px;
+  }
+}
+
 .CollapseTitle {
   display: flex;
   cursor: pointer;
@@ -26,7 +42,7 @@
 .CollapseTitleIcon {
   color: gray;
   transition: 0.3s;
-  [aria-expanded='true'] & {
+  [aria-expanded="true"] & {
     color: var(--ifm-color-primary-contrast-foreground);
     transform: rotate(180deg);
   }

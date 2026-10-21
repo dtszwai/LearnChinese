@@ -6,6 +6,8 @@ tags: [唐詩, 杜甫]
 author: 杜甫
 ---
 
+import quizData from '@site/src/data/Quiz/客至.json';
+
 <Intro>
 
 這首詩作於唐肅宗上元二年（公元 761），是杜甫五十歲鄉居於四川成都西郊的浣花草堂時的作品。原詩在標題下有「喜崔明府相過」數字。除了幾個知己，杜甫很少與人交往。一日，親友崔明府來訪。明府，在唐代是對縣令的尊稱。杜甫的母親姓崔，一說崔明府是他母家的親戚，一說是他的舅氏崔頊。無論如何，有客來訪，詩人都感到喜出望外，便寫下了這首詩歌，記述歡敘暢飲的情形，表現出詩人誠樸的性格和真摯的情感。
@@ -169,9 +171,9 @@ I’ll call over the hedge to get him and we’ll finish the last cups.
 
 <Challenges>
   <ChallengeItem label="評估練習">
-    <Quiz href="https://docs.google.com/forms/d/1Uv8HPhnMrgBwQkQtR5b_eEkV8lSzGu4Wiuebb5qFJrA/copy" />
+    <Quiz data={quizData.questions} href="https://docs.google.com/forms/d/1Uv8HPhnMrgBwQkQtR5b_eEkV8lSzGu4Wiuebb5qFJrA/copy" />
     <Solution>
-      <QuizAnswers />
+      <QuizAnswers data={quizData.questions} />
     </Solution>
   </ChallengeItem>
   <ChallengeItem label="字詞配對">

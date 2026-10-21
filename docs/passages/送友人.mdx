@@ -6,6 +6,8 @@ tags: [唐詩, 李白]
 author: 李白
 ---
 
+import quizData from '@site/src/data/Quiz/送友人.json';
+
 <AudioCard tracks={[{title:`【粵】〈送友人〉`, src:`/audio/送友人(粵語).mp3`,author:'李白 (EDB)', cap:'粵語'},{title:'【普】〈送友人〉',src:'/audio/送友人(普通話).mp3',author:'李白 (EDB)', cap:'普通話'}]} />
 
 <MainText>
@@ -153,9 +155,9 @@ author: 李白
 
 <Challenges>
   <ChallengeItem label="評估練習">
-    <Quiz href="https://docs.google.com/forms/d/1rEfpOD20fNyqrb0hlIvNfzj-FO0l_uD6468hYOJNEEc/copy" />
+    <Quiz data={quizData.questions} href="https://docs.google.com/forms/d/1rEfpOD20fNyqrb0hlIvNfzj-FO0l_uD6468hYOJNEEc/copy" />
     <Solution>
-      <QuizAnswers />
+      <QuizAnswers data={quizData.questions} />
     </Solution>
   </ChallengeItem>
 </Challenges>

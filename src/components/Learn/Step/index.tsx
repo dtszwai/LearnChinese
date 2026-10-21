@@ -4,10 +4,21 @@ import Activities from '../Activities';
 import Report from '../ReportStep';
 import tagWrapper from '@site/src/utils/tagWrapper';
 import styles from './index.module.scss';
+import type { Lesson, LessonData } from '../types';
+import type { LessonProgress } from '../lessonProgress';
 
-export default ({ lesson, data, step, error, onChangeSuccess, onRestart }) => {
+type Props = {
+  lesson: Lesson;
+  data: LessonData;
+  step: LessonProgress;
+  error: boolean;
+  onChangeSuccess: (success: boolean) => void;
+  onRestart: () => void;
+};
+
+const Step = ({ lesson, data, step, error, onChangeSuccess, onRestart }: Props) => {
   const [modalIsOpen, setIsOpenModal] = useState(false);
-  const handleCloseModal = (e) => e.key === 'Escape' && setIsOpenModal(false);
+  const handleCloseModal = (e: KeyboardEvent) => e.key === 'Escape' && setIsOpenModal(false);
   useEffect(() => {
     addEventListener('keyup', handleCloseModal);
     return () => removeEventListener('keyup', handleCloseModal);
@@ -41,25 +52,31 @@ export default ({ lesson, data, step, error, onChangeSuccess, onRestart }) => {
       )}
       {data.id?.endsWith('-complete') && (
         <div>
-          <button type='button' className='button button--secondary' onClick={onRestart}>重新學習</button>
+          <button type='button' className='button button--secondary' onClick={onRestart}>
+            重新學習
+          </button>
         </div>
       )}
       {data.interactive !== false && (
         <>
-          {data.interaction ? <Activities
-            key={data.id || step.currentStep}
-            data={data}
-            step={step}
-            parentError={error}
-            onChangeSuccess={onChangeSuccess}
-          /> : <InteractiveArea
-            key={data.id || step.currentStep}
-            data={data}
-            step={step}
-            parentError={error}
-            onChangeSuccess={onChangeSuccess}
-            setIsOpenModal={setIsOpenModal}
-          />}
+          {data.interaction ? (
+            <Activities
+              key={data.id || step.currentStep}
+              data={data}
+              step={step}
+              parentError={error}
+              onChangeSuccess={onChangeSuccess}
+            />
+          ) : (
+            <InteractiveArea
+              key={data.id || step.currentStep}
+              data={data}
+              step={step}
+              parentError={error}
+              onChangeSuccess={onChangeSuccess}
+              setIsOpenModal={setIsOpenModal}
+            />
+          )}
           <Report title={lesson.title} step={step} />
           {data.videoURL && modalIsOpen && (
             <div className={styles.StepVideoModal}>
@@ -81,3 +98,5 @@ export default ({ lesson, data, step, error, onChangeSuccess, onRestart }) => {
     </div>
   );
 };
+
+export default Step;

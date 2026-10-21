@@ -6,6 +6,8 @@ tags: [林海音, 小說, 自傳, 散敘法]
 author: 林海音
 ---
 
+import quizData from '@site/src/data/Quiz/爸爸的花兒落了.json';
+
 <MainText>
 
 <div className="main prose">
@@ -114,9 +116,9 @@ author: 林海音
 
 <Challenges>
   <ChallengeItem label="評估練習">
-    <Quiz href="https://docs.google.com/forms/d/1Rv0PONd-_6jgDy16-nOeeZC5JM6U3Kq9fwccueBOU4U/copy" />
+    <Quiz data={quizData.questions} href="https://docs.google.com/forms/d/1Rv0PONd-_6jgDy16-nOeeZC5JM6U3Kq9fwccueBOU4U/copy" />
     <Solution>
-      <QuizAnswers />
+      <QuizAnswers data={quizData.questions} />
     </Solution>
   </ChallengeItem>
 </Challenges>

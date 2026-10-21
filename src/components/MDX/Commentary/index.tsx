@@ -5,7 +5,7 @@ import { CommentaryContext } from '@site/src/theme/Root';
 
 type TipsProps = { children: React.ReactNode; group: string };
 type DisplayProps = { left?: boolean } & TargetProps & TextProps;
-type TargetProps = { all: true; group?: never } | { group: string; all?: never };
+type TargetProps = { group: string };
 type TextProps = { children: React.ReactNode; label?: never } | { label: string; children?: never };
 
 const TextComponent = (props: TipsProps) => {
@@ -17,12 +17,12 @@ const ButtonComponent = (props: DisplayProps) => {
   const [show, setShow] = useContext(CommentaryContext);
 
   const showComment = () => {
-    setShow({ ...show, [props.group]: !show[props.group] });
+    setShow((previous) => ({ ...previous, [props.group]: !previous[props.group] }));
   };
 
   React.useEffect(() => {
     return () => setShow({});
-  }, []);
+  }, [setShow]);
 
   return (
     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -37,18 +37,19 @@ const ButtonComponent = (props: DisplayProps) => {
   );
 };
 
-const Panel = (props) => (
-  <div className={styles.Commentary_Panel}>
-    {props.children}
-  </div>
-);
+const Panel = (props: React.PropsWithChildren) => <div className={styles.Commentary_Panel}>{props.children}</div>;
 
-export default (props) => {
-  const varientMap = {
-    button: <ButtonComponent {...props} />,
-    text: <TextComponent {...props} />,
-    panel: <Panel {...props} />,
-  };
-
-  return varientMap[props.type];
+type CommentaryProps =
+  ({ type: 'button' } & DisplayProps) | ({ type: 'text' } & TipsProps) | ({ type: 'panel' } & React.PropsWithChildren);
+const Commentary = (props: CommentaryProps) => {
+  switch (props.type) {
+    case 'button':
+      return <ButtonComponent {...props} />;
+    case 'text':
+      return <TextComponent {...props} />;
+    case 'panel':
+      return <Panel {...props} />;
+  }
 };
+
+export default Commentary;

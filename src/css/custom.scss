@@ -1,4 +1,4 @@
-@import "typography.scss";
+@use "typography";
 
 :root {
   --ifm-color-primary: #247ba0;
@@ -256,7 +256,7 @@ ul.table-of-contents li ul {
   }
 }
 
-div[class^="announcementBar_"] {
+div.theme-announcement-bar {
   background-color: #7f7ff0;
   color: #fff;
   font-weight: bold;

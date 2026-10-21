@@ -3,11 +3,23 @@ import S1 from "./docs/contents/S1/PassageList.json";
 import S2 from "./docs/contents/S2/PassageList.json";
 import S3 from "./docs/contents/S3/PassageList.json";
 
+// JSON widens discriminator strings. Validate the supported shape instead of
+// asserting that arbitrary JSON is a Docusaurus sidebar.
+function passageSidebar(entries: typeof S1): SidebarsConfig[string] {
+  return entries.map((entry) => {
+    if (typeof entry === "string") return entry;
+    if (entry.type !== "category" || entry.link.type !== "doc") {
+      throw new Error(`Unsupported passage sidebar item: ${entry.label}`);
+    }
+    return { ...entry, type: "category" as const, link: { ...entry.link, type: "doc" as const } };
+  });
+}
+
 const sidebar: SidebarsConfig = {
-  S1,
-  S2,
-  S3,
-  
+  S1: passageSidebar(S1),
+  S2: passageSidebar(S2),
+  S3: passageSidebar(S3),
+
   settext: [
     {
       type: "category",

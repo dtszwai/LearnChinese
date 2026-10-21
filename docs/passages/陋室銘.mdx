@@ -6,6 +6,8 @@ author: 劉禹錫
 dynasty: 唐
 ---
 
+import quizData from '@site/src/data/Quiz/陋室銘.json';
+
 <Intro>
 
 「銘」是古代刻在器物、碑石上用以歌功頌德或警戒自己的文字，後來成為一種獨立文體，其特點是短小精悍，文字簡潔，句式整齊，而且多是押韻的。
@@ -102,9 +104,9 @@ dynasty: 唐
 
 <Challenges>
   <ChallengeItem label="評估練習">
-    <Quiz />
+    <Quiz data={quizData.questions} />
     <Solution>
-      <QuizAnswers />
+      <QuizAnswers data={quizData.questions} />
     </Solution>
   </ChallengeItem>
   <ChallengeItem label='內容深究'>

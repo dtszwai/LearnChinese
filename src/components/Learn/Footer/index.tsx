@@ -1,5 +1,5 @@
 import React, { MouseEventHandler } from 'react';
-import cx from 'classnames';
+import cx from 'clsx';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { BsFillLockFill, BsFillUnlockFill } from 'react-icons/bs';
 import styles from './index.module.scss';
@@ -29,26 +29,36 @@ export default ({ totalSteps, currentStep, nextStep, prevStep, success, error }:
       </div>
       <div className={styles.LearnFooterNextWrapper}>
         {currentStep < totalSteps && (
-          <button type='button' aria-label='下一題' aria-disabled={!success} className={cx(styles.NavigationStepNext, { [styles.NextReady]: success })} onClick={nextStep}>
-            {success ? <>
-              <BsFillUnlockFill className={styles.ReadyUnlock} aria-hidden='true' />
-              <span>下一題</span>
-              <kbd className='Shortcut'>Enter</kbd>
-              <AiOutlineArrowRight className={styles.ReadyArrow} size={18} aria-hidden='true' />
-            </> : <>
-            <div className={styles.NavigationStepNextWrapper}>
-              <div className='Shortcut'>Enter</div>
-                <BsFillLockFill
-                  className={cx(styles.NavigationStepStatusIcon, {
-                    [styles.NavigationStepStatusIconError]: error,
-                  })}
-                />
-            </div>
-            <div className={styles.NavigationStepText}>
-              下一題
-              <AiOutlineArrowRight className={styles.NavigationStepIcon} size={20} />
-            </div>
-            </>}
+          <button
+            type='button'
+            aria-label='下一題'
+            aria-disabled={!success}
+            className={cx(styles.NavigationStepNext, { [styles.NextReady]: success })}
+            onClick={nextStep}
+          >
+            {success ? (
+              <>
+                <BsFillUnlockFill className={styles.ReadyUnlock} aria-hidden='true' />
+                <span>下一題</span>
+                <kbd className='Shortcut'>Enter</kbd>
+                <AiOutlineArrowRight className={styles.ReadyArrow} size={18} aria-hidden='true' />
+              </>
+            ) : (
+              <>
+                <div className={styles.NavigationStepNextWrapper}>
+                  <div className='Shortcut'>Enter</div>
+                  <BsFillLockFill
+                    className={cx(styles.NavigationStepStatusIcon, {
+                      [styles.NavigationStepStatusIconError]: error,
+                    })}
+                  />
+                </div>
+                <div className={styles.NavigationStepText}>
+                  下一題
+                  <AiOutlineArrowRight className={styles.NavigationStepIcon} size={20} />
+                </div>
+              </>
+            )}
           </button>
         )}
       </div>

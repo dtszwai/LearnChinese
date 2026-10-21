@@ -1,0 +1,11 @@
+{
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "printWidth": 120,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "endOfLine": "lf",
+  "overrides": [
+    { "files": ["*.json", "*.scss", "docusaurus.config.ts", "sidebars.ts"], "options": { "singleQuote": false } }
+  ]
+}

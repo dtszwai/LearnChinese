@@ -1,31 +1,28 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useCallback, useEffect, useState, useContext } from 'react';
 import styles from './styles.module.scss';
 import { Question, Selection, WrongAnswer } from './utils';
 import { QuizContext } from '@site/src/theme/Root';
 import postData from '@site/src/utils/postData';
+import type { QuizQuestion } from './types';
 
-export default ({ questions, checkAnswer = false }) => {
+type Props = { questions: QuizQuestion[]; checkAnswer?: boolean };
+const App = ({ questions, checkAnswer = false }: Props) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const { setSelectedAnswer, result, setResult } = useContext(QuizContext);
 
-  const reset = () => {
+  const reset = useCallback(() => {
     setScore(0);
     setCurrentQuestion(0);
     setShowScore(false);
     setResult([]);
     setSelectedAnswer({});
-  };
+  }, [setResult, setSelectedAnswer]);
 
   useEffect(() => {
     reset();
-  }, []);
-
-  useEffect(() => {
-    if (showScore)
-      postData({ Event: 'Quiz', Details: WrongAnswer(result), Message: `分數：${score}/${questions.length}` });
-  }, [showScore]);
+  }, [reset]);
 
   const handleAnswerOptionClick = (i: number) => {
     const isCorrect = questions[currentQuestion].answerOptions[i].isCorrect;
@@ -33,7 +30,16 @@ export default ({ questions, checkAnswer = false }) => {
     setSelectedAnswer((prep) => ({ ...prep, [currentQuestion]: i }));
     setResult((prep) => [...prep, isCorrect]);
     const nextQuestion = currentQuestion + 1;
-    nextQuestion < questions.length ? setCurrentQuestion(nextQuestion) : setShowScore(true);
+    if (nextQuestion < questions.length) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      setShowScore(true);
+      void postData({
+        Event: 'Quiz',
+        Details: WrongAnswer([...result, isCorrect]) ?? '',
+        Message: `分數：${score + (isCorrect ? 1 : 0)}/${questions.length}`,
+      });
+    }
   };
 
   return (
@@ -53,7 +59,7 @@ export default ({ questions, checkAnswer = false }) => {
             <button
               className={styles.btn}
               onClick={() => {
-                document.querySelector<HTMLElement>('[data-quiz="Answers"]').click();
+                document.querySelector<HTMLElement>('[data-quiz="Answers"]')?.click();
               }}
               children='查看答案'
             />
@@ -74,3 +80,5 @@ export default ({ questions, checkAnswer = false }) => {
     </div>
   );
 };
+
+export default App;

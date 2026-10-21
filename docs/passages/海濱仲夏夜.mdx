@@ -7,6 +7,8 @@ author: 峻青
 source: 《秋色賦》
 ---
 
+import quizData from '@site/src/data/Quiz/海濱仲夏夜.json';
+
 <YouWillLearn>
 
 - 學習隨時推移法及動態描寫。
@@ -141,11 +143,11 @@ source: 《秋色賦》
 
 <ChallengeItem label='評估練習'>
 
-<Quiz href="https://docs.google.com/forms/d/1ITf2QjSTYpVvG4sOmg7I2eX8K4JwIlUaG-dwJ0ybx3g/copy" />
+<Quiz data={quizData.questions} href="https://docs.google.com/forms/d/1ITf2QjSTYpVvG4sOmg7I2eX8K4JwIlUaG-dwJ0ybx3g/copy" />
 
 <Solution>
 
-<QuizAnswers />
+<QuizAnswers data={quizData.questions} />
 
 </Solution>
 

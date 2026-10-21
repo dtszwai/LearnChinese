@@ -7,6 +7,8 @@ author: 韓非
 source: 《韓非子．外儲說左上》
 ---
 
+import quizData from '@site/src/data/Quiz/曾子殺豬.json';
+
 <AudioCard tracks={[{title:`【粵】〈曾子殺豬〉`, src:`/audio/曾子殺豬(粵語).mp3`,author:'韓非 (EDB)', cap:'粵語'},{title:'【普】〈曾子殺豬〉',src:'/audio/曾子殺豬(普通話).mp3',author:'韓非 (EDB)', cap:'普通話'}]} />
 
 ![曾子殺豬](/img/S1/曾子殺豬/Cover.jpg)
@@ -80,9 +82,9 @@ source: 《韓非子．外儲說左上》
 
 <Challenges>
   <ChallengeItem>
-    <Quiz href="https://docs.google.com/forms/d/1KYmtmGCLrlmhZ6QZGZFWzk-SGVB9etWrkvLo3AcJ1z4/copy" />
+    <Quiz data={quizData.questions} href="https://docs.google.com/forms/d/1KYmtmGCLrlmhZ6QZGZFWzk-SGVB9etWrkvLo3AcJ1z4/copy" />
     <Solution>
-      <QuizAnswers />
+      <QuizAnswers data={quizData.questions} />
     </Solution>
   </ChallengeItem>
 </Challenges>

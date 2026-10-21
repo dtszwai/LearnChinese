@@ -1,26 +1,12 @@
-import React from "react";
-import clsx from "clsx";
-import { translate } from "@docusaurus/Translate";
-import IconWordWrap from "@theme/Icon/WordWrap";
-import styles from "./styles.module.css";
-export default function WordWrapButton({ className, onClick, isEnabled }) {
-  React.useEffect(() => {
-    onClick();
-  }, []);
-  // const title = translate({
-  //   id: "theme.CodeBlock.wordWrapToggle",
-  //   message: "Toggle word wrap",
-  //   description: "The title attribute for toggle word wrapping button of code block lines",
-  // });
-  // return (
-  //   <button
-  //     type="button"
-  //     onClick={onClick}
-  //     className={clsx("clean-btn", className, isEnabled && styles.wordWrapButtonEnabled)}
-  //     aria-label={title}
-  //     title={title}
-  //   >
-  //     <IconWordWrap className={styles.wordWrapButtonIcon} aria-hidden="true" />
-  //   </button>
-  // );
+import { useEffect, useRef } from 'react';
+// Keep the existing automatic word wrapping and hidden toggle.
+export default function WordWrapButton({ onClick }) {
+  const initialized = useRef(false);
+  useEffect(() => {
+    if (!initialized.current) {
+      initialized.current = true;
+      onClick();
+    }
+  }, [onClick]);
+  return null;
 }

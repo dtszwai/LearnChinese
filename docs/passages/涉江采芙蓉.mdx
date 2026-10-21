@@ -9,6 +9,8 @@ dynasty: 漢
 source: 《古詩十九首》
 ---
 
+import quizData from '@site/src/data/Quiz/涉江采芙蓉.json';
+
 <Intro>
 
 《古詩十九首》是十九首五言詩的合稱，由南朝梁武帝的長子蕭統編入《昭明文選》而成。《古詩十九首》每首皆無題目，後人以各詩首句為題，一般認為是東漢末年的作品，作者不只一人。
@@ -125,9 +127,9 @@ source: 《古詩十九首》
 
 <Challenges>
   <ChallengeItem label="評估練習">
-    <Quiz href="https://docs.google.com/forms/d/1iqfGmbJHqVtkE6TNBdx517njeIxo_-rLcYYKil0wHwQ/copy" />
+    <Quiz data={quizData.questions} href="https://docs.google.com/forms/d/1iqfGmbJHqVtkE6TNBdx517njeIxo_-rLcYYKil0wHwQ/copy" />
     <Solution>
-      <QuizAnswers />
+      <QuizAnswers data={quizData.questions} />
     </Solution>
   </ChallengeItem>
 </Challenges>

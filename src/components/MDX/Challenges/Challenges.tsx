@@ -4,6 +4,9 @@ import clsx from 'clsx';
 import { Navigation } from './Navigation';
 import { IoFlagOutline, IoBulbOutline, IoArrowForward } from 'react-icons/io5';
 import styles from './styles.module.scss';
+import { useMDXComponents } from '@mdx-js/react';
+import type { MDXComponents } from 'mdx/types';
+import { ChallengeItem, Hint, Solution } from './markers';
 
 export type ChallengeContents = {
   id: string;
@@ -12,22 +15,35 @@ export type ChallengeContents = {
   content: React.ReactNode;
   solution: React.ReactNode;
   hint?: React.ReactNode;
-}
+};
 
-const parseChallengeContents = (challengeItem): ChallengeContents[] => {
+const parseChallengeContents = (challengeItem: React.ReactNode, components: MDXComponents): ChallengeContents[] => {
   const contents: ChallengeContents[] = [];
   React.Children.forEach(challengeItem, (item) => {
-    if (item.type.name !== 'ChallengeItem') return;
-    let [content, challenge]: [React.ReactElement[], Partial<ChallengeContents>] = [[], {}];
+    if (
+      !React.isValidElement<React.PropsWithChildren<{ label: string }>>(item) ||
+      (item.type !== ChallengeItem && item.type !== components.ChallengeItem)
+    )
+      return;
+    const content: React.ReactNode[] = [];
     const { props: itemProps } = item;
-    [challenge.order, challenge.name, challenge.id] = [contents.length + 1, itemProps.label, itemProps.label]
-    React.Children.forEach((itemProps.children), (child) => {
-      switch (child.type?.name || child.type) {
-        case 'Solution': {
+    const challenge: ChallengeContents = {
+      order: contents.length + 1,
+      name: itemProps.label,
+      id: itemProps.label,
+      content,
+      solution: null,
+    };
+    React.Children.forEach(itemProps.children, (child) => {
+      const kind = React.isValidElement(child) ? child.type : null;
+      switch (kind) {
+        case Solution:
+        case components.Solution: {
           challenge.solution = child;
           break;
         }
-        case 'Hint': {
+        case Hint:
+        case components.Hint: {
           challenge.hint = child;
           break;
         }
@@ -37,16 +53,16 @@ const parseChallengeContents = (challengeItem): ChallengeContents[] => {
       }
     });
     challenge.content = content;
-    contents.push(challenge as ChallengeContents);
+    contents.push(challenge);
   });
   return contents;
 };
 
-export function Challenges({ children }: { children: React.ReactElement[] }) {
-  const challenges = parseChallengeContents(children);
+export function Challenges({ children }: React.PropsWithChildren) {
+  const challenges = parseChallengeContents(children, useMDXComponents());
   const [showHint, setShowHint] = React.useState(false);
   const [showSolution, setShowSolution] = React.useState(false);
-  const [activeChallenge, setActiveChallenge] = React.useState(challenges[0].id);
+  const [activeChallenge, setActiveChallenge] = React.useState(challenges[0]?.id);
 
   const handleChallengeChange = (challengeId: string) => {
     setShowHint(false);

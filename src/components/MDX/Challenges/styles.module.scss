@@ -1,9 +1,10 @@
 .Container {
-  margin-left: -1.25rem;
-  margin-right: -1.25rem;
+  // Match the document column gutter when the exercise extends to screen edges.
+  margin-left: calc(-1 * var(--ifm-spacing-horizontal));
+  margin-right: calc(-1 * var(--ifm-spacing-horizontal));
   box-shadow: rgba(0, 0, 0, 0.05);
   background-color: #f6f7f9;
-  html[data-theme='dark'] & {
+  html[data-theme="dark"] & {
     background-color: #343a46;
   }
   border-color: #ebecf0;
@@ -43,7 +44,7 @@
     font-size: 20px;
     margin-bottom: 1.5rem;
     font-weight: inherit;
-    html[data-theme='dark'] & {
+    html[data-theme="dark"] & {
       color: #f6f7f9;
     }
 
@@ -80,7 +81,7 @@
   transition-property: color, background, border-color;
   transition-duration: var(--ifm-button-transition-duration);
   transition-timing-function: var(--ifm-transition-timing-default);
-  html[data-theme='dark'] & {
+  html[data-theme="dark"] & {
     color: #ebecf0;
     background-color: #404756;
   }
@@ -93,7 +94,7 @@
 .ButtonActive {
   color: white !important;
   background-color: #087ea4 !important;
-  html[data-theme='dark'] & {
+  html[data-theme="dark"] & {
     background-color: #149eca;
   }
 }
@@ -112,7 +113,7 @@
 .NavChallengeActive {
   color: #087ea4;
   border-bottom-color: #087ea4;
-  html[data-theme='dark'] & {
+  html[data-theme="dark"] & {
     color: #149eca;
     border-bottom-color: #149eca;
   }
@@ -132,18 +133,18 @@
   }
   &:last-child {
     border-left: 1px solid #bcc1cd;
-    html[data-theme='dark'] & {
+    html[data-theme="dark"] & {
       border-left: 1px solid #ebecf0;
     }
   }
-  html[data-theme='dark'] & {
+  html[data-theme="dark"] & {
     background-color: #404756;
   }
 }
 
 .CanScroll {
   color: #23272f;
-  html[data-theme='dark'] & {
+  html[data-theme="dark"] & {
     color: #f6f7f9;
   }
 }

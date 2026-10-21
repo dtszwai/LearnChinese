@@ -2,62 +2,42 @@ import React, { useState, useEffect, useRef } from 'react';
 import Hint from '../Hint';
 import tagWrapper from '@site/src/utils/tagWrapper';
 import checkRegex, { findAnswer, getHighlightRegex } from '../checkRegex';
-import cx from 'classnames';
+import cx from 'clsx';
 import styles from './index.module.scss';
+import type { LessonData } from '../types';
+import type { LessonProgress } from '../lessonProgress';
 
-export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) => {
+type Props = {
+  data: LessonData;
+  step: LessonProgress;
+  parentError: boolean;
+  onChangeSuccess: (success: boolean) => void;
+  setIsOpenModal: (open: boolean) => void;
+};
+
+export default function Interactive({ data, step, parentError, onChangeSuccess, setIsOpenModal }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [inputValue, setInputValue] = useState(data?.initialValue || '');
-  const [content, setContent] = useState('');
-  const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [match, setMatch] = useState(false);
-
-  const applyRegex = () => {
-    if (data.applyRegex === false) {
-      const isCorrect = findAnswer(data.suggestedAnswer, inputValue) !== undefined;
-      setMatch(isCorrect);
-      setSuccess(isCorrect);
-      onChangeSuccess(isCorrect);
-      setError(!isCorrect);
-      return;
-    }
-    const { isSuccess, isMatch } = checkRegex(data, inputValue);
-    setMatch(isMatch);
-    setSuccess(isSuccess);
-    onChangeSuccess(isSuccess);
-    setError(!(isSuccess || isMatch));
-    const highlightRegex = getHighlightRegex(data, inputValue);
-    setContent(highlightRegex ? tagWrapper({
-        value: data.content,
-        regex: highlightRegex,
-        attributes: { class: styles.ResultTag },
-      }) : data.content);
-  };
-
-  const resetStep = () => {
-    setInputValue(data?.initialValue || '');
-    setContent('');
-    setError(false);
-    setSuccess(false);
-    onChangeSuccess(false);
-    setMatch(false);
-  };
-
+  // Step is keyed by the parent: initialize once for a new or revisited question.
+  const [inputValue, setInputValue] = useState(
+    () => (step.currentStep < step.lastStep ? data.suggestedAnswer?.[0] : data.initialValue) || '',
+  );
+  const result =
+    data.applyRegex === false
+      ? {
+          isSuccess: findAnswer(data.suggestedAnswer ?? [], inputValue) !== undefined,
+          isMatch: findAnswer(data.suggestedAnswer ?? [], inputValue) !== undefined,
+        }
+      : checkRegex(data, inputValue);
+  const { isSuccess: success, isMatch: match } = result;
+  const error = !(success || match);
+  const highlightRegex = data.applyRegex === false ? undefined : getHighlightRegex(data, inputValue);
+  const content = highlightRegex
+    ? tagWrapper({ value: data.content || '', regex: highlightRegex, attributes: { class: styles.ResultTag } })
+    : data.content || '';
+  const readableContent = content.replace(/\n/gm, '<br />');
   useEffect(() => {
-    resetStep();
-    const isCompletedStep = step.currentStep < step.lastStep;
-    const currentRegex = isCompletedStep ? data.suggestedAnswer[0] : data.initialValue;
-
-    setInputValue(currentRegex || '');
-    inputRef?.current?.blur();
-  }, [step]);
-
-  useEffect(() => {
-    applyRegex();
-  }, [inputValue, step, data]);
-
-  const readableContent = (content || data.content || '').replace(/\n/gm, '<br />');
+    onChangeSuccess(success);
+  }, [success, onChangeSuccess]);
 
   return (
     <div
@@ -70,14 +50,16 @@ export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) =>
     >
       <div className={styles.BlockContent} data-title='內容' dangerouslySetInnerHTML={{ __html: readableContent }} />
       <div className={styles.BlockRegex} data-title='答案'>
-        {!data.noHint && <Hint answer={data.suggestedAnswer} step={step} />}
+        {!data.noHint && <Hint answer={data.suggestedAnswer ?? []} step={step} />}
         <div className={styles.InputWrapper}>
           {data.prefix}
           <input
             ref={inputRef}
             type='text'
             className={styles.Input}
-            style={{ width: `calc(${Math.max([...inputValue].length, data?.placeholder?.length || 0, 3)} * 1.1em + 12px)` }}
+            style={{
+              width: `calc(${Math.max([...inputValue].length, data?.placeholder?.length || 0, 3)} * 1.1em + 12px)`,
+            }}
             aria-label='你的答案'
             aria-invalid={Boolean(inputValue && error)}
             autoComplete='off'
@@ -95,4 +77,4 @@ export default ({ data, step, parentError, onChangeSuccess, setIsOpenModal }) =>
       </div>
     </div>
   );
-};
+}
