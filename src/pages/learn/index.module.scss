@@ -1,3 +1,5 @@
+@use "../../components/Learn/colors";
+
 .main {
   width: 100%;
   max-width: 1120px;
@@ -6,18 +8,37 @@
 }
 .header {
   margin-bottom: 44px;
-  h1 { font-family: WenKai; font-size: 32px; margin: 0 0 12px; }
+  h1 {
+    font-family: WenKai;
+    font-size: 32px;
+    margin: 0 0 12px;
+  }
 }
-.description { font-family: WenKai; font-size: 24px; margin: 0 0 8px; }
-.group + .group { margin-top: 36px; }
+.description {
+  font-family: WenKai;
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+.group + .group {
+  margin-top: 36px;
+}
 .groupHeader {
   margin-bottom: 16px;
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
   gap: 6px 18px;
-  h2 { font-size: 20px; font-weight: 500; margin: 0; color: var(--ifm-font-color-base); }
-  p { font-size: 14px; color: #606673; margin: 0; }
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--ifm-font-color-base);
+  }
+  p {
+    font-size: 14px;
+    color: #606673;
+    margin: 0;
+  }
 }
 .grid {
   display: grid;
@@ -33,19 +54,35 @@
   border-radius: 12px;
   color: var(--ifm-font-color-base);
   text-decoration: none !important;
-  transition: border-color .18s, background-color .18s;
+  transition:
+    border-color 0.18s,
+    background-color 0.18s;
   &:hover {
     color: var(--ifm-font-color-base);
     border-color: var(--ifm-color-primary);
     background: color-mix(in srgb, var(--ifm-color-primary) 3%, #fff);
   }
-  &:focus-visible { outline: 2px solid var(--ifm-color-primary); outline-offset: 3px; }
-  &:hover .action svg { transform: translateX(3px); }
+  &:focus-visible {
+    outline: 2px solid var(--ifm-color-primary);
+    outline-offset: 3px;
+  }
+  &:hover .action svg {
+    transform: translateX(3px);
+  }
 }
 .cardContent {
   flex: 1;
-  h3 { font-size: 20px; font-weight: 400; margin: 0 0 10px; color: color-mix(in srgb, var(--ifm-color-primary) 80%, #000); }
-  p { margin: 0; font-size: 16px; line-height: 1.7; }
+  h3 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 10px;
+    color: color-mix(in srgb, var(--ifm-color-primary) 80%, #000);
+  }
+  p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+  }
 }
 .cardFooter {
   margin-top: 24px;
@@ -56,13 +93,17 @@
   gap: 10px;
   font-size: 14px;
 }
-.stepCount { color: #606673; }
+.stepCount {
+  color: #606673;
+}
 .action {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   color: color-mix(in srgb, var(--ifm-color-primary) 80%, #000);
-  svg { transition: transform .18s; }
+  svg {
+    transition: transform 0.18s;
+  }
 }
 .progress {
   height: 3px;
@@ -70,16 +111,75 @@
   background: var(--ifm-color-emphasis-200);
   overflow: hidden;
   margin-top: 14px;
-  span { display: block; height: 100%; background: var(--ifm-color-primary); border-radius: inherit; }
+  span {
+    display: block;
+    height: 100%;
+    background: var(--ifm-color-primary);
+    border-radius: inherit;
+  }
 }
 @media (max-width: 600px) {
-  .main { padding: 28px 20px 40px; }
-  .header { margin-bottom: 32px; }
-  .description { font-size: 22px; }
-  .grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .card { padding: 20px; }
-  .group + .group { margin-top: 30px; }
+  .main {
+    padding: 28px 20px 40px;
+  }
+  .header {
+    margin-bottom: 32px;
+  }
+  .description {
+    font-size: 22px;
+  }
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .card {
+    padding: 20px;
+  }
+  .group + .group {
+    margin-top: 30px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .card, .action svg { transition: none; }
+  .card,
+  .action svg {
+    transition: none;
+  }
+}
+
+html[data-theme="dark"] .main {
+  @include colors.dark;
+  color: var(--learn-text);
+
+  .groupHeader p,
+  .stepCount {
+    color: var(--learn-muted);
+  }
+
+  .card {
+    background: var(--learn-surface);
+    border-color: var(--learn-border-subtle);
+    color: var(--learn-text);
+
+    &:hover {
+      background: var(--learn-accent-surface);
+      border-color: var(--learn-accent);
+    }
+
+    &:focus-visible {
+      outline-color: var(--learn-accent);
+    }
+  }
+
+  .cardContent h3,
+  .action {
+    color: var(--learn-accent);
+  }
+
+  .progress {
+    background: var(--learn-border-subtle);
+
+    span {
+      background: var(--learn-accent);
+    }
+  }
 }

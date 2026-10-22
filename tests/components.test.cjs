@@ -74,7 +74,6 @@ test('prefilled demonstration remains editable and clearing/wrong answer relocks
       onChangeSuccess: (value) => {
         success = value;
       },
-      setIsOpenModal: () => {},
     }),
   );
   assert.equal(success, true);

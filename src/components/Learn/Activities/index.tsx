@@ -74,17 +74,25 @@ export default function Activities({ data, step, parentError, onChangeSuccess }:
     return parts;
   };
 
+  if (data.interaction === 'choice') {
+    return (
+      <Panel title='選擇答案' answer={!data.noHint && hintAnswers} step={step} className={styles.ChoicePanel}>
+        <section className={styles.Activity} aria-label='互動練習'>
+          {data.content && <div className={styles.Passage}>{data.content}</div>}
+          <div className={styles.Options} role='group' aria-label='選擇答案'>
+            {options.map((option) => optionButton(option.value, `${option.value}. ${option.label}`))}
+          </div>
+        </section>
+      </Panel>
+    );
+  }
+
   return (
     <>
       <Panel title='內容' answer={null} step={step}>
         <section className={styles.Activity} aria-label='互動練習'>
           {data.content && (
             <div className={styles.Passage}>{data.interaction === 'passage' ? passage() : data.content}</div>
-          )}
-          {data.interaction === 'choice' && (
-            <div className={styles.Options} role='group' aria-label='選擇答案'>
-              {options.map((option) => optionButton(option.value, `${option.value}. ${option.label}`))}
-            </div>
           )}
           {sequence && (
             <>

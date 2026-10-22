@@ -1,3 +1,5 @@
+@use "./colors";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -7,4 +9,16 @@
   flex: 1 0 auto;
   margin: 0 auto;
   max-width: min(100%, var(--ifm-container-width));
+}
+
+html[data-theme="dark"] .container {
+  @include colors.dark;
+  color: var(--learn-text);
+
+  :global(.Shortcut) {
+    background: var(--learn-inset);
+    color: var(--learn-muted);
+    border-color: var(--learn-border-subtle);
+    box-shadow: none;
+  }
 }

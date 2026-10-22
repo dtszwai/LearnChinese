@@ -176,25 +176,112 @@
   }
 }
 /* Keep semantic buttons visually identical to the original navigation controls. */
-.NavigationStep { border: 0; background: none; color: inherit; font: inherit; padding: 0; }
+.NavigationStep {
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+}
 
 .NextReady {
-  flex-direction: row; align-items: center; justify-content: center; gap: 8px;
-  height: 44px; min-height: 44px; padding: 0 12px; border-radius: 12px;
-  font-size: 16px; font-weight: 600; color: color-mix(in srgb, var(--ifm-color-primary) 80%, #000);
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--ifm-color-primary) 80%, #000);
   background: color-mix(in srgb, var(--ifm-color-primary) 9%, #fff);
   border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 22%, transparent);
   box-shadow: none;
-  transition: background-color .2s, border-color .2s;
-  &:hover { opacity: 1; background: color-mix(in srgb, var(--ifm-color-primary) 15%, #fff); border-color: color-mix(in srgb, var(--ifm-color-primary) 40%, transparent); }
-  &:hover .ReadyArrow { transform: translateX(2px); }
-  &:focus-visible { outline: 2px solid var(--ifm-color-primary); outline-offset: 3px; }
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+  &:hover {
+    opacity: 1;
+    background: color-mix(in srgb, var(--ifm-color-primary) 15%, #fff);
+    border-color: color-mix(in srgb, var(--ifm-color-primary) 40%, transparent);
+  }
+  &:hover .ReadyArrow {
+    transform: translateX(2px);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--ifm-color-primary);
+    outline-offset: 3px;
+  }
   :global(.Shortcut) {
-    font-size: 10px; color: inherit; background: transparent;
-    border-color: color-mix(in srgb, var(--ifm-color-primary) 22%, transparent); box-shadow: none; margin: 0;
+    font-size: 10px;
+    color: inherit;
+    background: transparent;
+    border-color: color-mix(in srgb, var(--ifm-color-primary) 22%, transparent);
+    box-shadow: none;
+    margin: 0;
   }
 }
-.ReadyUnlock { width: 16px; height: 16px; animation: unlock .45s ease; }
-.ReadyArrow { transition: transform .2s; }
-@keyframes unlock { 0%, 100% { transform: translateY(0); } 35% { transform: translateY(-3px); } 70% { transform: translateY(2px); } }
-@media (prefers-reduced-motion: reduce) { .NextReady, .ReadyArrow { transition: none; } .ReadyUnlock { animation: none; } }
+.ReadyUnlock {
+  width: 16px;
+  height: 16px;
+  animation: unlock 0.45s ease;
+}
+.ReadyArrow {
+  transition: transform 0.2s;
+}
+@keyframes unlock {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-3px);
+  }
+  70% {
+    transform: translateY(2px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .NextReady,
+  .ReadyArrow {
+    transition: none;
+  }
+  .ReadyUnlock {
+    animation: none;
+  }
+}
+
+html[data-theme="dark"] {
+  .NavigationStepPrev,
+  .NavigationStepNext[aria-disabled="true"],
+  .NavigationStepStatusIcon {
+    color: var(--learn-muted);
+  }
+
+  .NavigationStepStatusIconError {
+    color: var(--learn-error);
+  }
+
+  .NextReady {
+    background: var(--learn-accent-surface);
+    border-color: var(--learn-border);
+    color: var(--learn-accent);
+
+    &:hover {
+      background: var(--learn-raised);
+      border-color: var(--learn-accent);
+    }
+
+    &:focus-visible {
+      outline-color: var(--learn-accent);
+    }
+
+    :global(.Shortcut) {
+      background: transparent;
+      border-color: var(--learn-border-subtle);
+      color: var(--learn-accent);
+    }
+  }
+}

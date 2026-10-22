@@ -43,13 +43,27 @@
   {
     "topic": "修辭手法：比喻",
     "title": "練習",
-    "description": "下列句子中，運用了哪一種比喻方法？\\n`明喻`／`暗喻`／`借喻`",
+    "description": "下列句子運用了哪一種比喻方法？請點選答案。",
     "content": "她的心是荒涼的，那像是永遠長不出東西的沙漠。",
-    "prefix": "這句話屬於",
-    "suffix": "修辭。",
-    "placeholder": "比喻",
-    "suggestedAnswer": ["明喻"],
-    "applyRegex": false
+    "suggestedAnswer": ["A"],
+    "applyRegex": false,
+    "id": "rhetoric-metaphor-type",
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "明喻"
+      },
+      {
+        "value": "B",
+        "label": "暗喻"
+      },
+      {
+        "value": "C",
+        "label": "借喻"
+      }
+    ],
+    "explanation": "本體是「她的心」，喻體是「永遠長不出東西的沙漠」，以「像」相連，屬於明喻。"
   },
   {
     "topic": "修辭手法：比喻",
@@ -88,11 +102,31 @@
   {
     "topic": "修辭手法：比喻",
     "title": "練習",
-    "description": "以下哪一句運用了比喻修辭？請填寫相應的英文字母。",
-    "content": "A. 考前他一如往常，早早就寢，毫不緊張。\nB. 行事須謹慎，如自作聰明，必自食惡果。\nC. 惡習如野草，要快割盡除。\nD. 苦苦等待之後，他終於如願以償了。",
-    "regexMatch": ["C"],
+    "description": "以下哪一句運用了比喻修辭？請點選相應的選項。",
+    "content": "",
     "suggestedAnswer": ["C", "c"],
-    "applyRegex": true
+    "applyRegex": false,
+    "id": "rhetoric-metaphor-choice",
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "A",
+        "label": "考前他一如往常，早早就寢，毫不緊張。"
+      },
+      {
+        "value": "B",
+        "label": "行事須謹慎，如自作聰明，必自食惡果。"
+      },
+      {
+        "value": "C",
+        "label": "惡習如野草，要快割盡除。"
+      },
+      {
+        "value": "D",
+        "label": "苦苦等待之後，他終於如願以償了。"
+      }
+    ],
+    "explanation": "C以「野草」比喻「惡習」，指出惡習需要及早清除。其餘句子的「如」並沒有連接本體與喻體。"
   },
   {
     "topic": "修辭手法：比喻",
@@ -125,21 +159,30 @@
     "prefix": "這句話以「帆」借代",
     "suffix": "，屬於以部分代整體。",
     "placeholder": "物件",
-    "videoURL": "https://www.youtube.com/embed/jUBGYvsD1sQ",
     "suggestedAnswer": ["船", "舟"],
-    "applyRegex": false
+    "applyRegex": false,
+    "videoURL": "https://www.youtube.com/embed/hia1cw8hCJ4"
   },
   {
     "topic": "修辭手法",
     "title": "`借代`和`借喻`",
-    "description": "「借代」和「借喻」十分相似，讓人難以辨析；因為它們都有「借」字，而且均是省略`本體`，只以客體——`借體`或`喻體`代替。\\n\\n借代和借喻最大的區別，在於其主體和客體的關係。借代的本體和借體，有密切的`相關性`；而借喻的本體和喻體，則只具`相似性`和`象徵性`。\\n「帆」借代「船」，是因為帆屬於船的部件，帆是船的一部分；「蓬草」借喻「頭髮」，是因為蓬草和頭髮都有散亂（凌亂）的特點，但兩者本身並不存在任何關係。",
-    "content": "1. 雪下了好幾天，大地蓋上了厚厚的白被子。\n2. 雪下了好幾天，大地蒙上了一片白。",
-    "prefix": "第",
-    "suffix": "句運用了借代手法，以「白」代「雪」。（特徵代本體）",
-    "placeholder": "1 / 2",
-    "regexMatch": ["2"],
+    "description": "「借代」和「借喻」十分相似，讓人難以辨析；因為它們都有「借」字，而且均是省略`本體`，只以客體——`借體`或`喻體`代替。\\n\\n借代和借喻最大的區別，在於其主體和客體的關係。借代的本體和借體，有密切的`相關性`；而借喻的本體和喻體，則只具`相似性`和`象徵性`。\\n「帆」借代「船」，是因為帆屬於船的部件，帆是船的一部分；「蓬草」借喻「頭髮」，是因為蓬草和頭髮都有散亂（凌亂）的特點，但兩者本身並不存在任何關係。\\n以下哪一句運用了借代手法？請點選句子。",
+    "content": "",
     "suggestedAnswer": ["2"],
-    "applyRegex": true
+    "applyRegex": false,
+    "id": "rhetoric-metonymy-choice",
+    "interaction": "choice",
+    "options": [
+      {
+        "value": "1",
+        "label": "雪下了好幾天，大地蓋上了厚厚的白被子。"
+      },
+      {
+        "value": "2",
+        "label": "雪下了好幾天，大地蒙上了一片白。"
+      }
+    ],
+    "explanation": "第2句以雪的顏色特徵「白」代「雪」，屬於以特徵代本體。第1句以「白被子」借喻雪，依據是相似性。"
   },
   {
     "topic": "修辭手法：借代",
@@ -192,8 +235,27 @@
     "applyRegex": false
   },
   {
-    "image": "/img/construction.gif",
-    "title": "More Coming Soon!",
-    "interactive": false
+    "id": "rhetoric-complete",
+    "topic": "修辭手法",
+    "title": "你已完成本課練習！",
+    "description": "你已完成本課的`比喻、借代和比擬`練習。接著可以認識其他修辭，或到課文中看看它們的用法。",
+    "interactive": false,
+    "recommendations": [
+      {
+        "title": "認識排比",
+        "description": "看看相似句式如何加強語氣和節奏。",
+        "href": "/cheatsheet#修辭手法-排比"
+      },
+      {
+        "title": "認識對偶",
+        "description": "認識兩個句子對稱排列的形式和效果。",
+        "href": "/cheatsheet#修辭手法-對偶"
+      },
+      {
+        "title": "課文應用：海濱仲夏夜",
+        "description": "在景物描寫中觀察比喻和擬人的用法。",
+        "href": "/passages/海濱仲夏夜"
+      }
+    ]
   }
 ]

@@ -63,6 +63,22 @@
       "url": "https://www.cacler.hku.hk/hk/content/basic/5969",
       "locator": "研究成果：立好論點、用好論據、寫好論證的教學建議",
       "use": "核對論據與論點相連、論據可信、避免空泛及片面結論的出題原則。"
+    },
+    "edb-metonymy-video": {
+      "publisher": "教育局課程資源組／教育局教育多媒體",
+      "title": "誰能替代我？（借代）（中文字幕可供選擇）",
+      "url": "https://emm.edcity.hk/media/t/0_rxf4mk2h",
+      "locator": "官方媒體頁標題與內容介紹；修辭手法標籤頁列長度14:59",
+      "use": "核對原借代教學影片的主題與官方替代入口。介紹為掌握借代並分辨借代與借喻；未完整觀看影片，不作逐段內容或播放保證。",
+      "checkedOn": "2026-10-22"
+    },
+    "youtube-metonymy-replacement": {
+      "publisher": "ETV HK（使用者提供的YouTube上載者）",
+      "title": "誰能替代我？（借代）丨中國語文教育 小六",
+      "url": "https://www.youtube.com/watch?v=hia1cw8hCJ4",
+      "locator": "影片頁播放器資料：長度871秒，介紹為提升讀寫能力、掌握借代並分辨借代與借喻",
+      "use": "2026-10-22使用者提供的替代上載。oEmbed可讀取；影片頁播放器狀態OK並標示playableInEmbed:true。未完整觀看影片，未藉自動測試向影片服務送出播放或分析事件。",
+      "checkedOn": "2026-10-22"
     }
   }
 }

@@ -1,14 +1,45 @@
 .ReportStep {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   cursor: default;
   min-width: 10px;
   user-select: none;
   text-align: left;
   font-size: 12px;
+  line-height: 1.5;
 }
 
-.ReportStepLink {
+.Action {
   display: inline-flex;
   align-items: center;
+  gap: 4px;
+  min-height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ifm-link-color);
+  font: inherit;
+  cursor: pointer;
   text-decoration: none;
   transition: 0.1s;
+
+  &:hover {
+    color: var(--ifm-link-hover-color);
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ifm-color-primary);
+    outline-offset: 3px;
+  }
+}
+
+html[data-theme="dark"] .Action {
+  color: var(--learn-accent);
+
+  &:hover {
+    color: var(--learn-text);
+  }
 }

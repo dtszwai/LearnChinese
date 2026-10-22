@@ -37,3 +37,17 @@
   min-width: 6px;
   max-width: 100%;
 }
+
+html[data-theme="dark"] {
+  .ProgressStatus {
+    color: var(--learn-muted);
+  }
+
+  .ProgressBar {
+    background: var(--learn-border-subtle);
+  }
+
+  .ProgressLine {
+    background: var(--learn-accent);
+  }
+}

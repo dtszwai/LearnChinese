@@ -109,12 +109,6 @@ function LearningSession({
         step={step}
         onChangeSuccess={setSuccess}
         error={error}
-        onRestart={() => {
-          setError(false);
-          setSuccess(false);
-          setStep({ currentStep: 0, lastStep: 0 });
-          onSave({ currentStep: 0, lastStep: 0 });
-        }}
       />
       <LearnFooter
         totalSteps={data.length - 1}

@@ -1,0 +1,18 @@
+// Scoped to Learn, including its portalled hint and video dialog.
+@mixin dark {
+  --learn-text: #e7edf5;
+  --learn-muted: #b2bfd0;
+  --learn-surface: #303640;
+  --learn-inset: #242b35;
+  --learn-raised: #3b4656;
+  --learn-border: #73839a;
+  --learn-border-subtle: #536176;
+  --learn-accent: #7dd3fc;
+  --learn-accent-surface: #213f50;
+  --learn-success: #83d6ae;
+  --learn-success-surface: #203d33;
+  --learn-error: #ffaaaa;
+  --learn-error-surface: #482d34;
+  --learn-warning: #ffe1a0;
+  --learn-warning-surface: #493c25;
+}

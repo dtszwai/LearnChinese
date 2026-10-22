@@ -12,10 +12,9 @@ type Props = {
   step: LessonProgress;
   parentError: boolean;
   onChangeSuccess: (success: boolean) => void;
-  setIsOpenModal: (open: boolean) => void;
 };
 
-export default function Interactive({ data, step, parentError, onChangeSuccess, setIsOpenModal }: Props) {
+export default function Interactive({ data, step, parentError, onChangeSuccess }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   // Step is keyed by the parent: initialize once for a new or revisited question.
   const [inputValue, setInputValue] = useState(
@@ -69,11 +68,6 @@ export default function Interactive({ data, step, parentError, onChangeSuccess, 
           />
           {data.suffix}
         </div>
-        {data.videoURL && (
-          <div className={styles.WatchButton} onClick={() => setIsOpenModal(true)}>
-            📹 觀看影片
-          </div>
-        )}
       </div>
     </div>
   );

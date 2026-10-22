@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import Dialog from '@mui/material/Dialog';
+import Link from '@docusaurus/Link';
 import InteractiveArea from '../Interactive';
 import Activities from '../Activities';
 import Report from '../ReportStep';
@@ -13,16 +15,10 @@ type Props = {
   step: LessonProgress;
   error: boolean;
   onChangeSuccess: (success: boolean) => void;
-  onRestart: () => void;
 };
 
-const Step = ({ lesson, data, step, error, onChangeSuccess, onRestart }: Props) => {
+const Step = ({ lesson, data, step, error, onChangeSuccess }: Props) => {
   const [modalIsOpen, setIsOpenModal] = useState(false);
-  const handleCloseModal = (e: KeyboardEvent) => e.key === 'Escape' && setIsOpenModal(false);
-  useEffect(() => {
-    addEventListener('keyup', handleCloseModal);
-    return () => removeEventListener('keyup', handleCloseModal);
-  }, []);
 
   return (
     <div className={styles.Step}>
@@ -51,11 +47,31 @@ const Step = ({ lesson, data, step, error, onChangeSuccess, onRestart }: Props) 
         />
       )}
       {data.id?.endsWith('-complete') && (
-        <div>
-          <button type='button' className='button button--secondary' onClick={onRestart}>
-            重新學習
-          </button>
-        </div>
+        <>
+          {data.recommendations && data.recommendations.length > 0 && (
+            <section className={styles.Recommendations} aria-labelledby='learn-next-topics'>
+              <h3 id='learn-next-topics'>接下來學甚麼？</h3>
+              <ul>
+                {data.recommendations.map((item) => (
+                  <li key={item.href}>
+                    <Link className={styles.Recommendation} to={item.href}>
+                      <span className={styles.RecommendationText}>
+                        <strong>{item.title}</strong>
+                        <span>{item.description}</span>
+                      </span>
+                      <span aria-hidden='true'>→</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+          <div>
+            <Link className='button button--secondary' to='/learn'>
+              返回學習目錄
+            </Link>
+          </div>
+        </>
       )}
       {data.interactive !== false && (
         <>
@@ -74,24 +90,42 @@ const Step = ({ lesson, data, step, error, onChangeSuccess, onRestart }: Props) 
               step={step}
               parentError={error}
               onChangeSuccess={onChangeSuccess}
-              setIsOpenModal={setIsOpenModal}
             />
           )}
-          <Report title={lesson.title} step={step} />
-          {data.videoURL && modalIsOpen && (
-            <div className={styles.StepVideoModal}>
-              <iframe
-                width='80%'
-                height='80%'
-                src={data.videoURL}
-                frameBorder={0}
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                allowFullScreen
-              />
-              <button className='button button--secondary' onClick={() => setIsOpenModal(false)}>
-                關閉
-              </button>
-            </div>
+          <Report
+            title={lesson.title}
+            step={step}
+            onOpenVideo={data.videoURL ? () => setIsOpenModal(true) : undefined}
+          />
+          {data.videoURL && (
+            <Dialog
+              open={modalIsOpen}
+              onClose={() => setIsOpenModal(false)}
+              aria-labelledby='learn-video-title'
+              maxWidth={false}
+              PaperProps={{ className: styles.VideoDialogPaper }}
+            >
+              <div className={styles.VideoDialogHeader}>
+                <h3 id='learn-video-title'>觀看影片</h3>
+                <button
+                  type='button'
+                  className={styles.VideoDialogClose}
+                  aria-label='關閉影片'
+                  autoFocus
+                  onClick={() => setIsOpenModal(false)}
+                >
+                  <span aria-hidden='true'>×</span> 關閉
+                </button>
+              </div>
+              <div className={styles.VideoFrame}>
+                <iframe
+                  title={`${data.title}教學影片`}
+                  src={data.videoURL}
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowFullScreen
+                />
+              </div>
+            </Dialog>
           )}
         </>
       )}

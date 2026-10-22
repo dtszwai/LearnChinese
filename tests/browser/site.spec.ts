@@ -2,8 +2,8 @@ import { test, expect, type Page } from '@playwright/test';
 
 // Do not send test ratings, analytics or video traffic to external services.
 test.beforeEach(async ({ page }) => {
-  await page.route(/https:\/\/(www\.)?(google-analytics|googletagmanager|youtube-nocookie)\.com\//, (route) =>
-    route.fulfill({ body: '' }),
+  await page.route('**/*', (route) =>
+    route.request().url().startsWith('http://127.0.0.1:4174/') ? route.continue() : route.fulfill({ body: '' }),
   );
   await page.route('https://script.google.com/**', (route) => route.fulfill({ body: 'ok' }));
 });
@@ -39,7 +39,7 @@ for (const path of [
       await page.waitForTimeout(300);
       expect(errors).toEqual([]);
     }
-    await expect(page.locator('.theme-announcement-bar')).toHaveCSS('background-color', 'rgb(127, 127, 240)');
+    await expect(page.locator('.theme-announcement-bar')).toHaveCount(0);
   });
 }
 
@@ -95,6 +95,139 @@ test('Learn answer lock, hint keyboard, IME, simplified answer and edited demons
   await page.reload();
   await answer.fill('过量的酒');
   await expect(next).toHaveAttribute('aria-disabled', 'false');
+  expect(errors).toEqual([]);
+});
+
+test('rhetoric choices use one stable panel with answer locking and keyboard hints', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('/learn/rhetoric');
+  for (const [index, wrong, correct] of [
+    [4, 'B. 暗喻', 'A. 明喻'],
+    [8, 'A. 考前他一如往常，早早就寢，毫不緊張。', 'C. 惡習如野草，要快割盡除。'],
+    [13, '1. 雪下了好幾天，大地蓋上了厚厚的白被子。', '2. 雪下了好幾天，大地蒙上了一片白。'],
+  ] as const) {
+    await page.evaluate((currentStep) => {
+      localStorage.setItem('learn.rhetoric', JSON.stringify({ currentStep, lastStep: currentStep }));
+    }, index);
+    await page.reload();
+    const panel = page.getByRole('region', { name: '選擇答案', exact: true });
+    await expect(page.locator('main [data-title]')).toHaveCount(1);
+    await expect(page.getByRole('region', { name: '答案', exact: true })).toHaveCount(0);
+    const text = await panel.innerText();
+    const next = page.getByRole('button', { name: '下一題', exact: true });
+    await page.getByRole('button', { name: wrong, exact: true }).click();
+    await expect(next).toHaveAttribute('aria-disabled', 'true');
+    await expect(page.getByRole('button', { name: wrong, exact: true })).toHaveCSS('border-color', 'rgb(255, 99, 71)');
+    expect(await panel.innerText()).toBe(text);
+    await page.keyboard.press('Alt+h');
+    await expect(page.getByRole('tooltip')).toContainText(correct.slice(3));
+    await expect(next).toHaveAttribute('aria-disabled', 'true');
+    await page.getByRole('button', { name: correct, exact: true }).press('Enter');
+    await expect(next).toHaveAttribute('aria-disabled', 'false');
+    await expect(page.getByRole('button', { name: correct, exact: true })).toHaveCSS(
+      'border-color',
+      'rgb(37, 131, 92)',
+    );
+    expect(await panel.innerText()).toBe(text);
+    await expect(page.getByRole('status')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: correct, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    await page.getByRole('button', { name: wrong, exact: true }).click();
+    await expect(next).toHaveAttribute('aria-disabled', 'true');
+  }
+  expect(errors).toEqual([]);
+});
+
+test('rhetoric completion offers public next topics and returns to Learn without resetting progress', async ({
+  page,
+}) => {
+  const errors = watchErrors(page);
+  await page.goto('/learn/rhetoric');
+  await page.evaluate(() => localStorage.setItem('learn.rhetoric', JSON.stringify({ currentStep: 19, lastStep: 19 })));
+  await page.reload();
+  await page.getByRole('textbox', { name: '你的答案' }).fill('種子');
+  await page.getByRole('button', { name: '下一題', exact: true }).click();
+  const completion = page.getByRole('heading', { name: '你已完成本課練習！', exact: true });
+  await expect(completion).toBeVisible();
+  await expect(page.getByText('More Coming Soon!', { exact: true })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: '下一題', exact: true })).toHaveCount(0);
+  await page.reload();
+  await expect(completion).toBeVisible();
+  const recommendations = page.getByRole('region', { name: '接下來學甚麼？', exact: true });
+  await expect(recommendations.getByRole('link')).toHaveCount(3);
+  expect(
+    await recommendations.getByRole('link').evaluateAll((links) => links.map((link) => link.getAttribute('href'))),
+  ).toEqual(['/cheatsheet#修辭手法-排比', '/cheatsheet#修辭手法-對偶', '/passages/海濱仲夏夜']);
+  for (const topic of ['排比', '對偶']) {
+    await recommendations.getByRole('link', { name: new RegExp(`^認識${topic}`) }).click();
+    const trigger = page.locator(`[id="修辭手法-${topic}"]`).locator('..');
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    await page.reload();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    await page.goto('/learn/rhetoric');
+    await expect(completion).toBeVisible();
+  }
+  await recommendations.getByRole('link', { name: /^課文應用：海濱仲夏夜/ }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('海濱仲夏夜');
+  await page.reload();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('海濱仲夏夜');
+  await page.goto('/learn/rhetoric');
+  await page.getByRole('link', { name: '返回學習目錄', exact: true }).click();
+  await expect(page).toHaveURL(/\/learn$/);
+  await expect(page.getByRole('heading', { level: 1, name: '學習', exact: true })).toBeVisible();
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('learn.rhetoric') || '{}'))).toEqual({
+    currentStep: 20,
+    lastStep: 20,
+  });
+  await page.locator('main a[href="/learn/rhetoric"]').click();
+  await expect(completion).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('Learn video dialog opens above the page, closes and restores keyboard focus', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('/learn/rhetoric');
+  for (const index of [12, 18]) {
+    await page.evaluate((currentStep) => {
+      localStorage.setItem('learn.rhetoric', JSON.stringify({ currentStep, lastStep: currentStep }));
+    }, index);
+    await page.reload();
+    const trigger = page.getByRole('button', { name: '觀看影片', exact: true });
+    const report = page.getByRole('link', { name: '回報問題', exact: true });
+    const reportBox = await report.boundingBox();
+    const videoBox = await trigger.boundingBox();
+    expect(reportBox).not.toBeNull();
+    expect(videoBox).not.toBeNull();
+    if (reportBox && videoBox) {
+      expect(videoBox.x).toBeGreaterThan(reportBox.x + reportBox.width);
+      expect(videoBox.y).toBe(reportBox.y);
+    }
+    await expect(trigger).toHaveCSS(
+      'font-size',
+      await report.evaluate((element) => getComputedStyle(element).fontSize),
+    );
+    expect(await trigger.evaluate((element) => Boolean(element.closest('[data-title]')))).toBe(false);
+    await trigger.press('Enter');
+    const dialog = page.getByRole('dialog', { name: '觀看影片', exact: true });
+    const close = dialog.getByRole('button', { name: '關閉影片', exact: true });
+    await expect(close).toBeFocused();
+    await expect(dialog.locator('iframe')).toHaveAttribute('title', /教學影片$/);
+    await expect(dialog.locator('iframe')).toHaveAttribute(
+      'src',
+      index === 12 ? 'https://www.youtube.com/embed/hia1cw8hCJ4' : 'https://www.youtube.com/embed/YuPAonzKAbA',
+    );
+    await expect(page.locator('body')).toHaveCSS('overflow', 'hidden');
+    await page.keyboard.press('Escape');
+    await expect(dialog).toHaveCount(0);
+    await expect(trigger).toBeFocused();
+    await trigger.click();
+    await close.click();
+    await expect(dialog.locator('iframe')).toHaveCount(0);
+    await expect(trigger).toBeFocused();
+    await trigger.click();
+    await page.locator('.MuiDialog-container').click({ position: { x: 5, y: 5 } });
+    await expect(dialog).toHaveCount(0);
+    await expect(trigger).toBeFocused();
+  }
   expect(errors).toEqual([]);
 });
 

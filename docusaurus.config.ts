@@ -67,12 +67,6 @@ const config: Config = {
     docs: {
       sidebar: { hideable: true },
     },
-    announcementBar: {
-      id: "questionnaire",
-      backgroundColor: "#7f7ff0",
-      textColor: "#fff",
-      content: `📢 我們想聽聽你的聲音！讓我們知道你的意見；或者只是告訴我們一個笑話，我們都聽。感謝你的支持！<a href="https://forms.gle/FzYfySqYG7nrzgYU8" target="_blank" rel="noopener">📝 填寫問卷</a>`,
-    },
     navbar: {
       title: title,
       hideOnScroll: true,

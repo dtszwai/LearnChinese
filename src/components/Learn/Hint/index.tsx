@@ -13,7 +13,7 @@ export default ({ answer, step }: Props) => {
   const toggleShow = (e: KeyboardEvent) => {
     if (e.altKey && e.key.toLowerCase() === 'h') {
       e.preventDefault();
-      setShowStatus(shown => !shown);
+      setShowStatus((shown) => !shown);
     }
   };
 
@@ -41,8 +41,20 @@ export default ({ answer, step }: Props) => {
   );
 
   return (
-    <Tooltip describeChild open={showStatus} title={hint} placement='top' className={styles.Hint}>
-      <button type='button' className={styles.ShowHint} onClick={() => setShowStatus(shown => !shown)} aria-expanded={showStatus}>
+    <Tooltip
+      describeChild
+      open={showStatus}
+      title={hint}
+      placement='top'
+      className={styles.Hint}
+      componentsProps={{ tooltip: { className: styles.Tooltip } }}
+    >
+      <button
+        type='button'
+        className={styles.ShowHint}
+        onClick={() => setShowStatus((shown) => !shown)}
+        aria-expanded={showStatus}
+      >
         顯示答案
         <span className='Shortcut'>ALT + H</span>
       </button>

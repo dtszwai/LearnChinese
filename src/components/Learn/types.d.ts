@@ -14,6 +14,7 @@ export type LessonData = {
   options?: { value: string; label: string }[];
   correctOrder?: string[];
   explanation?: string;
+  recommendations?: { title: string; description: string; href: string }[];
   image?: string;
   topic?: string;
   title: string;

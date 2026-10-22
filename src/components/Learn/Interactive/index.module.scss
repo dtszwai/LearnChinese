@@ -60,7 +60,7 @@
   max-width: 100%;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   & .Block::before,
   & .InputWrapper {
     background: #272727;
@@ -122,22 +122,66 @@ html[data-theme='dark'] {
   box-shadow: inset 0px 0px 0px 2px tomato;
 }
 
-.WatchButton {
-  display: inline-flex;
-  align-items: center;
-  margin-right: auto;
-  cursor: pointer;
-}
-
-.WatchButton:hover {
-  color: #2a87d8;
-}
-
-.WatchButton svg {
-  margin-right: 5px;
-}
-
 @media (max-width: 800px) {
   // Retain the hint at the lower right without overlapping the answer or report link.
-  .BlockRegex { padding: 24px 16px 48px; }
+  .BlockRegex {
+    padding: 24px 16px 48px;
+  }
+}
+
+html[data-theme="dark"] {
+  .Block {
+    background: var(--learn-surface);
+    color: var(--learn-text);
+  }
+
+  .Block::before {
+    background: var(--learn-raised);
+    color: var(--learn-muted);
+  }
+
+  .InputWrapper {
+    background: var(--learn-inset);
+    color: var(--learn-text);
+  }
+
+  .Input {
+    color: var(--learn-accent);
+    outline-color: var(--learn-border);
+
+    &::placeholder {
+      color: var(--learn-muted);
+    }
+
+    &:focus {
+      outline: 2px solid var(--learn-accent);
+    }
+
+    &[aria-invalid="true"] {
+      outline-color: var(--learn-error);
+    }
+  }
+
+  .ResultTag {
+    color: var(--learn-text);
+  }
+
+  .Error .ResultTag {
+    background: var(--learn-error-surface);
+    color: var(--learn-error);
+  }
+
+  .Match:not(.Success) .ResultTag {
+    background: var(--learn-warning-surface);
+    color: var(--learn-warning);
+  }
+
+  .Success .ResultTag {
+    background: var(--learn-accent-surface);
+    color: var(--learn-accent);
+  }
+
+  .ParentError .BlockRegex {
+    box-shadow: inset 0 0 0 2px var(--learn-error);
+  }
 }

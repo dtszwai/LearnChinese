@@ -1194,5 +1194,86 @@
         "rationale": "回顧本單元概念；完成頁不另設作答。"
       }
     ]
+  },
+  "rhetoricChoiceUpdates": {
+    "reviewedOn": "2026-10-21",
+    "scope": "記錄三道有明確選項的題目之操作調整；選擇題只保留單一容器，以選項狀態表示對錯，不切換回饋文字。不屬於修辭全課的來源或內容重新審定，其餘題目的文字與答案維持原樣；影片入口與完成頁更新另列紀錄。",
+    "steps": [
+      {
+        "stepId": "rhetoric-metaphor-type",
+        "acceptedAnswers": [
+          "A"
+        ],
+        "rationale": "本體是「她的心」，喻體是「永遠長不出東西的沙漠」，以「像」相連，屬於明喻。",
+        "interaction": "choice"
+      },
+      {
+        "stepId": "rhetoric-metaphor-choice",
+        "acceptedAnswers": [
+          "C",
+          "c"
+        ],
+        "rationale": "C以「野草」比喻「惡習」，指出惡習需要及早清除。其餘句子的「如」並沒有連接本體與喻體。",
+        "interaction": "choice"
+      },
+      {
+        "stepId": "rhetoric-metonymy-choice",
+        "acceptedAnswers": [
+          "2"
+        ],
+        "rationale": "第2句以雪的顏色特徵「白」代「雪」，屬於以特徵代本體。第1句以「白被子」借喻雪，依據是相似性。",
+        "interaction": "choice"
+      }
+    ]
+  },
+  "rhetoricMediaUpdates": [
+    {
+      "reviewedOn": "2026-10-22",
+      "step": 13,
+      "sources": [
+        "edb-metonymy-video",
+        "youtube-metonymy-replacement"
+      ],
+      "previousURL": "https://www.youtube.com/embed/jUBGYvsD1sQ",
+      "videoURL": "https://www.youtube.com/embed/hia1cw8hCJ4",
+      "rationale": "舊YouTube的oEmbed回傳404，播放器明示所屬帳戶已關閉。先核對教育局官方同名資源的教學主題，再改用使用者提供的ETV HK上載；新影片頁介紹一致，長度14:31，播放器資料顯示OK並允許嵌入。保留題目與原答案，觀看影片入口移至回報問題右側並共用文字樣式。",
+      "acceptedAnswers": [
+        "船",
+        "舟"
+      ]
+    }
+  ],
+  "rhetoricCompletionUpdate": {
+    "reviewedOn": "2026-10-22",
+    "stepId": "rhetoric-complete",
+    "coveredTopics": [
+      "比喻（明喻、暗喻、借喻）",
+      "借代",
+      "比擬（擬人、擬物）"
+    ],
+    "rationale": "21步已覆蓋本課宣告的三類修辭，完成文字限定本課練習，不宣稱已學完所有修辭。保留21步及15道互動題，不更換題序；完成頁提供返回學習目錄的連結，保留完成進度。推薦只連向現有公開語基條目與課文，不指向五個未公開Learn單元。",
+    "recommendations": [
+      {
+        "title": "認識排比",
+        "description": "看看相似句式如何加強語氣和節奏。",
+        "href": "/cheatsheet#修辭手法-排比"
+      },
+      {
+        "title": "認識對偶",
+        "description": "認識兩個句子對稱排列的形式和效果。",
+        "href": "/cheatsheet#修辭手法-對偶"
+      },
+      {
+        "title": "課文應用：海濱仲夏夜",
+        "description": "在景物描寫中觀察比喻和擬人的用法。",
+        "href": "/passages/海濱仲夏夜"
+      }
+    ],
+    "verifiedFiles": [
+      "src/data/cheatsheet.json",
+      "src/pages/cheatsheet/index.tsx",
+      "docs/passages/海濱仲夏夜.mdx",
+      ".docusaurus/routes.js"
+    ]
   }
 }

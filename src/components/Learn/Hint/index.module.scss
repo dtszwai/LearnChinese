@@ -1,3 +1,5 @@
+@use "../colors";
+
 .Hint {
   cursor: default;
   min-width: 10px;
@@ -28,7 +30,9 @@
   justify-content: center;
   cursor: pointer;
   min-height: 36px;
-  :global(.Shortcut) { color: #606673; }
+  :global(.Shortcut) {
+    color: #606673;
+  }
   &:hover {
     color: var(--ifm-color-primary);
   }
@@ -45,5 +49,43 @@
     margin-top: 3px;
     border: 1px dotted #333;
     color: #c4e0f9;
+  }
+}
+
+html[data-theme="dark"] {
+  .Hint {
+    color: var(--learn-muted);
+  }
+
+  .ShowHint {
+    :global(.Shortcut) {
+      color: var(--learn-muted);
+    }
+
+    &:hover {
+      color: var(--learn-accent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--learn-accent);
+      outline-offset: 3px;
+    }
+  }
+
+  .Tooltip:global(.MuiTooltip-tooltip) {
+    @include colors.dark;
+    background: var(--learn-raised);
+    border: 1px solid var(--learn-border);
+    color: var(--learn-text);
+  }
+
+  .HintAnswer {
+    background: transparent;
+    color: var(--learn-text);
+  }
+
+  .HintAnswerItem {
+    border-color: var(--learn-border);
+    color: var(--learn-text);
   }
 }
