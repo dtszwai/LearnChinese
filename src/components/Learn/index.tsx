@@ -11,7 +11,7 @@ import { readLessonProgress, LessonProgress } from './lessonProgress';
 
 export default function LearnPage({ lesson, data }: { lesson: Lesson; data: LessonData[] }) {
   return (
-    <Layout title={lesson.title}>
+    <Layout title={lesson.title} description={lesson.description}>
       <Learn key={lesson.slug} lesson={lesson} data={data} />
     </Layout>
   );
@@ -21,7 +21,15 @@ function Learn({ lesson, data }: { lesson: Lesson; data: LessonData[] }) {
   const [record, setRecord, loaded] = useLocalStorage<LessonProgress | undefined>(lesson.key, undefined, (value) =>
     readLessonProgress(value, data.length),
   );
-  if (!loaded) return <p role='status'>正在載入課程……</p>;
+  // The server and the first client render share a readable public lesson summary.
+  if (!loaded)
+    return (
+      <main className='container margin-vert--lg'>
+        <h1>{lesson.title}</h1>
+        <p>{lesson.description}</p>
+        <p role='status'>正在載入課程……</p>
+      </main>
+    );
   return (
     <LearningSession
       lesson={lesson}

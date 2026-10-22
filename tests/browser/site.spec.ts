@@ -28,6 +28,7 @@ for (const path of [
   '/contents/S3/詞曲欣賞',
   '/passages/背影',
   '/cheatsheet',
+  '/404.html',
 ]) {
   test(`production direct load and reload: ${path}`, async ({ page }) => {
     const errors = watchErrors(page);
@@ -64,6 +65,29 @@ test('only rhetoric is published; search and legacy redirect work', async ({ pag
   await expect(page).toHaveURL(/背影|%E8%83%8C%E5%BD%B1/);
   await page.goto('/S1/單元二：敘事寫人/背影');
   await expect(page).toHaveURL(/\/passages\//);
+});
+
+test('search includes public lessons and the language reference page', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('/');
+  const search = page.locator('.navbar__search-input');
+  for (const [query, title, href] of [
+    ['比擬', '修辭手法', '/learn/rhetoric'],
+    ['語文基礎', '語文基礎知識', '/cheatsheet'],
+  ]) {
+    await search.fill(query);
+    const result = page.getByRole('option').filter({ hasText: title }).first();
+    await expect(result).toBeVisible();
+    await result.click();
+    await expect(page).toHaveURL(new RegExp(href));
+    await page.reload();
+    await expect(page.locator('.navbar__search-input')).toBeVisible();
+  }
+  await page.goto('/search?q=比擬');
+  await expect(page.locator('a[href="/learn/rhetoric"]').first()).toBeVisible();
+  await page.reload();
+  await expect(page.locator('a[href="/learn/rhetoric"]').first()).toBeVisible();
+  expect(errors).toEqual([]);
 });
 
 test('Learn answer lock, hint keyboard, IME, simplified answer and edited demonstration', async ({ page }) => {

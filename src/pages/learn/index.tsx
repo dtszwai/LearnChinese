@@ -33,7 +33,10 @@ export default function LearnHome() {
     }))
     .filter((group) => group.lessons.length > 0);
   return (
-    <Layout title='學習'>
+    <Layout
+      title='學習'
+      description='透過中文科互動課程與練習，逐步掌握語文知識。選擇已開放課程開始學習，並在本機保留學習進度。'
+    >
       <main className={styles.main}>
         <header className={styles.header}>
           <h1>學習</h1>

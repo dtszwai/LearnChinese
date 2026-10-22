@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
+import Head from '@docusaurus/Head';
 import Sketch from '/img/index.svg';
 import styles from './index.module.scss';
 import Typer from '@site/src/components/HomeTypewriter';
@@ -81,19 +82,36 @@ const Settext = () => {
 };
 
 export default () => (
-  <Layout title={useDocusaurusContext().siteConfig.tagline}>
-    <Header title={useDocusaurusContext().siteConfig.tagline} />
-    <section className={styles.TOC}>
-      <div className={styles.Tab}>
-        <a href='#S1'>中一級課文</a>
-        <a href='#S2'>中二級課文</a>
-        <a href='#S3'>中三級課文</a>
-        <a href='#settext'>指定文言</a>
-      </div>
-      <TextList grade='S1' title='中一' Src={S1Text} color='#ec4899' />
-      <TextList grade='S2' title='中二' Src={S2Text} color='#82735C' />
-      <TextList grade='S3' title='中三' Src={S3Text} color='#6366f1' />
-      <Settext />
-    </section>
+  <Layout
+    title='中文科閱讀篇章、指定文言與語文基礎'
+    description='書目引得提供香港中學中文科學習資源：中一至中三課文、DSE 指定文言、文言語譯、字詞註釋、語文基礎知識及互動練習。按篇名或關鍵字搜尋，查找閱讀篇章與溫習材料。'
+  >
+    <Head>
+      <script type='application/ld+json'>
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: useDocusaurusContext().siteConfig.title,
+          alternateName: 'LearnChinese',
+          url: useDocusaurusContext().siteConfig.url,
+          inLanguage: 'zh-Hant',
+        })}
+      </script>
+    </Head>
+    <main>
+      <Header title={useDocusaurusContext().siteConfig.tagline} />
+      <section className={styles.TOC}>
+        <div className={styles.Tab}>
+          <a href='#S1'>中一級課文</a>
+          <a href='#S2'>中二級課文</a>
+          <a href='#S3'>中三級課文</a>
+          <a href='#settext'>指定文言</a>
+        </div>
+        <TextList grade='S1' title='中一' Src={S1Text} color='#ec4899' />
+        <TextList grade='S2' title='中二' Src={S2Text} color='#82735C' />
+        <TextList grade='S3' title='中三' Src={S3Text} color='#6366f1' />
+        <Settext />
+      </section>
+    </main>
   </Layout>
 );

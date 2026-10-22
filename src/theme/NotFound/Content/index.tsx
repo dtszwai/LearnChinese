@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import quotes from '@site/src/data/quotes.json';
 import Link from '@docusaurus/Link';
+import { PageMetadata } from '@docusaurus/theme-common';
 
 type Quote = (typeof quotes)[number];
 type QuoteProps = { randomQuote: Quote; setRandomQuote: (quote: Quote) => void };
@@ -29,6 +30,10 @@ export default () => {
 
   return (
     <main className='container '>
+      {/* Root docs routes also render this content without the NotFound layout. */}
+      <PageMetadata title='找不到頁面'>
+        <meta name='robots' content='noindex, follow' />
+      </PageMetadata>
       <div className='row margin-vert--xl'>
         <div className='col col--6 col--offset-3'>
           <h1 className={styles.title}>找不到頁面</h1>

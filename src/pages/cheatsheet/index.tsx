@@ -25,7 +25,10 @@ export default function Cheatsheet() {
   }, [location.hash]);
 
   return (
-    <Layout title={title}>
+    <Layout
+      title={title}
+      description='中文科語文基礎知識表，整理修辭、描寫、抒情、說明及論證等手法，配合例子與課文應用，方便查找和溫習。'
+    >
       <main className='container'>
         <header className={styles.header}>
           <h1 className={styles.title}>{title}</h1>

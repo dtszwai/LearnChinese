@@ -30,10 +30,12 @@ const config: Config = {
       "@easyops-cn/docusaurus-search-local",
       {
         hashed: true,
-        language: "zh",
-        docsRouteBasePath: "/",
+        language: ["en", "zh"],
+        // A root docs scope swallows non-doc routes before indexPages can index them.
+        docsRouteBasePath: ["contents", "passages", "settext", "dse"],
         indexBlog: false,
         indexPages: true,
+        explicitSearchResultPath: true,
       },
     ],
   ],
@@ -49,6 +51,9 @@ const config: Config = {
         },
 
         blog: false,
+        sitemap: {
+          ignorePatterns: ["/search", "/404.html"],
+        },
         pages: { beforeDefaultRemarkPlugins: [Annotate] },
         theme: {
           customCss: ["./src/css/custom.scss"],
@@ -84,6 +89,7 @@ const config: Config = {
           label: "更多",
           position: "right",
           items: [
+            { to: "/search", label: "搜尋全站" },
             { to: "about", label: "關於本站" },
             { href: "https://www.moedict.tw/", label: "萌典" },
             { href: "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/", label: "粵音" },
