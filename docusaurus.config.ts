@@ -96,6 +96,7 @@ const config: Config = {
   markdown: {
     hooks: { onBrokenMarkdownLinks: "throw" },
     format: "mdx",
+    remarkRehypeOptions: { footnoteLabel: "註釋" },
   },
 };
 
